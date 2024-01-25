@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alvin\\source\\repos\\Trabahub\\Trabahub.csproj": {}
+    "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alvin\\source\\repos\\Trabahub\\Trabahub.csproj": {
+    "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alvin\\source\\repos\\Trabahub\\Trabahub.csproj",
+        "projectUniqueName": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
         "projectName": "Trabahub",
-        "projectPath": "C:\\Users\\alvin\\source\\repos\\Trabahub\\Trabahub.csproj",
+        "projectPath": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
         "packagesPath": "C:\\Users\\alvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alvin\\source\\repos\\Trabahub\\obj\\",
+        "outputPath": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alvin\\AppData\\Roaming\\NuGet\\NuGet.Config",

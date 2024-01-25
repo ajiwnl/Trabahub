@@ -18,15 +18,28 @@ html {
     min-height: 100%;
 }
 
-html, body {
-    background-color: rgb(239, 239, 239, 1);
-}
-
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+
+/*Navbar edits*/
+.navbar-nav .nav-item.me-5 a.nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-item.me-5.active a.nav-link,
+.navbar-nav .nav-item.me-5 a.nav-link:hover {
+    color: #39B6A2;
+}
+
+.navbar-fonts {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
 
 /*Home Page*/
 #WordLogo {
@@ -48,13 +61,8 @@ header, footer {
     background-color: rgba(28, 27, 27, 1);
 }
 
-.navbar-fonts {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
-}
-
 #layoutbody {
-    background-image: url(https://i.ibb.co/x1LYVLQ/Background.jpg);
+    background-image: url(https://i.ibb.co/mR8gHRC/Background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
