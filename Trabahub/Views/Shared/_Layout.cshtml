@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="layoutbody">
     <header id="layouthead">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -29,20 +29,21 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1 justify-content-end me-5">
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Home" ? "active" : "")">
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
                         <li class="nav-item me-5">
-                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="About" asp-action="Index">About</a>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Community</a>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Community</a>
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Spaces</a>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Spaces</a>
-                        </li>
-                        <li class="nav-item me-5">
-                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
                         </li>
 
                     </ul>
@@ -58,7 +59,7 @@
 
     <footer class="footer text-muted" id="layoutfoot">
         <div class="container">
-            &copy; 2024 - Trabahub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <p>&copy; 2024 - Trabahub</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
