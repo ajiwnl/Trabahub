@@ -1,22 +1,155 @@
+/*Preset Classes*/
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+}
+
+html, body {
+    background-color: rgb(239, 239, 239, 1);
 }
 
 body {
-  margin-bottom: 60px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Home Page*/
+#WordLogo {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+}
+
+.tralogo {
+    width: 50px;
+    height: 50px;
+    transform: scale(2);
+    filter: brightness(70%);
+    font-weight: bold;
+}
+
+header, footer {
+    background-color: rgba(28, 27, 27, 1);
+}
+
+.navbar-fonts {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
+/*About Us Page*/
+.header-font {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+.body-font {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.grid-container {
+    display: inline-flex;
+    height: 85px;
+}
+
+.wrapper > * {
+    padding: 1px;
+    margin: 10px;
+    flex: 1 100%;
+}
+
+.header {
+    height: 60px;
+    text-align: start;
+}
+
+.main {
+    height: 320px;
+    text-align: start;
+}
+
+.side {
+    height: 420px;
+}
+
+.img-size {
+    width: auto;
+    max-width: 425px;
+    height: auto;
+    max-height: 425px
+}
+
+.firstlayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.secondlayer {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/DkCgJNM/Image-Sample-2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Responsive Actios For About Page*/
+@media all and (min-width: 800px) {
+    .main {
+        flex: 1;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .side {
+        order: 2;
+    }
+
+    .footer {
+        order: 3;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .side {
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        text-align: center;
+    }
+
+    footer {
+        display: none;
+    }
 }

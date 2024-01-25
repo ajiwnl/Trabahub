@@ -7,36 +7,53 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Trabahub.styles.css" asp-append-version="true" />
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header id="layouthead">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Trabahub</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="WordLogo">
+                    <img class="tralogo ms-5" src="https://i.ibb.co/WyDZdxC/trabahub-logo-1.png" alt="Trabahub logo" />
+                    TRABAHUB
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end me-5">
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="About" asp-action="Index">About</a>
                         </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Community</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Spaces</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted" id="layoutfoot">
         <div class="container">
             &copy; 2024 - Trabahub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
