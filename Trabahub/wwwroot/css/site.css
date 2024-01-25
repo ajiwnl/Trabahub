@@ -53,6 +53,13 @@ header, footer {
     font-size: 20px;
 }
 
+#layoutbody {
+    background-image: url(https://i.ibb.co/x1LYVLQ/Background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 /*About Us Page*/
 .header-font {
     font-family: 'Merriweather', serif;
