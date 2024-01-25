@@ -61,6 +61,14 @@ header, footer {
     background-color: rgba(28, 27, 27, 1);
 }
 
+footer {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 #layoutbody {
     background-image: url(https://i.ibb.co/mR8gHRC/Background.jpg);
     background-repeat: no-repeat;
