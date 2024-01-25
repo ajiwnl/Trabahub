@@ -76,7 +76,7 @@ footer {
     background-size: cover;
 }
 
-/*Home Page*/
+/*Home Page Content*/
 .maintxt {
     font-family: 'Merriweather', serif;
     font-size: 40px;
@@ -92,6 +92,17 @@ footer {
     color: azure;
     position: relative;
     text-shadow: 1px 1px 2px black;
+}
+
+#Bookbtn {
+    background-color: #39B6A2;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+    color: azure;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    box-shadow: none;
 }
 
 /*About Us Page*/
