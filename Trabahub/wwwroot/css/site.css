@@ -492,3 +492,20 @@ footer {
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
+
+.contactland {
+    font-family: 'Merriweather', serif;
+    font-size: 48px;
+    text-indent: 30px;
+    color: azure;
+    position: relative;
+    text-shadow: 1px 1px 2px black;
+}
+
+.para1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+}
+.txtcontainer {
+    margin-top: 10vh;
+}
