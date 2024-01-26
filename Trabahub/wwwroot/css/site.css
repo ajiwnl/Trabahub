@@ -297,7 +297,6 @@ footer {
        font-size: 30px;
    }
    #inputmap {
-       border: 2px solid red;
-       text-align: center;
+       transform: translate(-20%, -20%);
    }
 }
