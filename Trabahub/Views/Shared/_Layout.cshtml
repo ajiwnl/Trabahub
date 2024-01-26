@@ -45,8 +45,8 @@
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Spaces" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Spaces" asp-action="Index">Spaces</a>
                         </li>
-                        <li class="nav-item me-5">
-                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Contact Us" ? "active" : "")">
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Contacts" asp-action="Index">Contact Us</a>
                         </li>
                     </ul>
                 </div>
