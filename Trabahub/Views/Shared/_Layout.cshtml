@@ -15,9 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
-<body id="layoutbody">
+<body>
     <header id="layouthead">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="WordLogo">
                     <img class="tralogo ms-5" src="https://i.ibb.co/WyDZdxC/trabahub-logo-1.png" alt="Trabahub logo" />
@@ -45,14 +45,13 @@
                         <li class="nav-item me-5">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div>
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
