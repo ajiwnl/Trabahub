@@ -314,3 +314,26 @@ footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: inherit;
 }
+
+.bg-img-1 {
+    background-image: url('https://i.ibb.co/jWTN5f5/Image-Sample-3.jpg');
+}
+
+.bg-img-2 {
+    background-image: url('https://i.ibb.co/G30wtg9/Image-Sample-2.jpg');
+}
+
+.bg-img-3 {
+    background-image: url('https://i.ibb.co/cc6YW3b/Image-Sample.jpg');
+}
+
+.bg-img-4 {
+    background-image: url('https://i.ibb.co/bBMdT53/Image-Sample-4.jpg');
+}
+
+.carousel-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
