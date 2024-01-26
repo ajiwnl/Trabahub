@@ -310,30 +310,16 @@ footer {
 
 /*Community*/
 #txtdivide {
-    width: 50%;
+    width: 100%;
     font-family: 'Noto Sans', sans-serif;
-    font-size: inherit;
+    font-size: 18px;
 }
 
-.bg-img-1 {
-    background-image: url('https://i.ibb.co/jWTN5f5/Image-Sample-3.jpg');
-}
-
-.bg-img-2 {
-    background-image: url('https://i.ibb.co/G30wtg9/Image-Sample-2.jpg');
-}
-
-.bg-img-3 {
-    background-image: url('https://i.ibb.co/cc6YW3b/Image-Sample.jpg');
-}
-
-.bg-img-4 {
-    background-image: url('https://i.ibb.co/bBMdT53/Image-Sample-4.jpg');
-}
-
-.carousel-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+#carousel {
+width: 50vh;
+height: 50vh;
+float: right;
+margin-right: 20vh;
+margin-bottom: 10vh;
+margin-left: auto;
 }
