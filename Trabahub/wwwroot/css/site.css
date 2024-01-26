@@ -94,14 +94,13 @@ footer {
 }
 
 #Bookbtn {
-    background-color: #39B6A2;
+    background-color: #3ECCB5;
     font-family: 'Noto Sans', sans-serif;
     font-size: initial;
     color: azure;
     border-radius: 10px;
     width: 200px;
     height: 40px;
-    box-shadow: none;
 }
 
 /*About Us Page*/
