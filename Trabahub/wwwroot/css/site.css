@@ -101,6 +101,7 @@ footer {
     border-radius: 10px;
     width: 200px;
     height: 40px;
+    justify-content:center;
 }
 
 /*About Us Page*/
@@ -308,7 +309,6 @@ footer {
     background-color: rgb(239, 239, 239, 1);
 }
 
-<<<<<<< HEAD
 .spaceheader {
     font-family: 'Merriweather', serif;
     font-size: 40px;
@@ -316,32 +316,7 @@ footer {
 
 .spacebodytext {
     font-family: 'Noto Sans', sans-serif;
-<<<<<<< HEAD
     font-size: inherit;
-}
-
-.bg-img-1 {
-    background-image: url('https://i.ibb.co/jWTN5f5/Image-Sample-3.jpg');
-}
-
-.bg-img-2 {
-    background-image: url('https://i.ibb.co/G30wtg9/Image-Sample-2.jpg');
-}
-
-.bg-img-3 {
-    background-image: url('https://i.ibb.co/cc6YW3b/Image-Sample.jpg');
-}
-
-.bg-img-4 {
-    background-image: url('https://i.ibb.co/bBMdT53/Image-Sample-4.jpg');
-}
-
-.carousel-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-=======
     font-size: 20px;
 }
 
@@ -450,34 +425,42 @@ footer {
     #filter, footer {
         display: none;
     }
+
     #spaceselection {
         transform: translate(10%, 10%);
     }
+
     .spaceside {
         height: 120vh;
         width: 55vh;
     }
+
     #spaceheader, #spacedesc {
         text-align: center;
     }
+
     #secondrow {
         display: none;
     }
+
     .spacepholder {
         transform: translate(20%, 0%);
         margin-bottom: 15%;
     }
+
     .filterlabels {
         display: none;
     }
+
     #filteroptions {
         transform: translate(-13%, 10%);
     }
+
     #firstrow {
         transform: translate(-5%, 10%);
     }
->>>>>>> c86f303b713e6c753bf266823280037ca4907f83
-=======
+}
+
 /*Community*/
 #txtdivide {
     width: 100%;
@@ -486,11 +469,10 @@ footer {
 }
 
 #carousel {
-width: 50vh;
-height: 50vh;
-float: right;
-margin-right: 20vh;
-margin-bottom: 10vh;
-margin-left: auto;
->>>>>>> comedit
+    width: 50vh;
+    height: 50vh;
+    float: right;
+    margin-right: 20vh;
+    margin-bottom: 10vh;
+    margin-left: auto;
 }

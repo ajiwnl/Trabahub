@@ -6,6 +6,7 @@ namespace Trabahub.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["ActivePage"] = "Spaces";
             return View();
         }
     }
