@@ -21,6 +21,7 @@ namespace Trabahub.Controllers
 
         public IActionResult Privacy()
         {
+            ViewData["ActivePage"] = "Community";
             return View();
         }
 

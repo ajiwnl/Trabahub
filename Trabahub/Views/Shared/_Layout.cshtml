@@ -30,10 +30,10 @@
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
-                        <li class="nav-item me-5">
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "About" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="About" asp-action="Index">About</a>
                         </li>
-                        <li class="nav-item me-5">
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Community" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Privacy">Community</a>
                         </li>
                         <li class="nav-item me-5">
