@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Trabahub</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Trabahub.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/calendar.css" asp-append-version="true" />
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
     <header id="layouthead">
@@ -58,7 +55,10 @@
             @RenderBody()
         </main>
     </div>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/calendar.js" asp-append-version="true"></script>
     <footer class="footer text-muted" id="layoutfoot">
         <div class="container">
             <p>&copy; 2024 - Trabahub</p>

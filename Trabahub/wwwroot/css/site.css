@@ -636,7 +636,7 @@ footer {
         flex: 1;
     }
 }
-/*Mobile Resolution*/
+/*Mobile Resolution For Details*/
 @media only screen and (max-width: 767px) {
     .detailslayer {
         min-height: 200vh;
@@ -646,5 +646,68 @@ footer {
     }
     #pricelabelid {
         transform: translate(25%, 3%);
+    }
+}
+
+/*Booking Page*/
+.bookinglayer {
+    position: relative;
+    min-height: 130vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.bookingheader {
+    height: 80px;
+    text-align: start;
+}
+
+.bookingmain {
+    height: 420px;
+}
+
+.bookingside-1 {
+    height: 420px;
+}
+
+.bookingside-2 {
+    height: 420px;
+}
+
+.bnsheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    text-align: start;
+    transform: translate(0%, 30%);
+}
+
+.bfontbody {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/*Details Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .bookingmain {
+        flex: 3;
+    }
+
+    .bookingside-1 {
+        order: 1;
+    }
+
+    .bookingside-2 {
+        order: 2;
+    }
+
+    .bookingmain {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .bookingside {
+        flex: 1;
     }
 }
