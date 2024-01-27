@@ -155,7 +155,7 @@ footer {
 
 .firstlayer {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
@@ -164,7 +164,7 @@ footer {
     position: relative;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/DkCgJNM/Image-Sample-2.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 100vh;
+    min-height: 110vh;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -391,9 +391,19 @@ footer {
 }
 
 .coverlabel {
+    color: black !important;
     font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     font-weight: 700;
+    text-decoration: none;
+}
+
+.coverbody {
+    color: black !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: none;
 }
 
 /*Responsive Action for Space Page*/
@@ -464,6 +474,11 @@ footer {
 }
 
 /*Community*/
+.comlayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
 #txtdivide {
     width: 100%;
     font-family: 'Noto Sans', sans-serif;
@@ -471,12 +486,14 @@ footer {
 }
 
 #carousel {
-    width: 50vh;
-    height: 50vh;
+    width: 75vh;
+    height: 75vh;
     float: right;
-    margin-right: 20vh;
     margin-bottom: 10vh;
-    margin-left: auto;
+}
+
+.commheader {
+    height: 90px;
 }
 
 /*Contacts*/
@@ -508,4 +525,126 @@ footer {
 .para1 {
     font-family: 'Noto Sans', sans-serif;
     font-size: initial;
+}
+
+
+/*Details Page*/
+.detailslayer {
+    position: relative;
+    min-height: 130vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.detailsbody {
+    color: black !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+#lbposition {
+    transform: translate(5%, 10%);
+}
+
+.detailheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+.detailheader {
+    height: 60px;
+    text-align: start;
+}
+
+.detailmain {
+    margin-top: 10vh;
+    height: 320px;
+    background-color: #D9D9D9;
+}
+
+.detailside {
+    height: 420px;
+}
+
+#detailstars {
+    transform: translate(0%, -12%);
+}
+
+#detailines {
+    transform: translate(0%, -12%);
+}
+
+.detailnum {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.detailcover {
+    margin: 1vh;
+    height: 305px;
+    width: 375px;
+}
+
+.detailbars {
+    background-color: #D9D9D9;
+}
+
+.dbarheader {
+    padding-top: 1%;
+    color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.dbuttonlbls {
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 2vh 5vh 2vh 5vh;
+    border-radius: 2px;
+}
+
+/*Details Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .detailmain {
+        flex: 1;
+    }
+
+    .detailmain {
+        order: 1;
+        max-width: 60vh;
+    }
+
+    .detailside {
+        order: 2;
+    }
+
+    .detailfooter {
+        order: 3;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .detailside {
+        flex: 1;
+    }
+}
+/*Mobile Resolution*/
+@media only screen and (max-width: 767px) {
+    .detailslayer {
+        min-height: 200vh;
+    }
+    #ratingsrow {
+        text-align: center;
+    }
+    #pricelabelid {
+        transform: translate(25%, 3%);
+    }
 }

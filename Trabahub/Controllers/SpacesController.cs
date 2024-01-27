@@ -9,5 +9,11 @@ namespace Trabahub.Controllers
             ViewData["ActivePage"] = "Spaces";
             return View();
         }
+
+        public IActionResult Detail()
+        {
+            ViewData["ActivePage"] = "Details";
+            return View();
+        }
     }
 }
