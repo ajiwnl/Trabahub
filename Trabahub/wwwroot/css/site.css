@@ -315,8 +315,7 @@ footer {
 
 .spacebodytext {
     font-family: 'Noto Sans', sans-serif;
-<<<<<<< HEAD
-    font-size: inherit;
+    font-size: 20px;
 }
 
 .bg-img-1 {
@@ -340,7 +339,6 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-=======
     font-size: 20px;
 }
 
@@ -475,5 +473,4 @@ footer {
     #firstrow {
         transform: translate(-5%, 10%);
     }
->>>>>>> c86f303b713e6c753bf266823280037ca4907f83
 }
