@@ -71,7 +71,7 @@ footer {
     position: relative;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 80vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -101,6 +101,7 @@ footer {
     border-radius: 10px;
     width: 200px;
     height: 40px;
+    justify-content:center;
 }
 
 /*About Us Page*/
@@ -315,30 +316,11 @@ footer {
 
 .spacebodytext {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
-}
-
-.bg-img-1 {
-    background-image: url('https://i.ibb.co/jWTN5f5/Image-Sample-3.jpg');
-}
-
-.bg-img-2 {
-    background-image: url('https://i.ibb.co/G30wtg9/Image-Sample-2.jpg');
-}
-
-.bg-img-3 {
-    background-image: url('https://i.ibb.co/cc6YW3b/Image-Sample.jpg');
-}
-
-.bg-img-4 {
-    background-image: url('https://i.ibb.co/bBMdT53/Image-Sample-4.jpg');
-}
-
-.carousel-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    font-size: inherit;
     height: 100vh;
+=======
+    height: 100vh;
+=======
     font-size: 20px;
 }
 
@@ -447,29 +429,37 @@ footer {
     #filter, footer {
         display: none;
     }
+
     #spaceselection {
         transform: translate(10%, 10%);
     }
+
     .spaceside {
         height: 120vh;
         width: 55vh;
     }
+
     #spaceheader, #spacedesc {
         text-align: center;
     }
+
     #secondrow {
         display: none;
     }
+
     .spacepholder {
         transform: translate(20%, 0%);
         margin-bottom: 15%;
     }
+
     .filterlabels {
         display: none;
     }
+
     #filteroptions {
         transform: translate(-13%, 10%);
     }
+
     #firstrow {
         transform: translate(-5%, 10%);
     }

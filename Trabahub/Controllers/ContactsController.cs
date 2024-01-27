@@ -2,11 +2,11 @@
 
 namespace Trabahub.Controllers
 {
-    public class SpacesController : Controller
+    public class ContactsController : Controller
     {
         public IActionResult Index()
         {
-            ViewData["ActivePage"] = "Spaces";
+            ViewData["ActivePage"] = "Contact Us";
             return View();
         }
     }
