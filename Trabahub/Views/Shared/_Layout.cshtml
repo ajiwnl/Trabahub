@@ -17,7 +17,7 @@
 </head>
 <body>
     <header id="layouthead">
-        <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light box-shadow">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light box-shadow" id="layoutnav">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="WordLogo">
                     <img class="tralogo ms-5" src="https://i.ibb.co/WyDZdxC/trabahub-logo-1.png" alt="Trabahub logo" />
@@ -44,6 +44,9 @@
                         </li>
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Contact Us" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Contacts" asp-action="Index">Contact Us</a>
+                        </li>
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Login" ? "active" : "")">
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Credentials" asp-action="Login" onclick="NavVision('HideNavs')">Login</a>
                         </li>
                     </ul>
                 </div>
