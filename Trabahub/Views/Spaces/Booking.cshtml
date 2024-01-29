@@ -1,7 +1,7 @@
 ﻿<div class="bookinglayer pt-3">
     <div class="container">
         <div class="wrapper">
-            <div class="row">
+            <div class="row pb-4">
                 <div class="col">
                     <div class="bookingheader border-bottom border-2 border-dark">
                         <label class="bnsheader">Workspace Cafe</label>
@@ -16,11 +16,17 @@
                         </div>
                     </div>
                     <div class="left pt-3">
-                        <div class="calendar">
+                        <div class="calendar p-4">
                             <div class="month">
-                                <i class="fas fa-angle-left prev"></i>
+                                <svg class="fas fa-angle-left prev" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                    <path d="M14.5 21.75L7.25 14.5L14.5 7.25" stroke="#33363F" stroke-width="3" />
+                                    <path d="M21.75 21.75L14.5 14.5L21.75 7.25" stroke="#33363F" stroke-width="3" />
+                                </svg>
                                 <div class="date">January 2024</div>
-                                <i class="fas fa-angle-right next"></i>
+                                <svg class="fas fa-angle-right next" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                    <path d="M14.5 21.75L21.75 14.5L14.5 7.25" stroke="#33363F" stroke-width="3" />
+                                    <path d="M7.25 21.75L14.5 14.5L7.25 7.25" stroke="#33363F" stroke-width="3" />
+                                </svg>
                             </div>
                             <div class="weekdays">
                                 <div>S</div>
@@ -32,13 +38,15 @@
                                 <div>S</div>
                             </div>
                             <div class="days"></div>
-                            <div class="goto-today">
-                                <div class="goto" id="inputdate">
-                                    <input type="text" placeholder="mm/yyyy" class="date-input" />
-                                    <button class="goto-btn">Go</button>
-                                </div>
-                                <div class="text-center">
-                                    <button class="today-btn" id="todaybtn">Today</button>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="goto-today">
+                                        <div class="goto">
+                                            <input type="text" placeholder="mm/yyyy" class="date-input" />
+                                            <button class="goto-btn">Go</button>
+                                        </div>
+                                        <button class="today-btn" id="todaybtn">Today</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -73,11 +81,79 @@
                     </div>
                 </div>
             </div>
-            <div class="bookingmain border border-2 border-dark">
-                <label></label>
-            </div>
-            <div class="bookingside bookingside-2 border border-2 border-dark">
-                <label></label>
+            <div class="bookingmain">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col text-start">
+                                <label class="bfontbheader">Booking Details</label>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col text-start">
+                                <label class="bfontbody">Dynamic Date Here</label>
+                            </div>
+                        </div>
+                        <div class="text-start pt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="bfontbody">Time In:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="time" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-start pt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="bfontbody">Duration:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-5 text-start">
+                        <div class="row">
+                            <div class="col">
+                                <div class="btn-group mx-auto pt-3">
+                                    <button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                        Accomodation Type
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><button class="dropdown-item" type="button">Open Space</button></li>
+                                        <li><button class="dropdown-item" type="button">Private Space</button></li>
+                                        <li><button class="dropdown-item" type="button">Meeting Space</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label class="bfontbody">Private Space</label>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col">
+                                <label class="bfontbody">P 400</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col">
+                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Spaces" asp-action="Detail">GO BACK</a>
+                    </div>
+                    <div class="col">
+                        <a  class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;">BOOK NOW</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

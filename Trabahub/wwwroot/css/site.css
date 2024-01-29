@@ -1,6 +1,7 @@
 /*Preset Classes*/
 html {
     font-size: 14px;
+    overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -11,6 +12,10 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+
 }
 
 html {
@@ -59,7 +64,7 @@ body {
 }
 
 header, footer {
-    background-color: rgba(28, 27, 27, 1);
+    background-color: rgba(28, 27, 27, 1) !important;
 }
 
 footer {
@@ -318,7 +323,6 @@ footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: inherit;
     height: 100vh;
-    height: 100vh;
     font-size: 20px;
 }
 
@@ -565,7 +569,7 @@ footer {
 }
 
 .detailside {
-    height: 420px;
+    height: 620px;
 }
 
 #detailstars {
@@ -652,7 +656,7 @@ footer {
 /*Booking Page*/
 .bookinglayer {
     position: relative;
-    min-height: 130vh;
+    min-height: 100vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
@@ -681,6 +685,12 @@ footer {
     transform: translate(0%, 30%);
 }
 
+.bfontbheader {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
 .bfontbody {
     font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
@@ -702,6 +712,7 @@ footer {
     }
 
     .bookingmain {
+        max-width: 110vh;
         order: 2;
     }
 }
@@ -710,4 +721,99 @@ footer {
     .bookingside {
         flex: 1;
     }
+}
+
+/*Login Page*/
+.loginlayer {
+    position: relative;
+    height: 120vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.hidenavs {
+    opacity: 0;
+}
+
+.shownavs {
+    opacity: 1;
+}
+
+.loginmain {
+    height: 500px;
+}
+
+.loginside {
+    height: 500px;
+}
+
+.logincontainer{
+    padding: 100px 75px 100px 75px;
+}
+
+.loginlogo {
+    width: 250px;
+    height: 250px;
+}
+
+.loginheader {
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.loginheaderb {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.loginfontbody {
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.loginbody {
+    background: rgba(203, 199, 199, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 500px;
+}
+
+/*Login Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .loginmain {
+        flex: 1;
+    }
+
+    .loginside {
+        order: 1;
+    }
+
+    .loginmain {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .loginside {
+        flex: 1;
+    }
+}
+
+/*Mobile Resolution For Login*/
+@media only screen and (max-width: 767px) {
+    .loginlayer {
+        min-height: 200vh;
+    }
+}
+
+/*Debug Tool*/
+.debuggingwrappers {
+    border: 2px solid red;
 }

@@ -1,5 +1,5 @@
 ﻿:root {
-    --primary-clr: #b38add;
+    --primary-clr: #3ECCB5;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -31,19 +31,6 @@
     border-radius: 5px;
     background-color: #fff;
 }
-    /* set after behind the main element */
-    .calendar::before,
-    .calendar::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        width: 12px;
-        height: 97%;
-        border-radius: 0 5px 5px 0;
-        background-color: #d3d4d6d7;
-        transform: translateY(-50%);
-    }
 
     .calendar::before {
         height: 94%;
@@ -57,7 +44,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
         text-transform: capitalize;
     }
@@ -156,9 +143,6 @@
             box-shadow: 0 0 10px 2px var(--primary-clr);
         }
 
-    .calendar .days .today {
-
-    }
 
     .calendar .days .event {
         position: relative;
@@ -505,17 +489,3 @@
             background-color: transparent;
             color: var(--primary-clr);
         }
-
-#todaybtn {
-    transform: translate(-60%, 0%);
-}
-
-#inputdate {
-    opacity: 0;
-}
-
-@media only screen and (max-width: 767px) {
-    #inputdate {
-        opacity: 1;
-    }
-}
