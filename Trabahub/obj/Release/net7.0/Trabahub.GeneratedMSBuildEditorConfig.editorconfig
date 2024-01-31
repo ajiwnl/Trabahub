@@ -9,15 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Trabahub
 build_property.RootNamespace = Trabahub
-build_property.ProjectDir = C:\Users\alvin\source\repos\trabahubgit\Trabahub\
+build_property.ProjectDir = C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\alvin\source\repos\trabahubgit\Trabahub
+build_property.MSBuildProjectDirectory = C:\Users\alvin\Source\Repos\trabahubgit\Trabahub
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Community/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Contacts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Contacts/SendEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcU2VuZEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Credentials/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGVudGlhbHNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Credentials/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGVudGlhbHNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Credentials/RegisterOwners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGVudGlhbHNcUmVnaXN0ZXJPd25lcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Home/Index.cshtml]
@@ -38,6 +62,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Spaces/Booking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VzXEJvb2tpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Spaces/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VzXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alvin/source/repos/trabahubgit/Trabahub/Views/Spaces/Index.cshtml]

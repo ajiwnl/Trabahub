@@ -1,0 +1,32 @@
+﻿<section id="secondbg">
+    @{
+        ViewBag.Title = "Contacts";
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <h2>@ViewBag.Error</h2>
+    }
+
+    <form method="post" action="SendEmail">
+        <div class="container">
+@*             <span class="form-control-static">Receiver:</span>
+            <input class="form-control" type="text" name="receiver" /> *@
+            <br />
+            <span class="form-control-static">Name:</span>
+            <input class="form-control" type="text" name="name" />
+            <br />
+            <span class="form-control-static">Email:</span>
+            <input class="form-control" type="text" name="email" />
+            <br />
+            <span class="form-control-static">Contact No:</span>
+            <input class="form-control" type="text" name="contact" />
+            <br />
+            <span class="form-control-static">Message:</span>
+            <input class="form-control" type="text" name="message" />
+            <br />
+            <input class="btn btn-primary" type="submit" value="Send" />
+        </div>
+    </form>
+
+</section>
