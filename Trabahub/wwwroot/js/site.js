@@ -1,16 +1,14 @@
-﻿let isNotVisible = false;
-function NavVision(VisionState) {
-    var navbar = document.getElementById('layoutnav');
-    var footer = document.getElementById('layoutfoot');
+﻿document.addEventListener('DOMContentLoaded', function () {
 
-    
-}
-document.addEventListener('DOMContentLoaded', function () {
+    var isUserLogin = document.getElementById('loginlayer') != null;
+    var isUserRegister = document.getElementById('registerlayer') != null;
+
     var navbar = document.getElementById("layoutnav");
     var footer = document.getElementById('layoutfoot');
 
-    var visionState = localStorage.getItem('VisionState');
-
-    
+    if (isUserLogin || isUserRegister) {
+        navbar.classList.add('hidenavs');
+        footer.classList.add('hidenavs');
+    }    
 });
 
