@@ -21,5 +21,11 @@ namespace Trabahub.Controllers
         {
             return View();
         }
+
+        //EMAIL PASSWORD
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
     }
 }

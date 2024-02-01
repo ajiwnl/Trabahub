@@ -21,5 +21,12 @@ namespace Trabahub.Controllers
             ViewData["ActivePage"] = "Booking";
             return View();
         }
+
+        public IActionResult Listing()
+        {
+            ViewData["ActivePage"] = "Listing";
+            return View();
+
+        }
     }
 }
