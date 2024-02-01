@@ -519,11 +519,30 @@ footer {
 .contactland {
     font-family: 'Merriweather', serif;
     font-size: 48px;
-    text-indent: 30px;
     color: azure;
     position: relative;
     text-shadow: 1px 1px 2px black;
     margin-top: 10vh;
+}
+
+.contactlabel {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contactbody {
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.contactcenter {
+    display: grid;
+    align-items: center;
 }
 
 .para1 {
@@ -531,6 +550,48 @@ footer {
     font-size: initial;
 }
 
+.contactheader {
+   height: 60px;
+   display: grid;
+   align-items: center;
+}
+
+.contactmain {
+    height: 480px;
+    text-align: start;
+}
+
+.contactside {
+    height: 320px;
+}
+
+.contactsidep {
+    padding-top: 150px;
+}
+
+.contactbtn {
+    background-color: #3ECCB5;
+}
+
+@media all and (min-width: 800px) {
+    .contactmain {
+        flex: 1;
+    }
+
+    .contactmain {
+        order: 1;
+    }
+
+    .contactside {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .contactside {
+        flex: 1;
+    }
+}
 
 /*Details Page*/
 .detailslayer {

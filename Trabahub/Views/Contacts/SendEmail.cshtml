@@ -7,23 +7,78 @@
     {
         <h2>@ViewBag.Error</h2>
     }
-
-    <form method="post" action="SendEmail" onsubmit="return validateForm()">
-        <div class="container">
-            <br />
-            <span class="form-control-static">Name:</span>
-            <input class="form-control" type="text" name="name" minlength="20" maxlength="55" required />
-            <br />
-            <span class="form-control-static">Email:</span>
-            <input class="form-control" type="email" name="email" required />
-            <br />
-            <span class="form-control-static">Contact No:</span>
-            <input class="form-control" type="text" name="contact" pattern="09\d{9}" title="Please enter a valid Philippine mobile number (e.g., 09123456789)" required />
-            <br />
-            <span class="form-control-static">Message:</span>
-            <input class="form-control" type="text" name="message" minlength="20" required />
-            <br />
-            <input class="btn btn-primary" type="submit" value="Send" />
+    <div class="container pt-3">
+        <div class="wrapper">
+            <div class="contactheader">
+                <label class="contactlabel text-secondary">How Can We Help You?</label>
+            </div>
+            <div class="contactmain shadow-lg p-3 mb-5 bg-white rounded">
+                <form method="post" action="SendEmail" onsubmit="return validateForm()">
+                    <div class="container">
+                        <div class="row pt-3 text-center h5">
+                            <div class="col">
+                                <label class="text-secondary">Write Us</label>
+                            </div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col">
+                                <span class="form-control-static contactbody">Name:</span>
+                                <input class="form-control" type="text" name="name" minlength="20" maxlength="55" required />
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <span class="form-control-static contactbody">Email:</span>
+                                <input class="form-control" type="email" name="email" required />
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <span class="form-control-static contactbody">Contact No:</span>
+                                <input class="form-control" type="text" name="contact" pattern="09\d{9}" title="Please enter a valid Philippine mobile number (e.g., 09123456789)" required />
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <div class="form-group">
+                                    <span class="form-control-static contactbody">Message:</span>
+                                    <textarea class="form-control" type="text" name="message" minlength="20" required style="resize: none"></textarea>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col" style="display: grid; align-items: center">
+                                <input class="btn contactbtn text-white" type="submit" value="Send" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="contactside  shadow-lg p-5 mb-5 mt-5 contactbtn rounded">
+                <div class="container">
+                    <div class="row pt-1 text-center h3">
+                        <div class="col">
+                            <label class="text-white">Contact Us Directly</label>
+                        </div>
+                    </div>
+                    <div class="row pt-5 h5">
+                        <div class="col">
+                            <label class="text-white">Address: Sanciangko St. Cebu City, 6000 Cebu</label>
+                        </div>
+                    </div>
+                    <div class="row pt-3 h5">
+                        <div class="col">
+                            <label class="text-white">Phone: (032) 255 7777</label>
+                        </div>
+                    </div>
+                    <div class="row pt-3 h5">
+                        <div class="col">
+                            <label class="text-white">Email: trabahubco@gmail.com</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+    </div>
 </section>
