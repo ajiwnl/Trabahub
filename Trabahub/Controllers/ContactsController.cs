@@ -26,7 +26,7 @@ namespace Trabahub.Controllers
                 {
                     var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Customer Feedback");
                     var receiverEmail = new MailAddress("alvinjohnaranetz@gmail.com", "Receiver");
-                    var password = "aiij duhw rnxy onwa";
+                    var password = "weaz drul elrl bngg";
 
                     // Format the subject using the provided inputs
                     var subject = $"Customer Feedback Contact: {name}_{email}-[{contact}]";
