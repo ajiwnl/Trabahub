@@ -1,4 +1,5 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿// Hide navigation bar on login and register
+document.addEventListener('DOMContentLoaded', function () {
 
     var isUserLogin = document.getElementById('loginlayer') != null;
     var isUserRegister = document.getElementById('registerlayer') != null;
@@ -11,6 +12,29 @@
         footer.classList.add('hidenavs');
     }    
 });
+
+//Functionalities on Listing Page
+function BasicClicked() {
+    var basic = document.getElementById('basic');
+    var location = document.getElementById('location');
+
+    basic.classList.remove('hidelcontent');
+
+    location.classList.add('hidelcontent');
+
+    console.log('triggered');
+}
+
+function LocationClicked() {
+    var basic = document.getElementById('basic');
+    var location = document.getElementById('location');
+
+    basic.classList.add('hidelcontent');
+
+    location.classList.remove('hidelcontent');
+
+    console.log('triggered');
+}
 
 function FeedbackValidation() {
     var name = document.getElementsByName("name")[0].value;
