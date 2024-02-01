@@ -879,3 +879,15 @@ footer {
         padding-top: 10%;
     }
 }
+
+
+#Contactbtn {
+    background-color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+    color: azure;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+}

@@ -1,0 +1,29 @@
+﻿<section id="secondbg">
+    @{
+        ViewBag.Title = "Contacts";
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <h2>@ViewBag.Error</h2>
+    }
+
+    <form method="post" action="SendEmail" onsubmit="return validateForm()">
+        <div class="container">
+            <br />
+            <span class="form-control-static">Name:</span>
+            <input class="form-control" type="text" name="name" minlength="20" maxlength="55" required />
+            <br />
+            <span class="form-control-static">Email:</span>
+            <input class="form-control" type="email" name="email" required />
+            <br />
+            <span class="form-control-static">Contact No:</span>
+            <input class="form-control" type="text" name="contact" pattern="09\d{9}" title="Please enter a valid Philippine mobile number (e.g., 09123456789)" required />
+            <br />
+            <span class="form-control-static">Message:</span>
+            <input class="form-control" type="text" name="message" minlength="20" required />
+            <br />
+            <input class="btn btn-primary" type="submit" value="Send" />
+        </div>
+    </form>
+</section>
