@@ -1,0 +1,954 @@
+/*Preset Classes*/
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+
+/*Navbar edits*/
+.navbar-nav .nav-item.me-5 a.nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-item.me-5.active a.nav-link,
+.navbar-nav .nav-item.me-5 a.nav-link:hover {
+    color: #39B6A2;
+}
+
+.navbar-fonts {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
+
+/*Home Page*/
+#WordLogo {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+}
+
+.tralogo {
+    width: 50px;
+    height: 50px;
+    transform: scale(2);
+    filter: brightness(70%);
+    font-weight: bold;
+}
+
+header, footer {
+    background-color: rgba(28, 27, 27, 1) !important;
+}
+
+footer {
+    height: 10vh;
+    width: 100%;
+}
+
+#layoutbody {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/*Home Page Content*/
+.maintxt {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    text-indent: 30px;
+    color: azure;
+    position: relative;
+    text-shadow: 1px 1px 2px black;
+}
+
+#secondtxt {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    color: azure;
+    position: relative;
+    text-shadow: 1px 1px 2px black;
+}
+
+#Bookbtn {
+    background-color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+    color: azure;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    justify-content:center;
+}
+
+/*About Us Page*/
+.header-font {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+.body-font {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.grid-container {
+    display: inline-flex;
+    height: 85px;
+}
+
+.wrapper > * {
+    padding: 1px;
+    margin: 10px;
+    flex: 1 100%;
+}
+
+.header {
+    height: 60px;
+    text-align: start;
+}
+
+.main {
+    height: 320px;
+    text-align: start;
+}
+
+.side {
+    height: 420px;
+}
+
+.img-size {
+    width: auto;
+    max-width: 425px;
+    height: auto;
+    max-height: 425px
+}
+
+.firstlayer {
+    position: relative;
+    min-height: 92vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.secondlayer {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/DkCgJNM/Image-Sample-2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 110vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.thirdlayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.sl-header {
+    color: white;
+}
+
+.offercard {
+    background: rgba(0, 0, 0, 0.49);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    width: 300px;
+    height: 325px;
+}
+
+.offer-num {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 35px;
+    color: white;
+    font-weight: 700;
+}
+
+#selectcard {
+    transform: translate(10%, -30%);
+}
+
+#scardlabel {
+    transform: translate(0%, -45%);
+}
+
+#reservecard {
+    transform: translate(0%, -20%);
+}
+
+.maplabel {
+    text-decoration: none;
+}
+
+
+/*Responsive Actions For About Page*/
+@media all and (min-width: 800px) {
+    .main {
+        flex: 1;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .side {
+        order: 2;
+    }
+
+    .footer {
+        order: 3;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .side {
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header, .body-font {
+        text-align: center;
+    }
+
+    .offercard {
+        transform: translate(25%, 0%);
+        margin-bottom: 5%;
+    }
+
+    .secondlayer {
+        margin-top: 10%;
+    }
+
+    .body-font {
+        font-size: 20px;
+    }
+
+    #mapbtn {
+        text-align: center;
+    }
+}
+
+/*Interactive Search Map Page*/
+.maplayer {
+    position: relative;
+    min-height: 130vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+.interactive-map {
+    width: 170vh;
+    height: 90vh;
+}
+.searchbox-map {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    width: 40vh;
+    height: 6vh;
+}
+
+.mapheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+/*Resposive Action For Map Page*/
+@media only screen and (max-width: 767px) {
+   .interactive-map {
+       width: 65vh;
+   }
+   .mapheader{
+       font-size: 30px;
+   }
+   #inputmap {
+       transform: translate(-20%, -20%);
+   }
+}
+
+/*Space Page*/
+.spacelayer {
+    position: relative;
+    min-height: 160vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.spaceheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+.spacebodytext {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: inherit;
+    height: 100vh;
+    font-size: 20px;
+}
+
+.spaceheader {
+    height: 60px;
+    text-align: start;
+}
+
+.spacemain {
+    height: 320px;
+    background-color: #D9D9D9;
+}
+
+.spaceside {
+    height: 420px;
+}
+
+.filterbanner {
+    width: 100%;
+    height: 12vh;
+    background-color: #D9D9D9;
+    text-align: start;
+}
+
+.spacepholder {
+    position: relative;
+    background-color: #D9D9D9;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    width: 34vh;
+    height: 40vh;
+}
+
+.filterlabels {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
+.filterhlabel {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.accombtn {
+    background-color: #3ECCB5;
+    margin-left: 20%;
+    height: 8vh;
+    text-align: start;
+    padding-left: 5%;
+}
+
+.sapplybtn {
+    background-color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+    color: azure;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+.coverimage {
+    width: 100%;
+    height: 15vh;
+    background: url('https://i.ibb.co/Lr65TH1/Workplace-Cafe.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid black;
+}
+
+.coverlabel {
+    color: black !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.coverbody {
+    color: black !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+/*Responsive Action for Space Page*/
+@media all and (min-width: 800px) {
+    .spacemain {
+        flex: 1;
+        height: 107vh;
+    }
+
+    .spacemain {
+        order: 1;
+    }
+
+    .spaceside {
+        order: 2;
+        height: 90vh;
+    }
+
+    .spacefooter {
+        order: 3;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .spaceside {
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #filter, footer {
+        display: none;
+    }
+
+    #spaceselection {
+        transform: translate(10%, 10%);
+    }
+
+    .spaceside {
+        height: 120vh;
+        width: 55vh;
+    }
+
+    #spaceheader, #spacedesc {
+        text-align: center;
+    }
+
+    #secondrow {
+        display: none;
+    }
+
+    .spacepholder {
+        transform: translate(20%, 0%);
+        margin-bottom: 15%;
+    }
+
+    .filterlabels {
+        display: none;
+    }
+
+    #filteroptions {
+        transform: translate(-13%, 10%);
+    }
+
+    #firstrow {
+        transform: translate(-5%, 10%);
+    }
+}
+
+/*Community*/
+.comlayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+#txtdivide {
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+}
+
+#carousel {
+    width: 75vh;
+    height: 75vh;
+    float: right;
+    margin-bottom: 10vh;
+}
+
+.commheader {
+    height: 90px;
+}
+
+/*Contacts*/
+#firstbg {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#secondbg {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.contactland {
+    font-family: 'Merriweather', serif;
+    font-size: 48px;
+    color: azure;
+    position: relative;
+    text-shadow: 1px 1px 2px black;
+    margin-top: 10vh;
+}
+
+.contactlabel {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contactbody {
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.contactcenter {
+    display: grid;
+    align-items: center;
+}
+
+.para1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+}
+
+.contactheader {
+   height: 60px;
+   display: grid;
+   align-items: center;
+}
+
+.contactmain {
+    height: 480px;
+    text-align: start;
+}
+
+.contactside {
+    height: 320px;
+}
+
+.contactsidep {
+    padding-top: 150px;
+}
+
+.contactbtn {
+    background-color: #3ECCB5;
+}
+
+@media all and (min-width: 800px) {
+    .contactmain {
+        flex: 1;
+    }
+
+    .contactmain {
+        order: 1;
+    }
+
+    .contactside {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .contactside {
+        flex: 1;
+    }
+}
+
+/*Details Page*/
+.detailslayer {
+    position: relative;
+    min-height: 130vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.detailsbody {
+    color: black !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+#lbposition {
+    transform: translate(5%, 10%);
+}
+
+.detailheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+
+.detailheader {
+    height: 60px;
+    text-align: start;
+}
+
+.detailmain {
+    margin-top: 10vh;
+    height: 320px;
+    background-color: #D9D9D9;
+}
+
+.detailside {
+    height: 620px;
+}
+
+#detailstars {
+    transform: translate(0%, -12%);
+}
+
+#detailines {
+    transform: translate(0%, -12%);
+}
+
+.detailnum {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.detailcover {
+    margin: 1vh;
+    height: 305px;
+    width: 375px;
+}
+
+.detailbars {
+    background-color: #D9D9D9;
+}
+
+.dbarheader {
+    padding-top: 1%;
+    color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.dbuttonlbls {
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 2vh 5vh 2vh 5vh;
+    border-radius: 2px;
+}
+
+/*Details Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .detailmain {
+        flex: 1;
+    }
+
+    .detailmain {
+        order: 1;
+        max-width: 60vh;
+    }
+
+    .detailside {
+        order: 2;
+    }
+
+    .detailfooter {
+        order: 3;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .detailside {
+        flex: 1;
+    }
+}
+/*Mobile Resolution For Details*/
+@media only screen and (max-width: 767px) {
+    .detailslayer {
+        min-height: 200vh;
+    }
+    #ratingsrow {
+        text-align: center;
+    }
+    #pricelabelid {
+        transform: translate(25%, 3%);
+    }
+}
+
+/*Booking Page*/
+.bookinglayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.bookingheader {
+    height: 80px;
+    text-align: start;
+}
+
+.bookingmain {
+    height: 420px;
+}
+
+.bookingside-1 {
+    height: 420px;
+}
+
+.bookingside-2 {
+    height: 420px;
+}
+
+.bnsheader {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    text-align: start;
+    transform: translate(0%, 30%);
+}
+
+.bfontbheader {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.bfontbody {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/*Details Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .bookingmain {
+        flex: 3;
+    }
+
+    .bookingside-1 {
+        order: 1;
+    }
+
+    .bookingside-2 {
+        order: 2;
+    }
+
+    .bookingmain {
+        max-width: 110vh;
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .bookingside {
+        flex: 1;
+    }
+}
+
+/*Login Page*/
+.loginlayer {
+    position: relative;
+    height: 120vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.hidenavs {
+    display: none;
+}
+
+.loginmain {
+    height: 500px;
+}
+
+.loginside {
+    height: 500px;
+}
+
+.logincontainer{
+    padding: 100px 75px 100px 75px;
+}
+
+.loginlogo {
+    width: 250px;
+    height: 250px;
+}
+
+.loginheader {
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.loginheaderb {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.loginfontbody {
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.loginbody {
+    background: rgba(203, 199, 199, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 500px;
+}
+
+/*Login Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .loginmain {
+        flex: 1;
+    }
+
+    .loginside {
+        order: 1;
+    }
+
+    .loginmain {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .loginside {
+        flex: 1;
+    }
+}
+
+/*Mobile Resolution For Login*/
+@media only screen and (max-width: 767px) {
+    .loginlayer {
+        min-height: 200vh;
+    }
+
+    .loginbody {
+        transform: translate(0%, 10%);
+    }
+
+    #cardfooter {
+        transform: translate(0%, 80%);
+    }
+}
+
+/*Debug Tool*/
+.debuggingwrappers {
+    border: 2px solid red;
+}
+
+/*Register Page*/
+.registerlayer {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.registerside {
+    height: 500px;
+}
+
+.registermain {
+    height: 500px;
+}
+
+.registerbody {
+    /* From https://css.glass */
+    background-color: rgba(28, 27, 27, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/*Login Responsiveness Action*/
+@media all and (min-width: 800px) {
+    .registerside {
+        flex: 2;
+    }
+
+    .registerside {
+        order: 2;
+    }
+
+    .registermain {
+        order: 1;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .registermain {
+        flex: 1;
+    } 
+}
+
+/*Mobile Resolution For Register*/
+@media only screen and (max-width: 767px) {
+    .registerlayer {
+        min-height: 200vh;
+    }
+    #registercard {
+        padding-top: 10%;
+    }
+}
+
+
+#Contactbtn {
+    background-color: #3ECCB5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: initial;
+    color: azure;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+}

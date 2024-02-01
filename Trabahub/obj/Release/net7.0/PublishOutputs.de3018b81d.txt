@@ -1,0 +1,7 @@
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\Trabahub.exe
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\appsettings.json
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\Trabahub.dll
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\Trabahub.deps.json
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\Trabahub.runtimeconfig.json
+C:\Users\alvin\Source\Repos\trabahubgit\Trabahub\obj\Release\net7.0\PubTmp\Out\Trabahub.pdb
