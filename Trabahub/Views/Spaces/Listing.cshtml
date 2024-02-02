@@ -1,25 +1,25 @@
 ﻿<div class="listinglayer">
     <div class="row">
         <div class="col-2">
-            <nav id="sidebarMenu" class="d-lg-block sidebar bg-white" style="height: 100vh; width: 30vh;">
+            <nav id="sidebarMenu" class="d-lg-block sidebar bg-white" style="height: 100vh;">
                 <div class="position-sticky">
                     <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="BasicClicked()">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('basic')">
                             <i class="bi bi-info-square-fill me-4"></i><span> Basic</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="LocationClicked()">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('location')">
                             <i class="fas fa-chart-area fa-fw me-4"></i><span>Location</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('facilities')">
                             <i class="fas fa-lock fa-fw me-4"></i><span>Facilities</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listdetails')">
                             <i class="bi bi-pass-fill me-4"></i><span>Details</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listphotos')">
                             <i class="bi bi-card-image me-4"></i><span>Photos</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listpublish')">
                             <i class="bi bi-caret-right-square-fill me-4"></i><span>Publish</span>
                         </a>
                     </div>
@@ -27,81 +27,257 @@
             </nav>
         </div>
         <div class="col-10 pt-3">
-            <div class="basic" id="basic">
-                <div id="header">
-                    <div class="row">
-                        <div class="col">
-                            <label>Match your Co-Working Spaces and Study Hub to right individuals</label>
+            <div class="container">
+                <div class="basic" id="basic">
+                    <div id="header">
+                        <div class="row">
+                            <div class="col">
+                                <label>Match your Co-Working Spaces and Study Hub to right individuals</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>All information is required unless mark optional (*).</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>All information is required unless mark optional (*).</label>
+                    <div id="main" class="pt-3">
+                        <div class="row">
+                            <div class="col">
+                                <label>Name Your Place</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Make Your Name Sounds Catchy To User's Eyes</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Property Type</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Choose One Type From Below</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Co-Working Space</label>
+                            </div>
+                            <div class="col">
+                                <label>Study Hub</label>
+                            </div>
+                            <div class="col">
+                                <label>Cafe</label>
+                            </div>
+                            <div class="col">
+                                <label>Private Space</label>
+                            </div>
+                            <div class="col">
+                                <label>Hybrid Setup</label>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Describe Your Place</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Give The Reason Why They Should Choose Your Place</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <textarea style="resize: none"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="main" class="pt-3">
-                    <div class="row">
-                        <div class="col">
-                            <label>Name Your Place</label>
+                <div class="location hidelcontent" id="location">
+                    <div id="header">
+                        <div class="row">
+                            <div class="col">
+                                <label>Put Yourself On The Map</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>All information is required unless mark optional (*).</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>Make Your Name Sounds Catchy To User's Eyes</label>
+                    <div id="main" class="pt-3">
+                        <div class="row">
+                            <div class="col">
+                                <label>Location</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text"/>
+                        <div class="row">
+                            <div class="col">
+                                <label>Pinpoint Your Exact Location</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row pt-3">
-                        <div class="col">
-                            <label>Property Type</label>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Street Address</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>Choose One Type From Below</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>Co-Working Space</label>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Building Floor and Unit Number</label>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label>Study Hub</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" />
+                            </div>
                         </div>
-                        <div class="col">
-                            <label>Cafe</label>
-                        </div>
-                        <div class="col">
-                            <label>Private Space</label>
-                        </div>
-                        <div class="col">
-                            <label>Hybrid Setup</label>
-                        </div>
-                    </div>
-                    <div class="row pt-3">
-                        <div class="col">
-                            <label>Describe Your Place</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>Give The Reason Why They Should Choose Your Place</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <textarea style="resize: none"></textarea>
+                        <div class="row pt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Country Region</label>
+                                </div>
+                                <div class="col">
+                                    <label>State or Provice</label>
+                                </div>
+                                <div class="col">
+                                    <label>City</label>
+                                </div>
+                                <div class="col">
+                                    <label>Zip or Postal Code *</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" />
+                                </div>
+                                <div class="col">
+                                    <input type="text" />
+                                </div>
+                                <div class="col">
+                                    <input type="text" />
+                                </div>
+                                <div class="col">
+                                    <input type="text" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="location hidelcontent" id="location">
-                <h1>HELLO FUCKWAD</h1>
+                <div class="facilities hidelcontent" id="facilities">
+                    <div id="header">
+                        <div class="row">
+                            <div class="col">
+                                <label>What's Unique About Your Co-Working Space/Study Hub?</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>All information is required unless mark optional (*).</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main" class="pt-3">
+                        <div class="row">
+                            <div class="col">
+                                <label>Access</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>These Are How Guests Get In To Your Property.</label>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="FrontDesk" id="frontdescradio">
+                                    <label class="form-check-label" for="frontdescradio">
+                                        Front Desk
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="OnlineCheck" id="onlinecheckradio">
+                                    <label class="form-check-label" for="onlinecheckradio">
+                                        Online Check-In
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="OnSite" id="onsiteradio">
+                                    <label class="form-check-label" for="onsiteradio">
+                                        Onsite Check-In
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col">
+                                <label>Important Information</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>What Offerings Does Your Co-Working Space and Study Hub Have.</label>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="acchckbox">
+                                    <label class="form-check-label" for="acchckbox">
+                                        A/C
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chargechckbox">
+                                    <label class="form-check-label" for="chargechckbox">
+                                        Charging Ports
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="otherchckbox">
+                                    <label class="form-check-label" for="otherchckbox">
+                                        Others:
+                                    </label>
+                                    <input type="text" disabled style="transform: translate(60%, -82%); width: 100px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="listdetails hidelcontent" id="listdetails">
+                    <h1>HI IM DETAILS</h1>
+                </div>
+                <div class="listphotos hidelcontent" id="listphotos">
+                    <h1>HI IM PHOTOS</h1>
+                </div>
+                <div class="listpublist hidelcontent" id="listpublish">
+                    <h1>HI IM PUBLISH</h1>
+                </div>
             </div>
         </div>
     </div>

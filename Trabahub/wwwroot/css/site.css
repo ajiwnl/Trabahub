@@ -1011,6 +1011,14 @@ footer {
     }
 }
 
+/*Mobile Resolution For Listing*/
+@media only screen and (max-width: 767px) {
+    #sidebarMenu span {
+        display: none;
+    }
+
+}
+
 /*Debug Tool*/
 .debuggingwrappers {
     border: 2px solid red;
