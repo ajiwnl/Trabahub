@@ -1,7 +1,7 @@
 ﻿<div class="listinglayer">
     <div class="row">
         <div class="col-2">
-            <nav id="sidebarMenu" class="d-lg-block sidebar bg-white" style="height: 100vh;">
+            <nav id="sidebarMenu" class="d-lg-block sidebar bg-white" style="height: 150vh;">
                 <div class="position-sticky">
                     <div class="list-group list-group-flush">
                         <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('basic')">
@@ -28,6 +28,7 @@
         </div>
         <div class="col-10 pt-3">
             <div class="container">
+                @*/*BASIC TAB*/*@
                 <div class="basic" id="basic">
                     <div id="header">
                         <div class="row">
@@ -68,20 +69,45 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <label>Co-Working Space</label>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="deposit" id="cowdrbtn">
+                                    <label class="form-check-label" for="cowdrbtn">
+                                        Co-Working Space
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <label>Study Hub</label>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="card" id="studyrbtn">
+                                    <label class="form-check-label" for="studyrbtn">
+                                        Study Hub
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <label>Cafe</label>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="generateqr" id="caferbtn">
+                                    <label class="form-check-label" for="caferbtn">
+                                        Cafe
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <label>Private Space</label>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="generateqr" id="pspacerbtn">
+                                    <label class="form-check-label" for="pspacerbtn">
+                                        Private Space
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <label>Hybrid Setup</label>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="generateqr" id="hybridrbtn">
+                                    <label class="form-check-label" for="hybridrbtn">
+                                        Hyrbid Setup
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="row pt-3">
@@ -101,6 +127,7 @@
                         </div>
                     </div>
                 </div>
+                @*/*LOCATION TAB*/*@
                 <div class="location hidelcontent" id="location">
                     <div id="header">
                         <div class="row">
@@ -177,6 +204,7 @@
                         </div>
                     </div>
                 </div>
+                @*/*FACILITIES TAB*/*@
                 <div class="facilities hidelcontent" id="facilities">
                     <div id="header">
                         <div class="row">
@@ -269,7 +297,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="wifichckbox">
                                     <label class="form-check-label" for="wifichckbox">
-                                         Wifi
+                                        Wifi
                                     </label>
                                 </div>
                             </div>
@@ -364,14 +392,312 @@
                         </div>
                     </div>
                 </div>
+                @*/*DETAILS TAB*/*@
                 <div class="listdetails hidelcontent" id="listdetails">
-                    <h1>HI IM DETAILS</h1>
+                    <div id="header">
+                        <div class="row">
+                            <div class="col">
+                                <label>Give an in-depth on your Co-Workingspace/Study Hub</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>All information is required unless mark optional (*).</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="body">
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Payment</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>These are how guests get in to your property.</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="fddchckbox">
+                                    <label class="form-check-label" for="fddchckbox">
+                                        Front desk
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="onlinedchckbox">
+                                    <label class="form-check-label" for="onlinedchckbox">
+                                        Online Check-in
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="onsitedchckbox">
+                                    <label class="form-check-label" for="onsitedchckbox">
+                                        Onsite Check-in
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label>Important Information</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>What offerings does your Co-Workingpace and Study Hub have.</label>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="acdchckbox">
+                                        <label class="form-check-label" for="acdchckbox">
+                                            A/C
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="cpdchckbox">
+                                        <label class="form-check-label" for="cpdchckbox">
+                                            Charging Ports
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="oschckbox">
+                                        <label class="form-check-label" for="oschckbox">
+                                            Others:
+                                        </label>
+                                        <input type="text" class="position-absolute ms-2" disabled style="width: 100px" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="wifidchckbox">
+                                        <label class="form-check-label" for="wifidchckbox">
+                                            Wifi
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="crdchckbox">
+                                        <label class="form-check-label" for="crdchckbox">
+                                            Comfort Rooms
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="csdchckbox">
+                                            <label class="form-check-label" for="csdchckbox">
+                                                Cubicle Spaces
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 ms-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="cfdchckbox">
+                                            <label class="form-check-label" for="cfdchckbox">
+                                                Complimentary Foods
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col">
+                                    <label>Safety And Cleanliness</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Show your guests that you take their safety and health seriously</label>
+                                </div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="sdchckbox">
+                                        <label class="form-check-label" for="sdchckbox">
+                                            Security [24 Hrs.]
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="cpdchckbox">
+                                        <label class="form-check-label" for="cpdchckbox">
+                                            Cleaning Products
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="cicodchckbox">
+                                        <label class="form-check-label" for="cicodchckbox">
+                                            Contactless Check-in/Check-out
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="sdchckbox">
+                                        <label class="form-check-label" for="sdchckbox">
+                                            Hand Sanitizer
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="fmdchckbox">
+                                        <label class="form-check-label" for="fmdchckbox">
+                                            Free Facemasks
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="jdchckbox">
+                                        <label class="form-check-label" for="jdchckbox">
+                                            Janitors on-standby
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label>Payment Information</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>How will the guest pay?</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="cashdchckbox">
+                                        <label class="form-check-label" for="cashdchckbox">
+                                            Cash
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="carddchckbox">
+                                        <label class="form-check-label" for="carddchckbox">
+                                            Card
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="oocdchckbox">
+                                        <label class="form-check-label" for="oocdchckbox">
+                                            Over the counter
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label>How would you like to receive your payment?</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Select your preferred method payout method</label>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="deposit" id="directdrbtn">
+                                        <label class="form-check-label" for="directdrbtn">
+                                            Direct Bank Deposit
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="card" id="ecardrbtn">
+                                        <label class="form-check-label" for="ecardrbtn">
+                                            ECard
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="generateqr" id="genrbtn">
+                                        <label class="form-check-label" for="genrbtn">
+                                            Trabahub-generated Credit Card
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="listphotos hidelcontent" id="listphotos">
-                    <h1>HI IM PHOTOS</h1>
+                    <div id="header">
+                        <div class="row">
+                            <div class="col">
+                                <label>Show them what they’re missing!</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Picture matters to the guests. Upload as many high-quality photos as you want</label>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label>Co-Workingspace/Study Hub Photos</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>The Co-Workingspace/Study Hub exterior (e.g. parking area, entrance available facilities and interior)</label>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <input type="file" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="listpublist hidelcontent" id="listpublish">
-                    <h1>HI IM PUBLISH</h1>
+                    <div class="row text-center">
+                        <div class="pt-5">
+                            <button class="sapplybtn border-0">PUBLISH</button>
+                        </div>
+                    </div>
+                    <div class="pt-2 row text-center">
+                        <div class="col-5 position-absolute text-center" style="transform: translate(45%, 0%)">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="toschckbox">
+                                <label class="form-check-label" for="toschckbox">
+                                    I accept Trabahub’s <a href="#">Terms and Conditions</a> and certify that
+                                    I will follow applicable laws and regulations
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -974,17 +974,17 @@ footer {
 /*Listing Page*/
 .listinglayer {
     position: relative;
-    min-height: 100vh;
+    min-height: 150vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
 
 .listingmain {
-    height: 99vh;
+    height: 150vh;
 }
 
 .listingside {
-    height: 99vh;
+    height: 150vh;
 }
 
 .hidelcontent {
@@ -1015,6 +1015,10 @@ footer {
 @media only screen and (max-width: 767px) {
     #sidebarMenu span {
         display: none;
+    }
+
+    #toschckbox {
+        transform: translate(-100%, 0%)
     }
 
 }
