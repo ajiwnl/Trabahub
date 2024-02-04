@@ -1,41 +1,66 @@
 ﻿// Hide navigation bar on login and register
 document.addEventListener('DOMContentLoaded', function () {
 
+    //Get User Position
     var isUserLogin = document.getElementById('loginlayer') != null;
     var isUserRegister = document.getElementById('registerlayer') != null;
+    var isOwnerRegister = document.getElementById('listinglayer') != null;
 
+    //Get Nav and Footer Elements/Contents
     var navbar = document.getElementById("layoutnav");
     var footer = document.getElementById('layoutfoot');
+    var navcontents = document.getElementById('navcontents');
 
-    if (isUserLogin || isUserRegister) {
+    if(isUserLogin || isUserRegister) {
         navbar.classList.add('hidenavs');
         footer.classList.add('hidenavs');
-    }    
+    }
+
+    if (isOwnerRegister) {
+        navcontents.classList.add('hidenavs');
+    }
 });
 
 //Functionalities on Listing Page
-function BasicClicked() {
-    var basic = document.getElementById('basic');
-    var location = document.getElementById('location');
+function handleTabClick(clickedTabId) {
+    var tabs = ['basic', 'location', 'facilities', 'listdetails', 'listphotos', 'listpublish'];
 
-    basic.classList.remove('hidelcontent');
-
-    location.classList.add('hidelcontent');
-
-    console.log('triggered');
+    tabs.forEach(function (tabId) {
+        var tab = document.getElementById(tabId);
+        if (tabId === clickedTabId) {
+            tab.classList.remove('hidelcontent');
+        } else {
+            tab.classList.add('hidelcontent');
+        }
+    });
 }
 
-function LocationClicked() {
-    var basic = document.getElementById('basic');
-    var location = document.getElementById('location');
+document.getElementById('basicTab').addEventListener('click', function () {
+    handleTabClick('basic');
+});
 
-    basic.classList.add('hidelcontent');
+document.getElementById('locationTab').addEventListener('click', function () {
+    handleTabClick('location');
+});
 
-    location.classList.remove('hidelcontent');
+document.getElementById('facilitiesTab').addEventListener('click', function () {
+    handleTabClick('facilities');
+});
 
-    console.log('triggered');
-}
+document.getElementById('detailsTab').addEventListener('click', function () {
+    handleTabClick('listdetails');
+});
 
+document.getElementById('photosTab').addEventListener('click', function () {
+    handleTabClick('listphotos');
+});
+
+document.getElementById('publishTab').addEventListener('click', function () {
+    handleTabClick('listpublish');
+});
+
+
+//Contact Page Validation
 function FeedbackValidation() {
     var name = document.getElementsByName("name")[0].value;
     var email = document.getElementsByName("email")[0].value;

@@ -253,6 +253,58 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\AboutImage.jpg",
+      "PackagePath": "staticwebassets\\res\\AboutImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Background.jpg",
+      "PackagePath": "staticwebassets\\res\\Background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Calendar.png",
+      "PackagePath": "staticwebassets\\res\\Calendar.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Hive.jpg",
+      "PackagePath": "staticwebassets\\res\\Hive.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LargeLogo.png",
+      "PackagePath": "staticwebassets\\res\\LargeLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoOne.png",
+      "PackagePath": "staticwebassets\\res\\LogoOne.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoTwo.png",
+      "PackagePath": "staticwebassets\\res\\LogoTwo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Map.png",
+      "PackagePath": "staticwebassets\\res\\Map.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\MapList.png",
+      "PackagePath": "staticwebassets\\res\\MapList.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Nomads Hub.jpg",
+      "PackagePath": "staticwebassets\\res\\Nomads Hub.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\People.jpg",
+      "PackagePath": "staticwebassets\\res\\People.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Twopersons.jpg",
+      "PackagePath": "staticwebassets\\res\\Twopersons.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Workplace Cafe.jpg",
+      "PackagePath": "staticwebassets\\res\\Workplace Cafe.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Trabahub.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

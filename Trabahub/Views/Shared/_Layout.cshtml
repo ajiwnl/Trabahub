@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light box-shadow" id="layoutnav">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="WordLogo">
-                    <img class="tralogo ms-5" src="https://i.ibb.co/WyDZdxC/trabahub-logo-1.png" alt="Trabahub logo" />
+                    <img class="tralogo ms-5" src="~/res/LogoTwo.png" alt="Trabahub logo" />
                     TRABAHUB
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,7 +29,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-lg-inline-flex">
-                    <ul class="navbar-nav flex-grow-1 justify-content-end me-5">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end me-5" id="navcontents">
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Home" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
