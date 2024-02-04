@@ -1,25 +1,37 @@
 ﻿// Hide navigation bar on login and register
 document.addEventListener('DOMContentLoaded', function () {
 
-    //Get User Position
+    OnLoginRegisterLayers();
+    OnOwnerRegister();
+});
+
+function OnLoginRegisterLayers() {
+    //Check If User Is On Login/Register Page
     var isUserLogin = document.getElementById('loginlayer') != null;
     var isUserRegister = document.getElementById('registerlayer') != null;
-    var isOwnerRegister = document.getElementById('listinglayer') != null;
 
     //Get Nav and Footer Elements/Contents
     var navbar = document.getElementById("layoutnav");
     var footer = document.getElementById('layoutfoot');
-    var navcontents = document.getElementById('navcontents');
 
-    if(isUserLogin || isUserRegister) {
+    //If True, Hide Nav/Footer Bars
+    if (isUserLogin || isUserRegister) {
         navbar.classList.add('hidenavs');
         footer.classList.add('hidenavs');
     }
+}
 
-    if (isOwnerRegister) {
+function OnOwnerRegister() {
+    //Check If User Is On Owner Registration Page
+    var isOwnerRegister = document.getElementById('listinglayer') != null;
+    var isForgotPassword = document.getElementById('forgotlayer') != null;
+    var navcontents = document.getElementById('navcontents');
+
+    //If True, Hide Nav Contents and Disable Redirect Action
+    if (isOwnerRegister || isForgotPassword) {
         navcontents.classList.add('hidenavs');
     }
-});
+}
 
 //Functionalities on Listing Page
 function handleTabClick(clickedTabId) {

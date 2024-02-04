@@ -20,7 +20,7 @@
     <header id="layouthead">
         <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light box-shadow" id="layoutnav">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="WordLogo">
+                <a class="navbar-brand" id="WordLogo">
                     <img class="tralogo ms-5" src="~/res/LogoTwo.png" alt="Trabahub logo" />
                     TRABAHUB
                 </a>
@@ -33,9 +33,11 @@
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Home" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "About" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                        </li>
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Map" ? "active" : "")">
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Map" asp-action="Index">Map</a>
                         </li>
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Community" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Community" asp-action="Index">Community</a>
@@ -46,8 +48,8 @@
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Contact Us" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Contacts" asp-action="Index">Contact Us</a>
                         </li>
-                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Login" ? "active" : "")">
-                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Credentials" asp-action="Login" onclick="NavVision('HideNavs')">Login</a>
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Username" ? "active" : "")">
+                            <a class="nav-link navbar-fonts"><span>@ViewBag.Username</span></a>
                         </li>
                     </ul>
                 </div>
