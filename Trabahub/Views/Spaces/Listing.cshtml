@@ -14,13 +14,13 @@
                             <i class="fas fa-lock fa-fw me-4"></i><span>Facilities</span>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listdetails')">
-                            <i class="bi bi-pass-fill me-4"></i><span>Details</span>
+                            <i class="bi bi-pass-fill me-4 ps-1"></i><span>Details</span>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listphotos')">
-                            <i class="bi bi-card-image me-4"></i><span>Photos</span>
+                            <i class="bi bi-card-image me-4 ps-1"></i><span>Photos</span>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="handleTabClick('listpublish')">
-                            <i class="bi bi-caret-right-square-fill me-4"></i><span>Publish</span>
+                            <i class="bi bi-caret-right-square-fill me-4 ps-1"></i><span>Publish</span>
                         </a>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             <div class="container">
                 @*/*BASIC TAB*/*@
                 <div class="basic" id="basic">
-                    <div id="header">
+                    <div class="border-bottom border-1 border-secondary" id="header">
                         <div class="row">
                             <div class="col">
                                 <label>Match your Co-Working Spaces and Study Hub to right individuals</label>
@@ -129,7 +129,7 @@
                 </div>
                 @*/*LOCATION TAB*/*@
                 <div class="location hidelcontent" id="location">
-                    <div id="header">
+                    <div class="border-bottom border-1 border-secondary" id="header">
                         <div class="row">
                             <div class="col">
                                 <label>Put Yourself On The Map</label>
@@ -153,52 +153,46 @@
                             </div>
                         </div>
                         <div class="row pt-3">
-                            <div class="col">
-                                <label>Street Address</label>
+                            <div class="col-10">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Street Address">
+                                    <label for="floatingInput">Street Address</label>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <input type="text" />
-                            </div>
-                        </div>
-                        <div class="row pt-3">
-                            <div class="col">
-                                <label>Building Floor and Unit Number</label>
+                            <div class="col-10">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Building Floor and Unit Number">
+                                    <label for="floatingInput">Building Floor and Unit Number</label>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <input type="text" />
+                            <div class="col-5">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Country Region">
+                                    <label for="floatingInput">Region</label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="State or Province">
+                                    <label for="floatingInput">Province</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="row pt-3">
-                            <div class="row">
-                                <div class="col">
-                                    <label>Country Region</label>
-                                </div>
-                                <div class="col">
-                                    <label>State or Provice</label>
-                                </div>
-                                <div class="col">
-                                    <label>City</label>
-                                </div>
-                                <div class="col">
-                                    <label>Zip or Postal Code *</label>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="City">
+                                    <label for="floatingInput">City</label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" />
-                                </div>
-                                <div class="col">
-                                    <input type="text" />
-                                </div>
-                                <div class="col">
-                                    <input type="text" />
-                                </div>
-                                <div class="col">
-                                    <input type="text" />
+                            <div class="col-5">
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Zip Code">
+                                    <label for="floatingInput">Zip Code *</label>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +200,7 @@
                 </div>
                 @*/*FACILITIES TAB*/*@
                 <div class="facilities hidelcontent" id="facilities">
-                    <div id="header">
+                    <div class="border-bottom border-1 border-secondary" id="header">
                         <div class="row">
                             <div class="col">
                                 <label>What's Unique About Your Co-Working Space/Study Hub?</label>
@@ -394,7 +388,7 @@
                 </div>
                 @*/*DETAILS TAB*/*@
                 <div class="listdetails hidelcontent" id="listdetails">
-                    <div id="header">
+                    <div class="border-bottom border-1 border-secondary" id="header">
                         <div class="row">
                             <div class="col">
                                 <label>Give an in-depth on your Co-Workingspace/Study Hub</label>
@@ -417,7 +411,7 @@
                                 <label>These are how guests get in to your property.</label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row pt-2">
                             <div class="col-2">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="fddchckbox">
@@ -442,7 +436,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="row pt-3">
+                            <div class="row pt-2">
                                 <div class="col">
                                     <label>Important Information</label>
                                 </div>
@@ -653,7 +647,7 @@
                     </div>
                 </div>
                 <div class="listphotos hidelcontent" id="listphotos">
-                    <div id="header">
+                    <div class="border-bottom border-1 border-secondary" id="header">
                         <div class="row">
                             <div class="col">
                                 <label>Show them what they’re missing!</label>
@@ -664,6 +658,8 @@
                                 <label>Picture matters to the guests. Upload as many high-quality photos as you want</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="body">
                         <div class="row pt-3">
                             <div class="col">
                                 <label>Co-Workingspace/Study Hub Photos</label>
