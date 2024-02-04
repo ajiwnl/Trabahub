@@ -1,3 +1,8 @@
 ﻿@{
     Layout = "_Layout";
+    var setUsername = TempData["Username"];
+    var setStatus = TempData["Status"];
+
+    ViewBag.Username = setUsername;
+    ViewBag.Status = setStatus;
 }
