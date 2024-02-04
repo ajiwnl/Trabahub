@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Trabahub.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ApplicationDbContext>(
+
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default Connection")));
 
 var app = builder.Build();
 
@@ -22,7 +29,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-    //pattern: "{controller=Credentials}/{action=Login}/{id?}");
+    //pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Credentials}/{action=Login}/{id?}");
 
 app.Run();
