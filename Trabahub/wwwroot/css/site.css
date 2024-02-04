@@ -14,10 +14,6 @@ html {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html, body {
-
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -989,6 +985,25 @@ footer {
 
 .hidelcontent {
     display: none;
+}
+
+.listingheader {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.listingsub {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.listingbody {
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 @media all and (min-width: 800px) {

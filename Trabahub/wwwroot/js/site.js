@@ -1,16 +1,24 @@
 ﻿// Hide navigation bar on login and register
 document.addEventListener('DOMContentLoaded', function () {
 
+    //Get User Position
     var isUserLogin = document.getElementById('loginlayer') != null;
     var isUserRegister = document.getElementById('registerlayer') != null;
+    var isOwnerRegister = document.getElementById('listinglayer') != null;
 
+    //Get Nav and Footer Elements/Contents
     var navbar = document.getElementById("layoutnav");
     var footer = document.getElementById('layoutfoot');
+    var navcontents = document.getElementById('navcontents');
 
-    if (isUserLogin || isUserRegister) {
+    if(isUserLogin || isUserRegister) {
         navbar.classList.add('hidenavs');
         footer.classList.add('hidenavs');
-    }    
+    }
+
+    if (isOwnerRegister) {
+        navcontents.classList.add('hidenavs');
+    }
 });
 
 //Functionalities on Listing Page
