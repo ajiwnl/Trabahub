@@ -13,29 +13,23 @@ namespace Trabahub.Controllers
             _context = context;
 
         }
-
-        public IActionResult Index()
+        public IActionResult Login()
         {
             var credentials = _context.Credentials.ToList();
             return View(credentials);
         }
 
-
         [HttpPost]
         [ActionName("Login")]
-        public IActionResult Login()
+        public IActionResult Login(string user, string password)
         {
-            return View();
-        }
-        
-        //POST USER
-        public IActionResult Register()
-        {
-            return View();
+            var credentials = _context.Credentials.ToList();
+            return View(credentials);
         }
 
-        //POST OWNERS
-        public IActionResult RegisterOwners()
+        [HttpPost]
+        [ActionName("Register")]
+        public IActionResult Register()
         {
             return View();
         }
