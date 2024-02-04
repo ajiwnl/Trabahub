@@ -11,15 +11,15 @@ using Trabahub.Data;
 namespace Trabahub.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240204125424_InitialSetup")]
-    partial class InitialSetup
+    [Migration("20240204213706_add-migration InitialSetup")]
+    partial class addmigrationInitialSetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

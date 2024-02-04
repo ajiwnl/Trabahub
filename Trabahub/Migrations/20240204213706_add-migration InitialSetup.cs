@@ -5,7 +5,7 @@
 namespace Trabahub.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialSetup : Migration
+    public partial class addmigrationInitialSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
