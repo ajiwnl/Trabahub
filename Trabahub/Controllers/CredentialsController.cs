@@ -80,12 +80,6 @@ namespace Trabahub.Controllers
             return View();
         }
 
-
-
-
-
-
-
         public void SaveEntry(Credentials addCredentialEntry)
         {
             var credentials = new Credentials()
