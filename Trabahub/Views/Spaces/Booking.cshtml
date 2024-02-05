@@ -1,4 +1,4 @@
-﻿<div class="bookinglayer pt-3">
+﻿<div class="bookinglayer pt-3" id="bookinglayer">
     <div class="container">
         <div class="wrapper">
             <div class="row pb-4">
@@ -98,11 +98,11 @@
                             <div class="row">
                                 <div class="col-5">
                                     <span class="form-control-static listingbody">Time In</span>
-                                    <input class="form-control" type="time" name="timein" />
+                                    <input class="form-control" type="time" name="timein" id="timein" />
                                 </div>
                                 <div class="col-5">
                                     <span class="form-control-static listingbody">Time Out</span>
-                                    <input class="form-control" type="time" name="timeout" />
+                                    <input class="form-control" type="time" name="timeout" id="timeout" />
                                 </div>
                             </div>
                         </div>
@@ -110,34 +110,22 @@
                             <div class="row">
                                 <div class="col-5">
                                     <span class="form-control-static listingbody">Duration</span>
-                                    <input class="form-control" type="text" name="ducation" readonly />
+                                    <input class="form-control" type="text" name="duration" id="duration" readonly />
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col pt-5 text-start">
-                        <div class="row">
-                            <div class="col">
-                                <div class="btn-group mx-auto pt-3">
-                                    <button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                        Accomodation Type
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                                        <li><button class="dropdown-item" type="button">Open Space</button></li>
-                                        <li><button class="dropdown-item" type="button">Private Space</button></li>
-                                        <li><button class="dropdown-item" type="button">Meeting Space</button></li>
-                                    </ul>
+                                <div class="col-5">
+                                    <div class="btn-group mx-auto pt-3">
+                                        <button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                            Select Property Type
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-lg-end">
+                                            <li><button class="dropdown-item" type="button">Co-Working Space</button></li>
+                                            <li><button class="dropdown-item" type="button">Study Hub</button></li>
+                                            <li><button class="dropdown-item" type="button">Cafe</button></li>
+                                            <li><button class="dropdown-item" type="button">Private Space</button></li>
+                                            <li><button class="dropdown-item" type="button">Hybrid Setup</button></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row pt-3">
-                            <div class="col">
-                                <label class="bfontbody">Private Space</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label class="bfontbody">P 400</label>
                             </div>
                         </div>
                     </div>
@@ -154,3 +142,30 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Get the time in and time out input elements
+    const timeInInput = document.getElementById('timein');
+    const timeOutInput = document.getElementById('timeout');
+
+    // Add event listeners to the time inputs
+    timeInInput.addEventListener('change', calculateDuration);
+    timeOutInput.addEventListener('change', calculateDuration);
+
+    function calculateDuration() {
+        // Get the values of time in and time out
+        const timeInValue = timeInInput.value;
+        const timeOutValue = timeOutInput.value;
+
+        // Convert the time values to Date objects
+        const timeIn = new Date('2000-01-01T' + timeInValue);
+        const timeOut = new Date('2000-01-01T' + timeOutValue);
+
+        // Calculate the duration in minutes
+        const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
+
+        // Update the duration input with the calculated value
+        const durationInput = document.getElementById('duration');
+        durationInput.value = durationInMinutes + ' minutes';
+    }
+</script>
