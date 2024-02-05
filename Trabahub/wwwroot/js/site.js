@@ -107,3 +107,18 @@ function FeedbackValidation() {
     return true; // Form will be submitted if all validations pass
 }
 
+//Confirm Password Validation
+function checkPasswordMatch() {
+    var password = document.getElementById("passwordreg").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var errorSpan = document.getElementById("passwordMatchError");
+    var registerButton = document.getElementById("registerButton");
+
+    if (password !== confirmPassword) {
+        errorSpan.innerHTML = "Passwords do not match";
+        registerButton.disabled = true;
+    } else {
+        errorSpan.innerHTML = "";
+        registerButton.disabled = false;
+    }
+}
