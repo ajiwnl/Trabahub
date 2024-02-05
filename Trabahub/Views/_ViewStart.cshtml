@@ -1,8 +1,9 @@
-﻿@{
-    Layout = "_Layout";
-    var setUsername = TempData["Username"];
-    var setStatus = TempData["Status"];
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Mvc.Rendering
 
-    ViewBag.Username = setUsername;
-    ViewBag.Status = setStatus;
+
+@{
+    Layout = "_Layout";
+    ViewBag.Username = Context.Session.GetString("Username");
+    ViewBag.IsLoggedIn = Context.Session.GetString("IsLoggedIn") == "true";
 }

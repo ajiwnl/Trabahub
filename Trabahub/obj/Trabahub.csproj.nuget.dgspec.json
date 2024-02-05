@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {}
+    "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {
+    "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
         "projectName": "Trabahub",
-        "projectPath": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
-        "packagesPath": "C:\\Users\\alvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\Trabahub.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

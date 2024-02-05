@@ -43,11 +43,17 @@ namespace Trabahub.Controllers
 			}
             string loggedUser = existingEmail.Username.ToString();
 
-            TempData["Username"] = loggedUser;
-            TempData["Status"] = "false";
+            HttpContext.Session.SetString("Username", loggedUser);
+            HttpContext.Session.SetString("IsLoggedIn", "true");
 
             TempData["SuccessMessage"] = "Welcome To Trabahub!  " + loggedUser;
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Credentials");
         }
 
         [HttpPost]

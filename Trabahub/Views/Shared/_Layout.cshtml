@@ -48,8 +48,11 @@
                         <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Contact Us" ? "active" : "")">
                             <a class="nav-link navbar-fonts" asp-area="" asp-controller="Contacts" asp-action="Index">Contact Us</a>
                         </li>
-                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Username" ? "active" : "")">
-                            <a class="nav-link navbar-fonts"><span>@ViewBag.Username</span></a>
+                        <li class="nav-item me-2 @(ViewData["ActivePage"] as string == "Username" ? "active" : "")">
+                            <a class="nav-link navbar-fonts"><span class="text-white" style="user-select: none">@ViewBag.Username</span></a>
+                        </li>
+                        <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Logout" ? "active" : "")">
+                            <a class="nav-link navbar-fonts" asp-area="" asp-controller="Credentials" asp-action="Logout"><i class="bi bi-arrow-down-right-square-fill"></i></a>
                         </li>
                     </ul>
                 </div>
