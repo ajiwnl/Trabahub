@@ -122,3 +122,60 @@ function checkPasswordMatch() {
         registerButton.disabled = false;
     }
 }
+
+var emailChecked = false;
+
+// Email validation
+function handleEnter(event) {
+    if (event.key === 'Enter') {
+        checkEmail();
+    }
+}
+
+function checkEmail() {
+    var email = document.getElementById('floatingInputEmail').value;
+
+    $.ajax({
+        url: '/Credentials/CheckEmail',
+        type: 'POST',
+        data: { email: email },
+        success: function (data) {
+            if (data.exists) {
+                // Email exists, enable the password field
+                document.getElementById('floatingInputPassword').disabled = false;
+                document.getElementById('confirmPassword').disabled = false;
+                document.getElementById('emailValidationMessage').innerText = 'Email found. You can proceed.';
+                emailChecked = true; // Set the flag to true
+            } else {
+                // Email does not exist, show an error message and keep the password field disabled
+                document.getElementById('emailValidationMessage').innerText = 'Email not found. Please check and try again.';
+            }
+        },
+        error: function () {
+            alert('Error checking email.');
+        }
+    });
+}
+
+// Update the form submission function
+function submitForm() {
+    if (!emailChecked) {
+        return false; // Prevent the form from submitting
+    }
+    // Continue with form submission
+    document.forms[0].submit();
+}
+
+
+function checkForgotPasswordMatch() {
+    var password = document.getElementById('floatingInputPassword').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var errorElement = document.getElementById('passwordMatchError');
+
+    if (password !== confirmPassword) {
+        errorElement.innerText = 'Passwords do not match';
+    } else {
+        errorElement.innerText = '';
+    }
+}
+
