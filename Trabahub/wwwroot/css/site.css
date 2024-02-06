@@ -964,7 +964,9 @@ footer {
 }
 
 .adjust-content-password {
-    transform: translate(0%, -25%);
+    display: grid;
+    align-items: center;
+    transform: translate(0%, -5%);
 }
 
 /*Listing Page*/
