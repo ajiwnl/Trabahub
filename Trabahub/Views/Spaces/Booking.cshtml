@@ -163,9 +163,20 @@
 
         // Calculate the duration in minutes
         const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
+        const durationInHours = durationInMinutes / 60;
 
         // Update the duration input with the calculated value
         const durationInput = document.getElementById('duration');
-        durationInput.value = durationInMinutes + ' minutes';
+
+        if (durationInHours <= 0) {
+            durationInput.value = 'Please Select Appropriate Schedule';
+        }
+        else if (durationInHours === 1) {
+            durationInput.value = durationInHours + ' Hour';
+        }
+        else if (durationInHours >= 2) {
+            durationInput.value = durationInHours + ' Hours';
+        }
     }
+       
 </script>

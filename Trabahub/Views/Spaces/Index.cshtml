@@ -1,3 +1,6 @@
+@*@model List<Trabahub.Models.>*@
+
+
 <div class="spacelayer pt-4">
 	<div class="container">
 		<div class="wrapper">
@@ -78,118 +81,36 @@
 								</div>
 							</div>
 						</div>
-						<div class="row ps-5 pt-5" id="firstrow">
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
+						@*<div class="clayoutwrapper mt-3">
+							<div class="cardslayout debuggingwrappers">
+								@foreach (var listings in model)
+								{
+									<div class="spacecards text-start">
+										<a asp-area="" asp-controller="Spaces" asp-action="Detail" asp-route-code="@listings.ModelName">
+											<></>
+											<div class="coverimage">
+												<img src="" />
 											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
+											<div class="row">
+												<div class="col">
+													<label class="coverLabel">@listings.Name</label>
+												</div>
 											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
+											<div class="row">
+												<div class="col">
+													<label class="coverbody">@listings.EstimatePrice</label>
+												</div>
 											</div>
-										</div>
+											<div class="row">
+												<div class="col">
+													<label class="coverbody">@listings.Address</label>
+												</div>
+											</div>
+										</a>
 									</div>
-								</a>
+								}
 							</div>
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
-											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
-											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
-											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
-											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="row ps-5 pt-5" id="secondrow">
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
-											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
-											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
-											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
-											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col">
-								<a asp-area="" asp-controller="Spaces" asp-action="Detail">
-									<div class="spacepholder">
-										<div class="coverimage"></div>
-										<div class="container">
-											<div class="text-start pt-2">
-												<label class="coverlabel">Placeholder</label>
-											</div>
-											<div class="text-start pt-1">
-												<label class="coverbody">P200 - P400</label>
-											</div>
-											<div class="text-start pt-2">
-												<label class="coverbody">A Very Long Address Set Here, Break City</label>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+						</div>*@
 					</div>
 				</div>
 			</div>

@@ -343,7 +343,7 @@ footer {
     text-align: start;
 }
 
-.spacepholder {
+.spacecards {
     position: relative;
     background-color: #D9D9D9;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -351,6 +351,19 @@ footer {
     -webkit-backdrop-filter: blur(7.4px);
     width: 34vh;
     height: 40vh;
+}
+
+.clayoutwrapper {
+    max-height: 94vh;
+    overflow-y: auto;
+}
+
+.cardslayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 95vh;
+    width: 100%;
 }
 
 .filterlabels {
@@ -447,18 +460,6 @@ footer {
         width: 55vh;
     }
 
-    #spaceheader, #spacedesc {
-        text-align: center;
-    }
-
-    #secondrow {
-        display: none;
-    }
-
-    .spacepholder {
-        transform: translate(20%, 0%);
-        margin-bottom: 15%;
-    }
 
     .filterlabels {
         display: none;
@@ -466,10 +467,6 @@ footer {
 
     #filteroptions {
         transform: translate(-13%, 10%);
-    }
-
-    #firstrow {
-        transform: translate(-5%, 10%);
     }
 }
 
