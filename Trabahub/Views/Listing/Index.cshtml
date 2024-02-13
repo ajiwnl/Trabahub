@@ -14,8 +14,28 @@
             <th scope="col">Establishment Name</th>
             <th scope="col">Description</th>
             <th scope="col">Address</th>
-            <th scope="col">Time</th>
+            <th scope="col">Price Rate</th>
+            <th scope="col">Operating Hours</th>
         </tr>
     </thead>
 
+    <tbody>
+        @foreach (var listing in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@listing.ESTABIMAGEPATH" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+                </td>
+                <td>@listing.ESTABNAME</td>
+                <td>@listing.ESTABDESC</td>
+                <td>@listing.ESTABADD</td>
+                <td>&#8369; @listing.ESTABPRICE</td>
+                <td>
+                    @Html.DisplayFor(modelItem => listing.STARTTIME)
+                    -
+                @Html.DisplayFor(modelItem => listing.ENDTIME)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

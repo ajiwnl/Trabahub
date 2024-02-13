@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
+      "PackagePath": "staticwebassets\\img\\TEST TEST.png"
+    },
+    {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
+      "PackagePath": "staticwebassets\\img\\Work Test.png"
+    },
+    {
       "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
       "PackagePath": "staticwebassets\\js\\calendar.js"
     },

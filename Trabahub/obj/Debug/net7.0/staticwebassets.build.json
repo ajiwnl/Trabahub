@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PiHRVHH4oDEg3DTEBFTkDHu/UQn2rGAECCzOG5oKeKo=",
+  "Hash": "63tdp7eIecnv55SHopVfvQLKE5lep6tFJwp1pC+gwyA=",
   "Source": "Trabahub",
   "BasePath": "_content/Trabahub",
   "Mode": "Default",
@@ -100,6 +100,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/TEST TEST.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\TEST TEST.png"
+    },
+    {
+      "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Work Test.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Work Test.png"
     },
     {
       "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",

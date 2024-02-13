@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace Trabahub.Models
 {
@@ -19,8 +20,16 @@ namespace Trabahub.Models
         public string? ESTABADD { get; set; }
         
         [Required]
-        [StringLength(10)]
-        public string? ESTABTIME { get; set; }
+        public int? ESTABPRICE { get; set; }
+
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
+        public DateTime STARTTIME { get; set; }
+
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
+        public DateTime ENDTIME { get; set; }
+
 
         //<---For Photo--->
         [StringLength(255)]
