@@ -343,7 +343,7 @@ footer {
     text-align: start;
 }
 
-.spacepholder {
+.spacecards {
     position: relative;
     background-color: #D9D9D9;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -351,6 +351,23 @@ footer {
     -webkit-backdrop-filter: blur(7.4px);
     width: 34vh;
     height: 40vh;
+    overflow-y: hidden;
+}
+
+.clayoutwrapper {
+    max-height: 94vh;
+    overflow-y: auto;
+
+}
+
+.cardslayout {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    height: 95vh;
+    width: 100%;
 }
 
 .filterlabels {
@@ -377,16 +394,16 @@ footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: initial;
     color: azure;
-    border-radius: 10px;
-    width: 200px;
-    height: 40px;
+    padding: 2vh 4vh 2vh 4vh;
+    border-radius: 20px;
 }
 
 .coverimage {
     width: 100%;
     height: 15vh;
-    background: url('../res/Workplace Cafe.jpg') no-repeat center center;
+    background: no-repeat center center;
     background-size: cover;
+    object-fit: cover;
     border: 1px solid black;
 }
 
@@ -447,18 +464,6 @@ footer {
         width: 55vh;
     }
 
-    #spaceheader, #spacedesc {
-        text-align: center;
-    }
-
-    #secondrow {
-        display: none;
-    }
-
-    .spacepholder {
-        transform: translate(20%, 0%);
-        margin-bottom: 15%;
-    }
 
     .filterlabels {
         display: none;
@@ -466,10 +471,6 @@ footer {
 
     #filteroptions {
         transform: translate(-13%, 10%);
-    }
-
-    #firstrow {
-        transform: translate(-5%, 10%);
     }
 }
 
@@ -592,7 +593,7 @@ footer {
 /*Details Page*/
 .detailslayer {
     position: relative;
-    min-height: 130vh;
+    min-height: 150vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
@@ -620,13 +621,19 @@ footer {
 }
 
 .detailmain {
-    margin-top: 10vh;
     height: 320px;
     background-color: #D9D9D9;
 }
 
 .detailside {
-    height: 620px;
+    height: 820px;
+    background-color: #D9D9D9;
+}
+
+.detailsidetwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #detailstars {
@@ -645,14 +652,13 @@ footer {
 }
 
 .detailcover {
-    margin: 1vh;
-    height: 305px;
-    width: 375px;
+    width: 100%;
+    height: 45vh;
+    background: no-repeat center center;
+    background-size: contain;
+    object-fit: cover;
 }
 
-.detailbars {
-    background-color: #D9D9D9;
-}
 
 .dbarheader {
     padding-top: 1%;
@@ -783,7 +789,7 @@ footer {
 /*Login Page*/
 .loginlayer {
     position: relative;
-    height: 120vh;
+    min-height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../res/Background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -972,7 +978,7 @@ footer {
 /*Listing Page*/
 .listinglayer {
     position: relative;
-    min-height: 150vh;
+    min-height: 100vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
