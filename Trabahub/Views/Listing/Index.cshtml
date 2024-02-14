@@ -1,0 +1,41 @@
+﻿@model List<Trabahub.Models.Listing>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<h1>Spaces New</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Establishment Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Address</th>
+            <th scope="col">Price Rate</th>
+            <th scope="col">Operating Hours</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var listing in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@listing.ESTABIMAGEPATH" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+                </td>
+                <td>@listing.ESTABNAME</td>
+                <td>@listing.ESTABDESC</td>
+                <td>@listing.ESTABADD</td>
+                <td>&#8369; @listing.ESTABPRICE</td>
+                <td>
+                    @Html.DisplayFor(modelItem => listing.STARTTIME)
+                    -
+                @Html.DisplayFor(modelItem => listing.ENDTIME)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

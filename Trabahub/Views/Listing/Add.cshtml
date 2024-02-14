@@ -1,0 +1,232 @@
+﻿@model Listing
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<style>
+    h1 {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+
+    }
+
+    .short-input {
+        width: 200px;
+    }
+
+    .dd-size {
+        width: 150px; /* Adjust the width as needed */
+    }
+
+    .card {
+        background-color: skyblue;
+        padding: 20px;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-container .btn {
+            margin-right: 10px; /* Adjust the margin as needed to control the spacing */
+    }
+    /* Limit the width of the file input field */
+    #estabIMG {
+        max-width: 90%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /* Set the dimensions of the image preview to a circle with a diameter of 2 inches */
+    #imgPreview {
+        width: 2in;
+        height: 2in;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Style for the image placeholder to make it circular */
+    #imagePlaceholder {
+        width: 2in;
+        height: 2in;
+        background-color: white;
+        border-radius: 50%; /* Makes the placeholder circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <h1 class="card-header text-center">LISTING FORM</h1>
+                <div class="card-body">
+                    <form method="post" asp-action="Add" asp-controller="Listing" id="listingForm" enctype="multipart/form-data">
+                        <!--New Code Starts-->
+                        <div class="form-group row">
+                            <div class="col-sm-6 offset-sm-3">
+                                <!-- Circular placeholder -->
+                                <div id="imagePlaceholder">
+                                    <img id="imgPreview" src="">
+                                </div>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" asp-for="ESTABIMG" id="estabIMG" accept="image/*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <!--New Code Ends-->
+                        <div class="form-group row">
+                            <div class="col-sm-6 offset-sm-3">
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="ESTABLISHMENT NAME" asp-for="ESTABNAME">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="DESCRIPTION" asp-for="ESTABDESC">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="ADDRESS" asp-for="ESTABADD">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="PRICE RATE" asp-for="ESTABPRICE">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="form-floating">
+                                        <input type="time" asp-for="STARTTIME" class="form-control formatslabel" id="timestart">
+                                        <label asp-for="STARTTIME" for="timestart"></label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="time" asp-for="ENDTIME" class="form-control formatslabel" id="timestart">
+                                        <label asp-for="STARTTIME" for="timestart"></label>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-12">
+                                <div class="form-group text-center btn-container">
+                                    <input type="submit" class="btn btn-success" value="SAVE">
+                                    <input type="submit" class="btn btn-danger" id="cancelBtn" value="CANCEL">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        // Function to clear input fields and reset dropdowns
+        function clearInputFields() {
+            $("input[name='ESTABNAME']").val('');
+            $("input[name='ESTABDESC']").val('');
+            $("input[name='ESTABADD']").val('');
+            $("input[name='ESTABPRICE']").val('');
+            $("input[name='STARTTIME']").val('');
+            $("input[name='ENDTIME']").val('');
+            // Reset the image placeholder
+            $("#imgPreview").attr('src', '');
+            $('#imagePlaceholder').css('background-color', 'white');
+            $("#estabIMG").val('');
+        }
+
+        // Call the clearFormFields function when the page loads
+        window.onload = clearInputFields;
+
+        // Click event for the "CANCEL" button
+        $('#cancelBtn').click(function () {
+            clearInputFields();
+            // Prevent the form from submitting
+            return false;
+        });
+
+    });
+
+    // Function to handle image preview
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgPreview').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            $('#imgPreview').attr('src', ''); // Empty the src attribute
+        }
+    }
+
+    // Listen for changes in the file input
+    $('#estabIMG').change(function () {
+        previewImage(this);
+    });
+
+</script>
+
+
+@if (TempData.ContainsKey("FieldError"))
+{
+    <script>
+        var fieldError = '@TempData["FieldError"]';
+        Swal.fire({
+            icon: 'error',
+            title: 'Field Validation Entry Error',
+            text: fieldError,
+        });
+    </script>
+}
+
+@if (TempData.ContainsKey("DuplicateError"))
+{
+    <script>
+        var duplicateError = '@TempData["DuplicateError"]';
+        Swal.fire({
+            icon: 'error',
+            title: 'Duplicate Error',
+            text: duplicateError,
+        });
+    </script>
+}
+
+@if (TempData.ContainsKey("SuccessMessage"))
+{
+    <script>
+        var successMessage = '@TempData["SuccessMessage"]';
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: successMessage,
+        });
+    </script>
+}

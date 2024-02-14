@@ -10,6 +10,8 @@ namespace Trabahub.Data
 
         public DbSet<Credentials> Credentials { get; set; }
 
+        public DbSet<Listing> Listing { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Credentials>()
