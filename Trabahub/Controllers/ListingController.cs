@@ -56,7 +56,21 @@ namespace Trabahub.Controllers
             return View();
         }
 
-        private void SaveData(Listing addListing)
+        [HttpGet]
+        public IActionResult Details(string? name)
+        {
+            var listing = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
+            return View(listing);
+        }
+
+        [HttpGet]
+		public IActionResult Booking(string? name)
+		{
+			var booking = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
+			return View(booking);
+		}
+
+		private void SaveData(Listing addListing)
         {
             string imgPath = UploadFile(addListing);
 

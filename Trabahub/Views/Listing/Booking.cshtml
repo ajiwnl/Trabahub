@@ -1,10 +1,11 @@
-﻿<div class="bookinglayer pt-3" id="bookinglayer">
+﻿@model Listing
+<div class="bookinglayer pt-3" id="bookinglayer">
     <div class="container">
         <div class="wrapper">
             <div class="row pb-4">
                 <div class="col">
-                    <div class="bookingheader border-bottom border-2 border-dark">
-                        <label class="bnsheader">Workspace Cafe</label>
+                    <div class="bookingheader border-0">
+                        <input asp-for="ESTABNAME" class="bnsheader border-0" style="background-color: transparent" disabled />
                     </div>
                 </div>
             </div>
@@ -178,5 +179,5 @@
             durationInput.value = durationInHours + ' Hours';
         }
     }
-       
+
 </script>
