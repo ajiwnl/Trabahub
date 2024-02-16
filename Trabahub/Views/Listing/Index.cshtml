@@ -100,42 +100,45 @@
 							<div class="cardslayout">
 								@foreach (var listings in Model)
 								{
-									<div class="spacecards text-start">
-										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
-											<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
-											<div class="p-3">
-												<div class="row">
-													<div class="col">
-														<label class="coverLabel">@listings.ESTABNAME</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABDESC</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABADD</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
+											<div class="spacecards text-start">
+												<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
+													<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
+													<div class="p-3">
+														<div class="row">
+															<div class="col">
+																<label class="coverLabel">@listings.ESTABNAME</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABDESC</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABADD</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
 														@Html.DisplayFor(modelItem => listings.STARTTIME)
-													</div>
-													<div class="col">
+															</div>
+															<div class="col">
 														@Html.DisplayFor(modelItem => listings.ENDTIME)
+															</div>
+														</div>
 													</div>
-												</div>
+												</a>
 											</div>
-										</a>
-									</div>
 								}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="footer pt-3">
+			<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
 		</div>
 	</div>
 </div>

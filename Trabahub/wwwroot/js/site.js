@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     OnLoginRegisterLayers();
-    OnOwnerRegister();
+    OnForgotPassword();
 });
 
 function OnLoginRegisterLayers() {
@@ -21,14 +21,13 @@ function OnLoginRegisterLayers() {
     }
 }
 
-function OnOwnerRegister() {
+function OnForgotPassword() {
     //Check If User Is On Owner Registration Page
-    var isOwnerRegister = document.getElementById('listinglayer') != null;
     var isForgotPassword = document.getElementById('forgotlayer') != null;
     var navcontents = document.getElementById('navcontents');
 
     //If True, Hide Nav Contents and Disable Redirect Action
-    if (isOwnerRegister || isForgotPassword) {
+    if (isForgotPassword) {
         navcontents.classList.add('hidenavs');
     }
 }
