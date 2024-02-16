@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9RFLrxEtlJNNHCO5HwQIW5No69eIfF6uZAAcvuQATmQ=",
+  "Hash": "65vFblz8vOVkI1s4qwiENYhqek4gdFZPGxVdt9ZnQ6k=",
   "Source": "Trabahub",
   "BasePath": "_content/Trabahub",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Trabahub\\wwwroot",
       "Source": "Trabahub",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\Trabahub.styles.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\Trabahub.styles.css",
       "SourceId": "Trabahub",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "Trabahub.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\Trabahub.styles.css"
+      "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\bundle\\Trabahub.styles.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css",
       "SourceId": "Trabahub",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "Trabahub.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\css\\calendar.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\calendar.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "css/calendar.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\calendar.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\site.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\favicon.ico",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -102,10 +102,180 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Background.jpg",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Drippy Lab.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Drippy Lab.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Drippy Lab.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\hgjghj.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/hgjghj.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\hgjghj.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Image Sample 3.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Image Sample 3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Image Sample 3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\NOMADS HUB.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/NOMADS HUB.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\NOMADS HUB.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/sdfgsdfs.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\sdfgsdfs.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/TEST TEST.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\TEST TEST.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\The Hive.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/The Hive.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\The Hive.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Work Test.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Work Test.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Workplace Cafe.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/Workplace Cafe.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Workplace Cafe.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "js/calendar.js",
       "AssetKind": "All",
@@ -119,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\js\\calendar.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\site.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -136,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -153,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -170,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -187,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -204,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -221,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -238,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -255,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -272,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -289,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -306,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -323,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -340,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -357,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -374,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -391,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -408,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -425,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -442,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -459,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -476,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -493,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -510,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -527,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -544,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -561,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -578,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -595,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -612,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -629,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -646,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -663,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -680,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -697,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -714,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -731,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -748,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -765,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -782,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -799,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -816,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -833,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -850,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -867,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -884,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -901,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -918,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -935,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -952,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -969,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -986,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1003,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1020,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1037,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1054,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1071,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1088,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\alvin\\Source\\Repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
       "BasePath": "_content/Trabahub",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1103,6 +1273,227 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\AboutImage.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/AboutImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\AboutImage.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Background.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Calendar.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Calendar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Calendar.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Hive.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Hive.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Hive.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LargeLogo.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/LargeLogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\LargeLogo.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoOne.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/LogoOne.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\LogoOne.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoTwo.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/LogoTwo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\LogoTwo.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Map.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Map.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Map.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\MapList.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/MapList.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\MapList.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Nomads Hub.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Nomads Hub.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Nomads Hub.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\People.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/People.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\People.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Twopersons.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Twopersons.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Twopersons.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Workplace Cafe.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "res/Workplace Cafe.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\res\\Workplace Cafe.jpg"
     }
   ]
 }

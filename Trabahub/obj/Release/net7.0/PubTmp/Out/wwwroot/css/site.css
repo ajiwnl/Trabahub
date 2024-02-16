@@ -14,10 +14,6 @@ html {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html, body {
-
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -74,7 +70,7 @@ footer {
 
 #layoutbody {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../res/Background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     width: 100%;
@@ -167,7 +163,7 @@ footer {
 
 .secondlayer {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/DkCgJNM/Image-Sample-2.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../res/AboutImage.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 110vh;
     width: 100%;
@@ -347,7 +343,7 @@ footer {
     text-align: start;
 }
 
-.spacepholder {
+.spacecards {
     position: relative;
     background-color: #D9D9D9;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -355,6 +351,23 @@ footer {
     -webkit-backdrop-filter: blur(7.4px);
     width: 34vh;
     height: 40vh;
+    overflow-y: hidden;
+}
+
+.clayoutwrapper {
+    max-height: 94vh;
+    overflow-y: auto;
+
+}
+
+.cardslayout {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    height: 95vh;
+    width: 100%;
 }
 
 .filterlabels {
@@ -381,16 +394,16 @@ footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: initial;
     color: azure;
-    border-radius: 10px;
-    width: 200px;
-    height: 40px;
+    padding: 2vh 4vh 2vh 4vh;
+    border-radius: 20px;
 }
 
 .coverimage {
     width: 100%;
     height: 15vh;
-    background: url('https://i.ibb.co/Lr65TH1/Workplace-Cafe.jpg') no-repeat center center;
+    background: no-repeat center center;
     background-size: cover;
+    object-fit: cover;
     border: 1px solid black;
 }
 
@@ -451,18 +464,6 @@ footer {
         width: 55vh;
     }
 
-    #spaceheader, #spacedesc {
-        text-align: center;
-    }
-
-    #secondrow {
-        display: none;
-    }
-
-    .spacepholder {
-        transform: translate(20%, 0%);
-        margin-bottom: 15%;
-    }
 
     .filterlabels {
         display: none;
@@ -470,10 +471,6 @@ footer {
 
     #filteroptions {
         transform: translate(-13%, 10%);
-    }
-
-    #firstrow {
-        transform: translate(-5%, 10%);
     }
 }
 
@@ -503,7 +500,7 @@ footer {
 /*Contacts*/
 #firstbg {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../res/Background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     width: 100%;
@@ -596,7 +593,7 @@ footer {
 /*Details Page*/
 .detailslayer {
     position: relative;
-    min-height: 130vh;
+    min-height: 150vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }
@@ -624,13 +621,19 @@ footer {
 }
 
 .detailmain {
-    margin-top: 10vh;
     height: 320px;
     background-color: #D9D9D9;
 }
 
 .detailside {
-    height: 620px;
+    height: 820px;
+    background-color: #D9D9D9;
+}
+
+.detailsidetwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #detailstars {
@@ -649,14 +652,13 @@ footer {
 }
 
 .detailcover {
-    margin: 1vh;
-    height: 305px;
-    width: 375px;
+    width: 100%;
+    height: 45vh;
+    background: no-repeat center center;
+    background-size: contain;
+    object-fit: cover;
 }
 
-.detailbars {
-    background-color: #D9D9D9;
-}
 
 .dbarheader {
     padding-top: 1%;
@@ -787,9 +789,9 @@ footer {
 /*Login Page*/
 .loginlayer {
     position: relative;
-    height: 120vh;
+    min-height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../res/Background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -878,17 +880,12 @@ footer {
     }
 }
 
-/*Debug Tool*/
-.debuggingwrappers {
-    border: 2px solid red;
-}
-
 /*Register Page*/
 .registerlayer {
     position: relative;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.ibb.co/mR8gHRC/Background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../res/Background.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow-y: hidden;
 }
@@ -941,7 +938,6 @@ footer {
     }
 }
 
-
 #Contactbtn {
     background-color: #3ECCB5;
     font-family: 'Noto Sans', sans-serif;
@@ -951,4 +947,106 @@ footer {
     width: 200px;
     height: 40px;
     justify-content: center;
+}
+
+/*Forgot Password Pages*/
+.forgotlayer {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.forgotheader {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
+.forgotlogo {
+    width: 100px;
+    height: 100px;
+}
+
+.adjust-content-password {
+    display: grid;
+    align-items: center;
+    transform: translate(0%, -5%);
+}
+
+/*Listing Page*/
+.listinglayer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(239, 239, 239, 1);
+}
+
+.listingmain {
+    height: 150vh;
+}
+
+.listingside {
+    height: 150vh;
+}
+
+.hidelcontent {
+    display: none;
+}
+
+.listingheader {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.listingsub {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.listingbody {
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+@media all and (min-width: 800px) {
+    .lisingmain {
+        flex: 2;
+    }
+
+    .listingmain {
+        order: 1;
+    }
+
+    .listingside {
+        order: 2;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .listingside {
+        flex: 1;
+    }
+}
+
+/*Mobile Resolution For Listing*/
+@media only screen and (max-width: 767px) {
+    #sidebarMenu span {
+        display: none;
+    }
+
+    #toschckbox {
+        transform: translate(-100%, 0%)
+    }
+
+}
+
+/*Debug Tool*/
+.debuggingwrappers {
+    border: 2px solid red;
 }
