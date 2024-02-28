@@ -17,12 +17,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\54645646.jpg",
+      "PackagePath": "staticwebassets\\img\\54645646.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Background.jpg",
       "PackagePath": "staticwebassets\\img\\Background.jpg"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Drippy Lab.jpg",
       "PackagePath": "staticwebassets\\img\\Drippy Lab.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Flandre Project.jpg",
+      "PackagePath": "staticwebassets\\img\\Flandre Project.jpg"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Image Sample 3.jpg",
@@ -63,6 +71,10 @@
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
       "PackagePath": "staticwebassets\\img\\sdfgsdfs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\testr.jpg",
+      "PackagePath": "staticwebassets\\img\\testr.jpg"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
