@@ -53,7 +53,7 @@ namespace Trabahub.Controllers
 
             SaveData(addListing);
             TempData["SuccessMessage"] = "Space Listed Successfully";
-            return RedirectToAction("Login", "Credentials");
+            return RedirectToAction("Index", "Listing");
         }
 
         [HttpGet]

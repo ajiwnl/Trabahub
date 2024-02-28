@@ -178,3 +178,15 @@ function checkForgotPasswordMatch() {
     }
 }
 
+
+
+
+//Utility Functionalitiees
+function selectedType(selected) {
+    var accomddbtn = document.getElementById("accomddbtn");
+    var selection = document.getElementById("acctbox");
+    if (accomddbtn) {
+        accomddbtn.textContent = selected;
+        selection.value = selected;
+    }
+}
