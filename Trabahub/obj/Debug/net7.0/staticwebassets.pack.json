@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets\\img\\New Workspace.png"
     },
     {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Worksspaceeeeee.png",
+      "PackagePath": "staticwebassets\\img\\New Worksspaceeeeee.png"
+    },
+    {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\News Workspace.jpg",
+      "PackagePath": "staticwebassets\\img\\News Workspace.jpg"
+    },
+    {
       "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
       "PackagePath": "staticwebassets\\img\\TEST TEST.png"
     },
@@ -59,6 +67,10 @@
     {
       "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
       "PackagePath": "staticwebassets\\img\\sdfgsdfs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\wdasdasdasd.jpg",
+      "PackagePath": "staticwebassets\\img\\wdasdasdasd.jpg"
     },
     {
       "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",

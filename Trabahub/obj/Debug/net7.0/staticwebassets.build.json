@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZIpjw49lgbSRLJnX49uEC2skwwAoW0gvdEbo5HZuqWU=",
+  "Hash": "XfrVad8PyJNyeEoyrucZZdmozwSXDtAIYXTh3h050Uc=",
   "Source": "Trabahub",
   "BasePath": "_content/Trabahub",
   "Mode": "Default",
@@ -187,6 +187,40 @@
       "OriginalItemSpec": "wwwroot\\img\\New Workspace.png"
     },
     {
+      "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Worksspaceeeeee.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/New Worksspaceeeeee.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\New Worksspaceeeeee.png"
+    },
+    {
+      "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\News Workspace.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/News Workspace.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\News Workspace.jpg"
+    },
+    {
       "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\NOMADS HUB.jpg",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
@@ -253,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\The Hive.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\wdasdasdasd.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/wdasdasdasd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\wdasdasdasd.jpg"
     },
     {
       "Identity": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
