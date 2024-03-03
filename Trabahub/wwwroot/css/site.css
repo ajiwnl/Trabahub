@@ -198,6 +198,7 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.33);
     width: 300px;
     height: 325px;
+    z-index: -1;
 }
 
 .offer-num {
@@ -989,6 +990,16 @@ footer {
     background-color: rgb(239, 239, 239, 1);
 }
 
+.listingform {
+    width: 100%;
+    height: 95vh;
+    background-color: rgb(239, 239, 239, 1);
+    box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
 .listingmain {
     height: 150vh;
 }
@@ -1024,6 +1035,26 @@ footer {
     display: grid;
     align-items: center;
     justify-content: center;
+}
+
+.show {
+    opacity: 100%;
+    user-select: none;
+    pointer-events: all;
+}
+
+.hide {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.transform-step2 {
+    transform: translate(0, -250%);
+}
+
+.transform-step1 {
+    transform: translate(0, 250%);
 }
 
 @media all and (min-width: 800px) {

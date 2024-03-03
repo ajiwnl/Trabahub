@@ -178,8 +178,27 @@ function checkForgotPasswordMatch() {
     }
 }
 
+function nextPage(type) {
+    var step1 = document.getElementById('step1');
+    var step2 = document.getElementById('step2');
 
+    if (type === 'next') {
+        step1.classList.remove('show');
+        step1.classList.add('hide');
 
+        step2.classList.remove('hide');
+        step2.classList.add('show');
+        step2.classList.add('transform-step2');
+    }
+
+    else if(type === 'back') {
+        step1.classList.remove('hide');
+        step1.classList.add('show');
+
+        step2.classList.remove('show');
+        step2.classList.add('hide');
+    }
+}
 
 //Utility Functionalitiees
 function selectedType(selected) {
