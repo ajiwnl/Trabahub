@@ -114,18 +114,21 @@
                                     <input class="form-control" type="text" name="duration" id="duration" readonly />
                                 </div>
                                 <div class="col-5">
-                                    <div class="btn-group mx-auto pt-3">
-                                        <button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                    <div class="btn-group mx-auto pt-3" style="width: 100%">
+                                        <button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                             Select Property Type
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-lg-end">
-                                            <li><button class="dropdown-item" type="button">Co-Working Space</button></li>
-                                            <li><button class="dropdown-item" type="button">Study Hub</button></li>
-                                            <li><button class="dropdown-item" type="button">Cafe</button></li>
-                                            <li><button class="dropdown-item" type="button">Private Space</button></li>
-                                            <li><button class="dropdown-item" type="button">Hybrid Setup</button></li>
+                                            <li><button class="dropdown-item" onclick="selectedType('Co-Working Space')" type="button">Co-Working Space</button></li>
+                                            <li><button class="dropdown-item" onclick="selectedType('Study Hub')" type="button">Study Hub</button></li>
+                                            <li><button class="dropdown-item" onclick="selectedType('Cafe')" type="button">Cafe</button></li>
+                                            <li><button class="dropdown-item" onclick="selectedType('Private Space')" type="button">Private Space</button></li>
+                                            <li><button class="dropdown-item" onclick="selectedType('Hybrid Setup')" type="button">Hybrid Setup</button></li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="text" id="acctbox" hidden />
                                 </div>
                             </div>
                         </div>
@@ -133,7 +136,7 @@
                 </div>
                 <div class="row pt-5">
                     <div class="col">
-                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Spaces" asp-action="Detail">GO BACK</a>
+                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@Model.ESTABNAME" asp-route-image="@Model.ESTABIMAGEPATH" >GO BACK</a>
                     </div>
                     <div class="col">
                         <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;">BOOK NOW</a>
@@ -180,4 +183,7 @@
         }
     }
 
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>
