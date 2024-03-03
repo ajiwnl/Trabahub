@@ -11,21 +11,6 @@
 
 
 <style>
-    h1 {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-    }
-
-    .short-input {
-        width: 200px;
-    }
-
-    .dd-size {
-        width: 150px; /* Adjust the width as needed */
-    }
 
     .card {
         background-color: skyblue;
@@ -39,15 +24,6 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-        .btn-container .btn {
-            margin-right: 10px; /* Adjust the margin as needed to control the spacing */
-        }
     /* Limit the width of the file input field */
     #estabIMG {
         max-width: 90%;
@@ -79,71 +55,121 @@
 
 
 
-<div class="listinglayer" id="listinglayer">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <h1 class="card-header text-center">LISTING FORM</h1>
-                    <div class="card-body">
-                        <form method="post" asp-action="Add" asp-controller="Listing" id="listingForm" enctype="multipart/form-data">
-                            <!--New Code Starts-->
-                            <div class="form-group row">
-                                <div class="col-sm-6 offset-sm-3">
-                                    <!-- Circular placeholder -->
-                                    <div id="imagePlaceholder">
-                                        <img id="imgPreview" src="">
-                                    </div>
-                                    <div class="input-group">
-                                        <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" asp-for="ESTABIMG" id="estabIMG" accept="image/*" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <!--New Code Ends-->
-                            <div class="form-group row">
-                                <div class="col-sm-6 offset-sm-3">
-                                    <div class="row mb-2">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="ESTABLISHMENT NAME" asp-for="ESTABNAME">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="DESCRIPTION" asp-for="ESTABDESC">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="ADDRESS" asp-for="ESTABADD">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="PRICE RATE" asp-for="ESTABPRICE">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-2">
-                                        <div class="form-floating">
-                                            <input type="time" asp-for="STARTTIME" class="form-control formatslabel" id="timestart">
-                                            <label asp-for="STARTTIME" for="timestart"></label>
-                                        </div>
-                                        <div class="form-floating">
-                                            <input type="time" asp-for="ENDTIME" class="form-control formatslabel" id="timestart">
-                                            <label asp-for="STARTTIME" for="timestart"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-lg-12">
-                                    <div class="form-group text-center btn-container">
-                                        <input type="submit" class="btn btn-success" value="SAVE">
-                                        <input type="submit" class="btn btn-danger" id="cancelBtn" value="CANCEL">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+<div class="listinglayer ps-5 pt-5 pt-4" id="listinglayer">
+    <div class="container listingform p-5">
+        <form method="post" asp-action="Add" asp-controller="Listing" id="listingform" enctype="multipart/form-data">
+            <section class="show" id="step1">
+                <div class="row text-center">
+                    <div class="col">
+                        <label class="listingheader">Step 1: Establishment Information</label>
                     </div>
                 </div>
-            </div>
-        </div>
+
+                <div class="centerelement pt-3">
+                    <div id="imagePlaceholder">
+                        <img id="imgPreview" src="">
+                    </div>
+                </div>
+                <div class="row centerelement pt-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" asp-for="ESTABIMG" id="estabIMG" accept="image/*" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabName" asp-for="ESTABNAME">
+                            <label for="estabName">Establishment Name</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabDesc" asp-for="ESTABDESC">
+                            <label for="estabDesc">Establishment Description</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabAdd" asp-for="ESTABADD">
+                            <label for="estabAdd">Establishmnt Address</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabRate" asp-for="ESTABPRICE">
+                            <label for="estabRate">Price</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-3">
+                            <div class="btn-group mx-auto" style="width: 100%; height: 100%;">
+                                <button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                    Type
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-lg-end">
+                                    <li><button class="dropdown-item" onclick="selectedType('Hour')" type="button">Per Hour</button></li>
+                                    <li><button class="dropdown-item" onclick="selectedType('Day')" type="button">Per Day</button></li>
+                                    <li><button class="dropdown-item" onclick="selectedType('Week')" type="button">Per Week</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="time" asp-for="STARTTIME" class="form-control formatslabel" id="timestart">
+                            <label for="timestart">Start Time</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="time" asp-for="ENDTIME" class="form-control formatslabel" id="timestart">
+                            <label for="timestart">End Time</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <div class="form-group text-center btn-container">
+                            <button type="button" class="btn btn-success btn-lg" style="width: 25%" onclick="nextPage('next')" id="nextbtn">Next</button>
+                            <button type="submit" class="btn btn-danger btn-lg" style="width: 25%" id="cancelBtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hide" id="step2">
+                <div class="row text-center">
+                    <div class="col">
+                        <label class="listingheader">Step 2: Establishment Verification</label>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <label class="formatslabel">Your Information Used For Verification Is Private</label>
+                    </div>
+                </div>
+                <div class="row centerelement pt-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/*" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="form-group text-center btn-container">
+                            <button type="submit" class="btn btn-success btn-lg" style="width: 25%" id="nextbtn">List</button>
+                            <button type="submit" class="btn btn-danger btn-lg" style="width: 25%" id="backbtn" onclick="nextPage('back')">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
     </div>
 </div>
 
@@ -159,6 +185,7 @@
             $("input[name='ESTABPRICE']").val('');
             $("input[name='STARTTIME']").val('');
             $("input[name='ENDTIME']").val('');
+            $("#accomddbtn").val('Type');
             // Reset the image placeholder
             $("#imgPreview").attr('src', '');
             $('#imagePlaceholder').css('background-color', 'white');
@@ -174,7 +201,6 @@
             // Prevent the form from submitting
             return false;
         });
-
     });
 
     // Function to handle image preview

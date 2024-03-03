@@ -44,7 +44,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="pt-1">
+							<div class="pt-1 pb-2">
 								<svg width="2" height="35" viewBox="0 0 2 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<line x1="1" y1="35" x2="1" stroke="#BCBABA" stroke-width="2" />
 								</svg>
@@ -68,31 +68,23 @@
 						<div class="filterbanner">
 							<div class="row" id="filteroptions">
 								<div class="col pt-1">
-									<label class="filterlabels pt-4 ps-5 pe-5">Sort By</label>
+									<label class="filterlabels pt-4 ps-5 pe-5">Sort</label>
 								</div>
 								<div class="col text-start">
-									<div class="btn-group mx-auto pt-3">
-										<button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+									<div class="btn-group mx-auto pt-3" style="width: 100%">
+										<button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 											Accomodation
 										</button>
 										<ul class="dropdown-menu dropdown-menu-lg-end">
-											<li><button class="dropdown-item" type="button">Open Space</button></li>
-											<li><button class="dropdown-item" type="button">Private Space</button></li>
-											<li><button class="dropdown-item" type="button">Meeting Space</button></li>
+											<li><button class="dropdown-item" onclick="selectedType('All')" type="button">All</button></li>
+											<li><button class="dropdown-item" onclick="selectedType('Open Space')" type="button">Open Space</button></li>
+											<li><button class="dropdown-item" onclick="selectedType('Private Space')" type="button">Private Space</button></li>
+											<li><button class="dropdown-item" onclick="selectedType('Meeting Space')" type="button">Meeting Space</button></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col text-start">
-									<div class="btn-group mx-auto pt-3">
-										<button type="button" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-											Price
-										</button>
-										<ul class="dropdown-menu dropdown-menu-lg-end">
-											<li><button class="dropdown-item" type="button">P200 - P400</button></li>
-											<li><button class="dropdown-item" type="button">P400 - P800</button></li>
-											<li><button class="dropdown-item" type="button">P800 To Max</button></li>
-										</ul>
-									</div>
+									<input type="text" id="acctbox" hidden />
 								</div>
 							</div>
 						</div>
@@ -100,42 +92,45 @@
 							<div class="cardslayout">
 								@foreach (var listings in Model)
 								{
-									<div class="spacecards text-start">
-										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
-											<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
-											<div class="p-3">
-												<div class="row">
-													<div class="col">
-														<label class="coverLabel">@listings.ESTABNAME</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABDESC</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABADD</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
+											<div class="spacecards text-start">
+												<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
+													<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
+													<div class="p-3">
+														<div class="row">
+															<div class="col">
+																<label class="coverLabel">@listings.ESTABNAME</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABDESC</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABADD</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
 														@Html.DisplayFor(modelItem => listings.STARTTIME)
-													</div>
-													<div class="col">
+															</div>
+															<div class="col">
 														@Html.DisplayFor(modelItem => listings.ENDTIME)
+															</div>
+														</div>
 													</div>
-												</div>
+												</a>
 											</div>
-										</a>
-									</div>
 								}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="footer pt-5">
+			<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
 		</div>
 	</div>
 </div>
@@ -145,3 +140,39 @@
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 </script>
+
+@if (TempData.ContainsKey("UserNull"))
+{
+	<script>
+		var errorMessage = '@TempData["UserNull"]';
+		Swal.fire({
+			icon: 'error',
+			title: 'Error',
+			text: errorMessage,
+		});
+	</script>
+}
+
+@if (TempData.ContainsKey("PasswordIncorrect"))
+{
+	<script>
+		var errorMessage = '@TempData["PasswordIncorrect"]';
+		Swal.fire({
+			icon: 'error',
+			title: 'Error',
+			text: errorMessage,
+		});
+	</script>
+}
+
+@if (TempData.ContainsKey("SuccessMessage"))
+{
+	<script>
+		var successMessage = '@TempData["SuccessMessage"]';
+		Swal.fire({
+			icon: 'success',
+			title: 'Success',
+			text: successMessage,
+		});
+	</script>
+}

@@ -147,6 +147,13 @@ footer {
     height: 420px;
 }
 
+.footer {
+    height: 60px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+}
+
 .img-size {
     width: auto;
     max-width: 425px;
@@ -191,6 +198,7 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.33);
     width: 300px;
     height: 325px;
+    z-index: -1;
 }
 
 .offer-num {
@@ -654,8 +662,7 @@ footer {
 .detailcover {
     width: 100%;
     height: 45vh;
-    background: no-repeat center center;
-    background-size: contain;
+    background: no-repeat center center fixed;
     object-fit: cover;
 }
 
@@ -978,9 +985,19 @@ footer {
 /*Listing Page*/
 .listinglayer {
     position: relative;
-    min-height: 100vh;
+    min-height: 110vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
+}
+
+.listingform {
+    width: 100%;
+    height: 95vh;
+    background-color: rgb(239, 239, 239, 1);
+    box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
+    overflow: hidden;
 }
 
 .listingmain {
@@ -1012,6 +1029,32 @@ footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
+}
+
+.centerelement {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.show {
+    opacity: 100%;
+    user-select: none;
+    pointer-events: all;
+}
+
+.hide {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.transform-step2 {
+    transform: translate(0, -250%);
+}
+
+.transform-step1 {
+    transform: translate(0, 250%);
 }
 
 @media all and (min-width: 800px) {
