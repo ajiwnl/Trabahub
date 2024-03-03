@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bPCU9ZIOUKTAg7afGlNv3O0fVRt9viBsfeAhUEpzWVE=",
+  "Hash": "AWHf/D2lrwdkoAIXgkJUSmsPsFyKoImHPfBHgAa7QzE=",
   "Source": "Trabahub",
   "BasePath": "_content/Trabahub",
   "Mode": "Default",
@@ -153,6 +153,40 @@
       "OriginalItemSpec": "wwwroot\\img\\Drippy Lab.jpg"
     },
     {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\dsfsdfsf.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/dsfsdfsf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dsfsdfsf.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\fgdfgdfgdf.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/fgdfgdfgdf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fgdfgdfgdf.png"
+    },
+    {
       "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Flandre Project.jpg",
       "SourceId": "Trabahub",
       "SourceType": "Discovered",
@@ -202,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Image Sample 3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\jkl,jkljljljghjghj.jpg",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/jkl,jkljljljghjghj.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\jkl,jkljljljghjghj.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Workspace.png",
@@ -355,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Workplace Cafe.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\yjghjghjhgj.png",
+      "SourceId": "Trabahub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\",
+      "BasePath": "_content/Trabahub",
+      "RelativePath": "img/yjghjghjhgj.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\yjghjghjhgj.png"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",

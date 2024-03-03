@@ -65,8 +65,20 @@
       "PackagePath": "staticwebassets\\img\\Workplace Cafe.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\dsfsdfsf.png",
+      "PackagePath": "staticwebassets\\img\\dsfsdfsf.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\fgdfgdfgdf.png",
+      "PackagePath": "staticwebassets\\img\\fgdfgdfgdf.png"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\hgjghj.jpg",
       "PackagePath": "staticwebassets\\img\\hgjghj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\jkl,jkljljljghjghj.jpg",
+      "PackagePath": "staticwebassets\\img\\jkl,jkljljljghjghj.jpg"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
@@ -75,6 +87,10 @@
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\testr.jpg",
       "PackagePath": "staticwebassets\\img\\testr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\yjghjghjhgj.png",
+      "PackagePath": "staticwebassets\\img\\yjghjghjhgj.png"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
