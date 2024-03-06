@@ -34,30 +34,25 @@
 
     /* Set the dimensions of the image preview to a circle with a diameter of 2 inches */
     #imgPreview {
+        background: url(../res/profile-user.png) no-repeat center center;
         width: 2in;
         height: 2in;
-        border-radius: 50%;
-        object-fit: cover;
     }
 
     /* Style for the image placeholder to make it circular */
     #imagePlaceholder {
-        background: url(../res/profile.png) no-repeat center center;
         width: 2in;
         height: 2in;
-        background-color: white;
-        border-radius: 50%; /* Makes the placeholder circular */
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
 </style>
 
 
 
-<div class="listinglayer ps-5 pt-4 pt-4" id="listinglayer">
-    <div class="container listingform p-5">
+<div class="listinglayer ps-5 pt-3" id="listinglayer">
+    <div class="container listingform pt-5 pe-5 pb-3 ps-5">
         <form method="post" asp-action="Add" asp-controller="Listing" id="listingform" enctype="multipart/form-data">
             <section class="show" id="step1">
                 <div class="row text-center">
@@ -67,9 +62,7 @@
                 </div>
 
                 <div class="centerelement pt-3">
-                    <div id="imagePlaceholder">
-                        <img id="imgPreview">
-                    </div>
+                    <img id="imgPreview"/>
                 </div>
                 <div class="row centerelement pt-3">
                     <div class="col">
