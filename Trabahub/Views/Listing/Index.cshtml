@@ -57,6 +57,34 @@
 									</div>
 								</div>
 							</div>
+							<div class="pt-4 text-start border-bottom border-2 border-secondary">
+								<label class="filterlabels">Ratings</label>
+							</div>
+							<span class="rating_stars rating_0">
+								<span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+								<span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+								<span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+								<span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+								<span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+
+								<span class='r r0_5' data-rating='1' data-value='0.5'></span>
+								<span class='r r1' data-rating='1' data-value='1'></span>
+								<span class='r r1_5' data-rating='15' data-value='1.5'></span>
+								<span class='r r2' data-rating='2' data-value='2'></span>
+								<span class='r r2_5' data-rating='25' data-value='2.5'></span>
+								<span class='r r3' data-rating='3' data-value='3'></span>
+								<span class='r r3_5' data-rating='35' data-value='3.5'></span>
+								<span class='r r4' data-rating='4' data-value='4'></span>
+								<span class='r r4_5' data-rating='45' data-value='4.5'></span>
+								<span class='r r5' data-rating='5' data-value='5'></span>
+							</span>
+							<div class="values mt-2">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" name="rating" id="rating_val" value="0" />
+									<label for="rating_val">Rating Value</label>
+
+								</div>
+							</div>
 							<div class="pt-5">
 								<a href="#" class="sapplybtn text-white border-0 text-decoration-none rounded-1">APPLY</a>
 							</div>
@@ -70,8 +98,14 @@
 								<div class="col pt-1">
 									<label class="filterlabels pt-4 ps-5 pe-5">Sort</label>
 								</div>
+								<div class="col mt-3">
+									<div class="form-floating">
+									<input type="text" class="form-control" name="rating" id="searchSpaces" name="searchSpaces" value="Co-Working Spaces" />
+									<label for="rating_val">Search</label>
+								</div>
+								</div>
 								<div class="col text-start">
-									<div class="btn-group mx-auto pt-3" style="width: 100%">
+									<div class="btn-group mx-auto pt-3" style="width: 100%; height: 100%">
 										<button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 											Accomodation
 										</button>
@@ -92,36 +126,43 @@
 							<div class="cardslayout">
 								@foreach (var listings in Model)
 								{
-											<div class="spacecards text-start">
-												<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
-													<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
-													<div class="p-3">
-														<div class="row">
-															<div class="col">
-																<label class="coverLabel">@listings.ESTABNAME</label>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col">
-																<label class="coverbody">@listings.ESTABDESC</label>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col">
-																<label class="coverbody">@listings.ESTABADD</label>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col">
-														@Html.DisplayFor(modelItem => listings.STARTTIME)
-															</div>
-															<div class="col">
-														@Html.DisplayFor(modelItem => listings.ENDTIME)
-															</div>
-														</div>
+									<div class="spacecards text-start">
+										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
+											<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
+											<div class="p-3">
+												<div class="row">
+													<div class="col">
+														<label class="filterlabels">@listings.ESTABNAME</label>
 													</div>
-												</a>
+												</div>
+												<div class="stars mb-2">
+													<img src="~/res/starblank.png" width="20" height="20" />
+													<img src="~/res/starblank.png" width="20" height="20" />
+													<img src="~/res/starblank.png" width="20" height="20" />
+													<img src="~/res/starblank.png" width="20" height="20" />
+													<img src="~/res/starblank.png" width="20" height="20" />
+												</div>
+												<div class="row">
+													<div class="col">
+														<label class="coverbody">@listings.ESTABDESC</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<label class="coverbody">@listings.ESTABADD</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														@Html.DisplayFor(modelItem => listings.STARTTIME)
+													</div>
+													<div class="col">
+														@Html.DisplayFor(modelItem => listings.ENDTIME)
+													</div>
+												</div>
 											</div>
+										</a>
+									</div>
 								}
 							</div>
 						</div>

@@ -907,6 +907,7 @@ footer {
 
 .registerbody {
     /* From https://css.glass */
+    height: 80vh;
     background-color: rgba(28, 27, 27, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -992,7 +993,7 @@ footer {
 
 .listingform {
     width: 100%;
-    height: 95vh;
+    height: 105vh;
     background-color: rgb(239, 239, 239, 1);
     box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
     -webkit-box-shadow: -6px 10px 38px 1px rgba(0,0,0,0.75);
@@ -1089,7 +1090,105 @@ footer {
 
 }
 
+/*Utilities*/
+.grid-center {
+    display: grid;
+    place-items: center;
+}
+
+.star-size {
+    width: 50%;
+    height: 50%;
+}
+
+/*For Stars*/
+.rating_stars {
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 200;
+    color: #918f8f;
+    position: relative;
+}
+
+    .rating_stars span .fa, .rating_stars span.active-low .fa-star-o, .rating_stars span.active-high .fa-star-o {
+        display: none;
+    }
+
+    .rating_stars span .fa-star-o {
+        display: inline-block;
+    }
+
+    .rating_stars span.s.active-high .fa-star {
+        display: inline-block;
+        color: #feb645;
+    }
+
+    .rating_stars span.s.active-low .fa-star-half-o {
+        display: inline-block;
+        color: #feb645;
+    }
+
+    .rating_stars span.r {
+        position: absolute;
+        top: 0;
+        height: 20px;
+        width: 10px;
+        left: 0;
+    }
+
+        .rating_stars span.r.r0_5 {
+            left: 0px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r1 {
+            left: 10px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r1_5 {
+            left: 30px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r2 {
+            left: 40px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r2_5 {
+            left: 57px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r3 {
+            left: 68px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r3_5 {
+            left: 84px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r4 {
+            left: 94px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r4_5 {
+            left: 112px;
+            width: 11px;
+        }
+
+        .rating_stars span.r.r5 {
+            left: 122px;
+            width: 11px;
+        }
+
 /*Debug Tool*/
-.debuggingwrappers {
+.debug {
     border: 2px solid red;
 }
+
