@@ -19,5 +19,9 @@ namespace Trabahub.Models
         [StringLength(255)]
         public string? Password { get; set; }
 
-    }
+
+		[StringLength(255)]
+		public string? VerificationCode { get; set; }
+
+	}
 }
