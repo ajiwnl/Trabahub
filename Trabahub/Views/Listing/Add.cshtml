@@ -42,6 +42,7 @@
 
     /* Style for the image placeholder to make it circular */
     #imagePlaceholder {
+        background: url(../res/profile.png) no-repeat center center;
         width: 2in;
         height: 2in;
         background-color: white;
@@ -55,7 +56,7 @@
 
 
 
-<div class="listinglayer ps-5 pt-5 pt-4" id="listinglayer">
+<div class="listinglayer ps-5 pt-4 pt-4" id="listinglayer">
     <div class="container listingform p-5">
         <form method="post" asp-action="Add" asp-controller="Listing" id="listingform" enctype="multipart/form-data">
             <section class="show" id="step1">
@@ -67,7 +68,7 @@
 
                 <div class="centerelement pt-3">
                     <div id="imagePlaceholder">
-                        <img id="imgPreview" src="">
+                        <img id="imgPreview">
                     </div>
                 </div>
                 <div class="row centerelement pt-3">
