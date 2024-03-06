@@ -25,6 +25,11 @@ namespace Trabahub.Controllers
             return View();
         }
 
+        public IActionResult RedirectPage() { 
+        
+            return View();
+        }
+
         [HttpPost]
         [ActionName("Login")]
         public IActionResult Login(string emaillog, string passwordlog)
@@ -142,5 +147,7 @@ namespace Trabahub.Controllers
             bool emailExists = _context.Credentials.Any(s => s.Email == email);
             return Json(new { exists = emailExists });
         }
+
+
     }
 }
