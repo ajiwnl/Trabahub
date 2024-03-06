@@ -83,6 +83,8 @@ namespace Trabahub.Controllers
             var existingEmail = _context.Credentials.FirstOrDefault(x => x.Email == addCredentialEntry.Email);
             var existingUser =  _context.Credentials.FirstOrDefault(x => x.Username == addCredentialEntry.Username);
 
+            
+
             if (existingEmail != null)
             {
                 TempData["EmailExists"] = "Email Already Exists";
