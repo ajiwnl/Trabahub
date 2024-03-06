@@ -1,383 +1,391 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Trabahub.bundle.scp.css",
       "PackagePath": "staticwebassets\\Trabahub.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\calendar.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\calendar.css",
       "PackagePath": "staticwebassets\\css\\calendar.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\54645646.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\54645646.jpg",
       "PackagePath": "staticwebassets\\img\\54645646.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Background.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Background.jpg",
       "PackagePath": "staticwebassets\\img\\Background.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Drippy Lab.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Drippy Lab.jpg",
       "PackagePath": "staticwebassets\\img\\Drippy Lab.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Flandre Project.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Flandre Project.jpg",
       "PackagePath": "staticwebassets\\img\\Flandre Project.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Image Sample 3.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Image Sample 3.jpg",
       "PackagePath": "staticwebassets\\img\\Image Sample 3.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\NOMADS HUB.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\NOMADS HUB.jpg",
       "PackagePath": "staticwebassets\\img\\NOMADS HUB.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Workspace.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Workspace.png",
       "PackagePath": "staticwebassets\\img\\New Workspace.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\News Workspace.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\New Worksspaceeeeee.png",
+      "PackagePath": "staticwebassets\\img\\New Worksspaceeeeee.png"
+    },
+    {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\News Workspace.jpg",
       "PackagePath": "staticwebassets\\img\\News Workspace.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
       "PackagePath": "staticwebassets\\img\\TEST TEST.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\The Hive.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\The Hive.jpg",
       "PackagePath": "staticwebassets\\img\\The Hive.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
       "PackagePath": "staticwebassets\\img\\Work Test.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Workplace Cafe.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Workplace Cafe.jpg",
       "PackagePath": "staticwebassets\\img\\Workplace Cafe.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\dsfsdfsf.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\dsfsdfsf.png",
       "PackagePath": "staticwebassets\\img\\dsfsdfsf.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\fgdfgdfgdf.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\fgdfgdfgdf.png",
       "PackagePath": "staticwebassets\\img\\fgdfgdfgdf.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\hgjghj.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\hgjghj.jpg",
       "PackagePath": "staticwebassets\\img\\hgjghj.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\jkl,jkljljljghjghj.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\jkl,jkljljljghjghj.jpg",
       "PackagePath": "staticwebassets\\img\\jkl,jkljljljghjghj.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
       "PackagePath": "staticwebassets\\img\\sdfgsdfs.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\testr.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\testr.jpg",
       "PackagePath": "staticwebassets\\img\\testr.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\yjghjghjhgj.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\wdasdasdasd.jpg",
+      "PackagePath": "staticwebassets\\img\\wdasdasdasd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\yjghjghjhgj.png",
       "PackagePath": "staticwebassets\\img\\yjghjghjhgj.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
       "PackagePath": "staticwebassets\\js\\calendar.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\AboutImage.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\AboutImage.jpg",
       "PackagePath": "staticwebassets\\res\\AboutImage.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Background.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Background.jpg",
       "PackagePath": "staticwebassets\\res\\Background.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Calendar.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Calendar.png",
       "PackagePath": "staticwebassets\\res\\Calendar.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Hive.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Hive.jpg",
       "PackagePath": "staticwebassets\\res\\Hive.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LargeLogo.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LargeLogo.png",
       "PackagePath": "staticwebassets\\res\\LargeLogo.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoOne.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoOne.png",
       "PackagePath": "staticwebassets\\res\\LogoOne.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoTwo.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\LogoTwo.png",
       "PackagePath": "staticwebassets\\res\\LogoTwo.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Map.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Map.png",
       "PackagePath": "staticwebassets\\res\\Map.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\MapList.png",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\MapList.png",
       "PackagePath": "staticwebassets\\res\\MapList.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Nomads Hub.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Nomads Hub.jpg",
       "PackagePath": "staticwebassets\\res\\Nomads Hub.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\People.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\People.jpg",
       "PackagePath": "staticwebassets\\res\\People.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Twopersons.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Twopersons.jpg",
       "PackagePath": "staticwebassets\\res\\Twopersons.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Workplace Cafe.jpg",
+      "Id": "C:\\Users\\alvin\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Workplace Cafe.jpg",
       "PackagePath": "staticwebassets\\res\\Workplace Cafe.jpg"
     },
     {
