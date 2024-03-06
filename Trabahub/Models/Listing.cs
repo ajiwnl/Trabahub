@@ -31,11 +31,18 @@ namespace Trabahub.Models
         public DateTime ENDTIME { get; set; }
 
 
-        //<---For Photo--->
+        //<---For Photo Verification--->
         [StringLength(255)]
         public string? ESTABIMAGEPATH { get; set; }
 
         [NotMapped]
         public IFormFile? ESTABIMG { get; set; }
+
+        //<---For Photo Verificaiton--->
+        [StringLength(255)]
+        public string? VERIMAGEPATH { get; set; }
+
+        [NotMapped]
+        public IFormFile? VERIMG { get; set; }
     }
 }

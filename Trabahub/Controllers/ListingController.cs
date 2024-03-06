@@ -110,6 +110,27 @@ namespace Trabahub.Controllers
             return fileName;
         }
 
+        private string UploadFile2(Listing addListing)
+        {
+            string fileName2 = null;
+            if (addListing.ESTABIMG != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+
+
+                // Combine the elements to create the file name
+                fileName2 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.ESTABIMG.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "img");
+                string filePath = Path.Combine(uploadDir, fileName2);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.ESTABIMG.CopyTo(fileStream);
+                }
+            }
+            return fileName2;
+        }
+
         private string FieldValidation(Listing listing)
         {
             List<string> missingFields = new List<string>();
