@@ -25,6 +25,11 @@ namespace Trabahub.Controllers
             return View();
         }
 
+        public IActionResult RedirectPage() { 
+        
+            return View();
+        }
+
         [HttpPost]
         [ActionName("Login")]
         public IActionResult Login(string emaillog, string passwordlog)
