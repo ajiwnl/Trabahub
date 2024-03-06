@@ -12,7 +12,7 @@ namespace Trabahub.Data
 
         public DbSet<Listing> Listing { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Credentials>()
             .Property(c => c.Email)
