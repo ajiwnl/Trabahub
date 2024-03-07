@@ -30,6 +30,9 @@ namespace Trabahub.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime ENDTIME { get; set; }
 
+        [Required]
+        public double ESTABRATING { get; set; }
+
 
         //<---For Photo Verification--->
         [StringLength(255)]

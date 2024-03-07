@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Trabahub.Data;
 using Trabahub.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Trabahub.Controllers
 {
@@ -22,7 +24,22 @@ namespace Trabahub.Controllers
 
         }
 
-        [HttpGet]
+		[HttpGet]
+		public IActionResult Index(string searchSpaces)
+		{
+			var spaces = from x in _context.Listing
+						 select x;
+
+			if (!string.IsNullOrEmpty(searchSpaces))
+			{
+				spaces = spaces.Where(x => EF.Functions.Like(x.ESTABNAME, $"%{searchSpaces}%"));
+			}
+
+			return View(spaces.ToList());
+		}
+
+
+		[HttpGet]
         public IActionResult Add()
         {
             return View();
@@ -83,7 +100,8 @@ namespace Trabahub.Controllers
                 STARTTIME = addListing.STARTTIME,
                 ENDTIME = addListing.ENDTIME,
                 ESTABIMAGEPATH = imgPath,
-            };
+                ESTABRATING = 1.5,
+			};
 
             _context.Listing.Add(listing);
             _context.SaveChanges();
