@@ -34,24 +34,28 @@
 
     /* Set the dimensions of the image preview to a circle with a diameter of 2 inches */
     #imgPreview {
-        background: url(../res/profile-user.png) no-repeat center center;
         width: 2in;
+        border-radius: 50%;
         height: 2in;
+        object-fit: cover;
     }
 
     /* Style for the image placeholder to make it circular */
     #imagePlaceholder {
+        background: url(../res/profile-user.png) no-repeat center center;
         width: 2in;
         height: 2in;
         display: flex;
+        border-radius: 50%;
         justify-content: center;
         align-items: center;
+        object-fit: cover;
     }
 </style>
 
 
 
-<div class="listinglayer ps-5 pt-3" id="listinglayer">
+<div class="listinglayer ps-5 pt-5" id="listinglayer">
     <div class="container listingform pt-5 pe-5 pb-3 ps-5">
         <form method="post" asp-action="Add" asp-controller="Listing" id="listingform" enctype="multipart/form-data">
             <section class="show" id="step1">
@@ -62,7 +66,9 @@
                 </div>
 
                 <div class="centerelement pt-3">
-                    <img id="imgPreview"/>
+                    <div src="#" id="imagePlaceholder">
+                        <img src="#" id="imgPreview" />
+                    </div>
                 </div>
                 <div class="row centerelement pt-3">
                     <div class="col">
@@ -80,7 +86,7 @@
                     </div>
                     <div class="col-6">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="estabDesc" asp-for="ESTABDESC">
+                            <input type="text" class="form-control" id="estabDesc" asp-for="ESTABDESC" maxlength="30">
                             <label for="estabDesc">Establishment Description</label>
                         </div>
                     </div>
@@ -88,7 +94,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="estabAdd" asp-for="ESTABADD">
+                            <input type="text" class="form-control" id="estabAdd" asp-for="ESTABADD" maxlength="40">
                             <label for="estabAdd">Establishmnt Address</label>
                         </div>
                     </div>

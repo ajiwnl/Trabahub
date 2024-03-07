@@ -1,4 +1,9 @@
 ﻿@model Listing
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <div class="detailslayer container">
 	<div class="wrapper pt-5 mt-3">
 		@*PRICE DESCRIPTION ADDRESS*@
@@ -39,6 +44,49 @@
 						<div class="row">
 							<div class="col text-start ">
 								<input asp-for="ESTABADD" class="detailsbody border-0" style="background-color: #D9D9D9" disabled />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="detailsidetwo pt-4">
+					<div class="container ms-5">
+						<div class="row">
+							<div class="col ms-5 text-start">
+								<label class="dbarheader" id="starrating">Ratings:</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col text-start ms-5">
+								<input asp-for="ESTABRATING" class="detailsbody border-0" style="display:none" disabled />
+								<div class="stars mb-2" id="starlistings">
+									<script>
+										// JavaScript function to generate stars based on rating
+										function generateStars(rating, containerId) {
+											var starsHtml = '';
+											var fullStars = Math.floor(rating);
+											var halfStar = rating % 1 !== 0;
+
+											for (var i = 1; i <= 5; i++) {
+												if (i <= fullStars) {
+													starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
+												} else if (halfStar) {
+													starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
+													halfStar = false;
+												} else {
+													starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
+												}
+											}
+											document.getElementById(containerId).innerHTML = starsHtml;
+										}
+
+										// Call the function on document ready
+										$(document).ready(function () {
+											var rating = parseFloat($('[name="ESTABRATING"]').val());
+											var containerId = "starlistings";
+											generateStars(rating, containerId);
+										});
+									</script>
+								</div>
 							</div>
 						</div>
 					</div>
