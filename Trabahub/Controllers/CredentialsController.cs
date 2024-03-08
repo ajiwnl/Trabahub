@@ -85,45 +85,49 @@ namespace Trabahub.Controllers
 		[HttpPost]
 		public IActionResult Register(Credentials addCredentialEntry)
 		{
-			var existingEmail = _context.Credentials.FirstOrDefault(x => x.Email == addCredentialEntry.Email);
-			var existingUser = _context.Credentials.FirstOrDefault(x => x.Username == addCredentialEntry.Username);
+			// Check if model state is valid
+			if (!ModelState.IsValid)
+			{
+				// If model state is invalid, return the registration view with validation errors
+				return View("Register", addCredentialEntry);
+			}
 
+			// Check if email already exists
+			var existingEmail = _context.Credentials.FirstOrDefault(x => x.Email == addCredentialEntry.Email);
 			if (existingEmail != null)
 			{
 				TempData["EmailExists"] = "Email Already Exists";
-				return View("Register");
+				return RedirectToAction("Register");
 			}
 
+			// Check if username already exists
+			var existingUser = _context.Credentials.FirstOrDefault(x => x.Username == addCredentialEntry.Username);
 			if (existingUser != null)
 			{
 				TempData["UserExists"] = "Username Already Exists";
-				return View("Register");
+				return RedirectToAction("Register");
 			}
 
 			try
 			{
-				// Generate verification code
-				string verificationCode = GenerateVerificationCode();
+				// Save the entered credentials to the database
+				SaveEntry(addCredentialEntry);
 
-				// Send verification email
-				SendEmailWithVerificationCode(addCredentialEntry.Email, verificationCode);
-
-				// Save the verification code to TempData
-				TempData["VerificationCode"] = verificationCode;
-
-				// Save the entered credentials to TempData
-				TempData["Credentials"] = addCredentialEntry;
-
-				TempData["SuccessMessage"] = "Verification email sent. Check your email for the verification code.";
+				TempData["SuccessMessage"] = "Registration Successful! You may know Login to your account.";
 			}
 			catch (Exception ex)
 			{
 				TempData["ErrorMessage"] = "Failed to send verification email. Please try again later.";
-				// Handle exception
+				// Handle exception (log error, etc.)
+				return RedirectToAction("Register");
+				return RedirectToAction("Register");
 			}
 
-			return View("Login");
+			// Redirect to a success page or perform any other desired action
+			return RedirectToAction("Login");
 		}
+
+
 
 		// Modified method to send verification email with a different name to avoid conflicts
 		private void SendEmailWithVerificationCode(string email, string verificationCode)
@@ -176,14 +180,14 @@ namespace Trabahub.Controllers
 				// Save the user to the database
 				SaveEntry(credentials);
 
-				TempData["SuccessMessage"] = "Successfully Registered!";
+				Console.WriteLine($"Verification code: {verificationCode}");
 			}
 			else
 			{
-				TempData["ErrorMessage"] = "Verification code is incorrect. Please try again.";
+				Console.WriteLine("Verification code is incorrect. Please try again.");
 			}
 
-			return RedirectToAction("Login");
+			return View();
 		}
 
 
@@ -228,9 +232,12 @@ namespace Trabahub.Controllers
 		// Method to generate a random verification code
 		private string GenerateVerificationCode()
 		{
+			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 			Random random = new Random();
-			return random.Next(100000, 999999).ToString();
+			return new string(Enumerable.Repeat(chars, 6)
+				.Select(s => s[random.Next(s.Length)]).ToArray());
 		}
+
 
 
 		[HttpPost]
