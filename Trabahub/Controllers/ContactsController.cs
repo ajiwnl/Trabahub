@@ -25,15 +25,16 @@ namespace Trabahub.Controllers
                 if (ModelState.IsValid)
                 {
                     var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Customer Feedback");
-                    var receiverEmail = new MailAddress("alvinjohnaranetz@gmail.com", "Receiver");
+                    var receiverEmail = new MailAddress("trabahubco@gmail.com", "Receiver");
                     var password = "weaz drul elrl bngg";
 
                     // Format the subject using the provided inputs
-                    var subject = $"Customer Feedback Contact: {name}_{email}-[{contact}]";
+                    var subject = $"Customer Feedback for Trabahub";
 
-                    var body = message;
+					var body = $"Name: {name}\nEmail: {email}\nContact Number: {contact}\n\nMessage: {message}";
 
-                    var smtp = new SmtpClient
+
+					var smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
                         Port = 587,
