@@ -243,4 +243,5 @@ jQuery(document).ready(function ($) {
             else if (rating == low) $(this).addClass('active-low');
         });
     }
+
 });
