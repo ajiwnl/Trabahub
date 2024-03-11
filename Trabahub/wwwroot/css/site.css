@@ -373,7 +373,7 @@ footer {
     flex-direction: row;
     flex-flow: wrap;
     gap: 30px;
-    justify-content: flex-start;
+    justify-content: start;
     height: 95vh;
     width: 100%;
 }
@@ -814,8 +814,12 @@ footer {
     height: 500px;
 }
 
-.logincontainer{
-    padding: 50px 75px 100px 75px;
+.registercontainer {
+    padding: 20px 75px 100px 75px;
+}
+
+.logincontainer {
+    padding: 75px 75px 100px 75px;
 }
 
 .loginlogo {
@@ -907,7 +911,7 @@ footer {
 
 .registerbody {
     /* From https://css.glass */
-    height: 90vh;
+    height: 93vh;
     background-color: rgba(28, 27, 27, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1088,6 +1092,9 @@ footer {
         transform: translate(-100%, 0%)
     }
 
+    .cardslayout {
+        padding-left: 16%;
+    }
 }
 
 /*Utilities*/
