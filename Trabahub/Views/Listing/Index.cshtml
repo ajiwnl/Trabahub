@@ -139,7 +139,6 @@
 												</div>
 												<div class="stars mb-2" id="starlistings_@listings.ESTABNAME">
 													<script>
-														// JavaScript function to generate stars based on rating
 														function generateStars(rating, containerId) {
 															var starsHtml = '';
 															var fullStars = Math.floor(rating);
@@ -157,7 +156,6 @@
 															}
 															document.getElementById(containerId).innerHTML = starsHtml;
 														}
-														// Call the function on document ready
 														$(document).ready(function () {
 															var rating = parseFloat("@listings.ESTABRATING");
 															var containerId = "starlistings_@listings.ESTABNAME";
@@ -193,9 +191,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer pt-5">
-			<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
-		</div>
+		@if(ViewBag.UserType == "Owner")
+		{
+			<div class="footer pt-5">
+				<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
+			</div>
+		}
+		else if (ViewBag.UserType == "Client")
+		{
+			//Do Not Display Anything
+		}
 	</div>
 </div>
 

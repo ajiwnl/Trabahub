@@ -815,7 +815,7 @@ footer {
 }
 
 .registercontainer {
-    padding: 20px 75px 100px 75px;
+    padding: 40px 75px 100px 75px;
 }
 
 .logincontainer {
@@ -911,7 +911,7 @@ footer {
 
 .registerbody {
     /* From https://css.glass */
-    height: 93vh;
+    height: 110vh;
     background-color: rgba(28, 27, 27, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
