@@ -71,19 +71,19 @@ namespace Trabahub.Controllers
 			string userType = existingEmail.UserType.ToString(); // Assuming you have a property called UserType in your Credentials model
 
 			HttpContext.Session.SetString("Username", loggedUser);
-			HttpContext.Session.SetString("IsLoggedIn", "true");
+			HttpContext.Session.SetString("UserType", userType);
 
 			// Check user type and redirect accordingly
 			if (userType == "Owner")
 			{
 				TempData["SuccessMessage"] = "Welcome To Trabahub! " + loggedUser + " (Owner)";
-				return RedirectToAction("Index", "Listing"); // Redirect to the owner dashboard
+				return RedirectToAction("Index", "Home"); // Redirect to home
 			}
 			else if (userType == "Client")
 			{
 				TempData["SuccessMessage"] = "Welcome To Trabahub! " + loggedUser + " (Client)";
-				return RedirectToAction("Index", "Home"); // Redirect to the client dashboard
-			}
+				return RedirectToAction("Index", "Home"); // Redirect to home
+            }
 			else
 			{
 				// Handle unknown user type

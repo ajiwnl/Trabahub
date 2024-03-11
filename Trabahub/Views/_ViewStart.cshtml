@@ -5,5 +5,5 @@
 @{
     Layout = "_Layout";
     ViewBag.Username = Context.Session.GetString("Username");
-    ViewBag.IsLoggedIn = Context.Session.GetString("IsLoggedIn") == "true";
+    ViewBag.UserType = Context.Session.GetString("UserType");
 }
