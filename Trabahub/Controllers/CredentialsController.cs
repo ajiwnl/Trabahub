@@ -68,13 +68,30 @@ namespace Trabahub.Controllers
 			}
 
 			string loggedUser = existingEmail.Username.ToString();
+			string userType = existingEmail.UserType.ToString(); // Assuming you have a property called UserType in your Credentials model
 
 			HttpContext.Session.SetString("Username", loggedUser);
 			HttpContext.Session.SetString("IsLoggedIn", "true");
 
-			TempData["SuccessMessage"] = "Welcome To Trabahub!  " + loggedUser;
-			return RedirectToAction("Index", "Home");
+			// Check user type and redirect accordingly
+			if (userType == "Owner")
+			{
+				TempData["SuccessMessage"] = "Welcome To Trabahub! " + loggedUser + " (Owner)";
+				return RedirectToAction("Index", "Listing"); // Redirect to the owner dashboard
+			}
+			else if (userType == "Client")
+			{
+				TempData["SuccessMessage"] = "Welcome To Trabahub! " + loggedUser + " (Client)";
+				return RedirectToAction("Index", "Home"); // Redirect to the client dashboard
+			}
+			else
+			{
+				// Handle unknown user type
+				TempData["ErrorMessage"] = "Unknown User Type";
+				return RedirectToAction("Index", "Home"); // Redirect to the home page or any other appropriate action
+			}
 		}
+
 
 		public IActionResult Logout()
 		{
@@ -83,7 +100,7 @@ namespace Trabahub.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Register(Credentials addCredentialEntry)
+		public IActionResult Register(Credentials addCredentialEntry, string radBtnOptions)
 		{
 			// Check if model state is valid
 			if (!ModelState.IsValid)
@@ -111,6 +128,7 @@ namespace Trabahub.Controllers
 			try
 			{
 				// Save the entered credentials to the database
+				addCredentialEntry.UserType = radBtnOptions;
 				SaveEntry(addCredentialEntry);
 
 				TempData["SuccessMessage"] = "Registration Successful! You may know Login to your account.";
@@ -119,7 +137,6 @@ namespace Trabahub.Controllers
 			{
 				TempData["ErrorMessage"] = "Failed to send verification email. Please try again later.";
 				// Handle exception (log error, etc.)
-				return RedirectToAction("Register");
 				return RedirectToAction("Register");
 			}
 

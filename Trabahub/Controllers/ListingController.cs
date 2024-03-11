@@ -19,7 +19,7 @@ namespace Trabahub.Controllers
 
         public IActionResult Index()
         {
-            var listings = _context.Listing.ToList();
+			var listings = _context.Listing.ToList();
             return View(listings);
 
         }
