@@ -19,10 +19,17 @@ namespace Trabahub.Models
         [StringLength(50)]
         public string? ESTABADD { get; set; }
         
-        [Required]
-        public int? ESTABPRICE { get; set; }
+        public int? ESTABHRPRICE { get; set; }
 
-        [Required]
+        public int? ESTABDAYPRICE { get; set; }
+
+        public int? ESTABWKPRICE { get; set; }
+
+        public int? ESTABYRPRICE { get; set; }
+
+		public string OwnerUsername { get; set; }
+
+		[Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime STARTTIME { get; set; }
 

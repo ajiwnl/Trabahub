@@ -34,19 +34,19 @@
 
     /* Set the dimensions of the image preview to a circle with a diameter of 2 inches */
     #imgPreview {
-        width: 2in;
-        border-radius: 50%;
-        height: 2in;
+        width: 400px;
+        height: 250px;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     /* Style for the image placeholder to make it circular */
     #imagePlaceholder {
-        background: url(../res/profile-user.png) no-repeat center center;
-        width: 2in;
-        height: 2in;
+        background: url(../res/img-placeholder.png) no-repeat center center;
+        width: 400px;
+        height: 250px;
         display: flex;
-        border-radius: 50%;
+        border-radius: 10px;
         justify-content: center;
         align-items: center;
         object-fit: cover;
@@ -56,12 +56,12 @@
 
 
 <div class="listinglayer ps-5 pt-5" id="listinglayer">
-    <div class="container listingform pt-5 pe-5 pb-3 ps-5">
+    <div class="container listingform pt-5 pe-5 pb-3 ps-5" style="overflow-y: auto;">
         <form method="post" asp-action="Add" asp-controller="Listing" id="listingform" enctype="multipart/form-data">
             <section class="show" id="step1">
                 <div class="row text-center">
                     <div class="col">
-                        <label class="listingheader">Step 1: Establishment Information</label>
+                        <label class="listingheader">Step 1: Establishment Information<span style="color: red">*</span></label>
                     </div>
                 </div>
 
@@ -78,58 +78,69 @@
                     </div>
                 </div>
                 <div class="row pt-3">
-                    <div class="col-6">
+                    <div class="col">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="estabName" asp-for="ESTABNAME">
-                            <label for="estabName">Establishment Name</label>
+                            <label for="estabName">Establishment Name<span style="color: red">*</span></label>
                         </div>
                     </div>
-                    <div class="col-6">
+                </div>
+                <div class="row pt-3">
+                    <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="estabDesc" asp-for="ESTABDESC" maxlength="30">
-                            <label for="estabDesc">Establishment Description</label>
+                            <input type="text" style="height: 100px" class="form-control" id="estabDesc" asp-for="ESTABDESC" maxlength="30">
+                            <label for="estabDesc">Establishment Description<span style="color: red">*</span></label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="estabAdd" asp-for="ESTABADD" maxlength="40">
-                            <label for="estabAdd">Establishmnt Address</label>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="estabRate" asp-for="ESTABPRICE">
-                            <label for="estabRate">Price</label>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="form-floating mb-3">
-                            <div class="btn-group mx-auto" style="width: 100%; height: 100%;">
-                                <button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                    Type
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-lg-end">
-                                    <li><button class="dropdown-item" onclick="selectedType('Hour')" type="button">Per Hour</button></li>
-                                    <li><button class="dropdown-item" onclick="selectedType('Day')" type="button">Per Day</button></li>
-                                    <li><button class="dropdown-item" onclick="selectedType('Week')" type="button">Per Week</button></li>
-                                </ul>
-                            </div>
+                            <label for="estabAdd">Establishment Address<span style="color: red">*</span></label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="time" asp-for="STARTTIME" class="form-control formatslabel" id="timestart">
-                            <label for="timestart">Start Time</label>
+                            <input type="text" class="form-control" id="estabRate" asp-for="ESTABHRPRICE">
+                            <label for="estabRate">Hourly Price</label>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabDayRate" asp-for="ESTABDAYPRICE">
+                            <label for="estabDayRate">Day Pass Price</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabWeekRate" asp-for="ESTABWKPRICE">
+                            <label for="estabWeekRate">Weekly Pass Price</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="estabYearRate" asp-for="ESTABYRPRICE">
+                            <label for="estabYearRate">Yearly Pass Price</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="time" asp-for="STARTTIME" class="form-control formatslabel" id="timestart">
+                            <label for="timestart">Start Time<span style="color: red">*</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
                         <div class="form-floating">
-                            <input type="time" asp-for="ENDTIME" class="form-control formatslabel" id="timestart">
-                            <label for="timestart">End Time</label>
+                            <input type="time" asp-for="ENDTIME" class="form-control formatslabel" id="timeend">
+                            <label for="timeend">End Time<span style="color: red">*</span></label>
                         </div>
                     </div>
                 </div>
@@ -142,7 +153,7 @@
                     </div>
                 </div>
             </section>
-            <section class="hide" id="step2">
+            <section class="hide" id="step2" >
                 <div class="row text-center">
                     <div class="col">
                         <label class="listingheader">Step 2: Establishment Verification</label>
@@ -174,6 +185,7 @@
 </div>
 
 
+
 <script>
     $(document).ready(function () {
 
@@ -182,7 +194,10 @@
             $("input[name='ESTABNAME']").val('');
             $("input[name='ESTABDESC']").val('');
             $("input[name='ESTABADD']").val('');
-            $("input[name='ESTABPRICE']").val('');
+            $("input[name='ESTABHRPRICE']").val('');
+            $("input[name='ESTABDAYPRICE']").val('');
+            $("input[name='ESTABWKPRICE']").val('');
+            $("input[name='ESTABYRPRICE']").val('');
             $("input[name='STARTTIME']").val('');
             $("input[name='ENDTIME']").val('');
             $("#accomddbtn").val('Type');

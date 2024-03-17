@@ -17,18 +17,33 @@ namespace Trabahub.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-			var listings = _context.Listing.ToList();
-            return View(listings);
+		public IActionResult Index()
+		{
+			var userType = HttpContext.Session.GetString("UserType");
+			var username = HttpContext.Session.GetString("Username");
 
-        }
+			// Check if the user is an owner
+			if (userType == "Owner")
+			{
+				// Retrieve listings for the current owner
+				var ownerListings = _context.Listing.Where(l => l.OwnerUsername == username).ToList();
+				return View(ownerListings);
+			}
+			else
+			{
+				// For clients or other user types, show all listings
+				var listings = _context.Listing.ToList();
+				return View(listings);
+			}
+		}
 
 		[HttpGet]
 		public IActionResult Index(string searchSpaces)
 		{
 			var spaces = from x in _context.Listing
 						 select x;
+
+			var userType = HttpContext.Session.GetString("UserType");
 
 			if (!string.IsNullOrEmpty(searchSpaces))
 			{
@@ -49,7 +64,7 @@ namespace Trabahub.Controllers
         [ActionName("Add")]
         public IActionResult Add(Listing addListing)
         {
-            string errorMsg = FieldValidation(addListing);
+			string errorMsg = FieldValidation(addListing);
             if (!string.IsNullOrEmpty(errorMsg))
             {
                 // Contains the error message to TempData from the FieldValidation function,
@@ -66,9 +81,7 @@ namespace Trabahub.Controllers
                 // Return the view with the model validation errors
                 return View(addListing);
             }
-
-
-            SaveData(addListing);
+			SaveData(addListing);
             TempData["SuccessMessage"] = "Space Listed Successfully";
             return RedirectToAction("Index", "Listing");
         }
@@ -91,21 +104,62 @@ namespace Trabahub.Controllers
         {
             string imgPath = UploadFile(addListing);
 
-            var listing = new Listing()
+			// Retrieve the username of the currently logged-in owner
+			var ownerUsername = HttpContext.Session.GetString("Username");
+
+			Console.WriteLine($"Owner username from session: {ownerUsername}");
+
+			// Check if owner username is not null or empty
+			if (string.IsNullOrEmpty(ownerUsername))
+			{
+				Console.WriteLine("Owner username is null or empty.");
+				// Handle the case where the owner username is not set properly
+				// You may want to redirect the user to the login page or take appropriate action
+				return;
+			}
+
+			var listing = new Listing()
             {
                 ESTABNAME = addListing.ESTABNAME,
                 ESTABDESC = addListing.ESTABDESC,
                 ESTABADD = addListing.ESTABADD,
-                ESTABPRICE = addListing.ESTABPRICE,
                 STARTTIME = addListing.STARTTIME,
                 ENDTIME = addListing.ENDTIME,
                 ESTABIMAGEPATH = imgPath,
                 ESTABRATING = 1.5,
+				OwnerUsername = ownerUsername
 			};
+
+            // Check if ESTABHRPRICE is provided and assign it
+            if (addListing.ESTABHRPRICE.HasValue)
+            {
+                listing.ESTABHRPRICE = addListing.ESTABHRPRICE.Value;
+            }
+
+            // Check if ESTABDAYPRICE is provided and assign it
+            if (addListing.ESTABDAYPRICE.HasValue)
+            {
+                listing.ESTABDAYPRICE = addListing.ESTABDAYPRICE.Value;
+            }
+
+            // Check if ESTABWKPRICE is provided and assign it
+            if (addListing.ESTABWKPRICE.HasValue)
+            {
+                listing.ESTABWKPRICE = addListing.ESTABWKPRICE.Value;
+            }
+
+            // Check if ESTABYRPRICE is provided and assign it
+            if (addListing.ESTABYRPRICE.HasValue)
+            {
+                listing.ESTABYRPRICE = addListing.ESTABYRPRICE.Value;
+            }
 
             _context.Listing.Add(listing);
             _context.SaveChanges();
-        }
+
+			// Log the successful addition of the listing
+			Console.WriteLine("Listing added successfully.");
+		}
 
         private string UploadFile(Listing addListing)
         {
@@ -166,7 +220,7 @@ namespace Trabahub.Controllers
             {
                 missingFields.Add(fieldNames[3]);
             }
-            if (listing.ESTABPRICE == 0)
+            if (listing.ESTABHRPRICE == 0)
             {
                 missingFields.Add(fieldNames[4]);
             }
