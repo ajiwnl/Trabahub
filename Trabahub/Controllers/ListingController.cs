@@ -22,25 +22,25 @@ namespace Trabahub.Controllers
 			var userType = HttpContext.Session.GetString("UserType");
 			var username = HttpContext.Session.GetString("Username");
 
-			// Check if the user is an owner
 			if (userType == "Owner")
 			{
-				// Retrieve listings for the current owner
+				// Retrieve listings only for the current owner
 				var ownerListings = _context.Listing.Where(l => l.OwnerUsername == username).ToList();
 				return View(ownerListings);
 			}
 			else
 			{
-				// For clients or other user types, show all listings
-				var listings = _context.Listing.ToList();
-				return View(listings);
+				// For clients or other user types, show no listings
+				return View(new List<Listing>()); // Pass an empty list to the view
 			}
 		}
+
 
 		[HttpGet]
 		public IActionResult Index(string searchSpaces)
 		{
 			var spaces = from x in _context.Listing
+						 where x.OwnerUsername == HttpContext.Session.GetString("Username") // Filter by owner username
 						 select x;
 
 			var userType = HttpContext.Session.GetString("UserType");
@@ -131,7 +131,7 @@ namespace Trabahub.Controllers
             return View();
         }
 
-		private void SaveData(Listing addListing)
+		public void SaveData(Listing addListing)
         {
             string imgPath = UploadFile(addListing);
 
