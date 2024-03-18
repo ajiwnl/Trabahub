@@ -2,7 +2,7 @@
 using Trabahub.Data;
 using Trabahub.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Stripe;
 
 namespace Trabahub.Controllers
 {
@@ -99,6 +99,37 @@ namespace Trabahub.Controllers
 			var booking = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
 			return View(booking);
 		}
+        [HttpPost]
+        public IActionResult Charge(string stripeEmail, string stripeToken, string estabPrice, string estabName)
+        {
+            var customers = new CustomerService();
+            var charges = new ChargeService();
+            var price  = (long)Convert.ToDouble(estabPrice);
+
+            var customer = customers.Create(new CustomerCreateOptions
+            {
+                Email = stripeEmail,
+                Source = stripeToken
+            });
+
+            var charge = charges.Create(new ChargeCreateOptions
+            {
+                Amount = price,
+                Description = estabName,
+                Currency = "php",
+                Customer = customer.Id
+            });
+
+            if(charge.Status == "succeeded")
+            {
+                string BalanceTransactionId = charge.BalanceTransactionId;
+                return View();
+            }else
+            {
+
+            }
+            return View();
+        }
 
 		private void SaveData(Listing addListing)
         {
