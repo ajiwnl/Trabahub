@@ -112,11 +112,12 @@ namespace Trabahub.Controllers
 			return View(booking);
 		}
 		[HttpPost]
-		public IActionResult Charge(string stripeEmail, string stripeToken, string estabPrice, string estabName)
+		public IActionResult Charge(string stripeEmail, string stripeToken, string? subprice, string? estabname)
 		{
 			var customers = new CustomerService();
 			var charges = new ChargeService();
-			var price = (long)Convert.ToDouble(estabPrice);
+			long price = Convert.ToInt32(subprice) * 100;
+
 
 			var customer = customers.Create(new CustomerCreateOptions
 			{
@@ -127,7 +128,7 @@ namespace Trabahub.Controllers
 			var charge = charges.Create(new ChargeCreateOptions
 			{
 				Amount = price,
-				Description = estabName,
+				Description = estabname,
 				Currency = "php",
 				Customer = customer.Id
 			});
@@ -135,13 +136,12 @@ namespace Trabahub.Controllers
 			if (charge.Status == "succeeded")
 			{
 				string BalanceTransactionId = charge.BalanceTransactionId;
-				return View();
+				return View(BalanceTransactionId);
 			}
 			else
 			{
-
+				return View();
 			}
-			return View();
 		}
 
 		public void SaveData(Listing addListing)

@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <form asp-action="Charge" asp-controller="Listing" method="post" asp-route-charge="@Model.ESTABHRPRICE" asp-route-name="@Model.ESTABNAME">
+                    <form asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABHRPRICE" asp-route-estabname="@Model.ESTABNAME">
                         <article class="mb-2">
                             <label class="detailsbody border-0 text-center">Amount: ₱@Model.ESTABHRPRICE</label>
                         </article>
