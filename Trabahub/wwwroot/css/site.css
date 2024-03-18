@@ -601,7 +601,7 @@ footer {
 /*Details Page*/
 .detailslayer {
     position: relative;
-    min-height: 170vh;
+    min-height: 180vh;
     width: 100%;
     background-color: rgb(239, 239, 239, 1);
 }

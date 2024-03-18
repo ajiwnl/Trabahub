@@ -68,8 +68,7 @@ namespace Trabahub.Controllers
 			}
 
 			string loggedUser = existingEmail.Username.ToString();
-			string userType = existingEmail.UserType.ToString(); // Assuming you have a property called UserType in your Credentials model
-
+			string userType = existingEmail.UserType.ToString();
 			HttpContext.Session.SetString("Username", loggedUser);
 			HttpContext.Session.SetString("UserType", userType);
 

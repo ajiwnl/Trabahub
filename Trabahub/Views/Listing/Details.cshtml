@@ -26,15 +26,38 @@
 					<div class="container ms-5">
 						<div class="row">
 							<div class="col ms-5 text-start">
-								<label class="dbarheader" id="pricelabelid">Price Rate:</label>
+								<label class="dbarheader" id="pricelabelid">Price Rates:</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								<label class="detailsbody border-0">₱@Model.ESTABPRICE</label>
+								@if (Model.ESTABHRPRICE.HasValue)
+								{
+									<label class="detailslabel">Hourly Price:</label>
+									<span class="detailsbody">@Model.ESTABHRPRICE</span>
+									<br />
+								}
+								@if (Model.ESTABDAYPRICE.HasValue)
+								{
+									<label class="detailslabel">Day Pass Price:</label>
+									<span class="detailsbody">@Model.ESTABDAYPRICE</span>
+									<br />
+								}
+								@if (Model.ESTABWKPRICE.HasValue)
+								{
+									<label class="detailslabel">Weekly Pass Price:</label>
+									<span class="detailsbody">@Model.ESTABWKPRICE</span>
+									<br/>
+								}
+								@if (Model.ESTABYRPRICE.HasValue)
+								{
+									<label class="detailslabel">Yearly Pass Price:</label>
+									<span class="detailsbody">@Model.ESTABYRPRICE</span>
+								}
 							</div>
 						</div>
 					</div>
+
 					<div class="container">
 						<div class="row">
 							<div class="col text-start">
