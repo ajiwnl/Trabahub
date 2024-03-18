@@ -1118,6 +1118,13 @@ footer {
     position: relative;
 }
 
+.paymentlayer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
     .rating_stars span .fa, .rating_stars span.active-low .fa-star-o, .rating_stars span.active-high .fa-star-o {
         display: none;
     }
