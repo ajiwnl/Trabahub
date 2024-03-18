@@ -13,12 +13,12 @@
 				<div class="pt-5 ps-5 pe-5">
 					<div class="row">
 						<div class="col">
-							<input asp-for="ESTABNAME" class="detailheader text-center border-0" style="background-color: #D9D9D9" disabled />
+							<label class="detailheader text-center border-0">@Model.ESTABNAME</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<textarea asp-for="ESTABDESC" class="detailsbody text-center border-0" style="background-color: #D9D9D9;resize: none; width: 100%" disabled></textarea>
+							<label class="detailsbody text-center border-0">@Model.ESTABDESC</label>
 						</div>
 					</div>
 				</div>
@@ -26,12 +26,12 @@
 					<div class="container ms-5">
 						<div class="row">
 							<div class="col ms-5 text-start">
-								<label class="dbarheader" id="pricelabelid">Price Rate: ₱</label>
+								<label class="dbarheader" id="pricelabelid">Price Rate:</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								<input asp-for="ESTABPRICE" class="detailsbody border-0" style="background-color: #D9D9D9" disabled />
+								<label class="detailsbody border-0">₱@Model.ESTABPRICE</label>
 							</div>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ">
-								<input asp-for="ESTABADD" class="detailsbody border-0" style="background-color: #D9D9D9" disabled />
+								<label class="detailsbody border-0">@Model.ESTABADD</label>
 							</div>
 						</div>
 					</div>
@@ -60,7 +60,6 @@
 								<input asp-for="ESTABRATING" class="detailsbody border-0" style="display:none" disabled />
 								<div class="stars mb-2" id="starlistings">
 									<script>
-										// JavaScript function to generate stars based on rating
 										function generateStars(rating, containerId) {
 											var starsHtml = '';
 											var fullStars = Math.floor(rating);
@@ -79,7 +78,6 @@
 											document.getElementById(containerId).innerHTML = starsHtml;
 										}
 
-										// Call the function on document ready
 										$(document).ready(function () {
 											var rating = parseFloat($('[name="ESTABRATING"]').val());
 											var containerId = "starlistings";
@@ -100,7 +98,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								<input type="text" asp-for="STARTTIME" class="detailsbody border-0" style="background-color: #D9D9D9" disabled />
+								<label class="detailsbody border-0">@Model.STARTTIME.ToString("hh:mm tt")</label>
 							</div>
 						</div>
 					</div>
@@ -112,7 +110,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ">
-								<input type="text" asp-for="ENDTIME" class="detailsbody border-0" style="background-color: #D9D9D9" disabled />
+								<label class="detailsbody border-0">@Model.ENDTIME.ToString("hh:mm tt")</label>
 							</div>
 						</div>
 					</div>

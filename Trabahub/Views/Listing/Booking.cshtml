@@ -1,11 +1,13 @@
-﻿@model Listing
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<Trabahub.Data.StripeSetting> Stripe
+@model Listing
 <div class="bookinglayer pt-3" id="bookinglayer">
     <div class="container">
         <div class="wrapper">
             <div class="row pb-4">
                 <div class="col">
                     <div class="bookingheader border-0">
-                        <input asp-for="ESTABNAME" class="bnsheader border-0" style="background-color: transparent" disabled />
+                        <label class="bnsheader border-0" style="background-color: transparent">@Model.ESTABNAME</label>
                     </div>
                 </div>
             </div>
@@ -136,11 +138,24 @@
                 </div>
                 <div class="row pt-5">
                     <div class="col">
-                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@Model.ESTABNAME" asp-route-image="@Model.ESTABIMAGEPATH" >GO BACK</a>
+                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@Model.ESTABNAME" asp-route-image="@Model.ESTABIMAGEPATH">GO BACK</a>
                     </div>
                     <div class="col">
                         <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;">BOOK NOW</a>
                     </div>
+                </div>
+                <div class="text-center mt-5">
+                    <form asp-action="Charge" asp-controller="Listing" method="post" asp-route-charge="@Model.ESTABPRICE" asp-route-name="@Model.ESTABNAME">
+                        <article class="mb-2">
+                            <label class="detailsbody border-0 text-center">Amount: ₱@Model.ESTABPRICE</label>
+                        </article>
+                        <script src="//checkout.stripe.com/v2/checkout.js"
+                                class="stripe-button"
+                                data-key="@Stripe.Value.PublishableKey"
+                                data-locale="auto"
+                                data-description="Sample Charge">
+                        </script>
+                    </form>
                 </div>
             </div>
         </div>
