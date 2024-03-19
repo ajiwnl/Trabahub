@@ -117,15 +117,10 @@
                                 </div>
                                 <div class="col-5">
                                     <div class="btn-group mx-auto pt-3" style="width: 100%">
-                                        <button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                            Select Property Type
+                                        <button type="button" id="priceDropdownBtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                            Select Price Option
                                         </button>
-                                        <ul class="dropdown-menu dropdown-menu-lg-end">
-                                            <li><button class="dropdown-item" onclick="selectedType('Co-Working Space')" type="button">Co-Working Space</button></li>
-                                            <li><button class="dropdown-item" onclick="selectedType('Study Hub')" type="button">Study Hub</button></li>
-                                            <li><button class="dropdown-item" onclick="selectedType('Cafe')" type="button">Cafe</button></li>
-                                            <li><button class="dropdown-item" onclick="selectedType('Private Space')" type="button">Private Space</button></li>
-                                            <li><button class="dropdown-item" onclick="selectedType('Hybrid Setup')" type="button">Hybrid Setup</button></li>
+                                        <ul class="dropdown-menu dropdown-menu-lg-end" id="priceDropdown">
                                         </ul>
                                     </div>
                                 </div>
@@ -145,9 +140,9 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <form asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABHRPRICE" asp-route-estabname="@Model.ESTABNAME">
+                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABHRPRICE" asp-route-estabname="@Model.ESTABNAME">
                         <article class="mb-2">
-                            <label class="detailsbody border-0 text-center">Amount: ₱@Model.ESTABHRPRICE</label>
+                            <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
                         </article>
                         <script src="//checkout.stripe.com/v2/checkout.js"
                                 class="stripe-button"
@@ -186,18 +181,81 @@
         // Update the duration input with the calculated value
         const durationInput = document.getElementById('duration');
 
+        let pricePerHour = 100; // Change this to your actual price per hour
+
         if (durationInHours <= 0) {
             durationInput.value = 'Please Select Appropriate Schedule';
-        }
-        else if (durationInHours === 1) {
+        } else if (durationInHours === 1) {
             durationInput.value = durationInHours + ' Hour';
-        }
-        else if (durationInHours >= 2) {
+        } else {
             durationInput.value = durationInHours + ' Hours';
         }
+
+        // Calculate the price based on duration
+        const price = durationInHours * pricePerHour;
+
+        // Update the amount label with the calculated price
+        const amountLabel = document.getElementById('amountLabel');
+        amountLabel.textContent = 'Amount: ₱' + price.toFixed(2); // Assuming price is in PHP
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    }
+</script>
+
+<script>
+    var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
+
+    function clearInputFields() {
+        $("input[name='timein']").val('');
+        $("input[name='timeout']").val('');
+        $("input[name='duration']").val('');
+        $("label[id='amountLabel']").text('Amount ₱:');
     }
 
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
+    Object.entries(prices).forEach(function ([option, price]) {
+        var listItem = document.createElement("li");
+        var button = document.createElement("button");
+        button.className = "dropdown-item";
+        button.type = "button";
+        button.textContent = option + ": ₱" + price;
+        button.onclick = function () {
+            handleSelection(option, price);
+            if (option === "Hourly Price") {
+                clearInputFields();
+            }
+        };
+        listItem.appendChild(button);
+        document.getElementById("priceDropdown").appendChild(listItem);
     });
 </script>
+
+<script>
+    function handleSelection(option, price) {
+        document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+
+        var updatePrice = price;
+
+        $.ajax({
+            type: "POST",
+            url: "/Listing/SetPrice",
+            data: { price: updatePrice },
+            success: function (response) {
+                var bookingForm = document.getElementById("bookingForm");
+                bookingForm.setAttribute("asp-route-subprice", response.price);
+            },
+            error: function (xhr, status, error) {
+                console.error("Something Went Wrong", error);
+            }
+        });
+
+        document.getElementById("amountLabel").textContent = "Amount: ₱" + price;
+    }
+</script>
+
+
+
+
+
+

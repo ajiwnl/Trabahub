@@ -111,59 +111,89 @@ namespace Trabahub.Controllers
 		public IActionResult Booking(string? name)
 		{
 			var booking = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
+
+			var prices = new Dictionary<string, int>();
+
+			if (booking.ESTABHRPRICE.HasValue)
+			{
+				prices.Add("Hourly Price", booking.ESTABHRPRICE.Value);
+			}
+
+			if (booking.ESTABDAYPRICE.HasValue)
+			{
+				prices.Add("Day Pass Price", booking.ESTABDAYPRICE.Value);
+			}
+
+			if (booking.ESTABWKPRICE.HasValue)
+			{
+				prices.Add("Weekly Pass Price", booking.ESTABWKPRICE.Value);
+			}
+
+			if (booking.ESTABYRPRICE.HasValue)
+			{
+				prices.Add("Yearly Pass Price", booking.ESTABYRPRICE.Value);
+			}
+
+			ViewBag.Prices = prices;
+
 			return View(booking);
 		}
-		
-		[HttpPost]
-		public IActionResult Charge(string stripeEmail, string stripeToken, string? subprice, string? estabname)
-		{
-			var customers = new CustomerService();
-			var charges = new ChargeService();
-			long price = Convert.ToInt32(subprice) * 100;
 
-			var customer = customers.Create(new CustomerCreateOptions
-			{
-				Email = stripeEmail,
-				Source = stripeToken
-			});
+        [HttpPost]
+        public IActionResult Charge(string stripeEmail, string stripeToken, string? subprice, string? estabname)
+        {
+            var customers = new CustomerService();
+            var charges = new ChargeService();
+            long price = Convert.ToInt32(subprice) * 100;
 
-			var charge = charges.Create(new ChargeCreateOptions
-			{
-				Amount = price,
-				Description = estabname,
-				Currency = "php",
-				Customer = customer.Id
-			});
+            var customer = customers.Create(new CustomerCreateOptions
+            {
+                Email = stripeEmail,
+                Source = stripeToken
+            });
 
-			if (charge.Status == "succeeded")
-			{
-				string BalanceTransactionId = charge.BalanceTransactionId;
+            var charge = charges.Create(new ChargeCreateOptions
+            {
+                Amount = price,
+                Description = estabname,
+                Currency = "php",
+                Customer = customer.Id
+            });
 
-                // Retrieve the username from the session
+            if (charge.Status == "succeeded")
+            {
+                string BalanceTransactionId = charge.BalanceTransactionId;
+
                 string userName = HttpContext.Session.GetString("Username");
 
-                // Prepare email content
                 var email = stripeEmail;
-				var message = $"Payment successful for reserved co-working space: {estabname}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
-				var sprice = Convert.ToDecimal(subprice); // Convert to decimal to ensure correct calculation
-                var phpPrice = string.Format("{0:C}", sprice); // Format to PHP currency
+                var message = $"Payment successful for reserved co-working space: {estabname}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+                var sprice = Convert.ToDecimal(subprice); 
+                var phpPrice = string.Format("{0:C}", sprice);
 
 
-                // Send email
                 SendEmail(userName, email, message, phpPrice);
 
-				TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
-				return RedirectToAction("Index", "Listing");
-			}
-			else
-			{
-				TempData["PayFail"] = "Payment Failed, Please try again!";
-				return View();
-			}
-		}
+                TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+                return RedirectToAction("Index", "Listing");
+            }
+            else
+            {
+                TempData["PayFail"] = "Payment Failed, Please try again!";
+                return View();
+            }
+        }
 
-		// Email sending logic
-		public void SendEmail(string name, string email, string message, string phpPrice)
+        [HttpPost]
+        public IActionResult SetPrice(int price)
+        {
+
+            return Json(new { success = true, price = price });
+        }
+
+
+        // Email sending logic
+        public void SendEmail(string name, string email, string message, string phpPrice)
 		{
 			try
 			{
@@ -340,6 +370,5 @@ namespace Trabahub.Controllers
 			return null; // No errors, return null
 
 		}
-
-	}
+    }
 }
