@@ -303,6 +303,5 @@ namespace Trabahub.Controllers
 			}
 		}
 
-
-	}
+    }
 }
