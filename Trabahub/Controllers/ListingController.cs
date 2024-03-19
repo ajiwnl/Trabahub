@@ -185,12 +185,12 @@ namespace Trabahub.Controllers
         }
 
         [HttpPost]
-        public IActionResult SetPrice(int price)
+        public IActionResult SetPrice(string option, int count)
         {
-
-            return Json(new { success = true, price = price });
+            HttpContext.Session.SetString("Option", option);
+			HttpContext.Session.SetInt32("Count", count);
+            return Json(new { success = true, option = option, count = count });
         }
-
 
         // Email sending logic
         public void SendEmail(string name, string email, string message, string phpPrice)

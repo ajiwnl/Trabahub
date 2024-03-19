@@ -6,5 +6,7 @@
     Layout = "_Layout";
     ViewBag.Username = Context.Session.GetString("Username");
     ViewBag.UserType = Context.Session.GetString("UserType");
+    ViewBag.PriceOption = Context.Session.GetString("Option");
+    ViewBag.PriceCount = Context.Session.GetInt32("Count");
 }
 
