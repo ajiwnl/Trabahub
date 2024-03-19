@@ -421,3 +421,26 @@
 		});
 	</script>
 }
+@if (TempData.ContainsKey("PayFail"))
+{
+    <script>
+        var msgError = '@TempData["PayFail"]';
+        Swal.fire({
+            icon: 'error',
+            title: 'Payment Reservation Failed :(',
+            text: msgError,
+        });
+    </script>
+}
+
+@if (TempData.ContainsKey("PaySuccess"))
+{
+	<script>
+		var successMessage = '@TempData["PaySuccess"]';
+        Swal.fire({
+            icon: 'success',
+            title: 'Payment Reservation Complete, Have fun!',
+            text: successMessage,
+        });
+    </script>
+}

@@ -1,3 +1,29 @@
-﻿<div class="paymentlayer">
-	<h2>Successful</h2>
-</div>
+﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+if (TempData.ContainsKey("PayFail"))
+{
+<script>
+    var msgError = '@TempData["PayFail"]';
+    Swal.fire({
+        icon: 'error',
+        title: 'Payment Reservation Failed :(',
+        text: msgError,
+    });
+</script>
+}
+
+@if (TempData.ContainsKey("PaySuccess"))
+{
+    <script>
+        var successMessage = '@TempData["PaySuccess"]';
+        Swal.fire({
+            icon: 'success',
+            title: 'Payment Reservation Complete, Have fun!',
+            text: successMessage,
+        });
+    </script>
+}

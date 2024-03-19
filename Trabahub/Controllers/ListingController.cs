@@ -3,6 +3,8 @@ using Trabahub.Data;
 using Trabahub.Models;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
+using System.Net.Mail;
+using System.Net;
 
 namespace Trabahub.Controllers
 {
@@ -111,13 +113,13 @@ namespace Trabahub.Controllers
 			var booking = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
 			return View(booking);
 		}
+		
 		[HttpPost]
 		public IActionResult Charge(string stripeEmail, string stripeToken, string? subprice, string? estabname)
 		{
 			var customers = new CustomerService();
 			var charges = new ChargeService();
 			long price = Convert.ToInt32(subprice) * 100;
-
 
 			var customer = customers.Create(new CustomerCreateOptions
 			{
@@ -136,11 +138,65 @@ namespace Trabahub.Controllers
 			if (charge.Status == "succeeded")
 			{
 				string BalanceTransactionId = charge.BalanceTransactionId;
-				return View(BalanceTransactionId);
+
+                // Retrieve the username from the session
+                string userName = HttpContext.Session.GetString("Username");
+
+                // Prepare email content
+                var email = stripeEmail;
+				var message = $"Payment successful for reserved co-working space: {estabname}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+				var sprice = Convert.ToDecimal(subprice); // Convert to decimal to ensure correct calculation
+                var phpPrice = string.Format("{0:C}", sprice); // Format to PHP currency
+
+
+                // Send email
+                SendEmail(userName, email, message, phpPrice);
+
+				TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+				return RedirectToAction("Index", "Listing");
 			}
 			else
 			{
+				TempData["PayFail"] = "Payment Failed, Please try again!";
 				return View();
+			}
+		}
+
+		// Email sending logic
+		public void SendEmail(string name, string email, string message, string phpPrice)
+		{
+			try
+			{
+				var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Reservation Confirmation");
+				var receiverEmail = new MailAddress(email, "Receiver");
+				var password = "weaz drul elrl bngg";
+
+				var subject = $"Co-working Space Reservation Confirmation";
+
+				var body = $"Name: {name}\nEmail: {email} \nTotal Charge: {phpPrice}\n\n {message}";
+
+				var smtp = new SmtpClient
+				{
+					Host = "smtp.gmail.com",
+					Port = 587,
+					EnableSsl = true,
+					DeliveryMethod = SmtpDeliveryMethod.Network,
+					UseDefaultCredentials = false,
+					Credentials = new NetworkCredential(senderEmail.Address, password)
+				};
+
+				using (var mess = new MailMessage(senderEmail, receiverEmail)
+				{
+					Subject = subject,
+					Body = body
+				})
+				{
+					smtp.Send(mess);
+				}
+			}
+			catch (Exception)
+			{
+				ViewBag.Error = "Some Error";
 			}
 		}
 
