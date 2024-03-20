@@ -54,5 +54,12 @@ namespace Trabahub.Models
 
         [NotMapped]
         public IFormFile? VERIMG { get; set; }
-    }
+
+	}
+
+	public class ListingDetails
+	{
+		public Listing? Listing { get; set; }
+		public List<ListInteraction>? Interactions { get; set; }
+	}
 }

@@ -74,7 +74,36 @@ namespace Trabahub.Controllers
 			return View();
 		}
 
-		[HttpPost]
+        [HttpGet]
+        public IActionResult Charge()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ActionName("Interact")]
+        public IActionResult Interaction(ListInteraction addinteractList)
+        {
+            int totalCount = _context.ListInteraction.Count();
+
+            var interact = new ListInteraction()
+            {
+                InteractId = totalCount + 1,
+                ESTABNAME = addinteractList.ESTABNAME,
+				Username = addinteractList.Username,
+                InteractComment = addinteractList.InteractComment,
+                InteractRating = addinteractList.InteractRating
+            };
+
+            _context.ListInteraction.Add(interact);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Listing");
+        }
+
+
+        [HttpPost]
 		[ActionName("Add")]
 		public IActionResult Add(Listing addListing)
 		{
@@ -103,9 +132,18 @@ namespace Trabahub.Controllers
 		[HttpGet]
 		public IActionResult Details(string? name)
 		{
-			var listing = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
-			return View(listing);
+			var listing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == name);
+			var interactions = _context.ListInteraction.Where(i => i.ESTABNAME == name).ToList();
+
+			var viewModel = new ListingDetails
+			{
+				Listing = listing,
+				Interactions = interactions
+			};
+
+			return View(viewModel);
 		}
+
 
 		[HttpGet]
 		public IActionResult Booking(string? name)
@@ -181,7 +219,8 @@ namespace Trabahub.Controllers
 					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice);
 
 					TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
-					return RedirectToAction("Index", "Listing");
+                    TempData["EstablishmentName"] = stripeDescription;
+                    return RedirectToAction("Charge", "Listing");
 				}
 				else
 				{
@@ -275,7 +314,6 @@ namespace Trabahub.Controllers
 			}
 		}
 
-
 		// Email sending logic
 		public void SendEmail(string name, string email, string message, string phpPrice)
 		{
@@ -340,7 +378,7 @@ namespace Trabahub.Controllers
 				STARTTIME = addListing.STARTTIME,
 				ENDTIME = addListing.ENDTIME,
 				ESTABIMAGEPATH = imgPath,
-				ESTABRATING = 1.5,
+				ESTABRATING = 0,
 				OwnerUsername = ownerUsername
 			};
 

@@ -1,4 +1,5 @@
-﻿@model Listing
+﻿@model Trabahub.Models.ListingDetails
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -9,16 +10,16 @@
 		@*PRICE DESCRIPTION ADDRESS*@
 		<div class="detailside">
 			<form method="post">
-				<img src="/img/@Model.ESTABIMAGEPATH" class="detailcover" asp-append-version="true" />
+				<img src="/img/@Model.Listing.ESTABIMAGEPATH" class="detailcover" asp-append-version="true" />
 				<div class="pt-5 ps-5 pe-5">
 					<div class="row">
 						<div class="col">
-							<label class="detailheader text-center border-0">@Model.ESTABNAME</label>
+							<label class="detailheader text-center border-0">@Model.Listing.ESTABNAME</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<label class="detailsbody text-center border-0">@Model.ESTABDESC</label>
+							<label class="detailsbody text-center border-0">@Model.Listing.ESTABDESC</label>
 						</div>
 					</div>
 				</div>
@@ -31,28 +32,28 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								@if (Model.ESTABHRPRICE.HasValue)
+								@if (Model.Listing.ESTABHRPRICE.HasValue)
 								{
 									<label class="detailsbody">Hourly Price:</label>
-									<span class="detailsbody">₱@Model.ESTABHRPRICE</span>
+									<span class="detailsbody">₱@Model.Listing.ESTABHRPRICE</span>
 									<br />
 								}
-								@if (Model.ESTABDAYPRICE.HasValue)
+								@if (Model.Listing.ESTABDAYPRICE.HasValue)
 								{
 									<label class="detailsbody">Day Pass Price:</label>
-									<span class="detailsbody">₱@Model.ESTABDAYPRICE</span>
+									<span class="detailsbody">₱@Model.Listing.ESTABDAYPRICE</span>
 									<br />
 								}
-								@if (Model.ESTABWKPRICE.HasValue)
+								@if (Model.Listing.ESTABWKPRICE.HasValue)
 								{
 									<label class="detailsbody">Weekly Pass Price:</label>
-									<span class="detailsbody">₱@Model.ESTABWKPRICE</span>
-									<br/>
+									<span class="detailsbody">₱@Model.Listing.ESTABWKPRICE</span>
+									<br />
 								}
-								@if (Model.ESTABMONPRICE.HasValue)
+								@if (Model.Listing.ESTABMONPRICE.HasValue)
 								{
 									<label class="detailsbody">Yearly Pass Price:</label>
-									<span class="detailsbody">₱@Model.ESTABMONPRICE</span>
+									<span class="detailsbody">₱@Model.Listing.ESTABMONPRICE</span>
 								}
 							</div>
 						</div>
@@ -66,7 +67,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ">
-								<label class="detailsbody border-0">@Model.ESTABADD</label>
+								<label class="detailsbody border-0">@Model.Listing.ESTABADD</label>
 							</div>
 						</div>
 					</div>
@@ -80,29 +81,32 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								<input asp-for="ESTABRATING" class="detailsbody border-0" style="display:none" disabled />
+								<input asp-for="Listing.ESTABRATING" class="detailsbody border-0" hidden disabled />
 								<div class="stars mb-2" id="starlistings">
 									<script>
 										function generateStars(rating, containerId) {
 											var starsHtml = '';
-											var fullStars = Math.floor(rating);
-											var halfStar = rating % 1 !== 0;
 
-											for (var i = 1; i <= 5; i++) {
-												if (i <= fullStars) {
-													starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
-												} else if (halfStar) {
-													starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
-													halfStar = false;
-												} else {
-													starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
-												}
+											var fullStars = Math.floor(rating);
+
+											var hasHalfStar = rating % 1 >= 0.5;
+
+											for (var i = 0; i < fullStars; i++) {
+												starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
 											}
+
+											if (hasHalfStar) {
+												starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
+											}
+
+											for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+												starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
+											}
+
 											document.getElementById(containerId).innerHTML = starsHtml;
 										}
-
 										$(document).ready(function () {
-											var rating = parseFloat($('[name="ESTABRATING"]').val());
+											var rating = parseFloat('@Model.Listing.ESTABRATING');
 											var containerId = "starlistings";
 											generateStars(rating, containerId);
 										});
@@ -121,7 +125,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ms-5">
-								<label class="detailsbody border-0">@Model.STARTTIME.ToString("hh:mm tt")</label>
+								<label class="detailsbody border-0">@Model.Listing.STARTTIME.ToString("hh:mm tt")</label>
 							</div>
 						</div>
 					</div>
@@ -133,7 +137,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start ">
-								<label class="detailsbody border-0">@Model.ENDTIME.ToString("hh:mm tt")</label>
+								<label class="detailsbody border-0">@Model.Listing.ENDTIME.ToString("hh:mm tt")</label>
 							</div>
 						</div>
 					</div>
@@ -146,7 +150,28 @@
 			<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Index">GO BACK</a>
 		</div>
 		<div class="col">
-			<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" asp-area="" asp-controller="Listing" asp-action="Booking" asp-route-name="@Model.ESTABNAME">BOOK NOW</a>
+			<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" asp-area="" asp-controller="Listing" asp-action="Booking" asp-route-name="@Model.Listing.ESTABNAME">BOOK NOW</a>
+		</div>
+	</div>
+
+	<div class="commentwrapper mt-5">
+		<div class="detailcomments">
+			<label class="dbarheader ms-4">Comments</label>
+			@foreach (var interaction in Model.Interactions)
+			{
+				<div class="commentcards">
+					<label class="detailsbody">@interaction.Username</label>
+					<label class="detailsbody">@interaction.InteractComment</label>
+					<div class="star-container" id="star-@interaction.InteractId"></div>
+					<script>
+						$(document).ready(function () {
+							var rating = parseFloat('@interaction.InteractRating');
+							var containerId = "star-@interaction.InteractId";
+							generateStars(rating, containerId);
+						});
+					</script>
+				</div>
+			}
 		</div>
 	</div>
 </div>
