@@ -131,31 +131,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="row pt-5">
-                    <div class="col">
-                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@Model.ESTABNAME" asp-route-image="@Model.ESTABIMAGEPATH">GO BACK</a>
+                <div class="row mt-5">
+                    <div class="col mt-4">
+                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646; border-radius: 20px" asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@Model.ESTABNAME" asp-route-image="@Model.ESTABIMAGEPATH">GO BACK</a>
                     </div>
                     <div class="col">
-                        <a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;">BOOK NOW</a>
+                        <form id="bookingForm" asp-action="Charge" asp-controller="Listing" asp-area="" method="post">
+                            <article class="mb-2">
+                                <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
+                            </article>
+                            <script id="payscript"
+                                    src="//checkout.stripe.com/v2/checkout.js"
+                                    class="stripe-button"
+                                    data-key="@Stripe.Value.PublishableKey"
+                                    data-locale="auto"
+                                    data-description="@Model.ESTABNAME"
+                                    data-amount="">
+                            </script>
+                            <input type="hidden" id="stripePrice" name="stripePrice" value="">
+                            <input type="hidden" id="dynamicDate" name="dynamicDate" value="">
+                            <input type="hidden" id="stripeDescription" name="stripeDescription" value="@Model.ESTABNAME">
+                        </form>
                     </div>
-                </div>
-                <div class="text-center mt-5">
-                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" asp-area="" method="post" asp-route-name="@Model.ESTABNAME">
-                        <article class="mb-2">
-                            <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
-                        </article>
-                        <script id="payscript"
-                                src="//checkout.stripe.com/v2/checkout.js"
-                                class="stripe-button"
-                                data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto"
-                                data-description="@Model.ESTABNAME"
-                                data-amount="">
-                        </script>
-                        <input type="hidden" id="stripePrice" name="stripePrice" value="">
-                        <input type="hidden" id="dynamicDate" name="dynamicDate" value="">
-                        <input type="hidden" id="stripeDescription" name="stripeDescription" value="@Model.ESTABNAME">
-                    </form>
                 </div>
             </div>
         </div>

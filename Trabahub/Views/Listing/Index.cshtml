@@ -132,7 +132,7 @@
 								@foreach (var listings in Model)
 								{
 									<div class="spacecards text-start">
-										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
+										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
 											<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
 											<div class="p-3">
 												<div class="row">

@@ -12,6 +12,8 @@ namespace Trabahub.Data
 
         public DbSet<Listing> Listing { get; set; }
 
+        public DbSet<ListInteraction> ListInteraction { get; set; }
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Credentials>()
