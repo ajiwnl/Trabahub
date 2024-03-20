@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     OnLoginRegisterLayers();
-    OnOwnerRegister();
+    OnForgotPassword();
 });
 
 function OnLoginRegisterLayers() {
@@ -21,14 +21,13 @@ function OnLoginRegisterLayers() {
     }
 }
 
-function OnOwnerRegister() {
+function OnForgotPassword() {
     //Check If User Is On Owner Registration Page
-    var isOwnerRegister = document.getElementById('listinglayer') != null;
     var isForgotPassword = document.getElementById('forgotlayer') != null;
     var navcontents = document.getElementById('navcontents');
 
     //If True, Hide Nav Contents and Disable Redirect Action
-    if (isOwnerRegister || isForgotPassword) {
+    if (isForgotPassword) {
         navcontents.classList.add('hidenavs');
     }
 }
@@ -179,3 +178,70 @@ function checkForgotPasswordMatch() {
     }
 }
 
+function nextPage(type) {
+    var step1 = document.getElementById('step1');
+    var step2 = document.getElementById('step2');
+
+    if (type === 'next') {
+        step1.classList.remove('show');
+        step1.classList.add('hide');
+
+        step2.classList.remove('hide');
+        step2.classList.add('show');
+        step2.classList.add('transform-step2');
+    }
+
+    else if(type === 'back') {
+        step1.classList.remove('hide');
+        step1.classList.add('show');
+
+        step2.classList.remove('show');
+        step2.classList.add('hide');
+    }
+}
+
+//Utility Functionalitiees
+function selectedType(selected) {
+    var accomddbtn = document.getElementById("accomddbtn");
+    var selection = document.getElementById("acctbox");
+    if (accomddbtn) {
+        accomddbtn.textContent = selected;
+        selection.value = selected;
+    }
+}
+
+jQuery(document).ready(function ($) {
+    $('.rating_stars span.r').hover(function () {
+        // get hovered value
+        var rating = $(this).data('rating');
+        var value = $(this).data('value');
+        $(this).parent().attr('class', '').addClass('rating_stars').addClass('rating_' + rating);
+        highlight_star(value);
+    }, function () {
+        // get hidden field value
+        var rating = $("#rating").val();
+        var value = $("#rating_val").val();
+        $(this).parent().attr('class', '').addClass('rating_stars').addClass('rating_' + rating);
+        highlight_star(value);
+    }).click(function () {
+        // Set hidden field value
+        var value = $(this).data('value');
+        $("#rating_val").val(value);
+
+        var rating = $(this).data('rating');
+        $("#rating").val(rating);
+
+        highlight_star(value);
+    });
+
+    var highlight_star = function (rating) {
+        $('.rating_stars span.s').each(function () {
+            var low = $(this).data('low');
+            var high = $(this).data('high');
+            $(this).removeClass('active-high').removeClass('active-low');
+            if (rating >= high) $(this).addClass('active-high');
+            else if (rating == low) $(this).addClass('active-low');
+        });
+    }
+
+});

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\calendar.css"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\rating.css",
+      "PackagePath": "staticwebassets\\css\\rating.css"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -17,48 +21,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Background.jpg",
-      "PackagePath": "staticwebassets\\img\\Background.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Drippy Lab.jpg",
-      "PackagePath": "staticwebassets\\img\\Drippy Lab.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Image Sample 3.jpg",
-      "PackagePath": "staticwebassets\\img\\Image Sample 3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\NOMADS HUB.jpg",
-      "PackagePath": "staticwebassets\\img\\NOMADS HUB.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\TEST TEST.png",
-      "PackagePath": "staticwebassets\\img\\TEST TEST.png"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\The Hive.jpg",
-      "PackagePath": "staticwebassets\\img\\The Hive.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Work Test.png",
-      "PackagePath": "staticwebassets\\img\\Work Test.png"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\Workplace Cafe.jpg",
-      "PackagePath": "staticwebassets\\img\\Workplace Cafe.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\hgjghj.jpg",
-      "PackagePath": "staticwebassets\\img\\hgjghj.jpg"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\img\\sdfgsdfs.jpg",
-      "PackagePath": "staticwebassets\\img\\sdfgsdfs.jpg"
-    },
-    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\calendar.js",
       "PackagePath": "staticwebassets\\js\\calendar.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\rating.js",
+      "PackagePath": "staticwebassets\\js\\rating.js"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\js\\site.js",
@@ -301,10 +269,6 @@
       "PackagePath": "staticwebassets\\res\\Background.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Calendar.png",
-      "PackagePath": "staticwebassets\\res\\Calendar.png"
-    },
-    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Hive.jpg",
       "PackagePath": "staticwebassets\\res\\Hive.jpg"
     },
@@ -321,18 +285,6 @@
       "PackagePath": "staticwebassets\\res\\LogoTwo.png"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Map.png",
-      "PackagePath": "staticwebassets\\res\\Map.png"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\MapList.png",
-      "PackagePath": "staticwebassets\\res\\MapList.png"
-    },
-    {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Nomads Hub.jpg",
-      "PackagePath": "staticwebassets\\res\\Nomads Hub.jpg"
-    },
-    {
       "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\People.jpg",
       "PackagePath": "staticwebassets\\res\\People.jpg"
     },
@@ -341,8 +293,20 @@
       "PackagePath": "staticwebassets\\res\\Twopersons.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\Workplace Cafe.jpg",
-      "PackagePath": "staticwebassets\\res\\Workplace Cafe.jpg"
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\profile-user.png",
+      "PackagePath": "staticwebassets\\res\\profile-user.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\star-half.png",
+      "PackagePath": "staticwebassets\\res\\star-half.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\star.png",
+      "PackagePath": "staticwebassets\\res\\star.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\trabahubgit\\Trabahub\\wwwroot\\res\\starblank.png",
+      "PackagePath": "staticwebassets\\res\\starblank.png"
     },
     {
       "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.Trabahub.Microsoft.AspNetCore.StaticWebAssets.props",
