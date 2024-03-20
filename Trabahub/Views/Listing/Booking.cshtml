@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="btn-group mx-auto pt-3" style="width: 100%">
-                                        <button type="button" id="priceDropdownBtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                        <button type="button" id="priceDropdownBtn" name="dropdownChoice" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                             Select Price Option
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-lg-end" id="priceDropdown">
@@ -149,8 +149,12 @@
                                     data-amount="">
                             </script>
                             <input type="hidden" id="stripePrice" name="stripePrice" value="">
-                            <input type="hidden" id="dynamicDate" name="dynamicDate" value="">
                             <input type="hidden" id="stripeDescription" name="stripeDescription" value="@Model.ESTABNAME">
+                            <input type="hidden" id="timeinhid" name="timeinhid" value="">
+                            <input type="hidden" id="timeouthid" name="timeouthid" value="">
+                            <input type="hidden" id="dropdownChoice" name="dropdownChoice" value="">
+                            <input type="hidden" id="dynamicdate" name="dynamicdate" value="">
+
                         </form>
                     </div>
                 </div>
@@ -160,85 +164,114 @@
 </div>
 
 <script>
-    const timeInInput = document.getElementById('timein');
-    const timeOutInput = document.getElementById('timeout');
-    var countHours = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+        const timeInInput = document.getElementById('timein');
+        const timeOutInput = document.getElementById('timeout');
+        var countHours = 0;
 
-    timeInInput.addEventListener('change', handleTimeChange);
-    timeOutInput.addEventListener('change', handleTimeChange);
+        timeInInput.addEventListener('change', handleTimeChange);
+        timeOutInput.addEventListener('change', handleTimeChange);
 
-    function handleTimeChange() {
-        calculateDuration();
-    }
+        function handleTimeChange() {
+            calculateDuration();
 
-    function calculateDuration() {
-        const timeInValue = timeInInput.value;
-        const timeOutValue = timeOutInput.value;
-
-        const timeIn = new Date('2000-01-01T' + timeInValue);
-        const timeOut = new Date('2000-01-01T' + timeOutValue);
-
-        const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
-        const durationInHours = Math.ceil(durationInMinutes / 60);
-        countHours = durationInHours;
-
-        const durationInput = document.getElementById('duration');
-
-        let pricePerHour = @Model.ESTABHRPRICE;
-
-        if (durationInHours <= 0) {
-            durationInput.value = 'Please Select Appropriate Schedule';
-        } else if (durationInHours === 1) {
-            durationInput.value = durationInHours + ' Hour';
-        } else {
-            durationInput.value = durationInHours + ' Hours';
         }
 
-        const selectedOption = document.getElementById("priceDropdownBtn").innerText.split(": ")[0];
-        const selectedPrice = parseFloat(document.getElementById("priceDropdownBtn").innerText.split(": ₱")[1]);
-        handleSelection(selectedOption, selectedPrice);
-    }
+        function calculateDuration() {
+            const timeInValue = timeInInput.value;
+            const timeOutValue = timeOutInput.value;
 
+            const timeIn = new Date('2000-01-01T' + timeInValue);
+            const timeOut = new Date('2000-01-01T' + timeOutValue);
 
-    var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
+            const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
+            const durationInHours = Math.ceil(durationInMinutes / 60);
+            countHours = durationInHours;
 
-    function clearInputFields() {
-        $("input[name='timein']").val('');
-        $("input[name='timeout']").val('');
-        $("input[name='duration']").val('');
-        $("label[id='amountLabel']").text('Amount ₱:');
-    }
+            const durationInput = document.getElementById('duration');
 
-    Object.entries(prices).forEach(function ([option, price]) {
-        var listItem = document.createElement("li");
-        var button = document.createElement("button");
-        button.className = "dropdown-item";
-        button.type = "button";
-        button.textContent = option + ": ₱" + price;
-        button.onclick = function () {
-            handleSelection(option, price);
-            if (option === "Hourly Price") {
-                clearInputFields();
+            let pricePerHour = @Model.ESTABHRPRICE;
+
+            if (durationInHours <= 0) {
+                durationInput.value = 'Please Select Appropriate Schedule';
+            } else if (durationInHours === 1) {
+                durationInput.value = durationInHours + ' Hour';
+            } else {
+                durationInput.value = durationInHours + ' Hours';
             }
-        };
-        listItem.appendChild(button);
-        document.getElementById("priceDropdown").appendChild(listItem);
-    });
 
-    function handleSelection(option, price) {
-        if (option === "Hourly Price") {
-            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
-            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
-            document.getElementById("payscript").setAttribute("data-amount", price * countHours);
-            document.getElementById("stripePrice").setAttribute("value", price * countHours);
-            console.log(document.getElementById("payscript"))
-        } else {
-            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
-            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
-            document.getElementById("payscript").setAttribute("data-amount", price);
-            document.getElementById("stripePrice").setAttribute("value", price);
-            console.log(document.getElementById("payscript"))
+            const selectedOption = document.getElementById("priceDropdownBtn").innerText.split(": ")[0];
+            const selectedPrice = parseFloat(document.getElementById("priceDropdownBtn").innerText.split(": ₱")[1]);
+            handleSelection(selectedOption, selectedPrice);
         }
-    }
-</script>
 
+        var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
+
+        function clearInputFields() {
+            $("input[name='timein']").val('');
+            $("input[name='timeout']").val('');
+            $("input[name='duration']").val('');
+            $("label[id='amountLabel']").text('Amount ₱:');
+        }
+
+        Object.entries(prices).forEach(function ([option, price]) {
+            var listItem = document.createElement("li");
+            var button = document.createElement("button");
+            button.className = "dropdown-item";
+            button.type = "button";
+            button.textContent = option + ": ₱" + price;
+            button.onclick = function () {
+                handleSelection(option, price);
+                if (option === "Hourly Price") {
+                    clearInputFields();
+                }
+            };
+            listItem.appendChild(button);
+            document.getElementById("priceDropdown").appendChild(listItem);
+        });
+
+        function convertTo12HourFormat(timeString) {
+            const timeComponents = timeString.split(':');
+            let hours = parseInt(timeComponents[0]);
+            const minutes = timeComponents[1];
+
+            let period = 'AM';
+            if (hours >= 12) {
+                period = 'PM';
+                if (hours > 12) {
+                    hours -= 12;
+                }
+            }
+            if (hours === 0) {
+                hours = 12;
+            }
+
+            return `${hours}:${minutes} ${period}`;
+        }
+
+        function handleSelection(option, price) {
+            if (option === "Hourly Price") {
+                document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+                document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
+                document.getElementById("payscript").setAttribute("data-amount", price * countHours);
+                document.getElementById("stripePrice").setAttribute("value", price * countHours);
+                console.log(document.getElementById("payscript"))
+            } else {
+                document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
+                document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+                document.getElementById("payscript").setAttribute("data-amount", price);
+                document.getElementById("stripePrice").setAttribute("value", price);
+                console.log(document.getElementById("payscript"))
+            }
+            // Log the values of timeInInput and timeOutInput
+            console.log("Time In:", timeInInput.value);
+            console.log("Time Out:", timeOutInput.value);
+
+            // Update timein and timeout input values
+            document.getElementById("timeinhid").value = convertTo12HourFormat(timeInInput.value);
+            document.getElementById("timeouthid").value = convertTo12HourFormat(timeOutInput.value);
+            document.getElementById("dropdownChoice").value = option;
+            document.getElementById("dynamicdate").value = document.getElementById("dynamicdate").textContent;
+        }
+    });
+</script>

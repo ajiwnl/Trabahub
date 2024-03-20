@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Stripe;
 using System.Net.Mail;
 using System.Net;
+using System.Threading;
 
 namespace Trabahub.Controllers
 {
@@ -178,7 +179,7 @@ namespace Trabahub.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription)
+		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
 		{
 			var customers = new CustomerService();
 			var charges = new ChargeService();
@@ -208,15 +209,15 @@ namespace Trabahub.Controllers
 					string ownerEmail = GetOwnerEmail(stripeDescription); // Get owner's email based on the listing
 
 					var email = stripeEmail;
-					var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+					var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId}";
 					var sprice = Convert.ToDecimal(stripePrice);
 					var phpPrice = string.Format("{0:C}", sprice);
 
 					// Send email to client
-					SendEmail(userName, email, message, phpPrice);
+					SendEmail(userName, email, message, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
 					// Send email to owner
-					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice);
+					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
 					TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
                     TempData["EstablishmentName"] = stripeDescription;
@@ -251,25 +252,8 @@ namespace Trabahub.Controllers
 			}
 		}
 
-		// Method to retrieve owner's email based on the listing ESTABNAME
-		private string GetOwnerEmail(string listingESTABNAME)
-		{
-			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
-			if (listing != null)
-			{
-				var ownerUsername = listing.OwnerUsername;
-				var ownerCredentials = _context.Credentials.FirstOrDefault(c => c.Username == ownerUsername);
-				if (ownerCredentials != null)
-				{
-					return ownerCredentials.Email;
-				}
-			}
-			return null;
-		}
-
-
 		// Method to send email to the owner
-		public void SendEmailToOwner(string ownerEmail, string clientUsername, string clientEmail, string transactionId, string listingDescription, string phpPrice)
+		public void SendEmailToOwner(string ownerEmail, string clientUsername, string clientEmail, string transactionId, string listingDescription, string phpPrice, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
 		{
 			try
 			{
@@ -286,7 +270,12 @@ namespace Trabahub.Controllers
 				body += $"Client Username: {clientUsername}\n";
 				body += $"Client Email: {clientEmail}\n";
 				body += $"Transaction ID: {transactionId}\n";
-				body += $"Amount Received: ₱{amount}\n\n";
+				body += $"-----------------------------------\n";
+				body += $"Subscription: {dropdownChoice}\n";
+				body += $"Amount Received: ₱{amount}\n";
+				body += $"Time In: {timeinhid}\n";
+				body += $"Time Out: {timeouthid}\n";
+				body += $"Dynamic Date: {dynamicdate}\n\n";
 				body += $" Owner's Copy. Do no reply to this message";
 
 				var smtp = new SmtpClient
@@ -315,7 +304,7 @@ namespace Trabahub.Controllers
 		}
 
 		// Email sending logic
-		public void SendEmail(string name, string email, string message, string phpPrice)
+		public void SendEmail(string name, string email, string message, string phpPrice, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
 		{
 			try
 			{
@@ -328,8 +317,14 @@ namespace Trabahub.Controllers
 				// Ensure phpPrice contains only the amount without any currency symbols
 				decimal amount = Convert.ToDecimal(phpPrice.Replace("$", "").Replace("₱", ""));
 
-				var body = $"Username: {name}\nEmail: {email} \nTotal Charge: ₱{amount}\n {message}";
-
+				var body = $"Username: {name}\nEmail: {email} \nTotal Charge: ₱{amount}\n";
+				body += $"{message}\n";
+				body += $"Subscription: {dropdownChoice}\n";
+				body += $"Time In: {timeinhid}\n";
+				body += $"Time Out: {timeouthid}\n";
+				body += $"Dynamic Date: {dynamicdate}\n\n";
+				body += $"Please show this message to the reserved workspace for authentication.\n\n";
+				body += $"Do no reply to this message.";
 				var smtp = new SmtpClient
 				{
 					Host = "smtp.gmail.com",
@@ -354,6 +349,23 @@ namespace Trabahub.Controllers
 				ViewBag.Error = "Some Error";
 			}
 		}
+
+		// Method to retrieve owner's email based on the listing ESTABNAME
+		private string GetOwnerEmail(string listingESTABNAME)
+		{
+			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
+			if (listing != null)
+			{
+				var ownerUsername = listing.OwnerUsername;
+				var ownerCredentials = _context.Credentials.FirstOrDefault(c => c.Username == ownerUsername);
+				if (ownerCredentials != null)
+				{
+					return ownerCredentials.Email;
+				}
+			}
+			return null;
+		}
+
 		public void SaveData(Listing addListing)
 		{
 			string imgPath = UploadFile(addListing);
