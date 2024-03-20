@@ -140,15 +140,20 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABHRPRICE" asp-route-estabname="@Model.ESTABNAME">
+                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post">
                         <article class="mb-2">
                             <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
                         </article>
-                        <script src="//checkout.stripe.com/v2/checkout.js"
+                        <script id="payscript"
+                                src="//checkout.stripe.com/v2/checkout.js"
                                 class="stripe-button"
                                 data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto">
+                                data-locale="auto"
+                                data-description="@Model.ESTABNAME"
+                                data-amount="">
                         </script>
+                        <input type="hidden" id="stripePrice" name="stripePrice" value="">
+                        <input type="hidden" id="stripeDescription" name="stripeDescription" value="@Model.ESTABNAME">
                     </form>
                 </div>
             </div>
@@ -157,31 +162,31 @@
 </div>
 
 <script>
-    // Get the time in and time out input elements
     const timeInInput = document.getElementById('timein');
     const timeOutInput = document.getElementById('timeout');
+    var countHours = 0;
 
-    // Add event listeners to the time inputs
-    timeInInput.addEventListener('change', calculateDuration);
-    timeOutInput.addEventListener('change', calculateDuration);
+    timeInInput.addEventListener('change', handleTimeChange);
+    timeOutInput.addEventListener('change', handleTimeChange);
+
+    function handleTimeChange() {
+        calculateDuration();
+    }
 
     function calculateDuration() {
-        // Get the values of time in and time out
         const timeInValue = timeInInput.value;
         const timeOutValue = timeOutInput.value;
 
-        // Convert the time values to Date objects
         const timeIn = new Date('2000-01-01T' + timeInValue);
         const timeOut = new Date('2000-01-01T' + timeOutValue);
 
-        // Calculate the duration in minutes
         const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
         const durationInHours = durationInMinutes / 60;
+        countHours = durationInHours;
 
-        // Update the duration input with the calculated value
         const durationInput = document.getElementById('duration');
 
-        let pricePerHour = 100; // Change this to your actual price per hour
+        let pricePerHour = @Model.ESTABHRPRICE;
 
         if (durationInHours <= 0) {
             durationInput.value = 'Please Select Appropriate Schedule';
@@ -191,20 +196,11 @@
             durationInput.value = durationInHours + ' Hours';
         }
 
-        // Calculate the price based on duration
-        const price = durationInHours * pricePerHour;
-
-        // Update the amount label with the calculated price
-        const amountLabel = document.getElementById('amountLabel');
-        amountLabel.textContent = 'Amount: ₱' + price.toFixed(2); // Assuming price is in PHP
-
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
+        const selectedOption = document.getElementById("priceDropdownBtn").innerText.split(": ")[0];
+        const selectedPrice = parseFloat(document.getElementById("priceDropdownBtn").innerText.split(": ₱")[1]);
+        handleSelection(selectedOption, selectedPrice);
     }
-</script>
 
-<script>
     var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
 
     function clearInputFields() {
@@ -229,33 +225,22 @@
         listItem.appendChild(button);
         document.getElementById("priceDropdown").appendChild(listItem);
     });
-</script>
 
-<script>
     function handleSelection(option, price) {
-        document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
-
-        var updatePrice = price;
-
-        $.ajax({
-            type: "POST",
-            url: "/Listing/SetPrice",
-            data: { price: updatePrice },
-            success: function (response) {
-                var bookingForm = document.getElementById("bookingForm");
-                bookingForm.setAttribute("asp-route-subprice", response.price);
-            },
-            error: function (xhr, status, error) {
-                console.error("Something Went Wrong", error);
-            }
-        });
-
-        document.getElementById("amountLabel").textContent = "Amount: ₱" + price;
+        if (option === "Hourly Price") {
+            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
+            document.getElementById("payscript").setAttribute("data-amount", price * countHours);
+            document.getElementById("stripePrice").setAttribute("value", price * countHours);
+            console.log(document.getElementById("payscript"))
+        } else {
+            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
+            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+            document.getElementById("payscript").setAttribute("data-amount", price);
+            document.getElementById("stripePrice").setAttribute("value", price);
+            console.log(document.getElementById("payscript"))
+        }
     }
 </script>
-
-
-
-
 
 
