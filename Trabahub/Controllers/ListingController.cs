@@ -139,53 +139,53 @@ namespace Trabahub.Controllers
 			return View(booking);
 		}
 
-        [HttpPost]
-        public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription)
-        {
-            var customers = new CustomerService();
-            var charges = new ChargeService();
-            long price = Convert.ToInt32(stripePrice) * 100;
+		[HttpPost]
+		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription)
+		{
+			var customers = new CustomerService();
+			var charges = new ChargeService();
+			long price = Convert.ToInt32(stripePrice) * 100;
 
-            var customer = customers.Create(new CustomerCreateOptions
-            {
-                Email = stripeEmail,
-                Source = stripeToken
-            });
+			var customer = customers.Create(new CustomerCreateOptions
+			{
+				Email = stripeEmail,
+				Source = stripeToken
+			});
 
-            var charge = charges.Create(new ChargeCreateOptions
-            {
-                Amount = price,
-                Description = stripeDescription,
-                Currency = "php",
-                Customer = customer.Id
-            });
+			var charge = charges.Create(new ChargeCreateOptions
+			{
+				Amount = price,
+				Description = stripeDescription,
+				Currency = "php",
+				Customer = customer.Id
+			});
 
-            if (charge.Status == "succeeded")
-            {
-                string BalanceTransactionId = charge.BalanceTransactionId;
+			if (charge.Status == "succeeded")
+			{
+				string BalanceTransactionId = charge.BalanceTransactionId;
 
-                string userName = HttpContext.Session.GetString("Username");
+				string userName = HttpContext.Session.GetString("Username");
 
-                var email = stripeEmail;
-                var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
-                var sprice = Convert.ToDecimal(stripePrice);
-                var phpPrice = string.Format("{0:C}", sprice);
+				var email = stripeEmail;
+				var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+				var sprice = Convert.ToDecimal(stripePrice);
+				var phpPrice = string.Format("{0:C}", sprice);
 
 
-                SendEmail(userName, email, message, phpPrice);
+				SendEmail(userName, email, message, phpPrice);
 
-                TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
-                return RedirectToAction("Index", "Listing");
-            }
-            else
-            {
-                TempData["PayFail"] = "Payment Failed, Please try again!";
-                return View();
-            }
-        }
+				TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+				return RedirectToAction("Index", "Listing");
+			}
+			else
+			{
+				TempData["PayFail"] = "Payment Failed, Please try again!";
+				return View();
+			}
+		}
 
-        // Email sending logic
-        public void SendEmail(string name, string email, string message, string phpPrice)
+		// Email sending logic
+		public void SendEmail(string name, string email, string message, string phpPrice)
 		{
 			try
 			{
@@ -195,7 +195,10 @@ namespace Trabahub.Controllers
 
 				var subject = $"Co-working Space Reservation Confirmation";
 
-				var body = $"Name: {name}\nEmail: {email} \nTotal Charge: {phpPrice}\n\n {message}";
+				// Ensure phpPrice contains only the amount without any currency symbols
+				decimal amount = Convert.ToDecimal(phpPrice.Replace("$", "").Replace("₱", ""));
+
+				var body = $"Username: {name}\nEmail: {email} \nTotal Charge: ₱{amount}\n {message}";
 
 				var smtp = new SmtpClient
 				{
@@ -221,7 +224,6 @@ namespace Trabahub.Controllers
 				ViewBag.Error = "Some Error";
 			}
 		}
-
 		public void SaveData(Listing addListing)
 		{
 			string imgPath = UploadFile(addListing);
@@ -362,5 +364,5 @@ namespace Trabahub.Controllers
 			return null; // No errors, return null
 
 		}
-    }
+	}
 }

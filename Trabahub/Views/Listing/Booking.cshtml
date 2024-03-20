@@ -100,22 +100,6 @@
                         <div class="text-start pt-3">
                             <div class="row">
                                 <div class="col-5">
-                                    <span class="form-control-static listingbody">Time In</span>
-                                    <input class="form-control" type="time" name="timein" id="timein" />
-                                </div>
-                                <div class="col-5">
-                                    <span class="form-control-static listingbody">Time Out</span>
-                                    <input class="form-control" type="time" name="timeout" id="timeout" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-start pt-3">
-                            <div class="row">
-                                <div class="col-5">
-                                    <span class="form-control-static listingbody">Duration</span>
-                                    <input class="form-control" type="text" name="duration" id="duration" readonly />
-                                </div>
-                                <div class="col-5">
                                     <div class="btn-group mx-auto pt-3" style="width: 100%">
                                         <button type="button" id="priceDropdownBtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                             Select Price Option
@@ -124,8 +108,24 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="col-5">
+                                    <span class="form-control-static listingbody">Duration</span>
+                                    <input class="form-control" type="text" name="duration" id="duration" readonly />
+                                </div>
                                 <div class="col-1">
                                     <input type="text" id="acctbox" hidden />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-start pt-3">
+                            <div class="row">
+                                <div class="col-5">
+                                    <span class="form-control-static listingbody">Time In</span>
+                                    <input class="form-control" type="time" name="timein" id="timein" />
+                                </div>
+                                <div class="col-5">
+                                    <span class="form-control-static listingbody">Time Out</span>
+                                    <input class="form-control" type="time" name="timeout" id="timeout" />
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
         const timeOut = new Date('2000-01-01T' + timeOutValue);
 
         const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
-        const durationInHours = durationInMinutes / 60;
+        const durationInHours = Math.ceil(durationInMinutes / 60);
         countHours = durationInHours;
 
         const durationInput = document.getElementById('duration');
@@ -200,6 +200,7 @@
         const selectedPrice = parseFloat(document.getElementById("priceDropdownBtn").innerText.split(": ₱")[1]);
         handleSelection(selectedOption, selectedPrice);
     }
+
 
     var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
 
@@ -242,5 +243,4 @@
         }
     }
 </script>
-
 
