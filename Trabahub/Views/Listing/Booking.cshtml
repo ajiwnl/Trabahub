@@ -140,58 +140,21 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    @if (ViewBag.PriceOption == "Hourly Price")
-                    {
-                        <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@(Model.ESTABHRPRICE * (@ViewBag.PriceCount))" asp-route-estabname="@Model.ESTABNAME">
-                            <article class="mb-2">
-                                <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
-                            </article>
-                            <script src="//checkout.stripe.com/v2/checkout.js"
+                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post">
+                        <article class="mb-2">
+                            <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
+                        </article>
+                        <script id="payscript"
+                                src="//checkout.stripe.com/v2/checkout.js"
                                 class="stripe-button"
                                 data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto">
-                            </script>
-                        </form>
-                    }
-                    else if (ViewBag.PriceOption == "Day Pass Price")
-                    {
-                        <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABDAYPRICE" asp-route-estabname="@Model.ESTABNAME">
-                            <article class="mb-2">
-                                <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
-                            </article>
-                            <script src="//checkout.stripe.com/v2/checkout.js"
-                                class="stripe-button"
-                                data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto">
-                            </script>
-                        </form>
-                    }
-                    else if (ViewBag.PriceOption == "Weekly Pass Price")
-                    {
-                        <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABWKPRICE" asp-route-estabname="@Model.ESTABNAME">
-                            <article class="mb-2">
-                                <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
-                            </article>
-                            <script src="//checkout.stripe.com/v2/checkout.js"
-                                class="stripe-button"
-                                data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto">
-                            </script>
-                        </form>
-                    }
-                    else if (ViewBag.PriceOption == "Yearly Pass Price")
-                    {
-                        <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post" asp-route-subprice="@Model.ESTABYRPRICE" asp-route-estabname="@Model.ESTABNAME">
-                            <article class="mb-2">
-                                <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
-                            </article>
-                            <script src="//checkout.stripe.com/v2/checkout.js"
-                                class="stripe-button"
-                                data-key="@Stripe.Value.PublishableKey"
-                                data-locale="auto">
-                            </script>
-                        </form>
-                    }
+                                data-locale="auto"
+                                data-description="@Model.ESTABNAME"
+                                data-amount="">
+                        </script>
+                        <input type="hidden" id="stripePrice" name="stripePrice" value="">
+                        <input type="hidden" id="stripeDescription" name="stripeDescription" value="@Model.ESTABNAME">
+                    </form>
                 </div>
             </div>
         </div>
@@ -201,6 +164,7 @@
 <script>
     const timeInInput = document.getElementById('timein');
     const timeOutInput = document.getElementById('timeout');
+    var countHours = 0;
 
     timeInInput.addEventListener('change', handleTimeChange);
     timeOutInput.addEventListener('change', handleTimeChange);
@@ -218,6 +182,7 @@
 
         const durationInMinutes = (timeOut - timeIn) / (1000 * 60);
         const durationInHours = durationInMinutes / 60;
+        countHours = durationInHours;
 
         const durationInput = document.getElementById('duration');
 
@@ -262,38 +227,19 @@
     });
 
     function handleSelection(option, price) {
-        document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
-
-        var durationInput = document.getElementById("duration");
-        var durationValue = durationInput.value;
-        var numericValue = parseFloat(durationValue);
-
-        var updateOption = option;
-        var setCount = numericValue;
-
-        $.ajax({
-            type: "POST",
-            url: "/Listing/SetPrice",
-            data: {
-                option: updateOption,
-                count: setCount
-            },
-            success: function (response) {
-                console.log(response.option);
-                console.log(response.count);
-
-                if (response.count === 0) {
-                    document.getElementById("amountLabel").textContent = "Amount: ₱" + price;
-
-                }
-                else if(response.count != 0) {
-                    document.getElementById("amountLabel").textContent = "Amount: ₱" + price * response.count;
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error("Something Went Wrong", error);
-            }
-        });
+        if (option === "Hourly Price") {
+            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
+            document.getElementById("payscript").setAttribute("data-amount", price * countHours);
+            document.getElementById("stripePrice").setAttribute("value", price * countHours);
+            console.log(document.getElementById("payscript"))
+        } else {
+            document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
+            document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
+            document.getElementById("payscript").setAttribute("data-amount", price);
+            document.getElementById("stripePrice").setAttribute("value", price);
+            console.log(document.getElementById("payscript"))
+        }
     }
 </script>
 

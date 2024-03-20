@@ -140,11 +140,11 @@ namespace Trabahub.Controllers
 		}
 
         [HttpPost]
-        public IActionResult Charge(string stripeEmail, string stripeToken, string? subprice, string? estabname)
+        public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription)
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
-            long price = Convert.ToInt32(subprice) * 100;
+            long price = Convert.ToInt32(stripePrice) * 100;
 
             var customer = customers.Create(new CustomerCreateOptions
             {
@@ -155,7 +155,7 @@ namespace Trabahub.Controllers
             var charge = charges.Create(new ChargeCreateOptions
             {
                 Amount = price,
-                Description = estabname,
+                Description = stripeDescription,
                 Currency = "php",
                 Customer = customer.Id
             });
@@ -167,8 +167,8 @@ namespace Trabahub.Controllers
                 string userName = HttpContext.Session.GetString("Username");
 
                 var email = stripeEmail;
-                var message = $"Payment successful for reserved co-working space: {estabname}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
-                var sprice = Convert.ToDecimal(subprice); 
+                var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+                var sprice = Convert.ToDecimal(stripePrice);
                 var phpPrice = string.Format("{0:C}", sprice);
 
 
@@ -182,14 +182,6 @@ namespace Trabahub.Controllers
                 TempData["PayFail"] = "Payment Failed, Please try again!";
                 return View();
             }
-        }
-
-        [HttpPost]
-        public IActionResult SetPrice(string option, int count)
-        {
-            HttpContext.Session.SetString("Option", option);
-			HttpContext.Session.SetInt32("Count", count);
-            return Json(new { success = true, option = option, count = count });
         }
 
         // Email sending logic
