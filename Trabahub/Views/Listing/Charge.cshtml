@@ -1,8 +1,19 @@
-﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
+﻿@model Listing
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<div class="bookinglayer">
+    <div class="row">
+        <div class="col">
+            <label>@Model.ESTABNAME</label>
+        </div>
+        <div class="row">
+            <div class="col">Please Comment and Rate Us!</div>
+        </div>
+    </div>
+</div>
 
 if (TempData.ContainsKey("PayFail"))
 {

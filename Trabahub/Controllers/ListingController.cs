@@ -74,7 +74,16 @@ namespace Trabahub.Controllers
 			return View();
 		}
 
-		[HttpPost]
+        [HttpGet]
+        public IActionResult Charge()
+        {
+            var username = HttpContext.Session.GetString("Username");
+
+            var ownerListings = _context.Listing.Where(l => l.OwnerUsername == username).ToList();
+            return View(ownerListings);
+        }
+
+        [HttpPost]
 		[ActionName("Add")]
 		public IActionResult Add(Listing addListing)
 		{
@@ -175,13 +184,19 @@ namespace Trabahub.Controllers
 				SendEmail(userName, email, message, phpPrice);
 
 				TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
-				return RedirectToAction("Index", "Listing");
+				return RedirectToAction("Charge", "Listing");
 			}
 			else
 			{
 				TempData["PayFail"] = "Payment Failed, Please try again!";
 				return View();
 			}
+		}
+
+		[HttpPost]
+		public IActionResult Interaction()
+		{
+			return View();
 		}
 
 		// Email sending logic

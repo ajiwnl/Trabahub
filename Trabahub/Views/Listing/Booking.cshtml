@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" method="post">
+                    <form id="bookingForm" asp-action="Charge" asp-controller="Listing" asp-area="" method="post" asp-route-name="@Model.ESTABNAME">
                         <article class="mb-2">
                             <label id="amountLabel" class="detailsbody border-0 text-center">Amount: ₱</label>
                         </article>
