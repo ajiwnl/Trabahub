@@ -129,9 +129,9 @@ namespace Trabahub.Controllers
 				prices.Add("Weekly Pass Price", booking.ESTABWKPRICE.Value);
 			}
 
-			if (booking.ESTABYRPRICE.HasValue)
+			if (booking.ESTABMONPRICE.HasValue)
 			{
-				prices.Add("Yearly Pass Price", booking.ESTABYRPRICE.Value);
+				prices.Add("Monthly Pass Price", booking.ESTABMONPRICE.Value);
 			}
 
 			ViewBag.Prices = prices;
@@ -146,43 +146,135 @@ namespace Trabahub.Controllers
 			var charges = new ChargeService();
 			long price = Convert.ToInt32(stripePrice) * 100;
 
-			var customer = customers.Create(new CustomerCreateOptions
+			try
 			{
-				Email = stripeEmail,
-				Source = stripeToken
-			});
+				var customer = customers.Create(new CustomerCreateOptions
+				{
+					Email = stripeEmail,
+					Source = stripeToken
+				});
 
-			var charge = charges.Create(new ChargeCreateOptions
+				var charge = charges.Create(new ChargeCreateOptions
+				{
+					Amount = price,
+					Description = stripeDescription,
+					Currency = "php",
+					Customer = customer.Id
+				});
+
+				if (charge.Status == "succeeded")
+				{
+					string BalanceTransactionId = charge.BalanceTransactionId;
+
+					string userName = HttpContext.Session.GetString("Username");
+					string ownerEmail = GetOwnerEmail(stripeDescription); // Get owner's email based on the listing
+
+					var email = stripeEmail;
+					var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
+					var sprice = Convert.ToDecimal(stripePrice);
+					var phpPrice = string.Format("{0:C}", sprice);
+
+					// Send email to client
+					SendEmail(userName, email, message, phpPrice);
+
+					// Send email to owner
+					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice);
+
+					TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+					return RedirectToAction("Index", "Listing");
+				}
+				else
+				{
+					TempData["PayFail"] = "Payment Failed, Please try again!";
+					return RedirectToAction("Index", "Listing");
+				}
+			}
+			catch (StripeException stripeEx)
 			{
-				Amount = price,
-				Description = stripeDescription,
-				Currency = "php",
-				Customer = customer.Id
-			});
-
-			if (charge.Status == "succeeded")
+				// Handle specific Stripe exceptions
+				if (stripeEx.StripeError.Type == "card_error" && stripeEx.StripeError.Code == "card_declined")
+				{
+					TempData["PayFail"] = "Card declined. Please check your card details and try again.";
+					return RedirectToAction("Index", "Listing");
+				}
+				else
+				{
+					// Handle other Stripe exceptions
+					TempData["PayFail"] = "Payment Failed. Please try again later.";
+					return RedirectToAction("Index", "Listing");
+				}
+			}
+			catch (Exception ex)
 			{
-				string BalanceTransactionId = charge.BalanceTransactionId;
-
-				string userName = HttpContext.Session.GetString("Username");
-
-				var email = stripeEmail;
-				var message = $"Payment successful for reserved co-working space: {stripeDescription}.\nTransaction ID: {BalanceTransactionId} \n\nPlease show this message to the reserved workspace for authentication. \n\n Do no reply to this message.";
-				var sprice = Convert.ToDecimal(stripePrice);
-				var phpPrice = string.Format("{0:C}", sprice);
-
-
-				SendEmail(userName, email, message, phpPrice);
-
-				TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+				// Handle general exceptions
+				TempData["PayFail"] = "Payment Failed. Please try again later.";
 				return RedirectToAction("Index", "Listing");
 			}
-			else
+		}
+
+		// Method to retrieve owner's email based on the listing ESTABNAME
+		private string GetOwnerEmail(string listingESTABNAME)
+		{
+			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
+			if (listing != null)
 			{
-				TempData["PayFail"] = "Payment Failed, Please try again!";
-				return View();
+				var ownerUsername = listing.OwnerUsername;
+				var ownerCredentials = _context.Credentials.FirstOrDefault(c => c.Username == ownerUsername);
+				if (ownerCredentials != null)
+				{
+					return ownerCredentials.Email;
+				}
+			}
+			return null;
+		}
+
+
+		// Method to send email to the owner
+		public void SendEmailToOwner(string ownerEmail, string clientUsername, string clientEmail, string transactionId, string listingDescription, string phpPrice)
+		{
+			try
+			{
+				var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Space Reservation Owner");
+				var receiverEmail = new MailAddress(ownerEmail, "Owner");
+				var password = "weaz drul elrl bngg";
+
+				var subject = $"Co-working Space Reservation Notification";
+
+				// Ensure phpPrice contains only the amount without any currency symbols
+				decimal amount = Convert.ToDecimal(phpPrice.Replace("$", "").Replace("₱", ""));
+
+				var body = $"A client has made a payment for the reservation of the co-working space: {listingDescription}.\n";
+				body += $"Client Username: {clientUsername}\n";
+				body += $"Client Email: {clientEmail}\n";
+				body += $"Transaction ID: {transactionId}\n";
+				body += $"Amount Received: ₱{amount}\n\n";
+				body += $" Owner's Copy. Do no reply to this message";
+
+				var smtp = new SmtpClient
+				{
+					Host = "smtp.gmail.com",
+					Port = 587,
+					EnableSsl = true,
+					DeliveryMethod = SmtpDeliveryMethod.Network,
+					UseDefaultCredentials = false,
+					Credentials = new NetworkCredential(senderEmail.Address, password)
+				};
+
+				using (var mess = new MailMessage(senderEmail, receiverEmail)
+				{
+					Subject = subject,
+					Body = body
+				})
+				{
+					smtp.Send(mess);
+				}
+			}
+			catch (Exception)
+			{
+				ViewBag.Error = "Some Error";
 			}
 		}
+
 
 		// Email sending logic
 		public void SendEmail(string name, string email, string message, string phpPrice)
@@ -270,10 +362,10 @@ namespace Trabahub.Controllers
 				listing.ESTABWKPRICE = addListing.ESTABWKPRICE.Value;
 			}
 
-			// Check if ESTABYRPRICE is provided and assign it
-			if (addListing.ESTABYRPRICE.HasValue)
+			// Check if ESTABMONPRICE is provided and assign it
+			if (addListing.ESTABMONPRICE.HasValue)
 			{
-				listing.ESTABYRPRICE = addListing.ESTABYRPRICE.Value;
+				listing.ESTABMONPRICE = addListing.ESTABMONPRICE.Value;
 			}
 
 			_context.Listing.Add(listing);

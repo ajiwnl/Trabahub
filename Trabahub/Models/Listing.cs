@@ -25,7 +25,7 @@ namespace Trabahub.Models
 
         public int? ESTABWKPRICE { get; set; }
 
-        public int? ESTABYRPRICE { get; set; }
+        public int? ESTABMONPRICE { get; set; }
 
 		public string OwnerUsername { get; set; }
 
