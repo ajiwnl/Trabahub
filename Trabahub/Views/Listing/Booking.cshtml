@@ -153,7 +153,7 @@
                             <input type="hidden" id="timeinhid" name="timeinhid" value="">
                             <input type="hidden" id="timeouthid" name="timeouthid" value="">
                             <input type="hidden" id="dropdownChoice" name="dropdownChoice" value="">
-                            <input type="hidden" id="dynamicdate" name="dynamicdate" value="">
+                            <input type="hidden" id="dynamicdatehid" name="dynamicdate" value="">
 
                         </form>
                     </div>
@@ -271,7 +271,7 @@
             document.getElementById("timeinhid").value = convertTo12HourFormat(timeInInput.value);
             document.getElementById("timeouthid").value = convertTo12HourFormat(timeOutInput.value);
             document.getElementById("dropdownChoice").value = option;
-            document.getElementById("dynamicdate").value = document.getElementById("dynamicdate").textContent;
+            document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
         }
     });
 </script>
