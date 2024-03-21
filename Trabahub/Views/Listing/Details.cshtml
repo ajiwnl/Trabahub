@@ -161,8 +161,8 @@
 			{
 				<div class="commentcards">
 					<label class="detailsbody">@interaction.Username</label>
-					<label class="detailsbody">@interaction.InteractComment</label>
 					<div class="star-container" id="star-@interaction.InteractId"></div>
+					<label class="detailsbody">@interaction.InteractComment</label>
 					<script>
 						$(document).ready(function () {
 							var rating = parseFloat('@interaction.InteractRating');
@@ -173,5 +173,7 @@
 				</div>
 			}
 		</div>
+	</div>
+
 	</div>
 </div>
