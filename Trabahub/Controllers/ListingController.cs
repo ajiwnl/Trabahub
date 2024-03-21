@@ -45,29 +45,26 @@ namespace Trabahub.Controllers
 			var userType = HttpContext.Session.GetString("UserType");
 			var username = HttpContext.Session.GetString("Username");
 
+			IQueryable<Listing> spacesQuery;
+
 			if (userType == "Owner")
 			{
-				var spaces = _context.Listing.Where(x => x.OwnerUsername == username);
-
-				if (!string.IsNullOrEmpty(searchSpaces))
-				{
-					spaces = spaces.Where(x => EF.Functions.Like(x.ESTABNAME, $"%{searchSpaces}%"));
-				}
-
-				return View(spaces.ToList());
+				spacesQuery = _context.Listing.Where(x => x.OwnerUsername == username);
 			}
 			else
 			{
-				var allListings = _context.Listing.ToList();
-
-				if (!string.IsNullOrEmpty(searchSpaces))
-				{
-					allListings = allListings.Where(x => EF.Functions.Like(x.ESTABNAME, $"%{searchSpaces}%")).ToList();
-				}
-
-				return View(allListings);
+				spacesQuery = _context.Listing.AsQueryable();
 			}
+
+			if (!string.IsNullOrEmpty(searchSpaces))
+			{
+				spacesQuery = spacesQuery.Where(x => EF.Functions.Like(x.ESTABNAME, $"%{searchSpaces}%"));
+			}
+
+			var spaces = spacesQuery.ToList();
+			return View(spaces);
 		}
+
 
 		[HttpGet]
 		public IActionResult Add()
@@ -275,7 +272,7 @@ namespace Trabahub.Controllers
 				body += $"Amount Received: ₱{amount}\n";
 				body += $"Time In: {timeinhid}\n";
 				body += $"Time Out: {timeouthid}\n";
-				body += $"Dynamic Date: {dynamicdate}\n\n";
+				body += $"Reservation Date: {dynamicdate}\n\n";
 				body += $" Owner's Copy. Do no reply to this message";
 
 				var smtp = new SmtpClient
@@ -322,7 +319,7 @@ namespace Trabahub.Controllers
 				body += $"Subscription: {dropdownChoice}\n";
 				body += $"Time In: {timeinhid}\n";
 				body += $"Time Out: {timeouthid}\n";
-				body += $"Dynamic Date: {dynamicdate}\n\n";
+				body += $"Reservation Date: {dynamicdate}\n\n";
 				body += $"Please show this message to the reserved workspace for authentication.\n\n";
 				body += $"Do no reply to this message.";
 				var smtp = new SmtpClient
