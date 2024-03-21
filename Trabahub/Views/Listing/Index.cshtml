@@ -27,103 +27,20 @@
 				</div>
 			</div>
 			<div class="row mt-5">
-				<div class="col-3" id="filter">
-					<div class="spacemain">
-						<div class="container">
-							<div class="pt-4">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path d="M8.65827 22.4473L8.97449 23.396L8.65827 22.4473ZM15.6583 20.114L15.9745 21.0626L15.9745 21.0626L15.6583 20.114ZM22.3739 5.62622L23.081 6.33333L22.3739 5.62622ZM7.70726 11.7071L7.00015 12.4142L7.70726 11.7071ZM1.62639 5.62622L2.3335 4.91911L1.62639 5.62622ZM2.3335 2.33333H21.6668V0.333328H2.3335V2.33333ZM2.3335 4.91911V2.33333H0.333496V4.91911H2.3335ZM8.41437 11L2.3335 4.91911L0.919283 6.33333L7.00015 12.4142L8.41437 11ZM7.00015 12.4142V21.973H9.00015V12.4142H7.00015ZM7.00015 21.973C7.00015 22.9968 8.0032 23.7197 8.97449 23.396L8.34204 21.4986C8.6658 21.3907 9.00015 21.6317 9.00015 21.973H7.00015ZM8.97449 23.396L15.9745 21.0626L15.342 19.1653L8.34204 21.4986L8.97449 23.396ZM15.9745 21.0626C16.587 20.8585 17.0002 20.2853 17.0002 19.6396H15.0002C15.0002 19.4244 15.1379 19.2333 15.342 19.1653L15.9745 21.0626ZM17.0002 19.6396V12.4142H15.0002V19.6396H17.0002ZM21.6668 4.91911L15.5859 11L17.0002 12.4142L23.081 6.33333L21.6668 4.91911ZM21.6668 2.33333V4.91911H23.6668V2.33333H21.6668ZM23.081 6.33333C23.4561 5.95826 23.6668 5.44955 23.6668 4.91911H21.6668L23.081 6.33333ZM17.0002 12.4142L15.5859 11C15.2109 11.3751 15.0002 11.8838 15.0002 12.4142H17.0002ZM7.00015 12.4142H9.00015C9.00015 11.8838 8.78944 11.3751 8.41437 11L7.00015 12.4142ZM0.333496 4.91911C0.333496 5.44955 0.54421 5.95826 0.919283 6.33333L2.3335 4.91911V4.91911H0.333496ZM21.6668 2.33333H21.6668H23.6668C23.6668 1.22876 22.7714 0.333328 21.6668 0.333328V2.33333ZM2.3335 0.333328C1.22893 0.333328 0.333496 1.22876 0.333496 2.33333H2.3335V0.333328Z" fill="#222222" />
-								</svg>
-								<label class="filterhlabel ps-1">Filter Options</label>
-							</div>
-							<div class="pt-4 text-start border-bottom border-2 border-secondary">
-								<label class="filterlabels">Price Range</label>
-							</div>
-							<div class="row pt-4">
-								<div class="col text-start">
-									<div class="form-floating mb-2">
-										<input type="text" class="form-control" id="max" name="min" placeholder="P MIN" required />
-										<label for="min">Minimum</label>
-									</div>
-								</div>
-							</div>
-							<div class="pt-1 pb-2">
-								<svg width="2" height="35" viewBox="0 0 2 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<line x1="1" y1="35" x2="1" stroke="#BCBABA" stroke-width="2" />
-								</svg>
-							</div>
-							<div class="row pt-2">
-								<div class="col">
-									<div class="form-floating">
-										<input type="text" class="form-control" id="min" name="max" placeholder="P MAX" required />
-										<label for="max">Maximum</label>
-									</div>
-								</div>
-							</div>
-							<div class="pt-4 text-start border-bottom border-2 border-secondary">
-								<label class="filterlabels">Ratings</label>
-							</div>
-							<span class="rating_stars rating_0">
-								<span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-								<span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-								<span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-								<span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-								<span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-
-								<span class='r r0_5' data-rating='1' data-value='0.5'></span>
-								<span class='r r1' data-rating='1' data-value='1'></span>
-								<span class='r r1_5' data-rating='15' data-value='1.5'></span>
-								<span class='r r2' data-rating='2' data-value='2'></span>
-								<span class='r r2_5' data-rating='25' data-value='2.5'></span>
-								<span class='r r3' data-rating='3' data-value='3'></span>
-								<span class='r r3_5' data-rating='35' data-value='3.5'></span>
-								<span class='r r4' data-rating='4' data-value='4'></span>
-								<span class='r r4_5' data-rating='45' data-value='4.5'></span>
-								<span class='r r5' data-rating='5' data-value='5'></span>
-							</span>
-							<div class="values mt-2">
-								<div class="form-floating mb-3">
-									<input type="text" class="form-control" name="rating" id="rating_val" value="0" />
-									<label for="rating_val">Rating Value</label>
-
-								</div>
-							</div>
-							<div class="pt-5">
-								<a href="#" class="sapplybtn text-white border-0 text-decoration-none rounded-1">APPLY</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-9" id="spaceselection">
+				<div class="col" id="spaceselection">
 					<div class="spaceside">
 						<div class="filterbanner">
 							<div class="row" id="filteroptions">
-								<div class="col pt-1">
-									<label class="filterlabels pt-4 ps-5 pe-5">Sort</label>
+								<div class="col-2 pt-1">
+									<label class="filterlabels pt-4 ps-5 pe-5">Search:</label>
 								</div>
-								<div class="col-4 mt-2">
+								<div class="col-8 mt-2">
 									<form method="get" asp-action="Index">
 										<div class="form-floating">
 											<input type="text" class="form-control" name="searchSpaces" id="searchSpaces" value="Co-Working Spaces" />
 											<label for="rating_val">Search</label>
 										</div>
 									</form>
-								</div>
-								<div class="col-4 text-start">
-									<div class="btn-group mx-auto pt-2" style="height: 100%">
-										<button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-											Accomodation
-										</button>
-										<ul class="dropdown-menu dropdown-menu-lg-end">
-											<li><button class="dropdown-item" onclick="selectedType('All')" type="button">All</button></li>
-											<li><button class="dropdown-item" onclick="selectedType('Open Space')" type="button">Open Space</button></li>
-											<li><button class="dropdown-item" onclick="selectedType('Private Space')" type="button">Private Space</button></li>
-											<li><button class="dropdown-item" onclick="selectedType('Meeting Space')" type="button">Meeting Space</button></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col text-start">
-									<input type="text" id="acctbox" hidden />
 								</div>
 							</div>
 						</div>
@@ -209,103 +126,20 @@
 					</div>
 				</div>
 				<div class="row mt-5">
-					<div class="col-3" id="filter">
-						<div class="spacemain">
-							<div class="container">
-								<div class="pt-4">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<path d="M8.65827 22.4473L8.97449 23.396L8.65827 22.4473ZM15.6583 20.114L15.9745 21.0626L15.9745 21.0626L15.6583 20.114ZM22.3739 5.62622L23.081 6.33333L22.3739 5.62622ZM7.70726 11.7071L7.00015 12.4142L7.70726 11.7071ZM1.62639 5.62622L2.3335 4.91911L1.62639 5.62622ZM2.3335 2.33333H21.6668V0.333328H2.3335V2.33333ZM2.3335 4.91911V2.33333H0.333496V4.91911H2.3335ZM8.41437 11L2.3335 4.91911L0.919283 6.33333L7.00015 12.4142L8.41437 11ZM7.00015 12.4142V21.973H9.00015V12.4142H7.00015ZM7.00015 21.973C7.00015 22.9968 8.0032 23.7197 8.97449 23.396L8.34204 21.4986C8.6658 21.3907 9.00015 21.6317 9.00015 21.973H7.00015ZM8.97449 23.396L15.9745 21.0626L15.342 19.1653L8.34204 21.4986L8.97449 23.396ZM15.9745 21.0626C16.587 20.8585 17.0002 20.2853 17.0002 19.6396H15.0002C15.0002 19.4244 15.1379 19.2333 15.342 19.1653L15.9745 21.0626ZM17.0002 19.6396V12.4142H15.0002V19.6396H17.0002ZM21.6668 4.91911L15.5859 11L17.0002 12.4142L23.081 6.33333L21.6668 4.91911ZM21.6668 2.33333V4.91911H23.6668V2.33333H21.6668ZM23.081 6.33333C23.4561 5.95826 23.6668 5.44955 23.6668 4.91911H21.6668L23.081 6.33333ZM17.0002 12.4142L15.5859 11C15.2109 11.3751 15.0002 11.8838 15.0002 12.4142H17.0002ZM7.00015 12.4142H9.00015C9.00015 11.8838 8.78944 11.3751 8.41437 11L7.00015 12.4142ZM0.333496 4.91911C0.333496 5.44955 0.54421 5.95826 0.919283 6.33333L2.3335 4.91911V4.91911H0.333496ZM21.6668 2.33333H21.6668H23.6668C23.6668 1.22876 22.7714 0.333328 21.6668 0.333328V2.33333ZM2.3335 0.333328C1.22893 0.333328 0.333496 1.22876 0.333496 2.33333H2.3335V0.333328Z" fill="#222222" />
-									</svg>
-									<label class="filterhlabel ps-1">Filter Options</label>
-								</div>
-								<div class="pt-4 text-start border-bottom border-2 border-secondary">
-									<label class="filterlabels">Price Range</label>
-								</div>
-								<div class="row pt-4">
-									<div class="col text-start">
-										<div class="form-floating mb-2">
-											<input type="text" class="form-control" id="max" name="min" placeholder="P MIN" required />
-											<label for="min">Minimum</label>
-										</div>
-									</div>
-								</div>
-								<div class="pt-1 pb-2">
-									<svg width="2" height="35" viewBox="0 0 2 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<line x1="1" y1="35" x2="1" stroke="#BCBABA" stroke-width="2" />
-									</svg>
-								</div>
-								<div class="row pt-2">
-									<div class="col">
-										<div class="form-floating">
-											<input type="text" class="form-control" id="min" name="max" placeholder="P MAX" required />
-											<label for="max">Maximum</label>
-										</div>
-									</div>
-								</div>
-								<div class="pt-4 text-start border-bottom border-2 border-secondary">
-									<label class="filterlabels">Ratings</label>
-								</div>
-								<span class="rating_stars rating_0">
-									<span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-									<span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-									<span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-									<span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-									<span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-
-									<span class='r r0_5' data-rating='1' data-value='0.5'></span>
-									<span class='r r1' data-rating='1' data-value='1'></span>
-									<span class='r r1_5' data-rating='15' data-value='1.5'></span>
-									<span class='r r2' data-rating='2' data-value='2'></span>
-									<span class='r r2_5' data-rating='25' data-value='2.5'></span>
-									<span class='r r3' data-rating='3' data-value='3'></span>
-									<span class='r r3_5' data-rating='35' data-value='3.5'></span>
-									<span class='r r4' data-rating='4' data-value='4'></span>
-									<span class='r r4_5' data-rating='45' data-value='4.5'></span>
-									<span class='r r5' data-rating='5' data-value='5'></span>
-								</span>
-								<div class="values mt-2">
-									<div class="form-floating mb-3">
-										<input type="text" class="form-control" name="rating" id="rating_val" value="0" />
-										<label for="rating_val">Rating Value</label>
-
-									</div>
-								</div>
-								<div class="pt-5">
-									<a href="#" class="sapplybtn text-white border-0 text-decoration-none rounded-1">APPLY</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-9" id="spaceselection">
+					<div class="col" id="spaceselection">
 						<div class="spaceside">
 							<div class="filterbanner">
 								<div class="row" id="filteroptions">
-									<div class="col pt-1">
-										<label class="filterlabels pt-4 ps-5 pe-5">Sort</label>
+									<div class="col-2 pt-1">
+										<label class="filterlabels pt-4 ps-5 pe-5">Search:</label>
 									</div>
-									<div class="col-4 mt-2">
+									<div class="col-8 mt-2">
 										<form method="get" asp-action="Index">
 											<div class="form-floating">
 												<input type="text" class="form-control" name="searchSpaces" id="searchSpaces" value="Co-Working Spaces" />
 												<label for="rating_val">Search</label>
 											</div>
 										</form>
-									</div>
-									<div class="col-4 text-start">
-										<div class="btn-group mx-auto pt-2" style="height: 100%">
-											<button type="button" id="accomddbtn" class="btn-lg dropdown-toggle form-control" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-												Accomodation
-											</button>
-											<ul class="dropdown-menu dropdown-menu-lg-end">
-												<li><button class="dropdown-item" onclick="selectedType('All')" type="button">All</button></li>
-												<li><button class="dropdown-item" onclick="selectedType('Open Space')" type="button">Open Space</button></li>
-												<li><button class="dropdown-item" onclick="selectedType('Private Space')" type="button">Private Space</button></li>
-												<li><button class="dropdown-item" onclick="selectedType('Meeting Space')" type="button">Meeting Space</button></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col text-start">
-										<input type="text" id="acctbox" hidden />
 									</div>
 								</div>
 							</div>
