@@ -10,63 +10,70 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<div class="bookinglayer">
-    <form method="post" asp-action="Interact" asp-controller="Listing" enctype="multipart/form-data">
+<div class="chargelayer">
+    <label class="headercharge mt-5 text-center">Please Comment and Rate Us!</label>
+    <form method="post" class="adjustform" asp-action="Interact" asp-controller="Listing" enctype="multipart/form-data">
         <div class="row">
-            <div class="col">
-                <label>@establishmentName</label>
+            <div class="col text-center">
+                <label class="filterlabels">@establishmentName</label>
             </div>
             <div class="col">
-                <label>Please Comment and Rate Us!</label>
             </div>
         </div>
-        <div class="pt-4 text-start border-bottom border-2 border-secondary">
-            <label class="filterlabels">Ratings</label>
-        </div>
-        <span class="rating_stars rating_0">
-            <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-            <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-            <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-            <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
-            <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+        <div class="row mt-2">
+            <div class="col text-center">
+                <label class="filterlabels">Ratings</label>
 
-            <span class='r r0_5' data-rating='1' data-value='0.5'></span>
-            <span class='r r1' data-rating='1' data-value='1'></span>
-            <span class='r r1_5' data-rating='15' data-value='1.5'></span>
-            <span class='r r2' data-rating='2' data-value='2'></span>
-            <span class='r r2_5' data-rating='25' data-value='2.5'></span>
-            <span class='r r3' data-rating='3' data-value='3'></span>
-            <span class='r r3_5' data-rating='35' data-value='3.5'></span>
-            <span class='r r4' data-rating='4' data-value='4'></span>
-            <span class='r r4_5' data-rating='45' data-value='4.5'></span>
-            <span class='r r5' data-rating='5' data-value='5'></span>
-        </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <span class="rating_stars rating_0">
+                    <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                    <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                    <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                    <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                    <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+
+                    <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+                    <span class='r r1' data-rating='1' data-value='1'></span>
+                    <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+                    <span class='r r2' data-rating='2' data-value='2'></span>
+                    <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+                    <span class='r r3' data-rating='3' data-value='3'></span>
+                    <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+                    <span class='r r4' data-rating='4' data-value='4'></span>
+                    <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+                    <span class='r r5' data-rating='5' data-value='5'></span>
+                </span>
+            </div>
+        </div>
         <div class="values mt-2">
             <div class="form-floating mb-3">
-                <input asp-for="InteractRating" type="text" class="form-control" id="rating_val"  />
+                <input asp-for="InteractRating" type="text" class="form-control" id="rating_val" hidden />
                 <label for="rating_val">Rating</label>
             </div>
         </div>
         <div class="comment mt-2">
             <div class="form-floating mb-3">
-                <input asp-for="InteractComment" type="text" class="form-control" id="comment_val" />
+                <input asp-for="InteractComment" type="text" class="form-control" style="height: 100px" id="comment_val" />
                 <label for="comment_val">Comment</label>
             </div>
         </div>
         <div class="comment mt-2">
             <div class="form-floating mb-3">
-                <input asp-for="ESTABNAME" type="text" class="form-control" id="estabname" value="@establishmentName" />
-                <label for="estabname">@establishmentName</label>
+                <input asp-for="ESTABNAME" type="text" class="form-control" id="estabname" value="@establishmentName" hidden />
             </div>
         </div>
         <div class="comment mt-2">
             <div class="form-floating mb-3">
-                <input asp-for="Username" type="text" class="form-control" id="username" value="@ViewBag.Username" />
-                <label for="username">@ViewBag.Username</label>
+                <input asp-for="Username" type="text" class="form-control" id="username" value="@ViewBag.Username" hidden/>
             </div>
         </div>
         <div class="row mt-5">
-            <button type="submit" class="btn btn-success btn-lg" style="width: 25%" id="nextbtn">List</button>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success btn-lg" style="width: 40%" id="nextbtn">Send</button>
+            </div>
         </div>
     </form>
 </div>
