@@ -83,19 +83,31 @@ namespace Trabahub.Controllers
         [ActionName("Interact")]
         public IActionResult Interaction(ListInteraction addinteractList)
         {
+            // Add the interaction to the database
             int totalCount = _context.ListInteraction.Count();
-
             var interact = new ListInteraction()
             {
                 InteractId = totalCount + 1,
                 ESTABNAME = addinteractList.ESTABNAME,
-				Username = addinteractList.Username,
+                Username = addinteractList.Username,
                 InteractComment = addinteractList.InteractComment,
                 InteractRating = addinteractList.InteractRating
             };
-
             _context.ListInteraction.Add(interact);
             _context.SaveChanges();
+
+            // Calculate average rating
+            double? averageRating = _context.ListInteraction
+                .Where(i => i.ESTABNAME == addinteractList.ESTABNAME && i.InteractRating != null)
+                .Average(i => i.InteractRating);
+
+            // Update ESTABRATING in Listing table with the calculated average
+            var listingToUpdate = _context.Listing.FirstOrDefault(l => l.ESTABNAME == addinteractList.ESTABNAME);
+            if (listingToUpdate != null)
+            {
+                listingToUpdate.ESTABRATING = averageRating ?? 0; // If averageRating is null, default to 0
+                _context.SaveChanges();
+            }
 
             return RedirectToAction("Index", "Listing");
         }

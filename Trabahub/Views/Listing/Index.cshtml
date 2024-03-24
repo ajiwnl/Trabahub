@@ -26,24 +26,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="row mt-5">
+			<div class="row">
 				<div class="col" id="spaceselection">
 					<div class="spaceside">
-						<div class="filterbanner">
-							<div class="row" id="filteroptions">
-								<div class="col-2 pt-1">
-									<label class="filterlabels pt-4 ps-5 pe-5">Search:</label>
-								</div>
-								<div class="col-8 mt-2">
-									<form method="get" asp-action="Index">
-										<div class="form-floating">
-											<input type="text" class="form-control" name="searchSpaces" id="searchSpaces" value="Co-Working Spaces" />
-											<label for="rating_val">Search</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
+						<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
 						<div class="clayoutwrapper mt-3">
 							<div class="cardslayout">
 								@foreach (var listings in Model)
@@ -104,9 +90,6 @@
 				</div>
 			</div>
 		</div>
-			<div class="footer pt-5">
-				<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
-			</div>
 		}
 		else if (ViewBag.UserType == "Client")
 		{
