@@ -174,7 +174,6 @@
 
         function handleTimeChange() {
             calculateDuration();
-
         }
 
         function calculateDuration() {
@@ -207,13 +206,6 @@
 
         var prices = @Html.Raw(Json.Serialize(ViewBag.Prices));
 
-        function clearInputFields() {
-            $("input[name='timein']").val('');
-            $("input[name='timeout']").val('');
-            $("input[name='duration']").val('');
-            $("label[id='amountLabel']").text('Amount ₱:');
-        }
-
         Object.entries(prices).forEach(function ([option, price]) {
             var listItem = document.createElement("li");
             var button = document.createElement("button");
@@ -222,13 +214,23 @@
             button.textContent = option + ": ₱" + price;
             button.onclick = function () {
                 handleSelection(option, price);
-                if (option === "Hourly Price") {
-                    clearInputFields();
+                if (option !== "Hourly Price") {
+                    disableTimeInputs(); // Disable time inputs for non-hourly options
                 }
             };
             listItem.appendChild(button);
             document.getElementById("priceDropdown").appendChild(listItem);
         });
+
+        function disableTimeInputs() {
+            timeInInput.disabled = true;
+            timeOutInput.disabled = true;
+        }
+
+        function enableTimeInputs() {
+            timeInInput.disabled = false;
+            timeOutInput.disabled = false;
+        }
 
         function convertTo12HourFormat(timeString) {
             const timeComponents = timeString.split(':');
@@ -250,18 +252,20 @@
         }
 
         function handleSelection(option, price) {
+            const timeInInput = document.getElementById('timein');
+            const timeOutInput = document.getElementById('timeout');
             if (option === "Hourly Price") {
                 document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
                 document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
                 document.getElementById("payscript").setAttribute("data-amount", price * countHours);
                 document.getElementById("stripePrice").setAttribute("value", price * countHours);
-                console.log(document.getElementById("payscript"))
             } else {
                 document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
                 document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
                 document.getElementById("payscript").setAttribute("data-amount", price);
                 document.getElementById("stripePrice").setAttribute("value", price);
-                console.log(document.getElementById("payscript"))
+                timeInInput.value = "Client can freely choose their time";
+                timeOutInput.value = "Client can freely choose their time";
             }
             // Log the values of timeInInput and timeOutInput
             console.log("Time In:", timeInInput.value);
@@ -272,6 +276,13 @@
             document.getElementById("timeouthid").value = convertTo12HourFormat(timeOutInput.value);
             document.getElementById("dropdownChoice").value = option;
             document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
+
+            if (option === "Hourly Price") {
+                enableTimeInputs(); // Enable time inputs for hourly option
+            } else {
+                disableTimeInputs(); // Disable time inputs for non-hourly options
+            }
         }
     });
+
 </script>
