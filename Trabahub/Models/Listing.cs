@@ -18,7 +18,10 @@ namespace Trabahub.Models
         [Required]
         [StringLength(50)]
         public string? ESTABADD { get; set; }
-        
+
+        [Required]
+        public int? ACCOMODATION { get; set; }
+
         public int? ESTABHRPRICE { get; set; }
 
         public int? ESTABDAYPRICE { get; set; }

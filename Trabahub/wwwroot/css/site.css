@@ -613,6 +613,14 @@ footer {
     text-decoration: none;
 }
 
+.detailserror {
+    color: red !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .detailcomments {
     position: relative;
     width: 100%;
