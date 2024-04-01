@@ -43,32 +43,36 @@
 														<label class="filterlabels">@listings.ESTABNAME</label>
 													</div>
 												</div>
-												<div class="stars mb-2" id="starlistings_@listings.ESTABNAME">
-													<script>
-														function generateStars(rating, containerId) {
-															var starsHtml = '';
-															var fullStars = Math.floor(rating);
-															var halfStar = rating % 1 !== 0;
+													<div class="stars mb-2" id="starlistings">
+														<script>
+															function generateStars(rating, containerId) {
+																var starsHtml = '';
 
-															for (var i = 1; i <= 5; i++) {
-																if (i <= fullStars) {
+																var fullStars = Math.floor(rating);
+
+																var hasHalfStar = rating % 1 >= 0.5;
+
+																for (var i = 0; i < fullStars; i++) {
 																	starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
-																} else if (halfStar) {
+																}
+
+																if (hasHalfStar) {
 																	starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
-																	halfStar = false;
-																} else {
+																}
+
+																for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
 																	starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
 																}
+
+																document.getElementById(containerId).innerHTML = starsHtml;
 															}
-															document.getElementById(containerId).innerHTML = starsHtml;
-														}
-														$(document).ready(function () {
-															var rating = parseFloat("@listings.ESTABRATING");
-															var containerId = "starlistings_@listings.ESTABNAME";
-															generateStars(rating, containerId);
-														});
-													</script>
-												</div>
+															$(document).ready(function () {
+																var rating = parseFloat('@listings.ESTABRATING');
+																var containerId = "starlistings";
+																generateStars(rating, containerId);
+															});
+														</script>
+													</div>
 												<div class="row">
 													<div class="col">
 														<label class="coverbody">@listings.ESTABDESC</label>
@@ -139,28 +143,32 @@
 															<label class="filterlabels">@listings.ESTABNAME</label>
 														</div>
 													</div>
-													<div class="stars mb-2" id="starlistings_@listings.ESTABNAME">
+													<div class="stars mb-2" id="starlistings">
 														<script>
 															function generateStars(rating, containerId) {
 																var starsHtml = '';
-																var fullStars = Math.floor(rating);
-																var halfStar = rating % 1 !== 0;
 
-																for (var i = 1; i <= 5; i++) {
-																	if (i <= fullStars) {
-																		starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
-																	} else if (halfStar) {
-																		starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
-																		halfStar = false;
-																	} else {
-																		starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
-																	}
+																var fullStars = Math.floor(rating);
+
+																var hasHalfStar = rating % 1 >= 0.5;
+
+																for (var i = 0; i < fullStars; i++) {
+																	starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
 																}
+
+																if (hasHalfStar) {
+																	starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
+																}
+
+																for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+																	starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
+																}
+
 																document.getElementById(containerId).innerHTML = starsHtml;
 															}
 															$(document).ready(function () {
-																var rating = parseFloat("@listings.ESTABRATING");
-																var containerId = "starlistings_@listings.ESTABNAME";
+																var rating = parseFloat('@listings.ESTABRATING');
+																var containerId = "starlistings";
 																generateStars(rating, containerId);
 															});
 														</script>
