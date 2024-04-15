@@ -6,6 +6,7 @@ using Stripe;
 using System.Net.Mail;
 using System.Net;
 using System.Threading;
+using Trabahub.Helpers;
 
 namespace Trabahub.Controllers
 {
@@ -281,6 +282,8 @@ namespace Trabahub.Controllers
 					// Send email to owner
 					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
+
+
 					TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
                     TempData["EstablishmentName"] = stripeDescription;
                     return RedirectToAction("Charge", "Listing");
@@ -313,8 +316,9 @@ namespace Trabahub.Controllers
 				return RedirectToAction("Index", "Listing");
 			}
 		}
+       
 
-		private void ScheduleAccommodationRestore(string establishmentName, int durationInHours)
+        private void ScheduleAccommodationRestore(string establishmentName, int durationInHours)
 		{
 			// Schedule a task to restore accommodation after the specified duration
 			Task.Delay(TimeSpan.FromHours(durationInHours)).ContinueWith((task) =>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Trabahub.Data;
 using Trabahub.Models;
+using Trabahub.Helpers;
 
 namespace Trabahub.Controllers
 {
@@ -20,15 +21,20 @@ namespace Trabahub.Controllers
 			_context = context;
 		}
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             var getTotalUsers = _context.Credentials.Count();
             var getTotalListings = _context.Listing.Count();
             var getTotalInteractions = _context.ListInteraction.Count();
+            // Access the CalculateTotalChargesFromStripe method
+            var getTotalCharges = await StripeHelper.CalculateTotalChargesFromStripe();
 
             HttpContext.Session.SetString("TotalListing", getTotalUsers.ToString());
             HttpContext.Session.SetString("TotalUsers", getTotalListings.ToString());
             HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
+            HttpContext.Session.SetString("TotalCharges", getTotalCharges.ToString());
+
+
 
             ViewData["ActivePage"] = "Home";
             return View();
