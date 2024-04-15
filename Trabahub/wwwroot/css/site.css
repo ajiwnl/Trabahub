@@ -76,6 +76,43 @@ footer {
     width: 100%;
 }
 
+.analyticsbody {
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.card-analytics {
+    width: 275px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;    
+    border-radius: 100%;
+}
+
+.analytics-style {
+    font-size: 48px;
+    font-weight: 600;
+    color: #3ECCB5;
+}
+
+.analytics-label {
+    font-size: 20px;
+}
+
+.analytics-h-label {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: 'Merriweather', serif;
+}
+
 /*Home Page Content*/
 .maintxt {
     font-family: 'Merriweather', serif;

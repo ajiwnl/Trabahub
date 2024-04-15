@@ -27,6 +27,23 @@
         </a>
     </div>
 </div>
+<div class="analytics-header text-center" style="transform: translate(0%, 75%)">
+    <label class="analytics-h-label">User Actions </label>
+</div>
+<div class="analyticsbody">
+    <div class="card-analytics">
+        <label class="analytics-style text-center">@ViewBag.TotalListing</label>
+        <label class="analytics-label mt-3 text-center">Total Listings</label>
+    </div>
+    <div class="card-analytics">
+        <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
+        <label class="analytics-label mt-3 text-center">Total Users Registered</label>
+    </div>
+    <div class="card-analytics">
+        <label class="analytics-style text-center">@ViewBag.TotalBooks</label>
+        <label class="analytics-label mt-3 text-center">Total Users Booked</label>
+    </div>
+</div>
 
 @if (TempData.ContainsKey("SuccessMessage"))
 {
