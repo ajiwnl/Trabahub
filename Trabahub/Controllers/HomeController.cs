@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Trabahub.Data;
 using Trabahub.Models;
 
 namespace Trabahub.Controllers
@@ -8,13 +10,26 @@ namespace Trabahub.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+		private readonly ApplicationDbContext _context;
+		private readonly IWebHostEnvironment _webHostEnvironment;
+
+		public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _logger = logger;
-        }
+			_webHostEnvironment = webHostEnvironment;
+			_context = context;
+		}
 
         public IActionResult Index()
         {
+            var getTotalUsers = _context.Credentials.Count();
+            var getTotalListings = _context.Listing.Count();
+            var getTotalInteractions = _context.ListInteraction.Count();
+
+            HttpContext.Session.SetString("TotalListing", getTotalUsers.ToString());
+            HttpContext.Session.SetString("TotalUsers", getTotalListings.ToString());
+            HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
+
             ViewData["ActivePage"] = "Home";
             return View();
         }

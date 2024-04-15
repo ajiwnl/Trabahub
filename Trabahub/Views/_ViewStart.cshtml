@@ -8,5 +8,9 @@
     ViewBag.UserType = Context.Session.GetString("UserType");
     ViewBag.PriceOption = Context.Session.GetString("Option");
     ViewBag.PriceCount = Context.Session.GetInt32("Count");
+
+    ViewBag.TotalListing = Context.Session.GetString("TotalListing");
+    ViewBag.TotalUsers = Context.Session.GetString("TotalUsers");
+    ViewBag.TotalBooks = Context.Session.GetString("TotalBooks");
 }
 
