@@ -209,8 +209,25 @@ namespace Trabahub.Controllers
 			}
 		}
 
+		private void UpdateTotalPrice(double stripePrice)
+		{
+			var analytics = _context.Analytics.FirstOrDefault();
+			if(analytics == null) {
+				var createAnalytics = new Analytics()
+				{
+					DataReference = "1",
+					TotalIncome = stripePrice
+				};
+				_context.Analytics.Add(createAnalytics);
+				_context.SaveChanges();
+			}else
+			{
+				analytics.TotalIncome += stripePrice;
+				_context.SaveChanges();
+			}
+        }
 
-		[HttpPost]
+        [HttpPost]
 		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
 		{
 			var customers = new CustomerService();
@@ -282,9 +299,10 @@ namespace Trabahub.Controllers
 					// Send email to owner
 					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
+					double priceDouble = Convert.ToDouble(stripePrice);
+					UpdateTotalPrice(priceDouble);
 
-
-					TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
+                    TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
                     TempData["EstablishmentName"] = stripeDescription;
                     return RedirectToAction("Charge", "Listing");
 				}
@@ -331,9 +349,6 @@ namespace Trabahub.Controllers
 
 		private int GetOriginalAccommodationCount(string establishmentName)
 		{
-		
-	
-
 			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == establishmentName);
 			if (listing != null)
 			{
