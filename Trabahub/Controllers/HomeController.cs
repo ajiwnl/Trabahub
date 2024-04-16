@@ -28,6 +28,7 @@ namespace Trabahub.Controllers
             var getTotalUsers = _context.Credentials.Count();
             var getTotalListings = _context.Listing.Count();
             var getTotalInteractions = _context.ListInteraction.Count();
+		var userType = HttpContext.Session.GetString("UserType");
 
             var getTotalPrice = _context.Analytics.FirstOrDefault();
             if (getTotalPrice != null)
@@ -46,8 +47,6 @@ namespace Trabahub.Controllers
             HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
             HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
             HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
-
-            var userType = HttpContext.Session.GetString("UserType");
 
             if (userType == "Owner")
             {
