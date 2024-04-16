@@ -4,6 +4,8 @@ using System.Diagnostics;
 using Trabahub.Data;
 using Trabahub.Models;
 using Trabahub.Helpers;
+using Stripe;
+using System.IO.Pipelines;
 
 namespace Trabahub.Controllers
 {
@@ -26,15 +28,24 @@ namespace Trabahub.Controllers
             var getTotalUsers = _context.Credentials.Count();
             var getTotalListings = _context.Listing.Count();
             var getTotalInteractions = _context.ListInteraction.Count();
+
+            var getTotalPrice = _context.Analytics.FirstOrDefault();
+            if (getTotalPrice != null)
+            {
+                double priceDouble = Convert.ToDouble(getTotalPrice.TotalIncome);
+                HttpContext.Session.SetString("TotalCharges", "₱" + priceDouble.ToString());
+            } else
+            {
+                HttpContext.Session.SetString("TotalCharges", "₱0");
+
+            }
+
             // Access the CalculateTotalChargesFromStripe method
             var getTotalCharges = await StripeHelper.CalculateTotalChargesFromStripe();
 
-            HttpContext.Session.SetString("TotalListing", getTotalUsers.ToString());
-            HttpContext.Session.SetString("TotalUsers", getTotalListings.ToString());
+            HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
+            HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
             HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
-            HttpContext.Session.SetString("TotalCharges", getTotalCharges.ToString());
-
-
 
             ViewData["ActivePage"] = "Home";
             return View();
