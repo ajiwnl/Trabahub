@@ -47,8 +47,18 @@ namespace Trabahub.Controllers
             HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
             HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
 
-            ViewData["ActivePage"] = "Home";
-            return View();
+            var userType = HttpContext.Session.GetString("UserType");
+
+            if (userType == "Owner")
+            {
+              
+                return View();
+            }
+            else
+            {
+
+                return View();
+            }
         }
 
         public IActionResult Privacy()
