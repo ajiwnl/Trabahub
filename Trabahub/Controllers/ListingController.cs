@@ -15,7 +15,7 @@ namespace Trabahub.Controllers
 		private readonly ApplicationDbContext _context;
 		private readonly IWebHostEnvironment _webHostEnvironment;
 
-		public ListingController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
+        public ListingController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
 		{
 			_webHostEnvironment = webHostEnvironment;
 			_context = context;
@@ -551,7 +551,42 @@ namespace Trabahub.Controllers
 			Console.WriteLine("Listing added successfully.");
 		}
 
-		private string UploadFile(Listing addListing)
+        // Controller action to fetch daily analytics data
+        public JsonResult GetDailyData()
+        {
+            // Example: Fetching daily data for the past week
+            DateTime endDate = DateTime.Today;
+            DateTime startDate = endDate.AddDays(-7);
+
+            // Query database to fetch daily analytics data
+            var dailyData = _context.DailyAnalytics
+                                .Where(d => d.Date >= startDate && d.Date <= endDate)
+                                .OrderBy(d => d.Date)
+                                .Select(d => new { Date = d.Date.ToShortDateString(), TotalUsers = d.TotalUsers })
+                                .ToList();
+
+            var ownerUsername = HttpContext.Session.GetString("Username");
+
+            var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
+            var getOwner = _context.Listing.FirstOrDefault(a => a.OwnerUsername == ownerUsername);
+            int getTotalBooks = 0;
+            if (getOwner != null)
+            {
+                getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+            }
+
+            // Prepare data for the chart
+            var chartData = new
+            {
+                DailyData = dailyData,
+                TotalListings = getTotalListings,
+                TotalBooks = getTotalBooks
+            };
+
+            return Json(chartData);
+        }
+
+        private string UploadFile(Listing addListing)
 		{
 			string fileName = null;
 			if (addListing.ESTABIMG != null)

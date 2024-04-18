@@ -1294,6 +1294,20 @@ footer {
     width: 75%;
 }
 
+.chart-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.chart-size {
+    max-width: 300px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
 /*Debug Tool*/
 .debug {
     border: 2px solid red;

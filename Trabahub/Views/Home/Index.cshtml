@@ -9,6 +9,8 @@
 @*Swal Import and JQuery*@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <div id="layoutbody">
     <div class="text-center pt-5">
@@ -35,7 +37,6 @@
         <label class="analytics-h-label">Owner's Dashboard</label>
     </div>
     <div class="analyticsbody">
-
         <div class="card-analytics">
             <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
             <label class="analytics-label mt-3 text-center">Trabahub Total Users</label>
@@ -55,6 +56,12 @@
             <label class="analytics-label mt-3 text-center">Total Income</label>
         </div>
     </div>
+
+    <div class="chart-container">
+        <canvas class="chart-size" id="userChart"></canvas>
+        <canvas class="chart-size" id="listingChart"></canvas>
+        <canvas class="chart-size" id="booksChart"></canvas>
+    </div>
 }
 
 @if (TempData.ContainsKey("SuccessMessage"))
@@ -68,3 +75,107 @@
         });
     </script>
 }
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Listing/GetDailyData',
+            type: 'GET',
+            success: function (data) {
+                // Parse and format the dates
+                var dates = data.dailyData.map(function (item) {
+                    // Split the date string into day, month, and year components
+                    var parts = item.date.split('/');
+                    // Create a new Date object using the components (year, month - 1, day)
+                    var date = new Date(parts[2], parts[1] - 1, parts[0]);
+                    // Format the date as needed (e.g., 'YYYY-MM-DD')
+                    return date.toISOString().slice(0, 10);
+                });
+
+                // Extract total users, total listings, and total books data
+                var totalUsers = data.dailyData.map(function (item) { return item.totalUsers; });
+                var totalListings = data.totalListings;
+                var totalBooks = data.totalBooks;
+
+                // Render user chart
+                const userCtx = document.getElementById('userChart').getContext('2d');
+                const userChart = new Chart(userCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Total Users',
+                            data: totalUsers,
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0
+                                }
+                            }
+                        }
+                    }
+                });
+
+
+                // Render listing chart
+                const listingCtx = document.getElementById('listingChart').getContext('2d');
+                const listingChart = new Chart(listingCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Total Listings',
+                            data: Array(dates.length).fill(totalListings),
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0 // Display whole numbers only
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Render books chart
+                const booksCtx = document.getElementById('booksChart').getContext('2d');
+                const booksChart = new Chart(booksCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Total Books',
+                            data: Array(dates.length).fill(totalBooks),
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0 // Display whole numbers only
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

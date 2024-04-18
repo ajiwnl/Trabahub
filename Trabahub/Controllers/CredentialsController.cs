@@ -127,8 +127,30 @@ namespace Trabahub.Controllers
 			try
 			{
 				// Save the entered credentials to the database
-				addCredentialEntry.UserType = radBtnOptions;
-				SaveEntry(addCredentialEntry);
+                var today = DateTime.Today;
+                var dailyAnalyticsEntry = _context.DailyAnalytics
+					.FirstOrDefault(da => da.Date == today);
+
+                if (dailyAnalyticsEntry != null)
+                {
+                    dailyAnalyticsEntry.TotalUsers++;
+                }
+                else
+                {
+                    // If there's no entry for today, create a new one
+                    var newDailyEntry = new DailyAnalytics
+                    {
+                        Date = today,
+                        TotalUsers = 1 // Start with 1 for the new user
+                    };
+                    _context.DailyAnalytics.Add(newDailyEntry);
+                }
+                _context.SaveChanges();
+
+
+                addCredentialEntry.UserType = radBtnOptions;
+                addCredentialEntry.CreationDate = DateTime.Today;
+                SaveEntry(addCredentialEntry);
 
 				TempData["SuccessMessage"] = "Registration Successful! You may know Login to your account.";
 			}
