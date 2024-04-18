@@ -26,5 +26,8 @@ namespace Trabahub.Models
 		[StringLength(255)]
 		public string? UserType { get; set; }
 
-	}
+        public DateTime CreationDate { get; set; }
+
+
+    }
 }

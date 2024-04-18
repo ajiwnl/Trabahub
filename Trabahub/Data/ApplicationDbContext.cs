@@ -15,8 +15,10 @@ namespace Trabahub.Data
         public DbSet<ListInteraction> ListInteraction { get; set; }
 
         public DbSet<Analytics> Analytics { get; set; }
+        public DbSet<DailyAnalytics> DailyAnalytics { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Credentials>()
             .Property(c => c.Email)
