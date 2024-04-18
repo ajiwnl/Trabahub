@@ -37,35 +37,39 @@ namespace Trabahub.Controllers
 
                 // Query the listings belonging to the logged-in owner
                 var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
+				var getOwner = _context.Listing.FirstOrDefault(a => a.OwnerUsername == ownerUsername);
+				if (getOwner == null)
+				{
+					// Handle the case where no listing is found for the owner
+					// For example, set TotalBooks to 0
+					HttpContext.Session.SetString("TotalBooks", "0");
+				}
+				else
+				{
+					// Listing is found, proceed with getting TotalBooks
+					var getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+					HttpContext.Session.SetString("TotalBooks", getTotalBooks.ToString());
+				}
+
+				var getTotalUsers = _context.Credentials.Count();
+
+				var ownerTotalIncome = _context.Analytics
+					.Where(a => a.DataReference == ownerUsername)
+					.Sum(a => a.TotalIncome);
 
 
-                HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
+				HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
+				HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
+				HttpContext.Session.SetString("TotalCharges", "₱" + ownerTotalIncome.ToString());
 
-
-                var ownerTotalIncome = _context.Analytics
-                    .Where(a => a.DataReference == ownerUsername)
-                    .Sum(a => a.TotalIncome);
-
-
-                HttpContext.Session.SetString("TotalCharges", "₱" + ownerTotalIncome.ToString());
             }
             else
             {
 
                 HttpContext.Session.SetString("TotalListing", "0");
-
                 var totalIncomeForAllOwners = _context.Analytics.Sum(a => a.TotalIncome);
-
                 HttpContext.Session.SetString("TotalCharges", "₱" + totalIncomeForAllOwners.ToString());
             }
-
-
-            var getTotalUsers = _context.Credentials.Count();
-            var getTotalInteractions = _context.ListInteraction.Count();
-
-            HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
-            HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
-
             return View();
         }
 

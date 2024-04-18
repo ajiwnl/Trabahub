@@ -84,6 +84,7 @@ namespace Trabahub.Controllers
         [ActionName("Interact")]
         public IActionResult Interaction(ListInteraction addinteractList)
         {
+			var getOwner = _context.Listing.FirstOrDefault(x => x.ESTABNAME == addinteractList.ESTABNAME);
             // Add the interaction to the database
             int totalCount = _context.ListInteraction.Count();
             var interact = new ListInteraction()
@@ -91,6 +92,7 @@ namespace Trabahub.Controllers
                 InteractId = totalCount + 1,
                 ESTABNAME = addinteractList.ESTABNAME,
                 Username = addinteractList.Username,
+				OwnerUsername = getOwner.OwnerUsername,
                 InteractComment = addinteractList.InteractComment,
                 InteractRating = addinteractList.InteractRating
             };
