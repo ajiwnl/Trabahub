@@ -14,15 +14,15 @@ namespace Trabahub.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-		private readonly ApplicationDbContext _context;
-		private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-		public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _logger = logger;
-			_webHostEnvironment = webHostEnvironment;
-			_context = context;
-		}
+            _webHostEnvironment = webHostEnvironment;
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -38,39 +38,37 @@ namespace Trabahub.Controllers
                 // Query the listings belonging to the logged-in owner
                 var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
 
-                // Set the session for TotalListing
+
                 HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
+
+
+                var ownerTotalIncome = _context.Analytics
+                    .Where(a => a.DataReference == ownerUsername)
+                    .Sum(a => a.TotalIncome);
+
+
+                HttpContext.Session.SetString("TotalCharges", "₱" + ownerTotalIncome.ToString());
             }
             else
             {
-                // For non-owners, set TotalListing to 0
+
                 HttpContext.Session.SetString("TotalListing", "0");
+
+                var totalIncomeForAllOwners = _context.Analytics.Sum(a => a.TotalIncome);
+
+                HttpContext.Session.SetString("TotalCharges", "₱" + totalIncomeForAllOwners.ToString());
             }
 
-            // Retrieve other counts and data as before
+
             var getTotalUsers = _context.Credentials.Count();
             var getTotalInteractions = _context.ListInteraction.Count();
-
-            var getTotalPrice = _context.Analytics.FirstOrDefault();
-            if (getTotalPrice != null)
-            {
-                double priceDouble = Convert.ToDouble(getTotalPrice.TotalIncome);
-                HttpContext.Session.SetString("TotalCharges", "₱" + priceDouble.ToString());
-            }
-            else
-            {
-                HttpContext.Session.SetString("TotalCharges", "₱0");
-            }
-
-            // Access the CalculateTotalChargesFromStripe method synchronously
-            var getTotalCharges = StripeHelper.CalculateTotalChargesFromStripe().Result;
 
             HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
             HttpContext.Session.SetString("TotalBooks", getTotalInteractions.ToString());
 
-            // Return the appropriate view based on user type
             return View();
         }
+
 
         public IActionResult Privacy()
         {

@@ -209,23 +209,41 @@ namespace Trabahub.Controllers
 			}
 		}
 
-		private void UpdateTotalPrice(double stripePrice)
-		{
-			var analytics = _context.Analytics.FirstOrDefault();
-			if(analytics == null) {
-				var createAnalytics = new Analytics()
-				{
-					DataReference = "1",
-					TotalIncome = stripePrice
-				};
-				_context.Analytics.Add(createAnalytics);
-				_context.SaveChanges();
-			}else
-			{
-				analytics.TotalIncome += stripePrice;
-				_context.SaveChanges();
-			}
+        private void UpdateTotalPrice(double stripePrice, string listingESTABNAME)
+        {
+            var ownerUsername = GetOwnerUsername(listingESTABNAME);
+            if (ownerUsername != null)
+            {
+                var analytics = _context.Analytics.FirstOrDefault(a => a.DataReference == ownerUsername);
+                if (analytics == null)
+                {
+                    var createAnalytics = new Analytics()
+                    {
+                        DataReference = ownerUsername,
+                        TotalIncome = stripePrice
+                    };
+                    _context.Analytics.Add(createAnalytics);
+                }
+                else
+                {
+                    analytics.TotalIncome += stripePrice;
+                }
+
+                _context.SaveChanges();
+            }
         }
+
+        private string GetOwnerUsername(string listingESTABNAME)
+        {
+            var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
+            if (listing != null)
+            {
+                return listing.OwnerUsername;
+            }
+            return null;
+        }
+
+
 
         [HttpPost]
 		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
@@ -300,7 +318,7 @@ namespace Trabahub.Controllers
 					SendEmailToOwner(ownerEmail, userName, email, BalanceTransactionId, stripeDescription, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
 					double priceDouble = Convert.ToDouble(stripePrice);
-					UpdateTotalPrice(priceDouble);
+					UpdateTotalPrice(priceDouble, stripeDescription);
 
                     TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
                     TempData["EstablishmentName"] = stripeDescription;
