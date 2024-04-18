@@ -16,7 +16,9 @@ namespace Trabahub.Models
 
         public string? Username { get; set; }
 
-        [StringLength(50)]
+		public string? OwnerUsername { get; set; }
+
+		[StringLength(50)]
         [Required]
         public string? ESTABNAME { get; set; }
 
