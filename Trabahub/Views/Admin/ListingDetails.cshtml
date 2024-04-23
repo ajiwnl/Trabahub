@@ -1,0 +1,7 @@
+﻿@model Listing
+
+<form method="post" action="@Url.Action("ApproveListing", "Admin")">
+    <label>@Model.ESTABNAME</label>
+    <input type="hidden" name="estabname" value="@Model.ESTABNAME">
+    <button type="submit">Approve Listing</button>
+</form>

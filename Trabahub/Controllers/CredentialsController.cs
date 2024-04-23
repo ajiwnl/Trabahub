@@ -35,6 +35,29 @@ namespace Trabahub.Controllers
 			return View();
 		}
 
+		public IActionResult Admin()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Admin(string adminemail, string adminpassword)
+		{
+			var checkAdmin = _context.Credentials.FirstOrDefault(x => x.Email == adminemail);
+			if(checkAdmin == null || checkAdmin.Password != adminpassword)
+			{
+				return View("Login");
+			}
+
+            string loggedUser = checkAdmin.Username.ToString();
+            string userType = checkAdmin.UserType.ToString();
+            HttpContext.Session.SetString("Username", loggedUser);
+            HttpContext.Session.SetString("UserType", userType);
+
+
+            return RedirectToAction("Dashboard", "Admin");
+		}
+
 		[HttpPost]
 		[ActionName("Login")]
 		public IActionResult Login(string emaillog, string passwordlog)

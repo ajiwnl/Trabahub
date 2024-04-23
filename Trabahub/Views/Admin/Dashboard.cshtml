@@ -1,0 +1,42 @@
+﻿@model List<Trabahub.Models.Listing>
+@if (ViewBag.Usertype == "Admin")
+{
+    <div class="admin-dashboard">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center">Establishment Name</th>
+                    <th class="text-center">Owner Username</th>
+                    <th class="text-center">Listing Status</th>
+                    <th class="text-center">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model != null) {
+                    @foreach (var listings in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@listings.ESTABNAME</td>
+                            <td class="text-center">@listings.OwnerUsername</td>
+                            <td class="text-center">@(listings.ListingStatus == false ? "Pending" : "Verified")</td>
+                            <td class="text-center">
+                                <a asp-area=""
+                                   asp-controller="Admin"
+                                   asp-action="ListingDetails"
+                                   asp-route-name="@listings.ESTABNAME" class="view-btn">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }  
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <script>
+        window.location.href = '/Credentials/Login';
+    </script>
+}

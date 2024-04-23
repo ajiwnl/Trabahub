@@ -32,6 +32,9 @@ namespace Trabahub.Models
 
 		public string OwnerUsername { get; set; }
 
+		public bool ListingStatus { get; set; }
+
+
 		[Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime STARTTIME { get; set; }
@@ -42,7 +45,6 @@ namespace Trabahub.Models
 
         [Required]
         public double ESTABRATING { get; set; }
-
 
         //<---For Photo Verification--->
         [StringLength(255)]
