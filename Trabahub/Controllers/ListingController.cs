@@ -34,11 +34,11 @@ namespace Trabahub.Controllers
 			}
 			else
 			{
-				// Retrieve all listings for clients
-				var allListings = _context.Listing.ToList();
-				return View(allListings);
-			}
-		}
+                // Retrieve all verified listings for clients
+                var verifiedListings = _context.Listing.Where(x => x.ListingStatus == true).ToList();
+                return View(verifiedListings);
+            }
+        }
 
 		[HttpGet]
 		public IActionResult Index(string searchSpaces)
@@ -517,6 +517,7 @@ namespace Trabahub.Controllers
 				ACCOMODATION = addListing.ACCOMODATION,
 				ESTABIMAGEPATH = imgPath,
 				ESTABRATING = 0,
+				ListingStatus = false,
 				OwnerUsername = ownerUsername
 			};
 

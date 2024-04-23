@@ -8,94 +8,8 @@
 
 <div class="spacelayer pt-4">
 	<div class="container">
-		
-		@if(ViewBag.UserType == "Owner")
-		{
-			<div class="wrapper">
-			<div class="spaceheader mb-5">
-				<div class="row">
-					<div class="col" id="spaceheader">
-						<div class="border-bottom border-3 border-dark">
-							<label class="spaceheader">Space</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-2">
-					<div class="col" id="spacedesc">
-						<p class="spacebodytext">Your Listings Available In This Platform</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col" id="spaceselection">
-					<div class="spaceside">
-						<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
-						<div class="clayoutwrapper mt-3">
-							<div class="cardslayout">
-								@foreach (var listings in Model)
-								{
-									<div class="spacecards text-start">
-										<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
-											<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
-											<div class="p-3">
-												<div class="row">
-													<div class="col">
-														<label class="filterlabels">@listings.ESTABNAME</label>
-													</div>
-												</div>
-													<div class="stars mb-2" id="starlistings_@listings.ESTABNAME">
-														<script>
-															function generateStars(rating, containerId) {
-																var starsHtml = '';
 
-																var fullStars = Math.floor(rating);
-
-																var hasHalfStar = rating % 1 >= 0.5;
-
-																for (var i = 0; i < fullStars; i++) {
-																	starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
-																}
-
-																if (hasHalfStar) {
-																	starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
-																}
-
-																for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
-																	starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
-																}
-
-																document.getElementById(containerId).innerHTML = starsHtml;
-															}
-															$(document).ready(function () {
-																var rating = parseFloat('@listings.ESTABRATING');
-																containerId = "starlistings_@listings.ESTABNAME";
-																generateStars(rating, containerId);
-															});
-														</script>
-													</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABDESC</label>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<label class="coverbody">@listings.ESTABADD</label>
-													</div>
-												</div>
-
-											</div>
-										</a>
-									</div>
-								}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		}
-		else if (ViewBag.UserType == "Client")
+		@if (ViewBag.UserType == "Owner")
 		{
 			<div class="wrapper">
 				<div class="spaceheader mb-5">
@@ -108,34 +22,20 @@
 					</div>
 					<div class="row mt-2">
 						<div class="col" id="spacedesc">
-							<p class="spacebodytext">Discover our diverse range of spaces with detailed availability, accomodation type and pricing</p>
+							<p class="spacebodytext">Your Listings Available In This Platform</p>
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
+				<div class="row">
 					<div class="col" id="spaceselection">
 						<div class="spaceside">
-							<div class="filterbanner">
-								<div class="row" id="filteroptions">
-									<div class="col-2 pt-1">
-										<label class="filterlabels pt-4 ps-5 pe-5">Search:</label>
-									</div>
-									<div class="col-8 mt-2">
-										<form method="get" asp-action="Index">
-											<div class="form-floating">
-												<input type="text" class="form-control" name="searchSpaces" id="searchSpaces" value="Co-Working Spaces" />
-												<label for="rating_val">Search</label>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
+							<label class="listingbody"><a class="text-success" asp-area="" asp-controller="Listing" asp-action="Add">Create a Listing</a> for Co-Working Space and Study Hub Owners.</label>
 							<div class="clayoutwrapper mt-3">
 								<div class="cardslayout">
 									@foreach (var listings in Model)
 									{
 										<div class="spacecards text-start">
-											<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
+											<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" class="text-dark" style="text-decoration: none">
 												<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
 												<div class="p-3">
 													<div class="row">
@@ -183,17 +83,121 @@
 															<label class="coverbody">@listings.ESTABADD</label>
 														</div>
 													</div>
-													<div class="row">
-														<div class="col">
-															@Html.DisplayFor(modelItem => listings.STARTTIME)
-														</div>
-														<div class="col">
-															@Html.DisplayFor(modelItem => listings.ENDTIME)
-														</div>
-													</div>
+
 												</div>
 											</a>
 										</div>
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+		else if (ViewBag.UserType == "Client")
+		{
+			<div class="wrapper">
+				<div class="spaceheader mb-5">
+					<div class="row">
+						<div class="col" id="spaceheader">
+							<div class="border-bottom border-3 border-dark">
+								<label class="spaceheader">Space</label>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col" id="spacedesc">
+							<p class="spacebodytext">Discover our diverse range of spaces with detailed availability, accomodation type and pricing</p>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col" id="spaceselection">
+						<div class="spaceside">
+							<div class="filterbanner">
+								<div class="row" id="filteroptions">
+									<div class="col-2 pt-1">
+										<label class="filterlabels pt-4 ps-5 pe-5">Search:</label>
+									</div>
+									<div class="col-8 mt-2">
+										<form method="get" asp-action="Index">
+											<div class="form-floating">
+												<input type="text" class="form-control" name="searchSpaces" id="searchSpaces" value="Co-Working Spaces" />
+												<label for="rating_val">Search</label>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="clayoutwrapper mt-3">
+								<div class="cardslayout">
+									@foreach (var listings in Model)
+									{
+										if (listings.ListingStatus == true)
+										{
+											<div class="spacecards text-start">
+												<a asp-area="" asp-controller="Listing" asp-action="Details" asp-route-name="@listings.ESTABNAME" asp-route-image="@listings.ESTABIMAGEPATH" class="text-dark" style="text-decoration: none">
+													<img src="~/img/@listings.ESTABIMAGEPATH" class="coverimage" asp-append-version="true" />
+													<div class="p-3">
+														<div class="row">
+															<div class="col">
+																<label class="filterlabels">@listings.ESTABNAME</label>
+															</div>
+														</div>
+														<div class="stars mb-2" id="starlistings_@listings.ESTABNAME">
+															<script>
+																function generateStars(rating, containerId) {
+																	var starsHtml = '';
+
+																	var fullStars = Math.floor(rating);
+
+																	var hasHalfStar = rating % 1 >= 0.5;
+
+																	for (var i = 0; i < fullStars; i++) {
+																		starsHtml += '<img class="star-size" src="/res/star.png" alt="Filled Star" />';
+																	}
+
+																	if (hasHalfStar) {
+																		starsHtml += '<img class="star-size" src="/res/star-half.png" alt="Half Star" />';
+																	}
+
+																	for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+																		starsHtml += '<img class="star-size" src="/res/starblank.png" alt="Empty Star" />';
+																	}
+
+																	document.getElementById(containerId).innerHTML = starsHtml;
+																}
+																$(document).ready(function () {
+																	var rating = parseFloat('@listings.ESTABRATING');
+																	containerId = "starlistings_@listings.ESTABNAME";
+																	generateStars(rating, containerId);
+																});
+															</script>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABDESC</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="coverbody">@listings.ESTABADD</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																@Html.DisplayFor(modelItem => listings.STARTTIME)
+															</div>
+															<div class="col">
+																@Html.DisplayFor(modelItem => listings.ENDTIME)
+															</div>
+														</div>
+													</div>
+												</a>
+											</div>
+										}
+
 									}
 								</div>
 							</div>
@@ -248,24 +252,24 @@
 }
 @if (TempData.ContainsKey("PayFail"))
 {
-    <script>
-        var msgError = '@TempData["PayFail"]';
-        Swal.fire({
-            icon: 'error',
-            title: 'Payment Reservation Failed.',
-            text: msgError,
-        });
-    </script>
+	<script>
+		var msgError = '@TempData["PayFail"]';
+		Swal.fire({
+			icon: 'error',
+			title: 'Payment Reservation Failed.',
+			text: msgError,
+		});
+	</script>
 }
 
 @if (TempData.ContainsKey("PaySuccess"))
 {
 	<script>
 		var successMessage = '@TempData["PaySuccess"]';
-        Swal.fire({
-            icon: 'success',
-            title: 'Payment Reservation Complete, Have fun!',
-            text: successMessage,
-        });
-    </script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Payment Reservation Complete, Have fun!',
+			text: successMessage,
+		});
+	</script>
 }

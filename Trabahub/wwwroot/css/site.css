@@ -1308,6 +1308,64 @@ footer {
     object-fit: cover;
 }
 
+/*Admin Classes*/
+
+.adminlogin {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-form {
+    padding: 20px;
+    width: 500px;
+}
+
+.admin-dashboard {
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3ECCB5;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.view-btn {
+    padding: 5px 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s ease;
+    border-radius: 10px;
+    background-color: #3ECCB5;
+}
+
+    .view-btn:hover {
+        color: black;
+        background-color: white;
+    }
+
 /*Debug Tool*/
 .debug {
     border: 2px solid red;
