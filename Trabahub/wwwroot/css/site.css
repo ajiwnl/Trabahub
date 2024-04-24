@@ -1366,6 +1366,93 @@ tr:hover {
         background-color: white;
     }
 
+
+.ad-details {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ad-details > * {
+    padding: 1px;
+    margin: 10px;
+    flex: 1 100%;
+}
+
+.ad-header {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.ad-main {
+    padding: 20px 50px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ad-side {
+    padding: 100px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-card {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-footer {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-imagever {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+@media all and (min-width: 800px) {
+    .ad-side {
+        flex: 1;
+    }
+
+    .ad-main {
+        order: 1;
+    }
+
+    .ad-side {
+        order: 2;
+    }
+
+    .ad-footer {
+        order: 3;
+    }
+}
+
+.ad-header-label {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+@media all and (min-width: 600px) {
+    .ad-main {
+        flex: 1;
+    }
+}
+
+
 /*Debug Tool*/
 .debug {
     border: 2px solid red;

@@ -18,7 +18,9 @@
                         <tr>
                             <td class="text-center">@listings.ESTABNAME</td>
                             <td class="text-center">@listings.OwnerUsername</td>
-                            <td class="text-center">@(listings.ListingStatus == false ? "Pending" : "Verified")</td>
+                            <td class="text-center @(listings.ListingStatus == false ? "text-warning" : "text-success")">
+                                @(listings.ListingStatus == false ? "Pending" : "Verified")
+                            </td>
                             <td class="text-center">
                                 <a asp-area=""
                                    asp-controller="Admin"
