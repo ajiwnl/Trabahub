@@ -83,7 +83,13 @@
 															<label class="coverbody">@listings.ESTABADD</label>
 														</div>
 													</div>
-
+													<div class="row">
+														<div class="col">
+															<label class="@(listings.ListingStatus == false ? "text-warning" : "text-success")">
+																@(listings.ListingStatus == false ? "Pending" : "Verified")
+															</label>
+														</div>
+													</div>
 												</div>
 											</a>
 										</div>

@@ -494,9 +494,10 @@ namespace Trabahub.Controllers
 		public void SaveData(Listing addListing)
 		{
 			string imgPath = UploadFile(addListing);
+			string veriPath = UploadFile2(addListing);
 
-			// Retrieve the username of the currently logged-in owner
-			var ownerUsername = HttpContext.Session.GetString("Username");
+            // Retrieve the username of the currently logged-in owner
+            var ownerUsername = HttpContext.Session.GetString("Username");
 
 			System.Diagnostics.Debug.WriteLine($"Owner username from session: {ownerUsername}");
 
@@ -516,6 +517,7 @@ namespace Trabahub.Controllers
 				ENDTIME = addListing.ENDTIME,
 				ACCOMODATION = addListing.ACCOMODATION,
 				ESTABIMAGEPATH = imgPath,
+				VERIMAGEPATH = veriPath,
 				ESTABRATING = 0,
 				ListingStatus = false,
 				OwnerUsername = ownerUsername
@@ -608,28 +610,26 @@ namespace Trabahub.Controllers
 			return fileName;
 		}
 
-		private string UploadFile2(Listing addListing)
-		{
-			string fileName2 = null;
-			if (addListing.ESTABIMG != null)
-			{
-				string estabname = addListing.ESTABNAME.ToString();
+        private string UploadFile2(Listing addListing)
+        {
+            string fileName2 = null;
+            if (addListing.VERIMG != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+                // Combine the elements to create the file name
+                fileName2 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG.FileName)}";
 
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
+                string filePath = Path.Combine(uploadDir, fileName2);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.VERIMG.CopyTo(fileStream);
+                }
+            }
+            return fileName2;
+        }
 
-				// Combine the elements to create the file name
-				fileName2 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.ESTABIMG.FileName)}";
-
-				string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "img");
-				string filePath = Path.Combine(uploadDir, fileName2);
-				using (var fileStream = new FileStream(filePath, FileMode.Create))
-				{
-					addListing.ESTABIMG.CopyTo(fileStream);
-				}
-			}
-			return fileName2;
-		}
-
-		private string FieldValidation(Listing listing)
+        private string FieldValidation(Listing listing)
 		{
 			List<string> missingFields = new List<string>();
 			string[] fieldNames = { "Establishment Name", "Establishment Description", "Establishment Address", "Price Rate", "Start Time", "End Time" };

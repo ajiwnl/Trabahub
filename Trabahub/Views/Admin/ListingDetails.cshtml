@@ -1,7 +1,104 @@
 ﻿@model Listing
 
 <form method="post" action="@Url.Action("ApproveListing", "Admin")">
-    <label>@Model.ESTABNAME</label>
-    <input type="hidden" name="estabname" value="@Model.ESTABNAME">
-    <button type="submit">Approve Listing</button>
+    <div class="ad-details">
+        <div class="ad-header">
+            <div class="admin-card">
+                <label class="ad-header-label text-dark mb-5">Company Picture</label>
+                <img class="ad-imagever" src="~/img/@Model.ESTABIMAGEPATH" asp-append-version="true" />
+            </div>
+            <div class="admin-card">
+                <label class="ad-header-label text-dark mb-5">Documents</label>
+                <img class="ad-imagever" src="~/verify/@Model.VERIMAGEPATH" asp-append-version="true" />
+            </div>
+        </div>
+        @if (Model.ListingStatus == false)
+        {
+            <div class="ad-main">
+                <label class="ad-header-label">@Model.ESTABNAME</label>
+                <input type="hidden" name="estabname" value="@Model.ESTABNAME">
+                <label class="text-dark">@Model.ESTABDESC</label>
+                <label class="text-dark">@Model.ESTABADD</label>
+                <label class="text-dark">@Model.OwnerUsername</label>
+                <label class="@(Model.ListingStatus == false ? "text-warning" : "text-success")">
+                    @(Model.ListingStatus == false ? "Pending" : "Verified")
+                </label>
+                @if (Model.STARTTIME == Model.ENDTIME)
+                {
+                    <label class="text-success">Open 24 Hours</label>
+                }
+                else
+                {
+                    <label>
+                        Opening Time: @Html.DisplayFor(modelItem => Model.STARTTIME)
+                    </label>
+                    <label>
+                        Closing Time: @Html.DisplayFor(modelItem => Model.ENDTIME)
+                    </label>
+                }
+            </div>
+            <div class="ad-side">
+                <label class="text-dark">Hourly Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABHRPRICE</label></label>
+                <label class="text-dark">
+                    Day Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABDAYPRICE</label>
+                </label>
+                <label class="text-dark">
+                    Week Pass Rate: <label class="text-success" style="font-weight: bold;"> ₱@Model.ESTABWKPRICE</label>
+                </label>
+                <label class="text-dark">
+                    Month Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABMONPRICE</label>
+                </label>
+                <label class="text-dark">Accomodation: <label class="text-success" style="font-weight: bold;">@Model.ACCOMODATION</label></label>
+            </div>
+            <div class="ad-footer">
+                <button class="btn btn-success me-2" style="width: 200px" type="submit" name="action" value="approve">Approve</button>
+                <button class="btn btn-danger" style="width: 200px" type="submit" name="action" value="deny">Deny</button>
+            </div>
+        }
+        else
+        {
+            <div class="ad-main">
+                <label class="ad-header-label">@Model.ESTABNAME</label>
+                <input type="hidden" name="estabname" value="@Model.ESTABNAME">
+                <label class="text-dark">@Model.ESTABDESC</label>
+                <label class="text-dark">@Model.ESTABADD</label>
+                <label class="text-dark">@Model.OwnerUsername</label>
+                <label class="@(Model.ListingStatus == false ? "text-warning" : "text-success")">
+                    @(Model.ListingStatus == false ? "Pending" : "Verified")
+                </label>
+                @if (Model.STARTTIME == Model.ENDTIME)
+                {
+                    <label class="text-success">Open 24 Hours</label>
+                }
+                else
+                {
+                    <label>
+                        Opening Time: @Html.DisplayFor(modelItem => Model.STARTTIME)
+                    </label>
+                    <label>
+                        Closing Time: @Html.DisplayFor(modelItem => Model.STARTTIME)
+                    </label>
+                }
+            </div>
+            <div class="ad-side">
+                <label class="text-dark">Hourly Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABHRPRICE</label></label>
+                <label class="text-dark">
+                    Day Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABDAYPRICE</label>
+                </label>
+                <label class="text-dark">
+                    Week Pass Rate: <label class="text-success" style="font-weight: bold;"> ₱@Model.ESTABWKPRICE</label>
+                </label>
+                <label class="text-dark">
+                    Month Pass Rate: <label class="text-success" style="font-weight: bold;">₱@Model.ESTABMONPRICE</label>
+                </label>
+                <label class="text-dark">Accomodation: <label class="text-success" style="font-weight: bold;">@Model.ACCOMODATION</label></label>
+            </div>
+            <div class="ad-footer">
+                <button class="btn btn-danger" style="width: 200px" type="submit" name="action" value="deny">Remove Listing</button>
+            </div>
+        }
+    </div>
 </form>
+
+
+

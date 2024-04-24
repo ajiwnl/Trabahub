@@ -28,13 +28,23 @@ namespace Trabahub.Controllers
         }
 
         [HttpPost]
-        public IActionResult ApproveListing(string estabname)
+        public IActionResult ApproveListing(string estabname, string action)
         {
             var findListing = _context.Listing.FirstOrDefault(x => x.ESTABNAME == estabname);
-            findListing.ListingStatus = true;
+
+            if (action == "approve")
+            {
+                findListing.ListingStatus = true;
+            }
+            else if (action == "deny")
+            {
+                _context.Listing.Remove(findListing);
+            }
+
             _context.SaveChanges();
 
             return RedirectToAction("Dashboard");
         }
+
     }
 }
