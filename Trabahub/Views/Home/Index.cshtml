@@ -36,26 +36,30 @@
     <div class="analytics-header text-center" style="transform: translate(0%, 75%)">
         <label class="analytics-h-label">Owner's Dashboard</label>
     </div>
-    <div class="analyticsbody">
-        <div class="card-analytics">
-            <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
-            <label class="analytics-label mt-3 text-center">Trabahub Total Users</label>
-        </div>
 
-        <div class="card-analytics">
-            <label class="analytics-style text-center">@ViewBag.TotalListing</label>
-            <label class="analytics-label mt-3 text-center">Total Listings</label>
-        </div>
+    <a asp-area="" asp-controller="" asp-action="" class="maplabel text-dark">
+        <div class="analyticsbody">
+            <div class="card-analytics">
+                <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
+                <label class="analytics-label mt-3 text-center">Trabahub Total Users</label>
+            </div>
 
-        <div class="card-analytics">
-            <label class="analytics-style text-center">@ViewBag.TotalBooks</label>
-            <label class="analytics-label mt-3 text-center">Total Users Booked</label>
+            <div class="card-analytics">
+                <label class="analytics-style text-center">@ViewBag.TotalListing</label>
+                <label class="analytics-label mt-3 text-center">Total Listings</label>
+            </div>
+
+            <div class="card-analytics">
+                <label class="analytics-style text-center">@ViewBag.TotalBooks</label>
+                <label class="analytics-label mt-3 text-center">Total Users Booked</label>
+            </div>
+            <div class="card-analytics">
+                <label class="analytics-style text-center">@ViewBag.TotalCharges</label>
+                <label class="analytics-label mt-3 text-center">Total Income</label>
+            </div>
         </div>
-        <div class="card-analytics">
-            <label class="analytics-style text-center">@ViewBag.TotalCharges</label>
-            <label class="analytics-label mt-3 text-center">Total Income</label>
-        </div>
-    </div>
+    </a>
+
 
     <div class="chart-container">
         <canvas class="chart-size" id="userChart"></canvas>

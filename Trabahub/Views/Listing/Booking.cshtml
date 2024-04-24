@@ -154,7 +154,6 @@
                             <input type="hidden" id="timeouthid" name="timeouthid" value="">
                             <input type="hidden" id="dropdownChoice" name="dropdownChoice" value="">
                             <input type="hidden" id="dynamicdatehid" name="dynamicdate" value="">
-
                         </form>
                     </div>
                 </div>
@@ -252,8 +251,8 @@
         }
 
         function handleSelection(option, price) {
-            const timeInInput = document.getElementById('timein');
-            const timeOutInput = document.getElementById('timeout');
+            const timeInInput = document.getElementById('timein').value;
+            const timeOutInput = document.getElementById('timeout').value;
             if (option === "Hourly Price") {
                 document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
                 document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
@@ -272,8 +271,8 @@
             console.log("Time Out:", timeOutInput.value);
 
             // Update timein and timeout input values
-            document.getElementById("timeinhid").value = convertTo12HourFormat(timeInInput.value);
-            document.getElementById("timeouthid").value = convertTo12HourFormat(timeOutInput.value);
+            document.getElementById("timeinhid").value = timeInInput;
+            document.getElementById("timeouthid").value = timeOutInput;
             document.getElementById("dropdownChoice").value = option;
             document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
 

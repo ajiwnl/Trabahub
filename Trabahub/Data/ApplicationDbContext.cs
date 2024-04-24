@@ -17,6 +17,8 @@ namespace Trabahub.Data
         public DbSet<Analytics> Analytics { get; set; }
         public DbSet<DailyAnalytics> DailyAnalytics { get; set; }
 
+        public DbSet<Booking> Booking { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -123,14 +123,7 @@
 						</div>
 						<div class="row">
 							<div class="col text-start">
-								@if (Model.Listing.ACCOMODATION <= 0)
-								{
-									<label class="detailserror border-0" style="color: red;">No Seats Left</label>
-								}
-								else
-								{
-									<label class="detailsbody border-0">@Model.Listing.ACCOMODATION.ToString()</label>
-								}
+								<label class="detailsbody border-0" id="accommodationCount">Loading...</label>
 							</div>
 						</div>
 					</div>
@@ -169,7 +162,7 @@
 			<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Index">GO BACK</a>
 		</div>
 		<div class="col">
-			@if (Model.Listing.ACCOMODATION <= 0) // Check if accommodation is 0 or less
+			@if (Model.Listing.ACCOMODATION <= 0)
 			{
 				<button class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" disabled>BOOK NOW</button>
 			}
@@ -202,3 +195,20 @@
 	</div>
 
 </div>
+
+<script>
+	$(document).ready(function () {
+		// Trigger AJAX call when the details page is accessed
+		$.ajax({
+			url: '/Listing/UpdateCount',
+			type: 'GET',
+			success: function (response) {
+				// Update the accommodation count on the page
+				$('#accommodationCount').text(response);
+			},
+			error: function (xhr, status, error) {
+				console.error(xhr.responseText);
+			}
+		});
+	});
+</script>
