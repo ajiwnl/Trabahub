@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Threading;
 using Trabahub.Helpers;
+using System.Globalization;
 
 namespace Trabahub.Controllers
 {
@@ -147,7 +148,7 @@ namespace Trabahub.Controllers
 		{
 			var listing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == name);
 			var interactions = _context.ListInteraction.Where(i => i.ESTABNAME == name).ToList();
-
+			HttpContext.Session.SetString("CurrentListing", name);
 			var viewModel = new ListingDetails
 			{
 				Listing = listing,
@@ -322,6 +323,8 @@ namespace Trabahub.Controllers
 					double priceDouble = Convert.ToDouble(stripePrice);
 					UpdateTotalPrice(priceDouble, stripeDescription);
 
+					SaveBookDetails(stripeDescription, userName, phpPrice, timeinhid, timeouthid , dropdownChoice, dynamicdate);
+
                     TempData["PaySuccess"] = "Successful Payment, Please check your email for more details";
                     TempData["EstablishmentName"] = stripeDescription;
                     return RedirectToAction("Charge", "Listing");
@@ -491,7 +494,46 @@ namespace Trabahub.Controllers
 			return null;
 		}
 
-		public void SaveData(Listing addListing)
+        public void SaveBookDetails(string estabName, string userName, string priceRate, string timein, string timeout, string ddchoice, string dynamicdate)
+        {
+            DateTime startTime, endTime, dynamicDate;
+
+            // Parse time strings into DateTime objects
+            if (!DateTime.TryParseExact(timein, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out startTime))
+            {
+                // Handle invalid time format
+            }
+
+            if (!DateTime.TryParseExact(timeout, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out endTime))
+            {
+                // Handle invalid time format
+            }
+
+            if (!DateTime.TryParseExact(dynamicdate, "ddd MMM dd yyyy HH:mm:ss 'GMT'K '(Philippine Standard Time)'", CultureInfo.InvariantCulture, DateTimeStyles.None, out dynamicDate))
+            {
+                // Handle invalid date format
+            }
+
+            int totalBooking = _context.Booking.Count();
+            var bookingDetail = new Booking()
+            {
+                Id = totalBooking + 1,
+                ESTABNAME = estabName,
+                Username = userName,
+                PriceRate = priceRate,
+                STARTTIME = startTime,
+                ENDTIME = endTime,
+                SelectedOption = ddchoice,
+                DynamicDate = dynamicDate,
+				Status = "Active",
+            };
+
+			_context.Booking.Add(bookingDetail);
+            _context.SaveChanges();
+        }
+
+
+        public void SaveData(Listing addListing)
 		{
 			string imgPath = UploadFile(addListing);
 			string veriPath = UploadFile2(addListing);
@@ -589,7 +631,32 @@ namespace Trabahub.Controllers
             return Json(chartData);
         }
 
-        private string UploadFile(Listing addListing)
+		public JsonResult UpdateCount()
+		{
+			var currentListing = HttpContext.Session.GetString("CurrentListing");
+			var listing = _context.Listing.FirstOrDefault(a => a.ESTABNAME == currentListing);
+
+			if (listing != null)
+			{
+				// Check and update the booking status if needed
+				var activeBookings = _context.Booking.Where(b => b.ESTABNAME == currentListing && b.ENDTIME < DateTime.Now);
+
+				foreach (var booking in activeBookings)
+				{
+					if (booking.ENDTIME < DateTime.Now && booking.Status != "Finished")
+					{
+						// Increase the accommodation count
+						listing.ACCOMODATION++;
+						booking.Status = "Finished";
+					}
+				}
+				_context.SaveChanges();
+			}
+
+			return Json(listing?.ACCOMODATION ?? 0);
+		}
+
+		private string UploadFile(Listing addListing)
 		{
 			string fileName = null;
 			if (addListing.ESTABIMG != null)
