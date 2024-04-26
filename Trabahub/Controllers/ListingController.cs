@@ -191,26 +191,22 @@ namespace Trabahub.Controllers
 			return View(booking);
 		}
 
-		private int GetAccommodationCount(string establishmentName)
+		[HttpGet]
+		public IActionResult BookingDetails()
 		{
-			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == establishmentName);
-			if (listing != null)
-			{
-				return listing.ACCOMODATION ?? 0; // Use null-coalescing operator to handle null values
-			}
-			return 0; // Return 0 if the establishment is not found or if accommodation count is not set
-		}
-
-		// Function to update accommodation count
-		private void UpdateAccommodationCount(string establishmentName, int newCount)
-		{
-			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == establishmentName);
-			if (listing != null)
-			{
-				listing.ACCOMODATION = newCount;
-				_context.SaveChanges();
-			}
-		}
+            var ownerUsername = HttpContext.Session.GetString("Username");
+            var owner = _context.Listing.FirstOrDefault(owner => owner.OwnerUsername == ownerUsername);
+            if (owner != null)
+            {
+                var bookings = _context.Booking.Where(booking => booking.ESTABNAME == owner.ESTABNAME).ToList();
+                return View(bookings);
+            }
+            else
+            {
+				TempData["ErrorMessage"] = "No Users Booked Yet, They'll Come Soon!";
+				return View();
+            }
+        }
 
         private void UpdateTotalPrice(double stripePrice, string listingESTABNAME)
         {
@@ -283,37 +279,6 @@ namespace Trabahub.Controllers
 					var sprice = Convert.ToDecimal(stripePrice);
 					var phpPrice = string.Format("{0:C}", sprice);
 
-					// Deduct accommodation count
-					int accommodationCount = GetAccommodationCount(stripeDescription);
-					// Decrement accommodation count
-					// Deduct accommodation count based on pass type
-					switch (dropdownChoice)
-					{
-						case "Hourly Price":
-							UpdateAccommodationCount(stripeDescription, accommodationCount - 1);
-							// Schedule task to restore accommodation after 1 hour
-							ScheduleAccommodationRestore(stripeDescription, 1);
-							break;
-						case "Day Pass Price":
-							UpdateAccommodationCount(stripeDescription, accommodationCount - 1); 
-																								 // Schedule task to restore accommodation after 24 hours
-							ScheduleAccommodationRestore(stripeDescription, 24);
-							break;
-						case "Weekly Pass Price":
-							UpdateAccommodationCount(stripeDescription, accommodationCount - 1); 
-																								  // Schedule task to restore accommodation after 7 days
-							ScheduleAccommodationRestore(stripeDescription, 7 * 24);
-							break;
-						case "Monthly Pass Price":
-							UpdateAccommodationCount(stripeDescription, accommodationCount - 1); 
-																								   // Schedule task to restore accommodation after 30 days
-							ScheduleAccommodationRestore(stripeDescription, 30 * 24);
-							break;
-						default:
-							// Handle unrecognized pass type
-							break;
-					}
-
 					// Send email to client
 					SendEmail(userName, email, message, phpPrice, timeinhid, timeouthid, dropdownChoice, dynamicdate);
 
@@ -356,28 +321,6 @@ namespace Trabahub.Controllers
 				TempData["PayFail"] = "Payment Failed. Please try again later.";
 				return RedirectToAction("Index", "Listing");
 			}
-		}
-       
-
-        private void ScheduleAccommodationRestore(string establishmentName, int durationInHours)
-		{
-			// Schedule a task to restore accommodation after the specified duration
-			Task.Delay(TimeSpan.FromHours(durationInHours)).ContinueWith((task) =>
-			{
-				// Restore accommodation count
-				int originalAccommodationCount = GetOriginalAccommodationCount(establishmentName);
-				UpdateAccommodationCount(establishmentName, originalAccommodationCount);
-			});
-		}
-
-		private int GetOriginalAccommodationCount(string establishmentName)
-		{
-			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == establishmentName);
-			if (listing != null)
-			{
-				return listing.ACCOMODATION ?? 0;
-			}
-			return 0; // Return 0 if the establishment is not found or if original accommodation count is not set
 		}
 
 		// Method to send email to the owner

@@ -37,7 +37,7 @@
         <label class="analytics-h-label">Owner's Dashboard</label>
     </div>
 
-    <a asp-area="" asp-controller="" asp-action="" class="maplabel text-dark">
+    <a asp-area="" asp-controller="Listing" asp-action="BookingDetails" class="maplabel text-dark">
         <div class="analyticsbody">
             <div class="card-analytics">
                 <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
@@ -76,6 +76,18 @@
             icon: 'success',
             title: 'Success',
             text: successMessage,
+        });
+    </script>
+}
+
+@if (TempData.ContainsKey("ErrorMessaage"))
+{
+    <script>
+        var errorMessage = '@TempData["ErrorMessaage"]';
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: errorMessage,
         });
     </script>
 }

@@ -1,0 +1,34 @@
+﻿@model List<Trabahub.Models.Booking>
+
+<div class="bookinglayer">
+    <table>
+        <thead>
+            <tr>
+                <th class="text-center">Establishment</th>
+                <th class="text-center">Username</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Start</th>
+                <th class="text-center">End</th>
+                <th class="text-center">Type</th>
+                <th class="text-center">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var bookings in Model)
+                {
+                    <tr>
+                        <td class="text-center">@bookings.ESTABNAME</td>
+                        <td class="text-center">@bookings.Username</td>
+                        <td class="text-center">@bookings.PriceRate</td>
+                        <td class="text-center">@bookings.STARTTIME</td>
+                        <td class="text-center">@bookings.ENDTIME</td>
+                        <td class="text-center">@bookings.SelectedOption</td>
+                        <td class="text-center @(bookings.Status == "Active" ? "text-success" : bookings.Status == "Finished" ? "text-danger" : "")">@bookings.Status</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -880,6 +880,11 @@ footer {
     display: none;
 }
 
+.hide-calendar {
+    user-select: none;
+    pointer-events: none;
+}
+
 .loginmain {
     height: 500px;
 }
