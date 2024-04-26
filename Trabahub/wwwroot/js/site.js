@@ -17,7 +17,6 @@ function OnLoginRegisterLayers() {
     //If True, Hide Nav/Footer Bars
     if (isUserLogin || isUserRegister) {
         navbar.classList.add('hidenavs');
-        footer.classList.add('hidenavs');
     }
 }
 

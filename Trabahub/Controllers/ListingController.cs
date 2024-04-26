@@ -494,46 +494,68 @@ namespace Trabahub.Controllers
 			return null;
 		}
 
-        public void SaveBookDetails(string estabName, string userName, string priceRate, string timein, string timeout, string ddchoice, string dynamicdate)
-        {
-            DateTime startTime, endTime, dynamicDate;
+		public void SaveBookDetails(string estabName, string userName, string priceRate, string timein, string timeout, string ddchoice, string dynamicdate)
+		{
+			DateTime startTime, endTime, dynamicDate;
 
-            // Parse time strings into DateTime objects
-            if (!DateTime.TryParseExact(timein, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out startTime))
-            {
-                // Handle invalid time format
-            }
+			// Parse time strings into DateTime objects
+			if (!DateTime.TryParseExact(timein, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out startTime))
+			{
+				// Handle invalid time format
+			}
 
-            if (!DateTime.TryParseExact(timeout, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out endTime))
-            {
-                // Handle invalid time format
-            }
+			if (!DateTime.TryParseExact(timeout, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out endTime))
+			{
+				// Handle invalid time format
+			}
 
-            if (!DateTime.TryParseExact(dynamicdate, "ddd MMM dd yyyy HH:mm:ss 'GMT'K '(Philippine Standard Time)'", CultureInfo.InvariantCulture, DateTimeStyles.None, out dynamicDate))
-            {
-                // Handle invalid date format
-            }
+			if (!DateTime.TryParseExact(dynamicdate, "ddd MMM dd yyyy HH:mm:ss 'GMT'K '(Philippine Standard Time)'", CultureInfo.InvariantCulture, DateTimeStyles.None, out dynamicDate))
+			{
+				// Handle invalid date format
+			}
 
-            int totalBooking = _context.Booking.Count();
-            var bookingDetail = new Booking()
-            {
-                Id = totalBooking + 1,
-                ESTABNAME = estabName,
-                Username = userName,
-                PriceRate = priceRate,
-                STARTTIME = startTime,
-                ENDTIME = endTime,
-                SelectedOption = ddchoice,
-                DynamicDate = dynamicDate,
+			DateTime calculatedStartTime;
+
+			switch (ddchoice)
+			{
+				case "Hourly Price":
+					calculatedStartTime = startTime;
+					break;
+				case "Day Pass Price":
+					calculatedStartTime = dynamicDate.AddDays(1);
+					break;
+				case "Weekly Pass Price":
+					calculatedStartTime = dynamicDate.AddDays(7);
+					break;
+				case "Monthly Pass Price":
+					calculatedStartTime = dynamicDate.AddMonths(1);
+					break;
+				// Add more cases for other pass types if needed
+				default:
+					// Handle unsupported pass types
+					return;
+			}
+
+			int totalBooking = _context.Booking.Count();
+			var bookingDetail = new Booking()
+			{
+				Id = totalBooking + 1,
+				ESTABNAME = estabName,
+				Username = userName,
+				PriceRate = priceRate,
+				STARTTIME = dynamicDate,
+				ENDTIME = calculatedStartTime,
+				SelectedOption = ddchoice,
+				DynamicDate = dynamicDate,
 				Status = "Active",
-            };
+			};
 
 			_context.Booking.Add(bookingDetail);
-            _context.SaveChanges();
-        }
+			_context.SaveChanges();
+		}
 
 
-        public void SaveData(Listing addListing)
+		public void SaveData(Listing addListing)
 		{
 			string imgPath = UploadFile(addListing);
 			string veriPath = UploadFile2(addListing);
@@ -609,6 +631,7 @@ namespace Trabahub.Controllers
                                 .OrderBy(d => d.Date)
                                 .Select(d => new { Date = d.Date.ToShortDateString(), TotalUsers = d.TotalUsers })
                                 .ToList();
+			Console.WriteLine(dailyData.ToString());
 
             var ownerUsername = HttpContext.Session.GetString("Username");
 
@@ -620,11 +643,10 @@ namespace Trabahub.Controllers
                 getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
             }
 
-            // Prepare data for the chart
             var chartData = new
             {
-                DailyData = dailyData,
-                TotalListings = getTotalListings,
+				DailyData = dailyData,
+				TotalListings = getTotalListings,
                 TotalBooks = getTotalBooks
             };
 
@@ -643,7 +665,7 @@ namespace Trabahub.Controllers
 
 				foreach (var booking in activeBookings)
 				{
-					if (booking.ENDTIME < DateTime.Now && booking.Status != "Finished")
+					if (booking.ENDTIME <= DateTime.Now && booking.Status != "Finished")
 					{
 						// Increase the accommodation count
 						listing.ACCOMODATION++;

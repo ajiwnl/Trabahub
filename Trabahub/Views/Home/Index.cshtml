@@ -86,6 +86,7 @@
             url: '/Listing/GetDailyData',
             type: 'GET',
             success: function (data) {
+                console.log(data);
                 // Parse and format the dates
                 var dates = data.dailyData.map(function (item) {
                     // Split the date string into day, month, and year components
@@ -100,6 +101,7 @@
                 var totalUsers = data.dailyData.map(function (item) { return item.totalUsers; });
                 var totalListings = data.totalListings;
                 var totalBooks = data.totalBooks;
+
 
                 // Render user chart
                 const userCtx = document.getElementById('userChart').getContext('2d');

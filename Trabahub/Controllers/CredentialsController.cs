@@ -127,8 +127,7 @@ namespace Trabahub.Controllers
 			// Check if model state is valid
 			if (!ModelState.IsValid)
 			{
-				// If model state is invalid, return the registration view with validation errors
-				return View("Register", addCredentialEntry);
+                return View("Register", addCredentialEntry);
 			}
 
 			// Check if email already exists
@@ -153,6 +152,7 @@ namespace Trabahub.Controllers
                 var today = DateTime.Today;
                 var dailyAnalyticsEntry = _context.DailyAnalytics
 					.FirstOrDefault(da => da.Date == today);
+				int countEntry = _context.DailyAnalytics.Count();
 
                 if (dailyAnalyticsEntry != null)
                 {
@@ -160,16 +160,17 @@ namespace Trabahub.Controllers
                 }
                 else
                 {
-                    // If there's no entry for today, create a new one
-                    var newDailyEntry = new DailyAnalytics
-                    {
+					// If there's no entry for today, create a new one
+					var newDailyEntry = new DailyAnalytics
+					{
+						Id = countEntry + 1,
                         Date = today,
                         TotalUsers = 1 // Start with 1 for the new user
                     };
                     _context.DailyAnalytics.Add(newDailyEntry);
-                }
-                _context.SaveChanges();
+                    _context.SaveChanges();
 
+                }
 
                 addCredentialEntry.UserType = radBtnOptions;
                 addCredentialEntry.CreationDate = DateTime.Today;
@@ -187,9 +188,6 @@ namespace Trabahub.Controllers
 			// Redirect to a success page or perform any other desired action
 			return RedirectToAction("Login");
 		}
-
-
-
 		// Modified method to send verification email with a different name to avoid conflicts
 		private void SendEmailWithVerificationCode(string email, string verificationCode)
 		{
