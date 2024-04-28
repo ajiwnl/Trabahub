@@ -26,6 +26,9 @@ namespace Trabahub.Models
 		[StringLength(255)]
 		public string? UserType { get; set; }
 
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreationDate { get; set; }
 
 
