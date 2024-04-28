@@ -25,6 +25,10 @@ namespace Trabahub.Data
             modelBuilder.Entity<Credentials>()
             .Property(c => c.Email)
             .UseCollation("SQL_Latin1_General_CP1_CS_AS");
+
+            modelBuilder.Entity<Credentials>()
+            .Property(c => c.CreationDate)
+            .HasColumnType("date");
         }
     }
 }

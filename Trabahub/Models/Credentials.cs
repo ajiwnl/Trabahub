@@ -17,6 +17,14 @@ namespace Trabahub.Models
 
         [Required]
         [StringLength(255)]
+        public string? fName { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string? lName { get; set; }
+
+        [Required]
+        [StringLength(255)]
         public string? Password { get; set; }
 
 
@@ -26,6 +34,9 @@ namespace Trabahub.Models
 		[StringLength(255)]
 		public string? UserType { get; set; }
 
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreationDate { get; set; }
 
 
