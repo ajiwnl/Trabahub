@@ -8,6 +8,8 @@ using System.Net;
 using System.Threading;
 using Trabahub.Helpers;
 using System.Globalization;
+using RestSharp;
+using Newtonsoft.Json;
 
 namespace Trabahub.Controllers
 {
@@ -264,14 +266,82 @@ namespace Trabahub.Controllers
             return null;
         }
 
+		[HttpGet]
+		public IActionResult ChargeGCash()
+		{
+			return View();
+		}
 
+        [HttpPost]
+        public async Task<IActionResult> ChargeGCash(string gcashprice, string gcashdesc, string gcashin)
+        {
+            var options = new RestClientOptions("https://api.paymongo.com/v1/checkout_sessions");
+            var client = new RestClient(options);
+
+            var successUrl = "https://localhost:7074/Listing/Charge/" + Uri.EscapeDataString(gcashdesc);
+
+
+            var requestBodyJson = JsonConvert.SerializeObject(new
+            {
+                data = new
+                {
+                    attributes = new
+                    {
+                        send_email_receipt = true,
+                        show_description = true,
+                        show_line_items = true,
+                        description = gcashdesc,
+                        line_items = new[]
+               {
+                    new
+                    {
+                        currency = "PHP",
+                        amount = 5000,
+                        description = "Day Pass Price",
+                        quantity = 1,
+                        name = "Day Pass Price"
+                    }
+                },
+                        payment_method_types = new[] { "gcash" },
+                        success_url = successUrl
+                    }
+                }
+            });
+
+            var request = new RestRequest("");
+            request.AddHeader("accept", "application/json");
+            request.AddHeader("authorization", "Basic c2tfdGVzdF9zdnBTYXFyNnBLMlRaTXlOSkhCVmI5Sng6");
+            request.AddJsonBody(requestBodyJson, false);
+
+
+            var response = await client.PostAsync(request);
+
+            if (response.IsSuccessful)
+            {
+                var responseData = response.Content;
+
+                // Parse the JSON response to extract the checkout URL
+                dynamic responseObject = JsonConvert.DeserializeObject(responseData);
+                string checkoutUrl = responseObject.data.attributes.checkout_url;
+                TempData["EstablishmentName"] = gcashdesc;
+
+                // Redirect the user's browser to the checkout URL
+                return Redirect(checkoutUrl);
+            }
+            else
+            {
+                var errorMessage = response.ErrorMessage;
+                // Handle the error
+                return StatusCode((int)response.StatusCode, errorMessage);
+            }
+        }
 
         [HttpPost]
 		public IActionResult Charge(string stripeEmail, string stripeToken, string stripePrice, string stripeDescription, string timeinhid, string timeouthid, string dropdownChoice, string dynamicdate)
 		{
-			var customers = new CustomerService();
+            long price = Convert.ToInt32(stripePrice) * 100;
+            var customers = new CustomerService();
 			var charges = new ChargeService();
-			long price = Convert.ToInt32(stripePrice) * 100;
 
 			try
 			{
