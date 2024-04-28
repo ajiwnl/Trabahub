@@ -155,6 +155,15 @@
                             <input type="hidden" id="dropdownChoice" name="dropdownChoice" value="">
                             <input type="hidden" id="dynamicdatehid" name="dynamicdate" value="">
                         </form>
+                        <form class="mt-5" asp-action="ChargeGCash" asp-controller="Listing" asp-area="" method="post">
+                            <input type="text" id="gcashprice" name="gcashprice" value="">
+                            <input type="text" id="gcashdesc" name="gcashdesc" value="@Model.ESTABNAME">
+                            <input type="text" id="gcashin" name="gcashin" value="">
+                            <input type="text" id="gcashout" name="gcashout" value="">
+                            <input type="text" id="gcashchoice" name="gcashchoice" value="">
+                            <input type="text" id="gcashdynamic" name="gcashdynamic" value="">
+                            <button type="submit">Pay With GCash</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -258,11 +267,14 @@
                 document.getElementById("amountLabel").textContent = "Amount: ₱ " + price * countHours;
                 document.getElementById("payscript").setAttribute("data-amount", price * countHours);
                 document.getElementById("stripePrice").setAttribute("value", price * countHours);
+                document.getElementById("gcashprice").setAttribute("value", price * countHours)
+
             } else {
                 document.getElementById("amountLabel").textContent = "Amount: ₱ " + price;
                 document.getElementById("priceDropdownBtn").innerText = option + ": ₱" + price;
                 document.getElementById("payscript").setAttribute("data-amount", price);
                 document.getElementById("stripePrice").setAttribute("value", price);
+                document.getElementById("gcashprice").setAttribute("value", price)
                 timeInInput.value = "Client can freely choose their time";
                 timeOutInput.value = "Client can freely choose their time";
             }
@@ -272,9 +284,13 @@
 
             // Update timein and timeout input values
             document.getElementById("timeinhid").value = timeInInput;
+            document.getElementById("gcashin").value = timeInInput;
             document.getElementById("timeouthid").value = timeOutInput;
+            document.getElementById("gcashout").value = timeInInput;
             document.getElementById("dropdownChoice").value = option;
+            document.getElementById("gcashchoice").value = option;
             document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
+            document.getElementById("gcashdynamic").value = document.getElementById("dynamicdate").textContent;
             var calendar = document.getElementById("calendar-side");
 
             if (option === "Hourly Price") {
