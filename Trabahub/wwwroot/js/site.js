@@ -12,12 +12,10 @@ function OnLoginRegisterLayers() {
 
     //Get Nav and Footer Elements/Contents
     var navbar = document.getElementById("layoutnav");
-    var footer = document.getElementById('layoutfoot');
 
     //If True, Hide Nav/Footer Bars
     if (isUserLogin || isUserRegister) {
         navbar.classList.add('hidenavs');
-        footer.classList.add('hidenavs');
     }
 }
 

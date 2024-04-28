@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bookingside">
+            <div class="bookingside" id="calendar-side">
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -275,11 +275,15 @@
             document.getElementById("timeouthid").value = timeOutInput;
             document.getElementById("dropdownChoice").value = option;
             document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
+            var calendar = document.getElementById("calendar-side");
 
             if (option === "Hourly Price") {
                 enableTimeInputs(); // Enable time inputs for hourly option
+                calendar.classList.add('hide-calendar');
+
             } else {
                 disableTimeInputs(); // Disable time inputs for non-hourly options
+                calendar.classList.remove('hide-calendar');
             }
         }
     });

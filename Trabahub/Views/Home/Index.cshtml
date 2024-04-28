@@ -37,7 +37,7 @@
         <label class="analytics-h-label">Owner's Dashboard</label>
     </div>
 
-    <a asp-area="" asp-controller="" asp-action="" class="maplabel text-dark">
+    <a asp-area="" asp-controller="Listing" asp-action="BookingDetails" class="maplabel text-dark">
         <div class="analyticsbody">
             <div class="card-analytics">
                 <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
@@ -80,12 +80,25 @@
     </script>
 }
 
+@if (TempData.ContainsKey("ErrorMessaage"))
+{
+    <script>
+        var errorMessage = '@TempData["ErrorMessaage"]';
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: errorMessage,
+        });
+    </script>
+}
+
 <script>
     $(document).ready(function () {
         $.ajax({
             url: '/Listing/GetDailyData',
             type: 'GET',
             success: function (data) {
+                console.log(data);
                 // Parse and format the dates
                 var dates = data.dailyData.map(function (item) {
                     // Split the date string into day, month, and year components
@@ -100,6 +113,7 @@
                 var totalUsers = data.dailyData.map(function (item) { return item.totalUsers; });
                 var totalListings = data.totalListings;
                 var totalBooks = data.totalBooks;
+
 
                 // Render user chart
                 const userCtx = document.getElementById('userChart').getContext('2d');
