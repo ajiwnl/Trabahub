@@ -10,11 +10,11 @@ namespace Trabahub.Models
         [Required]
         [StringLength(50)]
         public string? ESTABNAME { get; set; }
-        
+
         [Required]
         [StringLength(255)]
         public string? ESTABDESC { get; set; }
-       
+
         [Required]
         [StringLength(255)]
         public string? ESTABADD { get; set; }
@@ -30,12 +30,12 @@ namespace Trabahub.Models
 
         public int? ESTABMONPRICE { get; set; }
 
-		public string OwnerUsername { get; set; }
+        public string OwnerUsername { get; set; }
 
-		public bool ListingStatus { get; set; }
+        public bool ListingStatus { get; set; }
 
 
-		[Required]
+        [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime STARTTIME { get; set; }
 
@@ -60,11 +60,11 @@ namespace Trabahub.Models
         [NotMapped]
         public IFormFile? VERIMG { get; set; }
 
-	}
+    }
 
-	public class ListingDetails
-	{
-		public Listing? Listing { get; set; }
-		public List<ListInteraction>? Interactions { get; set; }
-	}
+    public class ListingDetails
+    {
+        public Listing? Listing { get; set; }
+        public List<ListInteraction>? Interactions { get; set; }
+    }
 }

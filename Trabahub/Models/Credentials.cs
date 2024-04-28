@@ -17,6 +17,14 @@ namespace Trabahub.Models
 
         [Required]
         [StringLength(255)]
+        public string? fName { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string? lName { get; set; }
+
+        [Required]
+        [StringLength(255)]
         public string? Password { get; set; }
 
 
