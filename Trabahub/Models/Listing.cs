@@ -16,7 +16,7 @@ namespace Trabahub.Models
         public string? ESTABDESC { get; set; }
        
         [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string? ESTABADD { get; set; }
 
         [Required]
