@@ -71,13 +71,11 @@ document.getElementById('publishTab').addEventListener('click', function () {
 
 //Contact Page Validation
 function FeedbackValidation() {
-    var name = document.getElementsByName("name")[0].value;
-    var email = document.getElementsByName("email")[0].value;
     var contact = document.getElementsByName("contact")[0].value;
     var message = document.getElementsByName("message")[0].value;
 
     if (name === "" || email === "" || contact === "") {
-        alert("Name, Email, and Contact No are required fields");
+        alert("Contact No are required fields");
         return false;
     }
 
@@ -87,20 +85,12 @@ function FeedbackValidation() {
         return false;
     }
 
-    // Validate Name has between 20 and 55 characters
-    if (name.length < 20 || name.length > 55) {
-        alert("Name must be between 20 and 55 characters");
-        return false;
-    }
 
     // Validate Message has at least 20 characters
     if (message.length < 20) {
         alert("Message must contain at least 20 characters");
         return false;
     }
-
-    // Additional validation logic can be added here if needed
-
     return true; // Form will be submitted if all validations pass
 }
 
@@ -125,6 +115,7 @@ var emailChecked = false;
 // Email validation
 function handleEnter(event) {
     if (event.key === 'Enter') {
+        event.preventDefault(); 
         checkEmail();
     }
 }
@@ -142,10 +133,11 @@ function checkEmail() {
                 document.getElementById('floatingInputPassword').disabled = false;
                 document.getElementById('confirmPassword').disabled = false;
                 document.getElementById('emailValidationMessage').innerText = 'Email found. You can proceed.';
-                emailChecked = true; // Set the flag to true
             } else {
-                // Email does not exist, show an error message and keep the password field disabled
+                // Email does not exist, show an error message and keep the password fields disabled
                 document.getElementById('emailValidationMessage').innerText = 'Email not found. Please check and try again.';
+                document.getElementById('floatingInputPassword').disabled = true;
+                document.getElementById('confirmPassword').disabled = true;
             }
         },
         error: function () {
@@ -153,6 +145,7 @@ function checkEmail() {
         }
     });
 }
+
 
 // Update the form submission function
 function submitForm() {

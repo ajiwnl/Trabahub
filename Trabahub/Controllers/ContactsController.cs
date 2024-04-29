@@ -18,20 +18,34 @@ namespace Trabahub.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendEmail(string name, string email, string contact, string message)
+        public ActionResult SendEmail(string contact, string message)
         {
+
+            var userType = HttpContext.Session.GetString("UserType");
+            var userName = HttpContext.Session.GetString("Username");
+            var fname = HttpContext.Session.GetString("fName");
+            var lname = HttpContext.Session.GetString("lName");
+            var email = HttpContext.Session.GetString("Email");
+            var fullname = fname + " " + lname;
+
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Customer Feedback");
+                    var senderEmail = new MailAddress("trabahubco@gmail.com", "Trabahub Customer Support");
                     var receiverEmail = new MailAddress("trabahubco@gmail.com", "Receiver");
                     var password = "weaz drul elrl bngg";
 
-                    // Format the subject using the provided inputs
-                    var subject = $"Customer Feedback for Trabahub";
 
-					var body = $"Name: {name}\nEmail: {email}\nContact Number: {contact}\n\nMessage: {message}";
+                    // Format the subject using the provided inputs
+                    var subject = $"Trabahub Customer Support";
+
+					var body = $"Name: {fullname}\n" +
+                        $"Username: {userName}\n" +
+                        $"User Type: {userType}" +
+                        $"\nEmail: {email}" +
+                        $"\nContact Number: {contact}" +
+                        $"\n\n\n {message}";
 
 
 					var smtp = new SmtpClient

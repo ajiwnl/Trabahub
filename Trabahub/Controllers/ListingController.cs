@@ -281,7 +281,6 @@ namespace Trabahub.Controllers
 
             SaveBookDetails(gcashdesc, userName, convertPrice, gcashin, gcashout, gcashchoice, gcashdynamic);
 
-
             var requestBodyJson = JsonConvert.SerializeObject(new
             {
                 data = new
@@ -305,7 +304,7 @@ namespace Trabahub.Controllers
                     }
                 },
                         payment_method_types = new[] { "gcash" },
-                        success_url = successUrl
+                        success_url = successUrl,
                     }
                 }
             });

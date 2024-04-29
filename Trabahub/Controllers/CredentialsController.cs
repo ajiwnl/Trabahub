@@ -106,6 +106,9 @@ namespace Trabahub.Controllers
             string userType = existingEmail.UserType.ToString();
             HttpContext.Session.SetString("Username", loggedUser);
             HttpContext.Session.SetString("UserType", userType);
+            HttpContext.Session.SetString("fName", existingEmail.fName);
+            HttpContext.Session.SetString("lName", existingEmail.lName);
+            HttpContext.Session.SetString("Email", emaillog);
 
             // Check user type and redirect accordingly
             if (userType == "Owner" || userType == "Client")
