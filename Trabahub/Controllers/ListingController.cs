@@ -322,6 +322,9 @@ namespace Trabahub.Controllers
             {
                 var responseData = response.Content;
 
+                double priceDouble = Convert.ToDouble(gcashprice);
+                UpdateTotalPrice(priceDouble, gcashdesc);
+
                 int accommodationCount = GetAccommodationCount(gcashdesc);
                 switch (gcashchoice)
                 {
