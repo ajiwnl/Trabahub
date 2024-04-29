@@ -125,7 +125,7 @@ namespace Trabahub.Controllers
         // Method to verify the password
         public bool VerifyPassword(string password, string hashedPassword)
         {
-            byte[] salt = Convert.FromBase64String(hashedPassword.Split(':')[0]); // Assuming the salt is stored as part of the hashed password
+            byte[] salt = Convert.FromBase64String(hashedPassword.Split(':')[0]); //Convert salt as part of the hashed password
             byte[] storedHash = Convert.FromBase64String(hashedPassword.Split(':')[1]); // Extract the hash portion from the stored hashed password
 
             byte[] hash = KeyDerivation.Pbkdf2(
