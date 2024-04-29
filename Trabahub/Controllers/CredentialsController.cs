@@ -31,8 +31,20 @@ namespace Trabahub.Controllers
             return View();
         }
 
+        
+
         public IActionResult RedirectPage()
         {
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Profile()
+        {
+            HttpContext.Session.GetString("Username");
+            HttpContext.Session.GetString("UserType");
+
 
             return View();
         }

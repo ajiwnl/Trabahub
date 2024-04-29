@@ -266,19 +266,20 @@ namespace Trabahub.Controllers
             return null;
         }
 
-		[HttpGet]
-		public IActionResult ChargeGCash()
-		{
-			return View();
-		}
-
         [HttpPost]
-        public async Task<IActionResult> ChargeGCash(string gcashprice, string gcashdesc, string gcashin)
+        public async Task<IActionResult> ChargeGCash(string gcashprice, string gcashdesc, string gcashin, string gcashout, string gcashchoice, string gcashdynamic, string status)
         {
             var options = new RestClientOptions("https://api.paymongo.com/v1/checkout_sessions");
             var client = new RestClient(options);
+            string userName = HttpContext.Session.GetString("Username");
+
 
             var successUrl = "https://localhost:7074/Listing/Charge/" + Uri.EscapeDataString(gcashdesc);
+			int priceInt = Convert.ToInt32(gcashprice) * 100;
+			string convertPrice = (priceInt / 100).ToString();
+			string concatDesc = userName + " " + gcashchoice + " " + gcashin + " " + gcashout + " " + gcashdynamic;
+
+            SaveBookDetails(gcashdesc, userName, convertPrice, gcashin, gcashout, gcashchoice, gcashdynamic);
 
 
             var requestBodyJson = JsonConvert.SerializeObject(new
@@ -290,16 +291,17 @@ namespace Trabahub.Controllers
                         send_email_receipt = true,
                         show_description = true,
                         show_line_items = true,
-                        description = gcashdesc,
+                        description = concatDesc,
                         line_items = new[]
                {
                     new
                     {
                         currency = "PHP",
-                        amount = 5000,
-                        description = "Day Pass Price",
+                        amount = priceInt,
+                        description = gcashdesc,
+
                         quantity = 1,
-                        name = "Day Pass Price"
+                        name = gcashchoice,
                     }
                 },
                         payment_method_types = new[] { "gcash" },
@@ -320,18 +322,37 @@ namespace Trabahub.Controllers
             {
                 var responseData = response.Content;
 
-                // Parse the JSON response to extract the checkout URL
+                int accommodationCount = GetAccommodationCount(gcashdesc);
+                switch (gcashchoice)
+                {
+                    case "Hourly Price":
+                        UpdateAccommodationCount(gcashdesc, accommodationCount - 1);
+                        ScheduleAccommodationRestore(gcashdesc, 1);
+                        break;
+                    case "Day Pass Price":
+                        UpdateAccommodationCount(gcashdesc, accommodationCount - 1);
+                        ScheduleAccommodationRestore(gcashdesc, 24);
+                        break;
+                    case "Weekly Pass Price":
+                        UpdateAccommodationCount(gcashdesc, accommodationCount - 1);
+                        ScheduleAccommodationRestore(gcashdesc, 7 * 24);
+                        break;
+                    case "Monthly Pass Price":
+                        UpdateAccommodationCount(gcashdesc, accommodationCount - 1);
+                        ScheduleAccommodationRestore(gcashdesc, 30 * 24);
+                        break;
+                    default:
+                        break;
+                }
+
                 dynamic responseObject = JsonConvert.DeserializeObject(responseData);
                 string checkoutUrl = responseObject.data.attributes.checkout_url;
                 TempData["EstablishmentName"] = gcashdesc;
-
-                // Redirect the user's browser to the checkout URL
                 return Redirect(checkoutUrl);
             }
             else
             {
                 var errorMessage = response.ErrorMessage;
-                // Handle the error
                 return StatusCode((int)response.StatusCode, errorMessage);
             }
         }
@@ -602,43 +623,53 @@ namespace Trabahub.Controllers
 				// Handle invalid date format
 			}
 
-			DateTime calculatedStartTime;
+            DateTime calculatedStartTime, calculatedEndTime;
 
-			switch (ddchoice)
-			{
-				case "Hourly Price":
-					calculatedStartTime = startTime;
-					break;
-				case "Day Pass Price":
-					calculatedStartTime = dynamicDate.AddDays(1);
-					break;
-				case "Weekly Pass Price":
-					calculatedStartTime = dynamicDate.AddDays(7);
-					break;
-				case "Monthly Pass Price":
-					calculatedStartTime = dynamicDate.AddMonths(1);
-					break;
-				// Add more cases for other pass types if needed
-				default:
-					// Handle unsupported pass types
-					return;
-			}
 
-			int totalBooking = _context.Booking.Count();
+            int totalBooking = _context.Booking.Count();
 			var bookingDetail = new Booking()
 			{
 				Id = totalBooking + 1,
 				ESTABNAME = estabName,
 				Username = userName,
 				PriceRate = priceRate,
-				STARTTIME = dynamicDate,
-				ENDTIME = calculatedStartTime,
+				STARTTIME = startTime,
+				ENDTIME = endTime,
 				SelectedOption = ddchoice,
 				DynamicDate = dynamicDate,
 				Status = "Active",
 			};
 
-			_context.Booking.Add(bookingDetail);
+            switch (ddchoice)
+            {
+                case "Hourly Price":
+                    calculatedStartTime = startTime;
+					bookingDetail.STARTTIME = calculatedStartTime;
+                    break;
+                case "Day Pass Price":
+                    calculatedStartTime = dynamicDate.AddDays(1);
+					bookingDetail.STARTTIME = dynamicDate;
+					bookingDetail.ENDTIME = calculatedStartTime;
+
+                    break;
+                case "Weekly Pass Price":
+                    calculatedStartTime = dynamicDate.AddDays(7);
+                    bookingDetail.STARTTIME = dynamicDate;
+                    bookingDetail.ENDTIME = calculatedStartTime;
+
+                    break;
+                case "Monthly Pass Price":
+                    calculatedStartTime = dynamicDate.AddMonths(1);
+                    bookingDetail.STARTTIME = dynamicDate;
+                    bookingDetail.ENDTIME = calculatedStartTime;
+                    break;
+                // Add more cases for other pass types if needed
+                default:
+                    // Handle unsupported pass types
+                    return;
+            }
+
+            _context.Booking.Add(bookingDetail);
 			_context.SaveChanges();
 		}
 

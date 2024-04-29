@@ -156,13 +156,13 @@
                             <input type="hidden" id="dynamicdatehid" name="dynamicdate" value="">
                         </form>
                         <form class="mt-5" asp-action="ChargeGCash" asp-controller="Listing" asp-area="" method="post">
-                            <input type="text" id="gcashprice" name="gcashprice" value="">
-                            <input type="text" id="gcashdesc" name="gcashdesc" value="@Model.ESTABNAME">
-                            <input type="text" id="gcashin" name="gcashin" value="">
-                            <input type="text" id="gcashout" name="gcashout" value="">
-                            <input type="text" id="gcashchoice" name="gcashchoice" value="">
-                            <input type="text" id="gcashdynamic" name="gcashdynamic" value="">
-                            <button type="submit">Pay With GCash</button>
+                            <input type="hidden" id="gcashprice" name="gcashprice" value="">
+                            <input type="hidden" id="gcashdesc" name="gcashdesc" value="@Model.ESTABNAME">
+                            <input type="hidden" id="gcashin" name="gcashin" value="">
+                            <input type="hidden" id="gcashout" name="gcashout" value="">
+                            <input type="hidden" id="gcashchoice" name="gcashchoice" value="">
+                            <input type="hidden" id="gcashdynamic" name="gcashdynamic" value="">
+                            <button class="gcash-button" type="submit">Pay With GCash</button>
                         </form>
                     </div>
                 </div>
@@ -286,7 +286,7 @@
             document.getElementById("timeinhid").value = timeInInput;
             document.getElementById("gcashin").value = timeInInput;
             document.getElementById("timeouthid").value = timeOutInput;
-            document.getElementById("gcashout").value = timeInInput;
+            document.getElementById("gcashout").value = timeOutInput;
             document.getElementById("dropdownChoice").value = option;
             document.getElementById("gcashchoice").value = option;
             document.getElementById("dynamicdatehid").value = document.getElementById("dynamicdate").textContent;
