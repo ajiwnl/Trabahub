@@ -1488,7 +1488,29 @@ tr:hover {
     }
 }
 
+/*Profile Layer*/
+.profile-layer {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-card {
+    width: 60vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /*Debug Tool*/
 .debug {
     border: 2px solid red;
