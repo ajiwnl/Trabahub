@@ -1428,6 +1428,14 @@ tr:hover {
     object-fit: cover;
 }
 
+.gcash-button {
+    padding: 10px;
+    background-color: #0000ff;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
 @media all and (min-width: 800px) {
     .ad-side {
         flex: 1;
