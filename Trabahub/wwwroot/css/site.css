@@ -912,6 +912,11 @@ footer {
     font-size: 40px;
 }
 
+.font-big {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+}
+
 .loginheaderb {
     font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
@@ -986,6 +991,24 @@ footer {
 
 .registermain {
     height: 500px;
+}
+
+.register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.radiobtn-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-input {
+    width: 400px;
 }
 
 .registerbody {
