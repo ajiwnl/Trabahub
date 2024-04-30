@@ -143,7 +143,23 @@ namespace Trabahub.Controllers
         [HttpPost]
         public IActionResult Edit(Credentials profileEdit)
         {
+            var getUser = HttpContext.Session.GetString("Username");
             var profile = _context.Credentials.FirstOrDefault(s => s.Email == profileEdit.Email);
+            var updateListing = _context.Listing.FirstOrDefault(a => a.OwnerUsername == getUser);
+            var updateInteraction = _context.ListInteraction.FirstOrDefault(b => b.OwnerUsername == getUser);
+
+
+            if (updateListing != null)
+            {
+                updateListing.OwnerUsername = profileEdit.Username;
+                _context.SaveChanges();
+            }
+
+            if(updateInteraction != null)
+            {
+                updateInteraction.OwnerUsername = profileEdit.Username;
+                _context.SaveChanges();
+            }
 
             if (profile != null)
             {
@@ -154,8 +170,9 @@ namespace Trabahub.Controllers
 
 
                 _context.SaveChanges();
+                HttpContext.Session.Clear();
                 TempData["UpMessage"] = "Profile Updated Successfully!";
-                return RedirectToAction("Profile");
+                return RedirectToAction("Login", "Credentials");
             }
             return NotFound();
         }
