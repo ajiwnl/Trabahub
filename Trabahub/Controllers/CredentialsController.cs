@@ -42,12 +42,20 @@ namespace Trabahub.Controllers
         [HttpGet]
         public IActionResult Profile()
         {
-            HttpContext.Session.GetString("Username");
-            HttpContext.Session.GetString("UserType");
+            // Get the username of the currently logged-in user from session
+            var username = HttpContext.Session.GetString("Username");
+            var userType = HttpContext.Session.GetString("UserType");
 
+            // Fetch profile data for the currently logged-in user from the database
+            var profile = _context.Credentials.FirstOrDefault(c => c.Username == username);
 
-            return View();
+            ViewData["Username"] = username;
+            ViewData["UserType"] = userType;
+
+            // Pass profile data to the view
+            return View(profile);
         }
+
 
         public IActionResult Admin()
         {
@@ -123,6 +131,30 @@ namespace Trabahub.Controllers
                 return RedirectToAction("Index", "Home"); // Redirect to the home page or any other appropriate action
             }
         }
+
+        public IActionResult Edit(string? email)
+        { 
+            var useremail = _context.Credentials.Where(s => s.Email == email).FirstOrDefault();
+
+            return View(useremail);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Credentials profileEdit)
+        {
+            var profile = _context.Credentials.FirstOrDefault(s => s.Email == profileEdit.Email);
+
+            if (profile != null)
+            {
+                _context.Credentials.Remove(profile);
+                _context.Add(profileEdit);
+                _context.SaveChanges();
+                TempData["UpMessage"] = "Profile Updated Successfully!";
+                return RedirectToAction("Profile");
+            }
+            return View(profile);
+        }
+
 
 
         // Method to verify the password
