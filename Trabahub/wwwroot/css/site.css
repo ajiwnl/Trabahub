@@ -1500,12 +1500,12 @@ tr:hover {
 profile-details {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .profile-card {
-    width: 60vh;
-    height: 60vh;
+    width: 90vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
