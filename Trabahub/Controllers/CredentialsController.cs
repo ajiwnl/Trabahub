@@ -44,10 +44,11 @@ namespace Trabahub.Controllers
         {
             // Get the username of the currently logged-in user from session
             var username = HttpContext.Session.GetString("Username");
+            var email = HttpContext.Session.GetString("Email");
             var userType = HttpContext.Session.GetString("UserType");
 
             // Fetch profile data for the currently logged-in user from the database
-            var profile = _context.Credentials.FirstOrDefault(c => c.Username == username);
+            var profile = _context.Credentials.FirstOrDefault(c => c.Email == email);
 
             ViewData["Username"] = username;
             ViewData["UserType"] = userType;
@@ -146,14 +147,19 @@ namespace Trabahub.Controllers
 
             if (profile != null)
             {
-                _context.Credentials.Remove(profile);
-                _context.Add(profileEdit);
+      
+                profile.Username = profileEdit.Username;
+                profile.fName = profileEdit.fName;
+                profile.lName = profileEdit.lName;
+
+
                 _context.SaveChanges();
                 TempData["UpMessage"] = "Profile Updated Successfully!";
                 return RedirectToAction("Profile");
             }
-            return View(profile);
+            return NotFound();
         }
+
 
 
 
