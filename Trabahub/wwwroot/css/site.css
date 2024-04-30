@@ -1511,6 +1511,26 @@ profile-details {
     justify-content: center;
     align-items: center;
 }
+
+.center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bk-btn {
+    padding: 10px;
+    background-color: #3ECCB5;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    transition: 1s ease;
+}
+
+.bk-btn:hover {
+    color: whitesmoke;
+}
+
 /*Debug Tool*/
 .debug {
     border: 2px solid red;

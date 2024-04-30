@@ -37,34 +37,36 @@
         <label class="analytics-h-label">Owner's Dashboard</label>
     </div>
 
-    <a asp-area="" asp-controller="Listing" asp-action="BookingDetails" class="maplabel text-dark">
-        <div class="analyticsbody">
-            <div class="card-analytics">
-                <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
-                <label class="analytics-label mt-3 text-center">Trabahub Total Users</label>
-            </div>
-
-            <div class="card-analytics">
-                <label class="analytics-style text-center">@ViewBag.TotalListing</label>
-                <label class="analytics-label mt-3 text-center">Total Listings</label>
-            </div>
-
-            <div class="card-analytics">
-                <label class="analytics-style text-center">@ViewBag.TotalBooks</label>
-                <label class="analytics-label mt-3 text-center">Total Users Booked</label>
-            </div>
-            <div class="card-analytics">
-                <label class="analytics-style text-center">@ViewBag.TotalCharges</label>
-                <label class="analytics-label mt-3 text-center">Total Income</label>
-            </div>
+    <div class="analyticsbody">
+        <div class="card-analytics">
+            <label class="analytics-style text-center">@ViewBag.TotalUsers</label>
+            <label class="analytics-label mt-3 text-center">Trabahub Total Users</label>
         </div>
-    </a>
+
+        <div class="card-analytics">
+            <label class="analytics-style text-center">@ViewBag.TotalListing</label>
+            <label class="analytics-label mt-3 text-center">Total Listings</label>
+        </div>
+
+        <div class="card-analytics">
+            <label class="analytics-style text-center">@ViewBag.TotalBooks</label>
+            <label class="analytics-label mt-3 text-center">Total Users Booked</label>
+        </div>
+        <div class="card-analytics">
+            <label class="analytics-style text-center">@ViewBag.TotalCharges</label>
+            <label class="analytics-label mt-3 text-center">Total Income</label>
+        </div>
+    </div>
 
 
     <div class="chart-container">
         <canvas class="chart-size" id="userChart"></canvas>
         <canvas class="chart-size" id="listingChart"></canvas>
         <canvas class="chart-size" id="booksChart"></canvas>
+    </div>
+
+    <div class="center-element mt-4 mb-3">
+        <a type="button" class="bk-btn maplabel" asp-area="" asp-controller="Listing" asp-action="BookingDetails">Check Booking Details</a>
     </div>
 }
 
