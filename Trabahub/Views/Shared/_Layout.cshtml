@@ -80,6 +80,9 @@
                         }
                         else if (ViewBag.UserType == "Admin")
                         {
+                            <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Home" ? "active" : "")">
+                                <a class="nav-link navbar-fonts" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
                             <li class="nav-item me-5 @(ViewData["ActivePage"] as string == "Username" ? "active" : "")">
                                  <a class="nav-link navbar-fonts" asp-area="" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
                             </li>

@@ -65,9 +65,14 @@ namespace Trabahub.Controllers
             }
             else
             {
-
-                HttpContext.Session.SetString("TotalListing", "0");
+                var getTotalListings = _context.Listing.Count();
+                var getTotalUsers = _context.Credentials.Count();
+                var getAllBooking = _context.Booking.Count();
                 var totalIncomeForAllOwners = _context.Analytics.Sum(a => a.TotalIncome);
+
+                HttpContext.Session.SetString("TotalListing", getTotalListings.ToString());
+                HttpContext.Session.SetString("TotalUsers", getTotalUsers.ToString());
+                HttpContext.Session.SetString("TotalBooks", getAllBooking.ToString());
                 HttpContext.Session.SetString("TotalCharges", "₱" + totalIncomeForAllOwners.ToString());
             }
             return View();
