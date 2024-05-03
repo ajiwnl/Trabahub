@@ -6,7 +6,11 @@ namespace Trabahub.Models
 {
     public class Analytics
     {
-        [Key]
+        [Column(Order = 0)]
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
+
         [Required]
         [StringLength(255)]
         public string? DataReference { get; set; }

@@ -31,7 +31,7 @@ namespace Trabahub.Controllers
             return View();
         }
 
-        
+
 
         public IActionResult RedirectPage()
         {
@@ -134,7 +134,7 @@ namespace Trabahub.Controllers
         }
 
         public IActionResult Edit(string? email)
-        { 
+        {
             var useremail = _context.Credentials.Where(s => s.Email == email).FirstOrDefault();
 
             return View(useremail);
@@ -144,41 +144,58 @@ namespace Trabahub.Controllers
         public IActionResult Edit(Credentials profileEdit)
         {
             var getUser = HttpContext.Session.GetString("Username");
+            var getRole = HttpContext.Session.GetString("UserType");
             var profile = _context.Credentials.FirstOrDefault(s => s.Email == profileEdit.Email);
-            var updateListing = _context.Listing.FirstOrDefault(a => a.OwnerUsername == getUser);
-            var updateInteraction = _context.ListInteraction.FirstOrDefault(b => b.OwnerUsername == getUser);
 
-
-            if (updateListing != null)
+            if (getRole == "Owner")
             {
-                updateListing.OwnerUsername = profileEdit.Username;
-                _context.SaveChanges();
+                var updateListings = _context.Listing.Where(a => a.OwnerUsername == getUser).ToList();
+                var upAnalytics = _context.Analytics.FirstOrDefault(b => b.DataReference == getUser);
+                var updateInteractions = _context.ListInteraction.Where(b => b.OwnerUsername == getUser).ToList();
+
+                foreach (var updateListing in updateListings)
+                {
+                    updateListing.OwnerUsername = profileEdit.Username;
+                }
+
+                foreach (var updateInteraction in updateInteractions)
+                {
+                    updateInteraction.OwnerUsername = profileEdit.Username;
+                }
+
+                if (upAnalytics != null)
+                {
+                    upAnalytics.DataReference = profileEdit.Username;
+                }
             }
-
-            if(updateInteraction != null)
+            else if (getRole == "Client")
             {
-                updateInteraction.OwnerUsername = profileEdit.Username;
-                _context.SaveChanges();
+                var updateInteractions = _context.ListInteraction.Where(d => d.Username == getUser).ToList();
+                var updateBookings = _context.Booking.Where(b => b.Username == getUser).ToList();
+
+                foreach (var updateInteraction in updateInteractions)
+                {
+                    updateInteraction.Username = profileEdit.Username;
+                }
+
+                foreach (var updateBooking in updateBookings)
+                {
+                    updateBooking.Username = profileEdit.Username;
+                }
             }
 
             if (profile != null)
             {
-      
                 profile.Username = profileEdit.Username;
                 profile.fName = profileEdit.fName;
                 profile.lName = profileEdit.lName;
-
-
-                _context.SaveChanges();
-                HttpContext.Session.Clear();
-                TempData["UpMessage"] = "Profile Updated Successfully!";
-                return RedirectToAction("Login", "Credentials");
             }
-            return NotFound();
+
+            _context.SaveChanges();
+            HttpContext.Session.Clear();
+            TempData["UpMessage"] = "Profile Updated Successfully!";
+            return RedirectToAction("Login", "Credentials");
         }
-
-
-
 
         // Method to verify the password
         public bool VerifyPassword(string password, string hashedPassword)
