@@ -207,7 +207,8 @@ namespace Trabahub.Controllers
             }
             else
             {
-                return View();
+                var bookings = _context.Booking.ToList();
+                return View(bookings);
             }
         }
 
@@ -754,24 +755,45 @@ namespace Trabahub.Controllers
                                 .ToList();
 			Console.WriteLine(dailyData.ToString());
 
-            var ownerUsername = HttpContext.Session.GetString("Username");
+			var role = HttpContext.Session.GetString("UserType");
 
-            var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
-            var getOwner = _context.Listing.FirstOrDefault(a => a.OwnerUsername == ownerUsername);
-            int getTotalBooks = 0;
-            if (getOwner != null)
-            {
-                getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+			if(role == "Owner")
+			{
+                var ownerUsername = HttpContext.Session.GetString("Username");
+                var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
+                var getOwner = _context.Listing.FirstOrDefault(a => a.OwnerUsername == ownerUsername);
+                int getTotalBooks = 0;
+                if (getOwner != null)
+                {
+                    getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+                }
+
+                var chartData = new
+                {
+                    DailyData = dailyData,
+                    TotalListings = getTotalListings,
+                    TotalBooks = getTotalBooks
+                };
+                return Json(chartData);
             }
+           
+			else if(role == "Admin")
+			{
+                var getTotalListings = _context.Listing.Count();
+                var getTotalBooks = _context.ListInteraction.Count();
 
-            var chartData = new
-            {
-				DailyData = dailyData,
-				TotalListings = getTotalListings,
-                TotalBooks = getTotalBooks
-            };
-
-            return Json(chartData);
+                var chartData = new
+                {
+                    DailyData = dailyData,
+                    TotalListings = getTotalListings,
+                    TotalBooks = getTotalBooks
+                };
+                return Json(chartData);
+            }
+			else
+			{
+				return Json(null);
+			}
         }
 
 		public JsonResult UpdateCount()
