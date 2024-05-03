@@ -11,25 +11,26 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+@if (ViewBag.Usertype == "Client")
+{
+    <div id="layoutbody">
+        <div class="text-center pt-5">
+            <p class="maintxt">
+                CO-WORKING<br />
+                SPACES AND STUDY<br />
+                HUBS IN CEBU
+            </p>
+            <p id="secondtxt">In an Innovative Environment</p>
+        </div>
 
-<div id="layoutbody">
-    <div class="text-center pt-5">
-        <p class="maintxt">
-            CO-WORKING<br />
-            SPACES AND STUDY<br />
-            HUBS IN CEBU
-        </p>
-        <p id="secondtxt">In an Innovative Environment</p>
+        <div class="d-flex justify-content-center pt-2">
+            <a type="button" id="Bookbtn" class="mx-auto border-0 text-center pt-2"
+               asp-area="" asp-controller="Listing" asp-action="Index" style="text-decoration: none">
+                BOOK NOW
+            </a>
+        </div>
     </div>
-
-    <div class="d-flex justify-content-center pt-2">
-        <a type="button" id="Bookbtn" class="mx-auto border-0 text-center pt-2"
-           asp-area="" asp-controller="Listing" asp-action="Index" style="text-decoration: none">
-            BOOK NOW
-        </a>
-    </div>
-</div>
-
+}
 
 @if (ViewBag.UserType == "Owner")
 {

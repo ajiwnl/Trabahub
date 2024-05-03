@@ -239,10 +239,12 @@ namespace Trabahub.Controllers
             if (ownerUsername != null)
             {
                 var analytics = _context.Analytics.FirstOrDefault(a => a.DataReference == ownerUsername);
+				var count = _context.Analytics.Count();
                 if (analytics == null)
                 {
                     var createAnalytics = new Analytics()
                     {
+						Id = count + 1,
                         DataReference = ownerUsername,
                         TotalIncome = stripePrice
                     };
