@@ -60,6 +60,31 @@ namespace Trabahub.Models
         [NotMapped]
         public IFormFile? VERIMG { get; set; }
 
+        [StringLength(255)]
+        public string? VERIMAGEPATH2 { get; set; }
+
+        [NotMapped]
+        public IFormFile? VERIMG2 { get; set; }
+
+        [StringLength(255)]
+        public string? VERIMAGEPATH3 { get; set; }
+
+        [NotMapped]
+        public IFormFile? VERIMG3 { get; set; }
+
+        [StringLength(255)]
+        public string? VERIMAGEPATH4 { get; set; }
+
+        [NotMapped]
+        public IFormFile? VERIMG4 { get; set; }
+
+        [StringLength(255)]
+        public string? VERIMAGEPATH5 { get; set; }
+
+        [NotMapped]
+        public IFormFile? VERIMG5 { get; set; }
+
+
     }
 
     public class ListingDetails

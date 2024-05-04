@@ -10,6 +10,7 @@ using Trabahub.Helpers;
 using System.Globalization;
 using RestSharp;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Trabahub.Controllers
 {
@@ -120,32 +121,32 @@ namespace Trabahub.Controllers
 
 
         [HttpPost]
-		[ActionName("Add")]
-		public IActionResult Add(Listing addListing)
-		{
-			string errorMsg = FieldValidation(addListing);
-			if (!string.IsNullOrEmpty(errorMsg))
-			{
-				// Contains the error message to TempData from the FieldValidation function,
-				//this will be use to display in JavaScript Pop-up box
-				TempData["FieldError"] = errorMsg;
-				return View("Add", addListing);
-			}
+        [ActionName("Add")]
+        public IActionResult Add(Listing addListing)
+        {
+            string errorMsg = FieldValidation(addListing);
+            if (!string.IsNullOrEmpty(errorMsg))
+            {
+                // Contains the error message to TempData from the FieldValidation function,
+                //this will be use to display in JavaScript Pop-up box
+                TempData["FieldError"] = errorMsg;
+                return View("Add", addListing);
+            }
 
-			if (_context.Listing.Any(s => s.ESTABNAME == addListing.ESTABNAME))
-			{
-				// The record already exists, this will be use to display in JavaScript Pop-up box
-				TempData["DuplicateError"] = "Space(s) already in-list";
+            if (_context.Listing.Any(s => s.ESTABNAME == addListing.ESTABNAME))
+            {
+                // The record already exists, this will be use to display in JavaScript Pop-up box
+                TempData["DuplicateError"] = "Space(s) already in-list";
 
-				// Return the view with the model validation errors
-				return View(addListing);
-			}
-			SaveData(addListing);
-			TempData["SuccessMessage"] = "Space Listed Successfully";
-			return RedirectToAction("Index", "Listing");
-		}
+                // Return the view with the model validation errors
+                return View(addListing);
+            }
+            SaveData(addListing);
+            TempData["SuccessMessage"] = "Space Listed Successfully";
+            return RedirectToAction("Index", "Listing");
+        }
 
-		[HttpGet]
+        [HttpGet]
 		public IActionResult Details(string? name)
 		{
 			var listing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == name);
@@ -679,68 +680,79 @@ namespace Trabahub.Controllers
 		}
 
 
-		public void SaveData(Listing addListing)
-		{
-			string imgPath = UploadFile(addListing);
-			string veriPath = UploadFile2(addListing);
+        public void SaveData(Listing addListing)
+        {
+            string imgPath = UploadFile(addListing);
+            string veriPath = UploadFile2(addListing);
+            string veriPath2 = UploadFile3(addListing);
+            string veriPath3 = UploadFile4(addListing);
+            string veriPath4 = UploadFile5(addListing);
+            string veriPath5 = UploadFile6(addListing);
 
             // Retrieve the username of the currently logged-in owner
             var ownerUsername = HttpContext.Session.GetString("Username");
 
-			System.Diagnostics.Debug.WriteLine($"Owner username from session: {ownerUsername}");
+            System.Diagnostics.Debug.WriteLine($"Owner username from session: {ownerUsername}");
 
-			// Check if owner username is not null or empty
-			if (string.IsNullOrEmpty(ownerUsername))
-			{
-				Console.WriteLine("Owner username is null or empty.");
-				return;
-			}
+            // Check if owner username is not null or empty
+            if (string.IsNullOrEmpty(ownerUsername))
+            {
+                Console.WriteLine("Owner username is null or empty.");
+                return;
+            }
 
-			var listing = new Listing()
-			{
-				ESTABNAME = addListing.ESTABNAME,
-				ESTABDESC = addListing.ESTABDESC,
-				ESTABADD = addListing.ESTABADD,
-				STARTTIME = addListing.STARTTIME,
-				ENDTIME = addListing.ENDTIME,
-				ACCOMODATION = addListing.ACCOMODATION,
-				ESTABIMAGEPATH = imgPath,
-				VERIMAGEPATH = veriPath,
-				ESTABRATING = 0,
-				ListingStatus = false,
-				OwnerUsername = ownerUsername
-			};
+            var listing = new Listing()
+            {
+                ESTABNAME = addListing.ESTABNAME,
+                ESTABDESC = addListing.ESTABDESC,
+                ESTABADD = addListing.ESTABADD,
+                STARTTIME = addListing.STARTTIME,
+                ENDTIME = addListing.ENDTIME,
+                ACCOMODATION = addListing.ACCOMODATION,
+                ESTABIMAGEPATH = imgPath,
+                VERIMAGEPATH = veriPath,
+                VERIMAGEPATH2 = veriPath2,
+                VERIMAGEPATH3 = veriPath3,
+                VERIMAGEPATH4 = veriPath4,
+                VERIMAGEPATH5 = veriPath5,
+                ESTABRATING = 0,
+                ListingStatus = false,
+                OwnerUsername = ownerUsername
+            };
 
-			// Check if ESTABHRPRICE is provided and assign it
-			if (addListing.ESTABHRPRICE.HasValue)
-			{
-				listing.ESTABHRPRICE = addListing.ESTABHRPRICE.Value;
-			}
+            // Check if ESTABHRPRICE is provided and assign it
+            if (addListing.ESTABHRPRICE.HasValue)
+            {
+                listing.ESTABHRPRICE = addListing.ESTABHRPRICE.Value;
+            }
 
-			// Check if ESTABDAYPRICE is provided and assign it
-			if (addListing.ESTABDAYPRICE.HasValue)
-			{
-				listing.ESTABDAYPRICE = addListing.ESTABDAYPRICE.Value;
-			}
+            // Check if ESTABDAYPRICE is provided and assign it
+            if (addListing.ESTABDAYPRICE.HasValue)
+            {
+                listing.ESTABDAYPRICE = addListing.ESTABDAYPRICE.Value;
+            }
 
-			// Check if ESTABWKPRICE is provided and assign it
-			if (addListing.ESTABWKPRICE.HasValue)
-			{
-				listing.ESTABWKPRICE = addListing.ESTABWKPRICE.Value;
-			}
+            // Check if ESTABWKPRICE is provided and assign it
+            if (addListing.ESTABWKPRICE.HasValue)
+            {
+                listing.ESTABWKPRICE = addListing.ESTABWKPRICE.Value;
+            }
 
-			// Check if ESTABMONPRICE is provided and assign it
-			if (addListing.ESTABMONPRICE.HasValue)
-			{
-				listing.ESTABMONPRICE = addListing.ESTABMONPRICE.Value;
-			}
+            // Check if ESTABMONPRICE is provided and assign it
+            if (addListing.ESTABMONPRICE.HasValue)
+            {
+                listing.ESTABMONPRICE = addListing.ESTABMONPRICE.Value;
+            }
 
-			_context.Listing.Add(listing);
-			_context.SaveChanges();
+            _context.Listing.Add(listing);
+            _context.SaveChanges();
 
-			// Log the successful addition of the listing
-			Console.WriteLine("Listing added successfully.");
-		}
+            // Log the successful addition of the listing
+            Console.WriteLine("Listing added successfully.");
+        }
+
+
+
 
         // Controller action to fetch daily analytics data
         public JsonResult GetDailyData()
@@ -862,6 +874,83 @@ namespace Trabahub.Controllers
             }
             return fileName2;
         }
+
+        private string UploadFile3(Listing addListing)
+        {
+            string fileName3 = null;
+            if (addListing.VERIMG2 != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+                // Combine the elements to create the file name
+                fileName3 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG2.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
+                string filePath = Path.Combine(uploadDir, fileName3);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.VERIMG2.CopyTo(fileStream);
+                }
+            }
+            return fileName3;
+        }
+
+        private string UploadFile4(Listing addListing)
+        {
+            string fileName4 = null;
+            if (addListing.VERIMG3 != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+                // Combine the elements to create the file name
+                fileName4 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG3.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
+                string filePath = Path.Combine(uploadDir, fileName4);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.VERIMG3.CopyTo(fileStream);
+                }
+            }
+            return fileName4;
+        }
+
+        private string UploadFile5(Listing addListing)
+        {
+            string fileName5 = null;
+            if (addListing.VERIMG4 != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+                // Combine the elements to create the file name
+                fileName5 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG4.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
+                string filePath = Path.Combine(uploadDir, fileName5);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.VERIMG4.CopyTo(fileStream);
+                }
+            }
+            return fileName5;
+        }
+
+        private string UploadFile6(Listing addListing)
+        {
+            string fileName6 = null;
+            if (addListing.VERIMG5 != null)
+            {
+                string estabname = addListing.ESTABNAME.ToString();
+                // Combine the elements to create the file name
+                fileName6 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG5.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
+                string filePath = Path.Combine(uploadDir, fileName6);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addListing.VERIMG5.CopyTo(fileStream);
+                }
+            }
+            return fileName6;
+        }
+
 
         private string FieldValidation(Listing listing)
 		{
