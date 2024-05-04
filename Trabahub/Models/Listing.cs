@@ -55,10 +55,10 @@ namespace Trabahub.Models
 
         //<---For Photo Verificaiton--->
         [StringLength(255)]
-        public string? VERIMAGEPATH { get; set; }
+        public string? VERIMAGEPATH1 { get; set; }
 
         [NotMapped]
-        public IFormFile? VERIMG { get; set; }
+        public IFormFile? VERIMG1 { get; set; }
 
         [StringLength(255)]
         public string? VERIMAGEPATH2 { get; set; }

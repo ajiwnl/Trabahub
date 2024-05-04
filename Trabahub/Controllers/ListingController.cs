@@ -683,12 +683,20 @@ namespace Trabahub.Controllers
         public void SaveData(Listing addListing)
         {
             string imgPath = UploadFile(addListing);
-            string veriPath = UploadFile2(addListing);
-            string veriPath2 = UploadFile3(addListing);
-            string veriPath3 = UploadFile4(addListing);
-            string veriPath4 = UploadFile5(addListing);
-            string veriPath5 = UploadFile6(addListing);
+            var veriPaths = new List<string>();
+            var listingProperties = addListing.GetType().GetProperties();
+            foreach (var property in listingProperties)
+            {
+                if (property.Name.StartsWith("VERIMG") && property.GetValue(addListing) is IFormFile verImg)
+                {
+                    if (int.TryParse(property.Name.Substring(6), out int index))
+                    {
+                        var veriPath = UploadFileVer(addListing, verImg, index);
+                        veriPaths.Add(veriPath);
+                    }
+                }
 
+            }
             // Retrieve the username of the currently logged-in owner
             var ownerUsername = HttpContext.Session.GetString("Username");
 
@@ -710,11 +718,6 @@ namespace Trabahub.Controllers
                 ENDTIME = addListing.ENDTIME,
                 ACCOMODATION = addListing.ACCOMODATION,
                 ESTABIMAGEPATH = imgPath,
-                VERIMAGEPATH = veriPath,
-                VERIMAGEPATH2 = veriPath2,
-                VERIMAGEPATH3 = veriPath3,
-                VERIMAGEPATH4 = veriPath4,
-                VERIMAGEPATH5 = veriPath5,
                 ESTABRATING = 0,
                 ListingStatus = false,
                 OwnerUsername = ownerUsername
@@ -743,6 +746,17 @@ namespace Trabahub.Controllers
             {
                 listing.ESTABMONPRICE = addListing.ESTABMONPRICE.Value;
             }
+
+            // Assign verification image paths
+            for (int i = 0; i < veriPaths.Count; i++)
+            {
+                var propertyInfo = listing.GetType().GetProperty($"VERIMAGEPATH{i + 1}");
+                if (propertyInfo != null)
+                {
+                    propertyInfo.SetValue(listing, veriPaths[i]);
+                }
+            }
+
 
             _context.Listing.Add(listing);
             _context.SaveChanges();
@@ -856,100 +870,25 @@ namespace Trabahub.Controllers
 			return fileName;
 		}
 
-        private string UploadFile2(Listing addListing)
+        private string UploadFileVer(Listing addListing, IFormFile file, int index)
         {
-            string fileName2 = null;
-            if (addListing.VERIMG != null)
+            string fileName = null;
+            if (file != null)
             {
                 string estabname = addListing.ESTABNAME.ToString();
                 // Combine the elements to create the file name
-                fileName2 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG.FileName)}";
+                fileName = $"VerPhoto_{estabname}_{index}{Path.GetExtension(file.FileName)}";
 
                 string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
-                string filePath = Path.Combine(uploadDir, fileName2);
+                string filePath = Path.Combine(uploadDir, fileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    addListing.VERIMG.CopyTo(fileStream);
+                    file.CopyTo(fileStream);
                 }
             }
-            return fileName2;
+            return fileName;
         }
 
-        private string UploadFile3(Listing addListing)
-        {
-            string fileName3 = null;
-            if (addListing.VERIMG2 != null)
-            {
-                string estabname = addListing.ESTABNAME.ToString();
-                // Combine the elements to create the file name
-                fileName3 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG2.FileName)}";
-
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
-                string filePath = Path.Combine(uploadDir, fileName3);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    addListing.VERIMG2.CopyTo(fileStream);
-                }
-            }
-            return fileName3;
-        }
-
-        private string UploadFile4(Listing addListing)
-        {
-            string fileName4 = null;
-            if (addListing.VERIMG3 != null)
-            {
-                string estabname = addListing.ESTABNAME.ToString();
-                // Combine the elements to create the file name
-                fileName4 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG3.FileName)}";
-
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
-                string filePath = Path.Combine(uploadDir, fileName4);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    addListing.VERIMG3.CopyTo(fileStream);
-                }
-            }
-            return fileName4;
-        }
-
-        private string UploadFile5(Listing addListing)
-        {
-            string fileName5 = null;
-            if (addListing.VERIMG4 != null)
-            {
-                string estabname = addListing.ESTABNAME.ToString();
-                // Combine the elements to create the file name
-                fileName5 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG4.FileName)}";
-
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
-                string filePath = Path.Combine(uploadDir, fileName5);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    addListing.VERIMG4.CopyTo(fileStream);
-                }
-            }
-            return fileName5;
-        }
-
-        private string UploadFile6(Listing addListing)
-        {
-            string fileName6 = null;
-            if (addListing.VERIMG5 != null)
-            {
-                string estabname = addListing.ESTABNAME.ToString();
-                // Combine the elements to create the file name
-                fileName6 = $"VerPhoto_{estabname}{Path.GetExtension(addListing.VERIMG5.FileName)}";
-
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "verify");
-                string filePath = Path.Combine(uploadDir, fileName6);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    addListing.VERIMG5.CopyTo(fileStream);
-                }
-            }
-            return fileName6;
-        }
 
 
         private string FieldValidation(Listing listing)
