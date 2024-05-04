@@ -121,7 +121,12 @@ function handleEnter(event) {
 }
 
 function checkEmail() {
-    var email = document.getElementById('floatingInputEmail').value;
+    var email = document.getElementById('floatingInputEmail').value.trim(); // Trim whitespace from the email
+
+    if (email === '') {
+        alert('Please enter an email.');
+        return;
+    }
 
     $.ajax({
         url: '/Credentials/CheckEmail',
@@ -132,21 +137,37 @@ function checkEmail() {
                 // Email exists, enable the password field
                 document.getElementById('floatingInputPassword').disabled = false;
                 document.getElementById('confirmPassword').disabled = false;
-                document.getElementById('emailValidationMessage').innerText = 'Email found. You can change your password.';
-                document.getElementById('emailValidationMessage').style.color = 'green';
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Email Found',
+                    text: 'Email found. You can change your password.',
+                    confirmButtonText: 'OK'
+                });
             } else {
                 // Email does not exist, show an error message and keep the password fields disabled
-                document.getElementById('emailValidationMessage').innerText = 'Email not found. Please check and try again.';
                 document.getElementById('floatingInputPassword').disabled = true;
                 document.getElementById('confirmPassword').disabled = true;
-                document.getElementById('emailValidationMessage').style.color = 'red';
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Email Not Found',
+                    text: 'Email not found. Please check and try again.'
+                });
             }
         },
         error: function () {
             alert('Error checking email.');
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error checking email.'
+            });
         }
     });
 }
+
 
 
 // Update the form submission function
