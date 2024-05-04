@@ -132,12 +132,14 @@ function checkEmail() {
                 // Email exists, enable the password field
                 document.getElementById('floatingInputPassword').disabled = false;
                 document.getElementById('confirmPassword').disabled = false;
-                document.getElementById('emailValidationMessage').innerText = 'Email found. You can proceed.';
+                document.getElementById('emailValidationMessage').innerText = 'Email found. You can change your password.';
+                document.getElementById('emailValidationMessage').style.color = 'green';
             } else {
                 // Email does not exist, show an error message and keep the password fields disabled
                 document.getElementById('emailValidationMessage').innerText = 'Email not found. Please check and try again.';
                 document.getElementById('floatingInputPassword').disabled = true;
                 document.getElementById('confirmPassword').disabled = true;
+                document.getElementById('emailValidationMessage').style.color = 'red';
             }
         },
         error: function () {
