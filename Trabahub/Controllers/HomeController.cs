@@ -28,6 +28,7 @@ namespace Trabahub.Controllers
         {
             // Get the logged-in user's type
             var userType = HttpContext.Session.GetString("UserType");
+            var getRecentBooks = _context.Booking.ToList();
 
             // Check if the user is an owner
             if (userType == "Owner")
@@ -63,7 +64,7 @@ namespace Trabahub.Controllers
 				HttpContext.Session.SetString("TotalCharges", "₱" + ownerTotalIncome.ToString());
 
             }
-            else
+            else if(userType == "Admin")
             {
                 var getTotalListings = _context.Listing.Count();
                 var getTotalUsers = _context.Credentials.Count();
@@ -75,7 +76,8 @@ namespace Trabahub.Controllers
                 HttpContext.Session.SetString("TotalBooks", getAllBooking.ToString());
                 HttpContext.Session.SetString("TotalCharges", "₱" + totalIncomeForAllOwners.ToString());
             }
-            return View();
+
+            return View(getRecentBooks);
         }
 
 
