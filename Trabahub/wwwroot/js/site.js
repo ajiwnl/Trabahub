@@ -125,6 +125,8 @@ function checkEmail() {
 
     if (email === '') {
         alert('Please enter an email.');
+        document.getElementById('floatingInputPassword').disabled = true;
+        document.getElementById('confirmPassword').disabled = true;
         return;
     }
 
