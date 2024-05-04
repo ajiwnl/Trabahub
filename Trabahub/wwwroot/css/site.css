@@ -1163,7 +1163,7 @@ footer {
 }
 
 .transform-step2 {
-    transform: translate(0, -250%);
+    transform: translate(0, -100%);
 }
 
 .transform-step1 {
@@ -1413,9 +1413,10 @@ tr:hover {
     }
 
 .ad-header {
-    height: 500px;
+    height: 100%;
     display: flex;
     flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
