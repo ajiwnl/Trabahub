@@ -2,12 +2,18 @@
 @if (ViewBag.Usertype == "Admin")
 {
     <div class="admin-dashboard">
+        <div class="d-flex flex-row gap-5 justify-content-end align-items-center pe-5 pt-3 pb-3">
+            <label class="fs-5 text-success">Total Verified: @ViewBag.VerifiedCount</label>
+            <label class="fs-5 text-warning">Total Pending: @ViewBag.PendingCount</label>
+        </div>
         <table>
             <thead>
                 <tr>
                     <th class="text-center">Establishment Name</th>
                     <th class="text-center">Owner Username</th>
                     <th class="text-center">Listing Status</th>
+                    <th class="tex-center">Total Income</th>
+                    <th class="tex-center">Total Books</th>
                     <th class="text-center">Details</th>
                 </tr>
             </thead>
@@ -20,6 +26,12 @@
                             <td class="text-center">@listings.OwnerUsername</td>
                             <td class="text-center @(listings.ListingStatus == false ? "text-warning" : "text-success")">
                                 @(listings.ListingStatus == false ? "Pending" : "Verified")
+                            </td>
+                            <td class="text-center">
+                                <label class="fs-6 text-success fw-bold">Income: ₱@ViewBag.TotalIncome</label>
+                            </td>
+                            <td class="text-center">
+                                <label class="fs-6 text-success fw-bold">Books: @ViewBag.OwnerBooks</label>
                             </td>
                             <td class="text-center">
                                 <a asp-area=""
