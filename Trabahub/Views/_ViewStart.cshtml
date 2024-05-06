@@ -18,5 +18,12 @@
     ViewBag.TotalCharges = Context.Session.GetString("TotalCharges");
 
     ViewBag.CurrentListing = Context.Session.GetString("CurrentListing");
+
+    ViewBag.VerifiedCount = Context.Session.GetString("VerifiedCount");
+    ViewBag.PendingCount = Context.Session.GetString("PendingCount");
+
+    ViewBag.TotalIncome = Context.Session.GetString("TotalIncome");
+    ViewBag.OwnerBooks = Context.Session.GetString("OwnerBooks");
+
 }
 

@@ -1429,7 +1429,7 @@ tr:hover {
 }
 
 .ad-side {
-    padding: 100px;
+    padding: 50px 100px 100px 100px;
     height: 300px;
     display: flex;
     flex-direction: column;
