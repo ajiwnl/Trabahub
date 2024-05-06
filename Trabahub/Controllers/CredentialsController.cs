@@ -7,15 +7,20 @@ using Trabahub.Data;
 using Trabahub.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Trabahub.Controllers
 {
+
     public class CredentialsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private int profileImageCount = 1;
 
-        public CredentialsController(ApplicationDbContext context)
+        public CredentialsController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
+            _webHostEnvironment = webHostEnvironment;
             _context = context;
         }
 
@@ -141,11 +146,12 @@ namespace Trabahub.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Credentials profileEdit)
+        public IActionResult Edit(Credentials profileEdit, IFormFile profImage)
         {
             var getUser = HttpContext.Session.GetString("Username");
             var getRole = HttpContext.Session.GetString("UserType");
             var profile = _context.Credentials.FirstOrDefault(s => s.Email == profileEdit.Email);
+
 
             if (getRole == "Owner")
             {
@@ -189,6 +195,15 @@ namespace Trabahub.Controllers
                 profile.Username = profileEdit.Username;
                 profile.fName = profileEdit.fName;
                 profile.lName = profileEdit.lName;
+            }
+
+
+            if (profImage != null)
+            {
+                // Upload the image and get the file name
+                string fileName = UploadFile(new Credentials { PROFIMG = profImage });
+                // Assign the file name to the PROFIMAGEPATH property of the profile object
+                profile.PROFIMAGEPATH = fileName;
             }
 
             _context.SaveChanges();
@@ -432,6 +447,32 @@ namespace Trabahub.Controllers
         {
             _context.Credentials.Add(addCredentialEntry);
             _context.SaveChanges();
+        }
+
+        public string UploadFile(Credentials addCredentials)
+        {
+            string fileName = null;
+            if (addCredentials.PROFIMG != null)
+            {
+  
+                string currentDate = DateTime.Now.ToString("MMddyyyy");
+
+                // Increment the profileImageCount for the next uploaded image
+                profileImageCount++;
+
+
+                // Combine the elements to create the file name
+                fileName = $"profileup{profileImageCount}_{currentDate}{Path.GetExtension(addCredentials.PROFIMG.FileName)}";
+
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "prof");
+                string filePath = Path.Combine(uploadDir, fileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    addCredentials.PROFIMG.CopyTo(fileStream);
+                }
+
+            }
+            return fileName;
         }
 
         [HttpPost]

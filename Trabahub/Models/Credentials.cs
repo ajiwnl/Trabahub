@@ -39,6 +39,14 @@ namespace Trabahub.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreationDate { get; set; }
 
+        //<---New Code Starts--->
+        [StringLength(255)]
+        public string? PROFIMAGEPATH { get; set; }
+
+        [NotMapped]
+        public IFormFile? PROFIMG { get; set; }
+        //<---New Code Ends--->
+
 
     }
 }
