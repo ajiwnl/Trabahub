@@ -162,13 +162,20 @@
 			<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #F64646;" asp-area="" asp-controller="Listing" asp-action="Index">GO BACK</a>
 		</div>
 		<div class="col">
-			@if (Model.Listing.ACCOMODATION <= 0)
+			@if (ViewBag.UserType == "Client")
 			{
-				<button class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" disabled>BOOK NOW</button>
-			}
-			else
+				@if (Model.Listing.ACCOMODATION <= 0)
+				{
+					<button class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" disabled>BOOK NOW</button>
+				}
+				else
+				{
+					<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" asp-area="" asp-controller="Listing" asp-action="Booking" asp-route-name="@Model.Listing.ESTABNAME">BOOK NOW</a>
+				}
+			} else
 			{
-				<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" asp-area="" asp-controller="Listing" asp-action="Booking" asp-route-name="@Model.Listing.ESTABNAME">BOOK NOW</a>
+				<a class="dbuttonlbls text-white border-0 text-decoration-none" style="background-color: #3ECCB5;" asp-area="" asp-controller="Listing" asp-action="EditListing" asp-route-name="@Model.Listing.ESTABNAME">EDIT LISTING</a>
+
 			}
 		</div>
 	</div>
