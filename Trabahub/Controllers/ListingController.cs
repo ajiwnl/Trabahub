@@ -83,6 +83,13 @@ namespace Trabahub.Controllers
             return View();
         }
 
+		[HttpGet] 
+		public IActionResult EditListing(string? name)
+		{
+			var getReference = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
+			return View(getReference);
+		}
+
 
         [HttpPost]
         [ActionName("Interact")]
