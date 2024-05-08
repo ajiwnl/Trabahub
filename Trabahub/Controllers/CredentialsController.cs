@@ -146,7 +146,7 @@ namespace Trabahub.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Credentials profileEdit, IFormFile profImage)
+        public IActionResult Edit(Credentials profileEdit)
         {
             var getUser = HttpContext.Session.GetString("Username");
             var getRole = HttpContext.Session.GetString("UserType");
@@ -197,14 +197,6 @@ namespace Trabahub.Controllers
                 profile.lName = profileEdit.lName;
             }
 
-
-            if (profImage != null)
-            {
-                // Upload the image and get the file name
-                string fileName = UploadFile(new Credentials { PROFIMG = profImage });
-                // Assign the file name to the PROFIMAGEPATH property of the profile object
-                profile.PROFIMAGEPATH = fileName;
-            }
 
             _context.SaveChanges();
             HttpContext.Session.Clear();
@@ -447,32 +439,6 @@ namespace Trabahub.Controllers
         {
             _context.Credentials.Add(addCredentialEntry);
             _context.SaveChanges();
-        }
-
-        public string UploadFile(Credentials addCredentials)
-        {
-            string fileName = null;
-            if (addCredentials.PROFIMG != null)
-            {
-  
-                string currentDate = DateTime.Now.ToString("MMddyyyy");
-
-                // Increment the profileImageCount for the next uploaded image
-                profileImageCount++;
-
-
-                // Combine the elements to create the file name
-                fileName = $"profileup{profileImageCount}_{currentDate}{Path.GetExtension(addCredentials.PROFIMG.FileName)}";
-
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "prof");
-                string filePath = Path.Combine(uploadDir, fileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    addCredentials.PROFIMG.CopyTo(fileStream);
-                }
-
-            }
-            return fileName;
         }
 
         [HttpPost]
