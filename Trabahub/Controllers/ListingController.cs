@@ -90,6 +90,28 @@ namespace Trabahub.Controllers
 			return View(getReference);
 		}
 
+        [HttpPost]
+        public IActionResult EditListing(Listing listingEdit)
+        {
+			var existingListing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == listingEdit.ESTABNAME);
+            if (existingListing != null)
+            {
+                // Update properties of the existing listing with the values from the edited listing
+                existingListing.ESTABDESC = listingEdit.ESTABDESC;
+                existingListing.ESTABADD = listingEdit.ESTABADD;
+                existingListing.ESTABHRPRICE = listingEdit.ESTABHRPRICE;
+                existingListing.ESTABDAYPRICE = listingEdit.ESTABDAYPRICE;
+                existingListing.ESTABWKPRICE = listingEdit.ESTABWKPRICE;
+                existingListing.ESTABMONPRICE = listingEdit.ESTABMONPRICE;
+                existingListing.ACCOMODATION = listingEdit.ACCOMODATION;
+
+                _context.SaveChanges();
+                TempData["UpMessage"] = "Listing Successfully Updated!";
+                return RedirectToAction("Details");
+            }
+            return View(listingEdit);
+        }
+
 
         [HttpPost]
         [ActionName("Interact")]
