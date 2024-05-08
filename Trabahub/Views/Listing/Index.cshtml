@@ -279,3 +279,15 @@
 		});
 	</script>
 }
+
+@if (TempData.ContainsKey("UpMessage"))
+{
+	<script>
+		var upMessage = '@TempData["UpMessage"]';
+		Swal.fire({
+			icon: 'success',
+			title: 'Success',
+			text: upMessage,
+		});
+	</script>
+}

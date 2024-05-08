@@ -107,7 +107,7 @@ namespace Trabahub.Controllers
 
                 _context.SaveChanges();
                 TempData["UpMessage"] = "Listing Successfully Updated!";
-                return RedirectToAction("Details");
+                return RedirectToAction("Index");
             }
             return View(listingEdit);
         }
