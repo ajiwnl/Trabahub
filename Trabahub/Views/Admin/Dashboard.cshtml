@@ -12,8 +12,6 @@
                     <th class="text-center">Establishment Name</th>
                     <th class="text-center">Owner Username</th>
                     <th class="text-center">Listing Status</th>
-                    <th class="tex-center">Total Income</th>
-                    <th class="tex-center">Total Books</th>
                     <th class="text-center">Details</th>
                 </tr>
             </thead>
@@ -26,12 +24,6 @@
                             <td class="text-center">@listings.OwnerUsername</td>
                             <td class="text-center @(listings.ListingStatus == false ? "text-warning" : "text-success")">
                                 @(listings.ListingStatus == false ? "Pending" : "Verified")
-                            </td>
-                            <td class="text-center">
-                                <label class="fs-6 text-success fw-bold">Income: ₱@ViewBag.TotalIncome</label>
-                            </td>
-                            <td class="text-center">
-                                <label class="fs-6 text-success fw-bold">Books: @ViewBag.OwnerBooks</label>
                             </td>
                             <td class="text-center">
                                 <a asp-area=""
