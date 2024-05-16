@@ -307,7 +307,7 @@ namespace Trabahub.Controllers
             string userName = HttpContext.Session.GetString("Username");
 
 
-            var successUrl = "https://localhost:7074/Listing/Charge/" + Uri.EscapeDataString(gcashdesc);
+            var successUrl = "http://trabahubco.somee.com/Listing/Charge/" + Uri.EscapeDataString(gcashdesc);
 			int priceInt = Convert.ToInt32(gcashprice) * 100;
 			string convertPrice = (priceInt / 100).ToString();
 			string concatDesc = userName + " " + gcashchoice + " " + gcashin + " " + gcashout + " " + gcashdynamic;

@@ -33,9 +33,15 @@ namespace Trabahub.Controllers
         public IActionResult ListingDetails(string? name)
         {
             var listingDetail = _context.Listing.FirstOrDefault(x => x.ESTABNAME == name);
+
+            if (listingDetail == null)
+            {
+                return NotFound();
+            }
+
             var getOwner = listingDetail.OwnerUsername;
 
-            var totalIncome = _context.Analytics.FirstOrDefault(owner => owner.DataReference == getOwner).TotalIncome;
+            var totalIncome = _context.Analytics.FirstOrDefault(owner => owner.DataReference == getOwner)?.TotalIncome;
             var referOwner = _context.Listing.FirstOrDefault(referowner => referowner.OwnerUsername == getOwner);
             int getBookCount = _context.Booking.Where(bookings => bookings.ESTABNAME == referOwner.ESTABNAME).Count();
 
@@ -47,6 +53,7 @@ namespace Trabahub.Controllers
 
             return View(listingDetail);
         }
+
 
         [HttpPost]
         public IActionResult ApproveListing(string estabname, string action)

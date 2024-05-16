@@ -11,11 +11,18 @@
             {
                 for (int i = 1; i <= 5; i++)
                 {
-                    var imagePath = $"~/verify/{Model.GetType().GetProperty($"VERIMAGEPATH{i}").GetValue(Model)}";
-                    <div class="admin-card">
-                        <label class="ad-header-label text-dark mb-5">Document @(i)</label>
-                        <img class="ad-imagever" src="@imagePath" asp-append-version="true" />
-                    </div>
+                    var imagePathProperty = $"VERIMAGEPATH{i}";
+                    var imagePathValue = Model.GetType().GetProperty(imagePathProperty)?.GetValue(Model) as string;
+
+                    // Check if imagePathValue is not null or empty
+                    if (!string.IsNullOrEmpty(imagePathValue))
+                    {
+                        var imagePath = $"~/verify/{imagePathValue}";
+                        <div class="admin-card">
+                            <label class="ad-header-label text-dark mb-5">Document @(i)</label>
+                            <img class="ad-imagever" src="@imagePath" asp-append-version="true" />
+                        </div>
+                    }
                 }
             }
             else
