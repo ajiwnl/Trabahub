@@ -822,7 +822,7 @@ namespace Trabahub.Controllers
                 int getTotalBooks = 0;
                 if (getOwner != null)
                 {
-                    getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+                    getTotalBooks = _context.Booking.Count(x => x.ESTABNAME == getOwner.ESTABNAME);
                 }
 
                 var chartData = new
