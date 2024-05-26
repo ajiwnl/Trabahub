@@ -109,6 +109,12 @@ namespace Trabahub.Controllers
                 return RedirectToAction("Index", "Home"); // Redirect to home
             }
 
+            if (existingEmail.Email == "trabahubco@gmail.com" && existingEmail.Password != passwordlog)
+            {
+                TempData["PasswordIncorrect"] = "Incorrect Password";
+                return View("Login");
+            }
+
             // Verify the hashed password
             if (!VerifyPassword(passwordlog, existingEmail.Password))
             {
