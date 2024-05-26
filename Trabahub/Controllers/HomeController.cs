@@ -48,7 +48,7 @@ namespace Trabahub.Controllers
 				else
 				{
 					// Listing is found, proceed with getting TotalBooks
-					var getTotalBooks = _context.ListInteraction.Count(x => x.OwnerUsername == ownerUsername);
+					var getTotalBooks = _context.Booking.Count(x => x.ESTABNAME == getOwner.ESTABNAME);
 					HttpContext.Session.SetString("TotalBooks", getTotalBooks.ToString());
 				}
 
