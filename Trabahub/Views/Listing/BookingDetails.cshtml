@@ -68,3 +68,20 @@
         </table>
     }
 </div>
+
+<script>
+    $(document).ready(function () {
+        // Trigger AJAX call when the details page is accessed
+        $.ajax({
+            url: '/Listing/UpdateCount',
+            type: 'GET',
+            success: function (response) {
+                // Update the accommodation count on the page
+                $('#accommodationCount').text(response);
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+</script>
