@@ -308,7 +308,7 @@ namespace Trabahub.Controllers
 			string localurl = "https://localhost:7074/Listing/Charge/";
 			string deployedurl = "http://trabahubco.somee.com/Listing/Charge/";
 
-			var successUrl = localurl + Uri.EscapeDataString(gcashdesc);
+			var successUrl = deployedurl + Uri.EscapeDataString(gcashdesc);
 			int priceInt = Convert.ToInt32(gcashprice) * 100;
 			string convertPrice = (priceInt / 100).ToString();
 			string concatDesc = userName + " " + gcashchoice + " " + gcashin + " " + gcashout + " " + gcashdynamic;
