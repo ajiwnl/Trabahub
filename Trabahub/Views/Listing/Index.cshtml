@@ -281,3 +281,16 @@
 		});
 	</script>
 }
+
+
+@if (TempData.ContainsKey("MissingFields"))
+{
+	<script>
+		var errorMessage = '@TempData["MissingFields"]';
+		Swal.fire({
+			icon: 'error',
+			title: 'Error',
+			text: errorMessage,
+		});
+	</script>
+}
