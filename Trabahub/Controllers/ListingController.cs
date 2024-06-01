@@ -19,7 +19,7 @@ namespace Trabahub.Controllers
 		private readonly ApplicationDbContext _context;
 		private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ListingController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
+		public ListingController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
 		{
 			_webHostEnvironment = webHostEnvironment;
 			_context = context;
@@ -38,11 +38,11 @@ namespace Trabahub.Controllers
 			}
 			else
 			{
-                // Retrieve all verified listings for clients
-                var verifiedListings = _context.Listing.Where(x => x.ListingStatus == true).ToList();
-                return View(verifiedListings);
-            }
-        }
+				// Retrieve all verified listings for clients
+				var verifiedListings = _context.Listing.Where(x => x.ListingStatus == true).ToList();
+				return View(verifiedListings);
+			}
+		}
 
 		[HttpGet]
 		public IActionResult Index(string searchSpaces)
@@ -77,105 +77,105 @@ namespace Trabahub.Controllers
 			return View();
 		}
 
-        [HttpGet]
-        public IActionResult Charge()
-        {
-            return View();
-        }
+		[HttpGet]
+		public IActionResult Charge()
+		{
+			return View();
+		}
 
-		[HttpGet] 
+		[HttpGet]
 		public IActionResult EditListing(string? name)
 		{
 			var getReference = _context.Listing.Where(s => s.ESTABNAME == name).FirstOrDefault();
 			return View(getReference);
 		}
 
-        [HttpPost]
-        public IActionResult EditListing(Listing listingEdit)
-        {
+		[HttpPost]
+		public IActionResult EditListing(Listing listingEdit)
+		{
 			var existingListing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == listingEdit.ESTABNAME);
-            if (existingListing != null)
-            {
-                // Update properties of the existing listing with the values from the edited listing
-                existingListing.ESTABDESC = listingEdit.ESTABDESC;
-                existingListing.ESTABADD = listingEdit.ESTABADD;
-                existingListing.ESTABHRPRICE = listingEdit.ESTABHRPRICE;
-                existingListing.ESTABDAYPRICE = listingEdit.ESTABDAYPRICE;
-                existingListing.ESTABWKPRICE = listingEdit.ESTABWKPRICE;
-                existingListing.ESTABMONPRICE = listingEdit.ESTABMONPRICE;
-                existingListing.ACCOMODATION = listingEdit.ACCOMODATION;
+			if (existingListing != null)
+			{
+				// Update properties of the existing listing with the values from the edited listing
+				existingListing.ESTABDESC = listingEdit.ESTABDESC;
+				existingListing.ESTABADD = listingEdit.ESTABADD;
+				existingListing.ESTABHRPRICE = listingEdit.ESTABHRPRICE;
+				existingListing.ESTABDAYPRICE = listingEdit.ESTABDAYPRICE;
+				existingListing.ESTABWKPRICE = listingEdit.ESTABWKPRICE;
+				existingListing.ESTABMONPRICE = listingEdit.ESTABMONPRICE;
+				existingListing.ACCOMODATION = listingEdit.ACCOMODATION;
 
-                _context.SaveChanges();
-                TempData["UpMessage"] = "Listing Successfully Updated!";
-                return RedirectToAction("Index");
-            }
-            return View(listingEdit);
-        }
+				_context.SaveChanges();
+				TempData["UpMessage"] = "Listing Successfully Updated!";
+				return RedirectToAction("Index");
+			}
+			return View(listingEdit);
+		}
 
 
-        [HttpPost]
-        [ActionName("Interact")]
-        public IActionResult Interaction(ListInteraction addinteractList)
-        {
+		[HttpPost]
+		[ActionName("Interact")]
+		public IActionResult Interaction(ListInteraction addinteractList)
+		{
 			var getOwner = _context.Listing.FirstOrDefault(x => x.ESTABNAME == addinteractList.ESTABNAME);
-            // Add the interaction to the database
-            int totalCount = _context.ListInteraction.Count();
-            var interact = new ListInteraction()
-            {
-                InteractId = totalCount + 1,
-                ESTABNAME = addinteractList.ESTABNAME,
-                Username = addinteractList.Username,
+			// Add the interaction to the database
+			int totalCount = _context.ListInteraction.Count();
+			var interact = new ListInteraction()
+			{
+				InteractId = totalCount + 1,
+				ESTABNAME = addinteractList.ESTABNAME,
+				Username = addinteractList.Username,
 				OwnerUsername = getOwner.OwnerUsername,
-                InteractComment = addinteractList.InteractComment,
-                InteractRating = addinteractList.InteractRating
-            };
-            _context.ListInteraction.Add(interact);
-            _context.SaveChanges();
+				InteractComment = addinteractList.InteractComment,
+				InteractRating = addinteractList.InteractRating
+			};
+			_context.ListInteraction.Add(interact);
+			_context.SaveChanges();
 
-            // Calculate average rating
-            double? averageRating = _context.ListInteraction
-                .Where(i => i.ESTABNAME == addinteractList.ESTABNAME && i.InteractRating != null)
-                .Average(i => i.InteractRating);
+			// Calculate average rating
+			double? averageRating = _context.ListInteraction
+				.Where(i => i.ESTABNAME == addinteractList.ESTABNAME && i.InteractRating != null)
+				.Average(i => i.InteractRating);
 
-            // Update ESTABRATING in Listing table with the calculated average
-            var listingToUpdate = _context.Listing.FirstOrDefault(l => l.ESTABNAME == addinteractList.ESTABNAME);
-            if (listingToUpdate != null)
-            {
-                listingToUpdate.ESTABRATING = averageRating ?? 0; // If averageRating is null, default to 0
-                _context.SaveChanges();
-            }
+			// Update ESTABRATING in Listing table with the calculated average
+			var listingToUpdate = _context.Listing.FirstOrDefault(l => l.ESTABNAME == addinteractList.ESTABNAME);
+			if (listingToUpdate != null)
+			{
+				listingToUpdate.ESTABRATING = averageRating ?? 0; // If averageRating is null, default to 0
+				_context.SaveChanges();
+			}
 
-            return RedirectToAction("Index", "Listing");
-        }
+			return RedirectToAction("Index", "Listing");
+		}
 
 
-        [HttpPost]
-        [ActionName("Add")]
-        public IActionResult Add(Listing addListing)
-        {
-            string errorMsg = FieldValidation(addListing);
-            if (!string.IsNullOrEmpty(errorMsg))
-            {
-                // Contains the error message to TempData from the FieldValidation function,
-                //this will be use to display in JavaScript Pop-up box
-                TempData["FieldError"] = errorMsg;
-                return View("Add", addListing);
-            }
+		[HttpPost]
+		[ActionName("Add")]
+		public IActionResult Add(Listing addListing)
+		{
+			string errorMsg = FieldValidation(addListing);
+			if (!string.IsNullOrEmpty(errorMsg))
+			{
+				// Contains the error message to TempData from the FieldValidation function,
+				//this will be use to display in JavaScript Pop-up box
+				TempData["FieldError"] = errorMsg;
+				return View("Add", addListing);
+			}
 
-            if (_context.Listing.Any(s => s.ESTABNAME == addListing.ESTABNAME))
-            {
-                // The record already exists, this will be use to display in JavaScript Pop-up box
-                TempData["DuplicateError"] = "Space(s) already in-list";
+			if (_context.Listing.Any(s => s.ESTABNAME == addListing.ESTABNAME))
+			{
+				// The record already exists, this will be use to display in JavaScript Pop-up box
+				TempData["DuplicateError"] = "Space(s) already in-list";
 
-                // Return the view with the model validation errors
-                return View(addListing);
-            }
-            SaveData(addListing);
-            TempData["SuccessMessage"] = "Space Listed Successfully";
-            return RedirectToAction("Index", "Listing");
-        }
+				// Return the view with the model validation errors
+				return View(addListing);
+			}
+			SaveData(addListing);
+			TempData["SuccessMessage"] = "Space Listed Successfully";
+			return RedirectToAction("Index", "Listing");
+		}
 
-        [HttpGet]
+		[HttpGet]
 		public IActionResult Details(string? name)
 		{
 			var listing = _context.Listing.FirstOrDefault(s => s.ESTABNAME == name);
@@ -223,26 +223,26 @@ namespace Trabahub.Controllers
 			return View(booking);
 		}
 
-        [HttpGet]
-        public IActionResult BookingDetails()
-        {
-            var ownerUsername = HttpContext.Session.GetString("Username");
-            var owner = _context.Listing.Where(owner => owner.OwnerUsername == ownerUsername).ToList();
+		[HttpGet]
+		public IActionResult BookingDetails()
+		{
+			var ownerUsername = HttpContext.Session.GetString("Username");
+			var owner = _context.Listing.Where(owner => owner.OwnerUsername == ownerUsername).ToList();
 
-            if (owner.Any())
-            {
-                var establishmentNames = owner.Select(o => o.ESTABNAME).ToList();
-                var bookings = _context.Booking.Where(booking => establishmentNames.Contains(booking.ESTABNAME)).ToList();
-                return View(bookings);
-            }
-            else
-            {
-                var bookings = _context.Booking.ToList();
-                return View(bookings);
-            }
-        }
+			if (owner.Any())
+			{
+				var establishmentNames = owner.Select(o => o.ESTABNAME).ToList();
+				var bookings = _context.Booking.Where(booking => establishmentNames.Contains(booking.ESTABNAME)).ToList();
+				return View(bookings);
+			}
+			else
+			{
+				var bookings = _context.Booking.ToList();
+				return View(bookings);
+			}
+		}
 
-        private int GetAccommodationCount(string establishmentName)
+		private int GetAccommodationCount(string establishmentName)
 		{
 			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == establishmentName);
 			if (listing != null)
@@ -263,54 +263,61 @@ namespace Trabahub.Controllers
 			}
 		}
 
-        private void UpdateTotalPrice(double stripePrice, string listingESTABNAME)
-        {
-            var ownerUsername = GetOwnerUsername(listingESTABNAME);
-            if (ownerUsername != null)
-            {
-                var analytics = _context.Analytics.FirstOrDefault(a => a.DataReference == ownerUsername);
+		private void UpdateTotalPrice(double stripePrice, string listingESTABNAME)
+		{
+			var ownerUsername = GetOwnerUsername(listingESTABNAME);
+			if (ownerUsername != null)
+			{
+				var analytics = _context.Analytics.FirstOrDefault(a => a.DataReference == ownerUsername);
 				var count = _context.Analytics.Count();
-                if (analytics == null)
-                {
-                    var createAnalytics = new Analytics()
-                    {
+				if (analytics == null)
+				{
+					var createAnalytics = new Analytics()
+					{
 						Id = count + 1,
-                        DataReference = ownerUsername,
-                        TotalIncome = stripePrice
-                    };
-                    _context.Analytics.Add(createAnalytics);
-                }
-                else
-                {
-                    analytics.TotalIncome += stripePrice;
-                }
+						DataReference = ownerUsername,
+						TotalIncome = stripePrice
+					};
+					_context.Analytics.Add(createAnalytics);
+				}
+				else
+				{
+					analytics.TotalIncome += stripePrice;
+				}
 
-                _context.SaveChanges();
-            }
-        }
+				_context.SaveChanges();
+			}
+		}
 
-        private string GetOwnerUsername(string listingESTABNAME)
-        {
-            var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
-            if (listing != null)
-            {
-                return listing.OwnerUsername;
-            }
-            return null;
-        }
+		private string GetOwnerUsername(string listingESTABNAME)
+		{
+			var listing = _context.Listing.FirstOrDefault(l => l.ESTABNAME == listingESTABNAME);
+			if (listing != null)
+			{
+				return listing.OwnerUsername;
+			}
+			return null;
+		}
 
-        [HttpPost]
-        public async Task<IActionResult> ChargeGCash(string gcashprice, string gcashdesc, string gcashin, string gcashout, string gcashchoice, string gcashdynamic, string status)
-        {
-            var options = new RestClientOptions("https://api.paymongo.com/v1/checkout_sessions");
-            var client = new RestClient(options);
-            string userName = HttpContext.Session.GetString("Username");
+		[HttpPost]
+		public async Task<IActionResult> ChargeGCash(string gcashprice, string gcashdesc, string gcashin, string gcashout, string gcashchoice, string gcashdynamic, string status)
+		{
+			var options = new RestClientOptions("https://api.paymongo.com/v1/checkout_sessions");
+			var client = new RestClient(options);
+			string userName = HttpContext.Session.GetString("Username");
+			string localurl = "https://localhost:7074/Listing/Charge/";
+			string deployedurl = "http://trabahubco.somee.com/Listing/Charge/";
 
-
-            var successUrl = "http://trabahubco.somee.com/Listing/Charge/" + Uri.EscapeDataString(gcashdesc);
+			var successUrl = localurl + Uri.EscapeDataString(gcashdesc);
 			int priceInt = Convert.ToInt32(gcashprice) * 100;
 			string convertPrice = (priceInt / 100).ToString();
 			string concatDesc = userName + " " + gcashchoice + " " + gcashin + " " + gcashout + " " + gcashdynamic;
+
+			if (gcashprice == null || gcashdesc == null || gcashin == null || gcashout == null || gcashchoice == null || gcashdynamic  == null || status == null)
+			{
+                TempData["MissingFields"] = "Something Went Wrong! Please Enter Correct Fields And Try Booking Again";
+                return RedirectToAction("Index", "Listing");
+            }
 
             SaveBookDetails(gcashdesc, userName, convertPrice, gcashin, gcashout, gcashchoice, gcashdynamic);
 
@@ -387,8 +394,7 @@ namespace Trabahub.Controllers
             }
             else
             {
-                var errorMessage = response.ErrorMessage;
-                return StatusCode((int)response.StatusCode, errorMessage);
+                return RedirectToAction("Index", "Listing");
             }
         }
 
