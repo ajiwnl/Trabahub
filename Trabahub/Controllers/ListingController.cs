@@ -70,8 +70,68 @@ namespace Trabahub.Controllers
 			return View(spaces);
 		}
 
+        [HttpGet]
+        public IActionResult FilterBookings(string status)
+        {
+            var userType = HttpContext.Session.GetString("UserType");
+            var username = HttpContext.Session.GetString("Username");
 
-		[HttpGet]
+            if (userType == "Owner")
+            {
+                // Retrieve establishments owned by the current user
+                var ownedEstablishments = _context.Listing
+                    .Where(l => l.OwnerUsername == username)
+                    .Select(l => l.ESTABNAME)
+                    .ToList();
+
+                // Filter bookings based on ownership and status
+                var filteredBookings = FilterBookingsByStatus(status, ownedEstablishments);
+                return PartialView("_BookingTable", filteredBookings);
+            }
+            else if (userType == "Admin")
+            {
+                // For admin, display all bookings regardless of ownership
+                var allBookings = _context.Booking.ToList();
+
+                // Filter bookings based on status only
+                var filteredBookings = FilterBookingsByStatus(status, null);
+                return PartialView("_BookingTable", filteredBookings);
+            }
+            else
+            {
+                return RedirectToAction("Home");
+            }
+        }
+
+        private List<Booking> FilterBookingsByStatus(string status, List<string> ownedEstablishments)
+        {
+            // Filter bookings based on the selected status and ownership
+            switch (status)
+            {
+                case "Active":
+                    return _context.Booking.Where(b => b.Status == "Active" && (ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME))).ToList();
+                case "Finished":
+                    return _context.Booking.Where(b => b.Status == "Finished" && (ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME))).ToList();
+                case "Day":
+                    DateTime today = DateTime.Today;
+                    return _context.Booking.Where(b => b.STARTTIME.Date == today.Date && (ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME))).ToList();
+                case "Week":
+                    DateTime startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                    DateTime endOfWeek = startOfWeek.AddDays(6);
+                    return _context.Booking.Where(b => b.STARTTIME.Date >= startOfWeek && b.STARTTIME.Date <= endOfWeek && (ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME))).ToList();
+                case "Month":
+                    DateTime startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    DateTime endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                    return _context.Booking.Where(b => b.STARTTIME.Date >= startOfMonth.Date && b.STARTTIME.Date <= endOfMonth.Date && (ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME))).ToList();
+                case "All":
+                    return _context.Booking.Where(b => ownedEstablishments == null || ownedEstablishments.Contains(b.ESTABNAME)).ToList();
+                default:
+                    // Default case if status is not recognized
+                    return new List<Booking>();
+            }
+        }
+
+        [HttpGet]
 		public IActionResult Add()
 		{
 			return View();
@@ -843,7 +903,7 @@ namespace Trabahub.Controllers
 			else if(role == "Admin")
 			{
                 var getTotalListings = _context.Listing.Count();
-                var getTotalBooks = _context.ListInteraction.Count();
+                var getTotalBooks = _context.Booking.Count();
 
                 var chartData = new
                 {
