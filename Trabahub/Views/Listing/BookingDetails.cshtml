@@ -125,8 +125,7 @@
             url: '/Listing/UpdateCount',
             type: 'GET',
             success: function (response) {
-                // Update the accommodation count on the page
-                $('#accommodationCount').text(response);
+                console.log(response)
             },
             error: function (xhr, status, error) {
                 console.error(xhr.responseText);
