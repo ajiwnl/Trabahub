@@ -39,20 +39,31 @@ namespace Trabahub.Controllers
                 // Query the listings belonging to the logged-in owner
                 var getTotalListings = _context.Listing.Count(l => l.OwnerUsername == ownerUsername);
 				var getOwner = _context.Listing.FirstOrDefault(a => a.OwnerUsername == ownerUsername);
-				if (getOwner == null)
+
+                var ownerListings = _context.Listing.Where(l => l.OwnerUsername == ownerUsername).ToList();
+                int totalBooks = 0;
+
+                if (getOwner == null)
 				{
-					// Handle the case where no listing is found for the owner
-					// For example, set TotalBooks to 0
-					HttpContext.Session.SetString("TotalBooks", "0");
+                    // Handle the case where no listing is found for the owner
+                    // For example, set TotalBooks to 0
+                    HttpContext.Session.SetString("TotalBooks", "0");
 				}
 				else
 				{
-					// Listing is found, proceed with getting TotalBooks
-					var getTotalBooks = _context.Booking.Count(x => x.ESTABNAME == getOwner.ESTABNAME);
-					HttpContext.Session.SetString("TotalBooks", getTotalBooks.ToString());
-				}
+                    // Listing is found, proceed with getting TotalBooks
+                    foreach (var listing in ownerListings)
+                    {
+                        // Count the bookings for each establishment owned by the owner
+                        var establishmentName = listing.ESTABNAME;
+                        var establishmentBooksCount = _context.Booking.Count(x => x.ESTABNAME == establishmentName);
+                        totalBooks += establishmentBooksCount;
+                    }
 
-				var getTotalUsers = _context.Credentials.Count();
+                    HttpContext.Session.SetString("TotalBooks", totalBooks.ToString());
+                }
+
+                var getTotalUsers = _context.Credentials.Count();
 
 				var ownerTotalIncome = _context.Analytics
 					.Where(a => a.DataReference == ownerUsername)
